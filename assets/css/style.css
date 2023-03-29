@@ -47,6 +47,11 @@
   max-height: 150px;
 }
 
+.media-body{
+  color: #151515;
+  text-decoration: none;
+}
+
 .mr-3 {
   width: 100%;
   height: 100%;
@@ -107,6 +112,10 @@
   max-height: 400px;
   min-width: 480px;
   min-height: 320px;
+}
+
+#cafeteria-cont{
+  margin-top: 30px;
 }
 
 /*--------------------------------------------------------------
