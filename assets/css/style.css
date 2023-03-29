@@ -61,6 +61,16 @@
   font-weight: bold;
 }
 
+.media .cafeteria-event {
+  color: #151515;
+  text-decoration: none;
+  width: 400px;
+}
+
+.media .cafeteria-event:hover {
+  font-weight: bold;
+}
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -1317,7 +1327,8 @@ section {
 }
 
 .contact .info .email,
-.contact .info .phone {
+.contact .info .phone ,
+.contact .info .other{
   margin-top: 40px;
 }
 
