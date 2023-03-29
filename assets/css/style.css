@@ -14,13 +14,32 @@
   max-height: 200px;
 }
 
+.closest-cafeterias .media-body {
+  justify-content: end;
+}
+
+.closest-cafeterias .media-nombre {
+  justify-content: end;
+  margin-right: 0px;
+}
+
 .media {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   margin-bottom: 20px;
   border-radius: 8px;
   transition: 0.3s;
-  border: 3px solid #ffc451;
+  border: 3px solid #ffe1a4;
   padding: 10px;
+}
+
+.media:hover {
+  border-color: #ffc451;
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+}
+
+.media-nombre:hover {
+  color: #ffd451;
 }
 
 .media-image {
@@ -70,6 +89,10 @@
   font-weight: bold;
 }
 
+.sidebar {
+  margin-top: 100px;
+}
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -83,11 +106,82 @@
   }
 
   .media-nombre {
-    margin-top:20px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .closest-cafeterias .media-body {
+    justify-content: center;
+  }
+
+  .closest-cafeterias .media-nombre {
     justify-content: center;
   }
 
 }
+
+/*--------------------------------------------------------------
+# top-cafeterias
+--------------------------------------------------------------*/
+.top-cafeterias .content h3 {
+  font-weight: 700;
+  font-size: 28px;
+  font-family: "Poppins", sans-serif;
+}
+
+.top-cafeterias .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.top-cafeterias .content ul li {
+  padding: 0 0 8px 26px;
+  position: relative;
+}
+
+.top-cafeterias .content ul i {
+  position: absolute;
+  font-size: 20px;
+  left: 0;
+  top: -3px;
+  color: #ffc451;
+}
+
+.top-cafeterias .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# closest-cafeterias
+--------------------------------------------------------------*/
+.closest-cafeterias .content h3 {
+  font-weight: 700;
+  font-size: 28px;
+  font-family: "Poppins", sans-serif;
+}
+
+.closest-cafeterias .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.closest-cafeterias .content ul li {
+  padding: 0 0 8px 26px;
+  position: relative;
+}
+
+.closest-cafeterias .content ul i {
+  position: absolute;
+  font-size: 20px;
+  left: 0;
+  top: -3px;
+  color: #ffc451;
+}
+
+.closest-cafeterias .content p:last-child {
+  margin-bottom: 0;
+}
+
 
 /*---------------------------------------------------------------------------------------
 # FIN DE NUESTRO CSS
@@ -603,36 +697,7 @@ section {
   color: #151515;
 }
 
-/*--------------------------------------------------------------
-# top-cafeterias
---------------------------------------------------------------*/
-.top-cafeterias .content h3 {
-  font-weight: 700;
-  font-size: 28px;
-  font-family: "Poppins", sans-serif;
-}
 
-.top-cafeterias .content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.top-cafeterias .content ul li {
-  padding: 0 0 8px 26px;
-  position: relative;
-}
-
-.top-cafeterias .content ul i {
-  position: absolute;
-  font-size: 20px;
-  left: 0;
-  top: -3px;
-  color: #ffc451;
-}
-
-.top-cafeterias .content p:last-child {
-  margin-bottom: 0;
-}
 
 /*--------------------------------------------------------------
 # Clients
