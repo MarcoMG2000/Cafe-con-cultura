@@ -9,6 +9,11 @@
 /*---------------------------------------------------------------------------------------
 # NUESTRO CSS
 ---------------------------------------------------------------------------------------*/
+#header .logo {
+  max-width: 300px;
+  max-height: 200px;
+}
+
 .media {
   margin-top: 30px;
   margin-bottom: 20px;
@@ -43,7 +48,7 @@
   border-radius: 50%;
   background-color: green;
   margin-right: 5px;
-  vertical-align: middle;
+  justify-content: center;
 }
 
 .cerrado:before {
@@ -54,7 +59,11 @@
   border-radius: 50%;
   background-color: rgb(128, 0, 0);
   margin-right: 5px;
-  vertical-align: middle;
+  justify-content: center;
+}
+
+.header-transparente {
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .about .h4 {
@@ -197,28 +206,6 @@ h6 {
 #header.header-scrolled,
 #header.header-inner-pages {
   background: rgba(0, 0, 0, 0.8);
-}
-
-#header .logo {
-  font-size: 32px;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-#header .logo a {
-  color: #fff;
-}
-
-#header .logo a span {
-  color: #ffc451;
-}
-
-#header .logo img {
-  max-height: 40px;
 }
 
 /*--------------------------------------------------------------

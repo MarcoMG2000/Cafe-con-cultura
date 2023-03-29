@@ -8,6 +8,16 @@
 (function() {
   "use strict";
 
+  // NUESTRO JS
+  window.addEventListener('load', function() {
+    cargarContenido("home.html");
+    let preloader = select('#preloader');
+    if (preloader) {
+      preloader.remove();
+    }
+  });
+  // FIN NUESTRO JS
+
   /**
    * Easy selector helper function
    */
@@ -154,16 +164,6 @@
       }
     }
   });
-
-  /**
-   * Preloader
-   */
-  let preloader = select('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove()
-    });
-  }
 
   /**
    * Clients Slider
