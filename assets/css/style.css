@@ -89,10 +89,6 @@
   font-weight: bold;
 }
 
-.sidebar {
-  margin-top: 100px;
-}
-
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -190,6 +186,10 @@
 /*---------------------------------------------------------------------------------------
 # CSS BUSCADOR
 ---------------------------------------------------------------------------------------*/
+
+.margen-nav {
+  margin-top: 50px;
+}
 
 *{
   box-sizing: border-box;
@@ -384,12 +384,14 @@ h6{
   #sidebar{
       width: 35%;
       padding: 20px;
+      margin-top: 60px;
       float: left;
   }
   #products{
       width: 65%;
       padding: 10px;
       margin: 0;
+      margin-top: 60px;
       float: right;
   }
   .card{
@@ -419,11 +421,13 @@ h6{
   #sidebar{
       width: 40%;
       padding: 20px;
+      margin-top: 60px;
       float: left;
   }
   #products{
       width: 60%;
       padding: 10px;
+      margin-top: 60px;
       margin: 0;
       float: right;
   }
@@ -458,6 +462,7 @@ h6{
   }
   #sidebar{
       display: none;
+      margin-top: 60px;
   }
   .filter{
       margin-left: 70%;
@@ -467,112 +472,6 @@ h6{
       font-size: 12px;
       margin-top: 2%;
   }
-}
-/*Hero buscador*/
-#heroBuscador {
-  width: 100%;
-  height: 20vh;
-  background: url("../img/cafeteria-ejemplo.jpg") top center;
-  background-size: cover;
-  position: relative;
-}
-#heroBuscador:before {
-  content: "";
-  background: rgba(0, 0, 0, 0.6);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-#heroBuscador .container {
-  position: relative;
-  padding-top: 74px;
-  text-align: center;
-}
-
-#heroBuscador h1 {
-  margin: 0;
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 64px;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-}
-
-#heroBuscador h1 span {
-  color: #ffc451;
-}
-
-#heroBuscador h2 {
-  color: rgba(255, 255, 255, 0.9);
-  margin: 10px 0 0 0;
-  font-size: 24px;
-}
-
-#heroBuscador .icon-box {
-  padding: 30px 20px;
-  transition: ease-in-out 0.3s;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  height: 100%;
-  text-align: center;
-}
-
-#heroBuscador .icon-box i {
-  font-size: 32px;
-  line-height: 1;
-  color: #ffc451;
-}
-
-#heroBuscador .icon-box h3 {
-  font-weight: 700;
-  margin: 10px 0 0 0;
-  padding: 0;
-  line-height: 1;
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#heroBuscador .icon-box h3 a {
-  color: #fff;
-  transition: ease-in-out 0.3s;
-}
-
-#heroBuscador .icon-box h3 a:hover {
-  color: #ffc451;
-}
-
-#heroBuscador .icon-box:hover {
-  border-color: #ffc451;
-}
-
-@media (min-width: 1024px) {
-  #heroBuscador {
-    background-attachment: fixed;
-  }
-}
-
-@media (max-width: 768px) {
-  #heroBuscador {
-    height: auto;
-  }
-
-  #heroBuscador h1 {
-    font-size: 28px;
-    line-height: 36px;
-  }
-
-  #heroBuscador h2 {
-    font-size: 20px;
-    line-height: 24px;
-  }
-}
-/*Fin hero buscador*/
-
-.margin-top-100 {
-  margin-top: 100px;
-  height: 800px;
 }
 
 /*---------------------------------------------------------------------------------------
