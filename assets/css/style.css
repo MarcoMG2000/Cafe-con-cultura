@@ -61,14 +61,24 @@
   font-weight: bold;
 }
 
-.media .cafeteria-event {
+.cafeteria-events .tittle{
+  text-align: center;
+}
+
+.media.cafeteria-event {
   color: #151515;
   text-decoration: none;
   width: 400px;
 }
 
-.media .cafeteria-event:hover {
+.media.cafeteria-event:hover {
   font-weight: bold;
+}
+.carousel-image{
+  max-width: 100%;
+  max-height: 400px;
+  min-width: 480px;
+  min-height: 320px;
 }
 
 /*--------------------------------------------------------------
