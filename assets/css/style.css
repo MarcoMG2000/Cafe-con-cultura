@@ -39,7 +39,8 @@
 }
 
 .media-nombre:hover {
-  color: #ffd451;
+  color: #c99327;
+  font-weight: bold;
 }
 
 .media-image {
@@ -207,6 +208,24 @@
   margin-bottom: 0;
 }
 
+.event-body {
+  padding: 5px;
+  border-radius: 8px;
+  transition: 0.3s;
+  /* border: 3px solid #ffe1a4; */
+}
+
+.event-body:hover {
+  border-color: #ffc451;
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.4);
+  transform: translateY(-10px);
+  color: #c99327;
+}
+
+.event-body .i {
+  max-height: 1px;
+  max-width: 1px;
+}
 
 /*---------------------------------------------------------------------------------------
 # FIN DE NUESTRO CSS
@@ -1055,35 +1074,35 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Features
+# events
 --------------------------------------------------------------*/
-.features {
+.events {
   padding-top: 20px;
 }
 
-.features .icon-box {
+.events .icon-box {
   padding-left: 15px;
 }
 
-.features .icon-box h4 {
+.events .icon-box h4 {
   font-size: 20px;
   font-weight: 700;
   margin: 5px 0 10px 60px;
 }
 
-.features .icon-box i {
-  font-size: 48px;
+.events .icon-box i {
+  font-size: 40px;
   float: left;
   color: #ffc451;
 }
 
-.features .icon-box p {
+.events .icon-box p {
   font-size: 15px;
   color: #848484;
   margin-left: 60px;
 }
 
-.features .image {
+.events .image {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

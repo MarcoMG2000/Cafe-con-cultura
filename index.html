@@ -23,7 +23,7 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/fontawesome/css/all.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome/css/all.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
@@ -34,6 +34,7 @@
   <!-- JQuery y función para cargar contenido dinámicamente-->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="assets/js/navegacion.js"></script>
+  <!-- <script src="assets/vendor/fontawesome/js/all.min.js"></script> -->
 
   <!-- =======================================================
   * Template Name: Gp
@@ -57,8 +58,10 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="#main" onclick="cargarContenido('home.html')">Home</a></li>
-          <li><a class="nav-link scrollto" href="#top-cafeterias">Top Cafeterias</a></li>
-          <li><a class="nav-link scrollto" href="#proximos-eventos">Proximos Eventos</a></li>
+          <li><a class="nav-link scrollto" href="#top-cafeterias">Mejores Cafeterías</a></li>
+          <li><a class="nav-link scrollto" href="#closest-cafeterias">Cafeterías cerca</a></li>
+          <li><a class="nav-link scrollto" href="#events">Proximos Eventos</a></li>
+          <li><a class="nav-link scrollto" href="#team">Equipo</a></li>
           <li class="dropdown"><a href="#"><span>Buscador</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#" onclick="cargarContenido('buscador.html')">Cafeterias</a></li>
@@ -66,7 +69,6 @@
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#rutas">Crea tu propia Ruta</a></li>
-          <li><a class="nav-link scrollto" href="#team">Equipo</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -83,14 +85,15 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-4 col-md-6">
             <div class="footer-info">
-              <h3>Gp<span>.</span></h3>
+              <h3>Café con Cultura<span>.</span></h3>
               <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
+                Universitat de les Illes Balears <br>
+                Cra. de Valldemossa, km 7.5. 07122<br>
+                Palma (Illes Balears)<br><br>
+                <strong>Phone:</strong> +34 971 124 521<br>
+                <strong>Email:</strong> email.ejemplo1@estudiant.uib.com<br>
               </p>
               <div class="social-links mt-3">
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -102,35 +105,23 @@
             </div>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
+          <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#team">About us</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <h4>Boletin informativo</h4>
+            <p>Mantente informado con las últimas actualizaciones.</p>
             <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+              <input type="email" name="email"><input type="submit" value="Subscribirse">
             </form>
-
           </div>
 
         </div>
@@ -162,13 +153,9 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  
-  <!-- <script src="assets/js/main.js"></script> -->
-
 </body>
 
 </html>
