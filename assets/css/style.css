@@ -334,6 +334,7 @@ h6{
       height: 80%;
       padding: 20px;
       float: left;
+      display: block;
   }
   #sidebar h6{
     border-bottom: 4px solid orange;
@@ -383,6 +384,7 @@ h6{
       width: 30%;
       padding: 20px;
       float: left;
+      display: block;
   }
   #products{
       width: 70%;
@@ -434,6 +436,7 @@ h6{
       padding: 20px;
       margin-top: 60px;
       float: left;
+      display: block;
   }
   #products{
       width: 65%;
@@ -471,6 +474,7 @@ h6{
       padding: 20px;
       margin-top: 60px;
       float: left;
+      display: block;
   }
   #products{
       width: 60%;
@@ -509,8 +513,9 @@ h6{
       font-size: 18px;
   }
   #sidebar{
-      display: none;
+      display: 20%;
       margin-top: 60px;
+      display: block;
   }
   .filter{
       margin-left: 70%;
