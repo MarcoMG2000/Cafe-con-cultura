@@ -513,8 +513,9 @@ h6{
       font-size: 18px;
   }
   #sidebar{
-      display: 20%;
+      display: 40%;
       margin-top: 60px;
+      float: left;
       display: block;
   }
   .filter{
