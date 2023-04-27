@@ -597,8 +597,7 @@
          },
          "openingHours":[
             "Tu-Th 15:00-02:00",
-		"Fr-Sa 15:00-03:00",
-		"Su 	 15:00-02:00"
+		      "Fr-Sa 15:00-03:00"
          ],
          "contactPoint":{
             "telephone":"+34 664 86 11 50",
