@@ -25,7 +25,10 @@ function storeCafeteria() {
         console.log(Storage);
         /*Con esto en caso de tener ya 5 cafeterías visitadas lo que hariamos
         es quedarnos con las 4 ultimas para despues añadir la visitada ahora*/
-        let historialPrevio = JSON.parse(localStorage.getItem("Cafeterias Visitadas"));
+        let historialPrevio = localStorage.getItem("Cafeterias Visitadas");
+        if (historialPrevio !== '') {
+            historialPrevio = JSON.parse(historialPrevio);
+        }
         let historialNuevo = [];
         if (historialPrevio != null) {
             if (historialPrevio.includes("Cafeteria Parabellum")) {
@@ -45,11 +48,13 @@ function storeCafeteria() {
                         historialNuevo[i - 1] = historialPrevio[i];
                     }
                 }
+                /*Tener en cuenta que ahora añadimos manualmente el nombre de la cafeteria
+                pero la idea seria que ese nombre se obtenga del mismo JSON por ejemplo*/
+                historialNuevo = historialNuevo.concat("Cafeteria Parabellum");
             }
+        }else{
+            historialNuevo = historialNuevo.concat("Cafeteria Parabellum");
         }
-        /*Tener en cuenta que ahora añadimos manualmente el nombre de la cafeteria
-      pero la idea seria que ese nombre se obtenga del mismo JSON por ejemplo*/
-        historialNuevo = historialNuevo.concat("Cafeteria Parabellum")
         localStorage.setItem("Cafeterias Visitadas", JSON.stringify(historialNuevo));
         //Aqui simplemente lo imprimo por consola, pero el getItem nos servirá para obtener la
         //información del historial de visitas

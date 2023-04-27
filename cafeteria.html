@@ -1,43 +1,4 @@
-<script>
-  if (typeof (Storage) != 'undefined') {
-    console.log(Storage);
-    /*Con esto en caso de tener ya 5 cafeterías visitadas lo que hariamos
-    es quedarnos con las 4 ultimas para despues añadir la visitada ahora*/
-    let historialPrevio = JSON.parse(localStorage.getItem("Cafeterias Visitadas"));
-    let historialNuevo = [];
-    if (historialPrevio.includes("Cafeteria Parabellum")) {
-      let posicion = historialPrevio.indexOf("Cafeteria Parabellum");
-      console.log(posicion)
-      console.log(historialPrevio.length)
-      for (let i = posicion; i <= historialPrevio.length-2; i++) {
-        historialPrevio[i] = historialPrevio[i + 1];
-        console.log(i)
-        //console.log(historialPrevio[i])
-      }
-      historialNuevo = historialPrevio;
-      historialNuevo[historialPrevio.length - 1] = "Cafeteria Parabellum"
-      console.log(historialPrevio);
-    } else {
-      if (historialPrevio.length >= 5) {
-        for (let i = 1; i < historialPrevio.length; i++) {
-          historialNuevo[i - 1] = historialPrevio[i];
-        }
-      }
-      /*Tener en cuenta que ahora añadimos manualmente el nombre de la cafeteria
-    pero la idea seria que ese nombre se obtenga del mismo JSON por ejemplo*/
-      historialNuevo = historialNuevo.concat("Cafeteria Parabellum")
-    }
-    localStorage.setItem("Cafeterias Visitadas", JSON.stringify(historialNuevo));
-    //Aqui simplemente lo imprimo por consola, pero el getItem nos servirá para obtener la
-    //información del historial de visitas
-    console.log(localStorage.getItem("Cafeterias Visitadas"))
-  } else {
-    alert("Storage no es compatible con este navegador");
-  }
-</script>
-
 <div class="margen-nav"></div>
-
 <!-- ======= Cafetería Section ======= -->
 <section id="cafeteria" class="cafeteria">
   <div class="container">
@@ -95,7 +56,7 @@
           </button>
         </div>
       </div>
-      <div class="row">
+      <div class="row-ev">
         <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
           <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
             <i class="fas fa-microphone-alt"></i>
@@ -125,7 +86,7 @@
     <div class="media cafeteria-events">
       <h3 class="cafeteria-events tittle">Proximos Eventos</h3>
       <div class="row">
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" onclick="cargarContenido('evento.html')">
           <a class="media cafeteria-event" href="#">
             <h4>24/03/2022 - 16:00</h4>
             <div class="icon"><i class="bx bxl-dribbble"></i></div>
