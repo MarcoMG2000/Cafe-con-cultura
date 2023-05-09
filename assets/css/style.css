@@ -24,22 +24,22 @@
 }
 
 .media {
-  /* margin-top: 30px; */
   margin-bottom: 20px;
   border-radius: 8px;
   transition: 0.3s;
   border: 3px solid #ffe1a4;
   padding: 10px;
+  cursor: pointer;
 }
 
 .media:hover {
-  border-color: #ffc451;
+  border-color: #e2a324;
   box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
   transform: translateY(-10px);
 }
 
 .media-nombre:hover {
-  color: #c99327;
+  color: #e2a324;
   font-weight: bold;
 }
 
@@ -176,6 +176,16 @@
 .top-cafeterias .content p:last-child {
   margin-bottom: 0;
 }
+
+.ubicacion i {
+  margin-right: 10px;
+  color: #e2a324;
+}
+
+.content span {
+  color: #e2a324;
+}
+
 
 /*--------------------------------------------------------------
 # closest-cafeterias

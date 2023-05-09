@@ -1,7 +1,3 @@
-function hello(params) {
-    console.log("hello wordl!");
-}
-
 function initMap() {
 	// Update MAP_ID with custom map ID
 	map = new google.maps.Map(document.getElementById('map'), {

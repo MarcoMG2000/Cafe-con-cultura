@@ -24,8 +24,7 @@
             "reviewCount":"250"
          },
          "openingHours":[
-            "Mo-Sa 11:00-14:30",
-            "Mo-Th 17:00-21:30",
+            "Mo-Fr 11:00-22:00",
             "Fr-Sa 17:00-22:00"
          ],
          "contactPoint":{
@@ -34,27 +33,7 @@
          },
          "url":"http://www.CafeteriaParabellum.com",
          "image":[
-            {
-               "@type":"ImageObject",
-               "url":"http://urlimg1.png",
-               "width":"800",
-               "height":"600",
-               "caption":"Cafeteria Parabellum's 1"
-            },
-            {
-               "@type":"ImageObject",
-               "url":"http://urlimg2.png",
-               "width":"1200",
-               "height":"800",
-               "caption":"Cafeteria Parabellum's 2"
-            },
-            {
-               "@type":"ImageObject",
-               "url":"http://urlimg3.png",
-               "width":"800",
-               "height":"600",
-               "caption":"Cafeteria Parabellum's 3"
-            }
+            "assets/img/cafeterias/cafeteria-3.jpg"
          ],
          "logo":"http://urlimg1.png",
          "priceRange":"$$",
@@ -196,7 +175,7 @@
          },
          "aggregateRating":{
             "@type":"AggregateRating",
-            "ratingValue":"0",
+            "ratingValue":"3",
             "reviewCount":"0"
          },
          "openingHours":[
@@ -263,7 +242,7 @@
          },
          "aggregateRating":{
             "@type":"AggregateRating",
-            "ratingValue":"0",
+            "ratingValue":"1",
             "reviewCount":"0"
          },
          "openingHours":[
@@ -328,7 +307,7 @@
          },
          "aggregateRating":{
             "@type":"AggregateRating",
-            "ratingValue":"0",
+            "ratingValue":"5",
             "reviewCount":"0"
          },
          "openingHours":[
@@ -340,7 +319,7 @@
          },
          "url":"https://www.facebook.com/cafebarroco",
          "image":[
-            
+            "assets/img/cafeterias/cafeteria-1.jpg"
          ],
          "logo":"",
          "priceRange":"$",
@@ -399,7 +378,7 @@
          },
          "openingHours":[
             "Su-Th 19:00-01:00",
-			"Fr-Sa 19:00-03:00"
+			   "Fr-Sa 19:00-03:00"
          ],
          "contactPoint":{
             "telephone":"+34 676 30 65 31",
@@ -660,7 +639,7 @@
          },
          "aggregateRating":{
             "@type":"AggregateRating",
-            "ratingValue":"0",
+            "ratingValue":"2",
             "reviewCount":"0"
          },
          "openingHours":[
@@ -726,7 +705,7 @@
          },
          "aggregateRating":{
             "@type":"AggregateRating",
-            "ratingValue":"0",
+            "ratingValue":"4.3",
             "reviewCount":"0"
          },
          "openingHours":[
@@ -739,7 +718,7 @@
          },
          "url":"https://www.literanta.com/",
          "image":[
-            
+            "assets/img/cafeterias/cafeteria-2.jpg"
          ],
          "logo":"",
          "priceRange":"$$-$$$",

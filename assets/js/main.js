@@ -11,6 +11,7 @@
   // NUESTRO JS
   window.addEventListener('load', function() {
     cargarContenido("home.html");
+    
     let preloader = select('#preloader');
     if (preloader) {
       preloader.remove();
