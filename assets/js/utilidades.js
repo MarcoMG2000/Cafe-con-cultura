@@ -299,7 +299,17 @@ function cargarEventos(listaCafeterias) {
         // Obtenemos los valores del evento del archivo JSON
         const nombre = listaEventos[i].name;
         const lugar = listaEventos[i].place;
-        const fecha = listaEventos[i].startDate;
+        const fechaInicioEvento = new Date(listaEventos[i].startDate);
+        const fecha = fechaInicioEvento.toLocaleString('es-ES', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false,
+            timeZone: 'UTC'
+        });
 
         // Creamos los elementos HTML
         const divIconBox = document.createElement("div");
@@ -346,14 +356,6 @@ function cargarEventos(listaCafeterias) {
         // Agregar las filas al párrafo
         paragraph.append(fila1);
         paragraph.append(fila2);
-
-
-
-
-
-
-        // const paragraph = document.createElement("p");
-        // paragraph.innerHTML = "Lugar: " + lugar + "<br>Fecha: " + fecha;
 
         // Estructuramos los elementos HTML
         divEventBody.appendChild(iconChevronRight);
