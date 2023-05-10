@@ -1,16 +1,20 @@
-
 /**
    * Función para cargar las distintas vistas al contenedor principal.
    * @param {*} nombreArchivo String con el nombre del archivo que se quiere cargar.
    */
 function cargarContenido(nombreArchivo) {
-    document.querySelector('#main').innerHTML = ''
-    fetch(nombreArchivo).then(response => response.text()).then(html => document.querySelector('#main').innerHTML = html);
-    if (nombreArchivo != "home.html") {
+  document.querySelector('#main').innerHTML = '';
+  
+  fetch(nombreArchivo)
+    .then(response => response.text())
+    .then(html => {
+      document.querySelector('#main').innerHTML = html;
+      
+      if (nombreArchivo != "home.html") {
         $("header").addClass("header-transparente");
-    }
-    else {
+      } else {
         $("header").removeClass("header-transparente");
+
     }
     //$('#main').load(nombreArchivo);
 }
@@ -63,4 +67,11 @@ function storeCafeteria() {
         alert("Storage no es compatible con este navegador");
     }
 }
-
+      }
+    })
+    .then(() => { // Carga el contenido de las cafeterías dinámicamente cuando el html está cargado
+      if (nombreArchivo == "home.html") {
+        cargarCafeterias();
+      }
+    });
+}
