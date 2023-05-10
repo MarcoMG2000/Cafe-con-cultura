@@ -177,6 +177,13 @@
   margin-bottom: 0;
 }
 
+.ubicacion {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 .ubicacion i {
   margin-right: 10px;
   color: #e2a324;

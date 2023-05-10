@@ -187,7 +187,7 @@
          },
          "url":"https://www.suscultura.cat/",
          "image":[
-            
+            "assets/img/cafeterias/cafeteria-2.jpg"
          ],
          "logo":"http://urlimg1.png",
          "priceRange":"$",
@@ -254,7 +254,7 @@
          },
          "url":"https://cafelisboa.es/",
          "image":[
-            
+            "assets/img/cafeterias/cafeteria-2.jpg"
          ],
          "logo":"",
          "priceRange":"$$",
@@ -386,7 +386,7 @@
          },
          "url":"https://www.aguabar.com/",
          "image":[
-            
+            "assets/img/cafeterias/cafeteria-2.jpg"
          ],
          "logo":"",
          "priceRange":"$$",
@@ -451,7 +451,7 @@
          },
          "url":"https://es-es.facebook.com/cafetresbandas/",
          "image":[
-            
+            "assets/img/cafeterias/cafeteria-2.jpg"
          ],
          "logo":"",
          "priceRange":"$$-$$$",
@@ -517,7 +517,7 @@
          },
          "url":"https://es-es.facebook.com/cafeantiquari",
          "image":[
-            
+            "assets/img/cafeterias/cafeteria-2.jpg"
          ],
          "logo":"",
          "priceRange":"$$-$$$",
@@ -584,7 +584,7 @@
          },
          "url":"mandragoramallorca.com",
          "image":[
-            
+            "assets/img/cafeterias/cafeteria-2.jpg"
          ],
          "logo":"",
          "priceRange":"$$-$$$",
@@ -652,7 +652,7 @@
          },
          "url":"http://www.labibliotecadebabel.es/",
          "image":[
-            
+            "assets/img/cafeterias/cafeteria-2.jpg"
          ],
          "logo":"",
          "priceRange":"$$",
@@ -709,7 +709,7 @@
             "reviewCount":"0"
          },
          "openingHours":[
-               "Mo-Sa 10:00-13:30",
+            "Mo-Sa 10:00-13:30",
    		   "Mo-Fr 17:00-20:00"
          ],
          "contactPoint":{
