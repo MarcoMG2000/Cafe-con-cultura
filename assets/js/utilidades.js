@@ -78,7 +78,7 @@ function comprobarSiEstaAbiertoEnEstaHora(horaInicio, horaFin, horaActual) {
     return horaActualMs >= horaInicioMs && horaActualMs <= horaFinMs;
 }
 
-function cargarCafeterias() {
+function cargarHome() {
     // Hacemos el request del JSON
     const request = new XMLHttpRequest();
     request.open("GET", "/assets/JSON/cafeterias.json");
@@ -91,7 +91,7 @@ function cargarCafeterias() {
         
         cargarCafeteriasPorValoracion(listaCafeterias);
         cargarCafeteriasPorCercania(listaCafeterias);
-        // cargarEventos(listaCafeterias)
+        cargarEventos(listaCafeterias)
     };
     request.send();
 }
@@ -113,7 +113,7 @@ function cargarCafeteriasPorValoracion(listaCafeterias) {
         // Creamos los elementos HTML con los valores de la cafetería
         const divMedia = document.createElement("div");
         divMedia.className = "media";
-        divMedia.onclick = function() { cargarContenido('cafeteria.html'); };
+        divMedia.onclick = function() { selectCafeteria('cafeteria.html'); };
 
         const divMediaBody = document.createElement("div");
         divMediaBody.className = "media-body row";
@@ -172,9 +172,7 @@ function cargarCafeteriasPorValoracion(listaCafeterias) {
         divFilas.appendChild(pValoracion);
 
         const divUbicacion = document.createElement("div");
-        divUbicacion.classList.add("ubicacion");
-        divUbicacion.style.display = "flex";
-        divUbicacion.style.alignItems = "center";
+        divUbicacion.classList.add("info");
 
         const pUbicacion = document.createElement("p");
         pUbicacion.textContent = ` ${ubicacion}`;
@@ -218,7 +216,7 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
         // Creamos los elementos HTML con los valores de la cafetería
         const divMedia = document.createElement("div");
         divMedia.className = "media";
-        divMedia.onclick = function() { cargarContenido('cafeteria.html'); };
+        divMedia.onclick = function() { selectCafeteria('cafeteria.html'); };
 
         const divMediaBody = document.createElement("div");
         divMediaBody.className = "media-body row";
@@ -253,7 +251,7 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
         divFilas.appendChild(pEstado);
 
         const divDistancia = document.createElement("div");
-        divDistancia.classList.add("ubicacion");
+        divDistancia.classList.add("info");
 
         const pDistancia = document.createElement("p");
         pDistancia.textContent = ` ${distancia} Km`;
@@ -266,7 +264,7 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
         divFilas.appendChild(divDistancia);
 
         const divUbicacion = document.createElement("div");
-        divUbicacion.classList.add("ubicacion");
+        divUbicacion.classList.add("info");
 
         const pUbicacion = document.createElement("p");
         pUbicacion.textContent = ` ${ubicacion}`;
@@ -285,6 +283,85 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
 
         // Agregar la cafetería al elemento HTML
         cafeteriasRating.appendChild(divMedia);
+    }
+}
+
+function cargarEventos(listaCafeterias) {
+    
+    var listaEventos = obtenerListaEventos(listaCafeterias);
+
+    // Ordenamos por valoración
+    listaEventos = ordenarLista(listaEventos, "startDate", "ascendente");
+
+    // Seleccionamos el elemento HTML donde se agregarán las cafeterías
+    const upcomingEvents = document.getElementById("upcoming-events");
+    for (let i = 0; i < 4; i++) { // Mostramos los 4 eventos más próximos en el tiempo
+        // Obtenemos los valores del evento del archivo JSON
+        const nombre = listaEventos[i].name;
+        const lugar = listaEventos[i].place;
+        const fecha = listaEventos[i].startDate;
+
+        // Creamos los elementos HTML
+        const divIconBox = document.createElement("div");
+        
+        if (i == 0) {
+            divIconBox.className = "icon-box mt-5 mt-lg-0";
+        }
+        else{
+            divIconBox.className = "icon-box mt-5";
+        }
+       
+        divIconBox.setAttribute("data-aos", "zoom-in");
+        divIconBox.setAttribute("data-aos-delay", "150");
+        divIconBox.onclick = function() { cargarContenido('evento.html'); };
+
+        const divEventBody = document.createElement("div");
+        divEventBody.className = "event-body";
+
+        const iconChevronRight = document.createElement("i");
+        iconChevronRight.className = "fa-solid fa-chevron-right chevron";
+
+        const heading = document.createElement("h4");
+        heading.textContent = nombre;
+
+        const paragraph = document.createElement("p");
+        paragraph.classList.add("info");
+
+        const iconoUbicacion = document.createElement("i");
+        iconoUbicacion.classList.add("fa-solid", "fa-location-dot", "fa-lg");
+
+        const iconoFecha = document.createElement("i");
+        iconoFecha.classList.add("fa-solid", "fa-calendar", "fa-lg");
+
+        // Crear contenedor para la primera fila
+        const fila1 = document.createElement('div');
+        fila1.append(iconoUbicacion);
+        fila1.append(lugar);
+
+        // Crear contenedor para la segunda fila
+        const fila2 = document.createElement('div');
+        fila2.append(iconoFecha);
+        fila2.append(fecha);
+
+        // Agregar las filas al párrafo
+        paragraph.append(fila1);
+        paragraph.append(fila2);
+
+
+
+
+
+
+        // const paragraph = document.createElement("p");
+        // paragraph.innerHTML = "Lugar: " + lugar + "<br>Fecha: " + fecha;
+
+        // Estructuramos los elementos HTML
+        divEventBody.appendChild(iconChevronRight);
+        divEventBody.appendChild(heading);
+        divEventBody.appendChild(paragraph);
+
+        divIconBox.appendChild(divEventBody);
+        upcomingEvents.appendChild(divIconBox);
     }
 }
 
@@ -354,4 +431,28 @@ async function obtenerDistanciasCafeterias(listaCafeterias) {
         cafeteria.distancia = calcularDistancia(latUsuario, lonUsuario, latCafeteria, lonCafeteria);
     });
     
+}
+
+function obtenerListaEventos(listaCafeterias) {
+    const listaEventos = listaCafeterias.reduce((eventosTotales, cafeteria) => {
+        // Añadir el nombre de la cafetería a cada evento
+        const eventosConLugar = cafeteria.events.map(evento => {
+            return {
+                ...evento,
+                place: cafeteria.name
+            };
+        });
+    
+        return eventosTotales.concat(eventosConLugar);
+    }, []);
+    
+    const fechaActual = new Date();
+    
+    // Filtramos los eventos que ya han sucedido
+    const eventosFiltrados = listaEventos.filter(evento => {
+        const fechaInicioEvento = new Date(evento.startDate);
+        return fechaInicioEvento >= fechaActual;
+    });
+    
+    return eventosFiltrados;
 }

@@ -2,7 +2,7 @@
  * Función para cargar las distintas vistas al contenedor principal.
  * @param {*} nombreArchivo String con el nombre del archivo que se quiere cargar.
  */
-function cargarContenido(nombreArchivo) {
+function cargarContenido(nombreArchivo, nombreCafeteria, nombreEvento) {
   document.querySelector('#main').innerHTML = '';
 
   fetch(nombreArchivo)
@@ -18,7 +18,13 @@ function cargarContenido(nombreArchivo) {
     })
     .then(() => { // Carga el contenido de las cafeterías dinámicamente cuando el html está cargado
       if (nombreArchivo == "home.html") {
-        cargarCafeterias();
+        cargarHome();
+      }
+      else if (nombreArchivo == "cafeteria.html") {
+        // FUNCIÓN PARA CARGAR INFO DE CAFETERÍA
+      }
+      else if (nombreArchivo == "evento.html") {
+        // FUNCIÓN PARA CARGAR INFO DEL EVENTO
       }
     });
 }
