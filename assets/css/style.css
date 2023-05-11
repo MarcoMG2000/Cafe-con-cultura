@@ -203,7 +203,6 @@ h6 {
   color: #e2a324;
 }
 
-
 /*--------------------------------------------------------------
 # Closest Cafeterias
 --------------------------------------------------------------*/
@@ -293,6 +292,23 @@ h6 {
 .carousel-item {
   height: 300px;
   width: 650px;
+  cursor: pointer;
+}
+
+.carousel h5 {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  font-weight: 600;
+  color: #e2a324;
+  width: auto;
+}
+
+.carousel p {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  font-weight: 500;
+  color: #e2a324;
+  width: auto;
 }
 
 /*--------------------------------------------------------------
