@@ -62,6 +62,25 @@ function comprobarSiEstaAbiertoEnEsteDia(diaInicio, diaFin) {
     return diaActualIndex >= diaInicioIndex && diaActualIndex <= diaFinIndex;
 }
 
+function storeCafeteria(nombre) {
+    if (typeof Storage !== 'undefined') {
+        let historialPrevio = localStorage.getItem('Cafeterias Visitadas');
+        let historialNuevo = [];
+        if (historialPrevio) {
+            historialNuevo = JSON.parse(historialPrevio);
+            if (historialNuevo.includes(nombre)) {
+                historialNuevo.splice(historialNuevo.indexOf(nombre), 1);
+            } else if (historialNuevo.length >= 5) {
+                historialNuevo.shift();
+            }
+        }
+        historialNuevo.push(nombre);
+        localStorage.setItem('Cafeterias Visitadas', JSON.stringify(historialNuevo));
+    } else {
+        alert('Storage no es compatible con este navegador');
+    }
+}
+
 function comprobarSiEstaAbiertoEnEstaHora(horaInicio, horaFin, horaActual) {
     const [horaInicioH, horaInicioM] = horaInicio.split(":");
     const [horaFinH, horaFinM] = horaFin.split(":");
@@ -109,6 +128,7 @@ function clickCafeteria(nombre) {
         const objeto = JSON.parse(request.response);
         var listaCafeterias = objeto.itemListElement;
         cargarCafeteriaClickada(listaCafeterias, nombre);
+        storeCafeteria(nombre);
     };
     request.send();
 }
