@@ -349,7 +349,7 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
         // Creamos los elementos HTML con los valores de la cafetería
         const divMedia = document.createElement("div");
         divMedia.className = "media";
-        divMedia.onclick = function() { selectCafeteria('cafeteria.html'); };
+        divMedia.onclick = function() { cargarContenido('cafeteria.html', nombre, "") };
 
         const divMediaBody = document.createElement("div");
         divMediaBody.className = "media-body row";
@@ -459,7 +459,7 @@ function cargarEventos(listaCafeterias) {
        
         divIconBox.setAttribute("data-aos", "zoom-in");
         divIconBox.setAttribute("data-aos-delay", "150");
-        divIconBox.onclick = function() { cargarContenido('evento.html'); };
+        divIconBox.onclick = function() { cargarContenido('evento.html', nombre, "") };
 
         const divEventBody = document.createElement("div");
         divEventBody.className = "event-body";
