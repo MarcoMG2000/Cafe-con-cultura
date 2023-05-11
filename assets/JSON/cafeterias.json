@@ -1,154 +1,145 @@
 {
-   "@context":"https://schema.org",
-   "@type":"itemList",
-   "itemListElement":[
+   "@context": "https://schema.org",
+   "@type": "itemList",
+   "itemListElement": [
       {
-         "@type":"CafeOrCoffeeShop",
-         "name":"Cafeteria Parabellum",
-         "description":"Cafeteria ",
-         "address":{
-            "streetAddress":"Carrer del Bisbe Rafael Josep Verger, 6",
-            "addressLocality":"Palma",
-            "addressRegion":"Illes Balears",
-            "postalCode":"07010",
-            "addressCountry":"ES"
+         "@type": "CafeOrCoffeeShop",
+         "name": "Cafeteria Parabellum",
+         "description": "Cafeteria ",
+         "address": {
+            "streetAddress": "Carrer del Bisbe Rafael Josep Verger, 6",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07010",
+            "addressCountry": "ES"
          },
-         "geo":{
-            "@type":"GeoCoordinates",
-            "latitude":"39.590315478708625",
-            "longitude":"2.652479930691325"
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.590315478708625",
+            "longitude": "2.652479930691325"
          },
-         "aggregateRating":{
-            "@type":"AggregateRating",
-            "ratingValue":"4",
-            "reviewCount":"250"
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4",
+            "reviewCount": "250"
          },
-         "openingHours":[
+         "openingHours": [
             "Mo-Fr 11:00-22:00",
             "Fr-Sa 17:00-22:00"
          ],
-         "contactPoint":{
-            "telephone":"(408) 714-1489",
-            "email":"cafeparabellum@gmail.com"
+         "contactPoint": {
+            "telephone": "(408) 714-1489",
+            "email": "cafeparabellum@gmail.com"
          },
-         "url":"http://www.CafeteriaParabellum.com",
-         "image":[
+         "url": "http://www.CafeteriaParabellum.com",
+         "image": [
             "assets/img/cafeterias/cafeteria-3.jpg"
          ],
-         "logo":"http://urlimg1.png",
-         "priceRange":"$$",
-         "acceptsReservations":false,
-         "hasMenu":"https://CafeteriaParabellum.com/carta",
-         "events":[
+         "logo": "http://urlimg1.png",
+         "priceRange": "$$",
+         "acceptsReservations": false,
+         "hasMenu": "https://CafeteriaParabellum.com/carta",
+         "events": [
             {
-               "@type":"Event",
-               "name":"Club de Lectura: MistBorn",
-               "about":"Club de Lectura del Libro 1 de la Saga MistBorn, por Brandom Sanderson",
-               "audience":"Todas las edades",
-               "startDate":"2023-05-20T18:30:00Z",
-               "endDate":"2023-05-20T20:00:00Z",
-               "offers":{
-                  "@type":"Offer",
-                  "price":"13.00",
-                  "priceCurrency":"EUR",
-                  "url":"http://www.ticketfly.com/purchase/309433"
+               "@type": "Event",
+               "name": "Club de Lectura: MistBorn",
+               "about": "Club de Lectura del Libro 1 de la Saga MistBorn, por Brandom Sanderson",
+               "audience": "Todas las edades",
+               "startDate": "2023-05-20T18:30:00Z",
+               "endDate": "2023-05-20T20:00:00Z",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "13.00",
+                  "priceCurrency": "EUR",
+                  "url": "http://www.ticketfly.com/purchase/309433"
                },
-               "maximumPhysicalAttendeeCapacity":"50",
-               "eventStatus":"EventScheduled",
-               "performers":[
+               "maximumPhysicalAttendeeCapacity": "50",
+               "eventStatus": "EventScheduled",
+               "performers": [
                   {
-                     "name":"Rock Band",
-                     "url":"https://rockband.com/"
+                     "name": "Rock Band",
+                     "url": "https://rockband.com/"
                   }
                ]
             },
             {
-               "@context":"https://schema.org",
-               "@type":"Event",
-               "name":"Concierto Jazz",
-               "about":"Musica en directo de Jazz por el artista tal",
-               "audience":"Todas las edades",
-               "startDate":"2023-05-22T18:30:00Z",
-               "endDate":"2023-05-22T20:00:00Z",
-               "isAccessibleForFree":true,
-               "maximumPhysicalAttendeeCapacity":"50",
-               "eventStatus":"EventScheduled",
-               "performers":[
+               "@context": "https://schema.org",
+               "@type": "Event",
+               "name": "Concierto Jazz",
+               "about": "Musica en directo de Jazz por el artista tal",
+               "audience": "Todas las edades",
+               "startDate": "2023-05-22T18:30:00Z",
+               "endDate": "2023-05-22T20:00:00Z",
+               "isAccessibleForFree": true,
+               "maximumPhysicalAttendeeCapacity": "50",
+               "eventStatus": "EventScheduled",
+               "performers": [
                   {
-                     "name":"Jazz Band",
-                     "url":"https://jazzband.com/"
+                     "name": "Jazz Band",
+                     "url": "https://jazzband.com/"
                   }
                ],
-               "image":[
-                  {
-                     "@type":"ImageObject",
-                     "url":"http://urlimg1.png",
-                     "width":"800",
-                     "height":"600",
-                     "caption":"Band 1"
-                  },
-                  {
-                     "@type":"ImageObject",
-                     "url":"http://urlimg2.png",
-                     "width":"1200",
-                     "height":"800",
-                     "caption":"Cafeteria Parabellum's interior"
-                  }
-               ]
+               "image": {
+                  "@type": "ImageObject",
+                  "url": "http://urlimg1.png",
+                  "width": "800",
+                  "height": "600",
+                  "caption": "Band 1"
+               }
             },
             {
-               "@context":"https://schema.org",
-               "@type":"TheaterEvent",
-               "name":"Concierto Jazz",
-               "about":"Musica en directo de Jazz por el artista tal",
-               "audience":"Todas las edades",
-               "startDate":"2023-06-12T20:30:00Z",
-               "endDate":"2023-06-12T22:00:00Z",
-               "isAccessibleForFree":true,
-               "maximumPhysicalAttendeeCapacity":"50",
-               "eventStatus":"EventScheduled",
-               "performers":[
+               "@context": "https://schema.org",
+               "@type": "TheaterEvent",
+               "name": "Concierto Jazz",
+               "about": "Musica en directo de Jazz por el artista tal",
+               "audience": "Todas las edades",
+               "startDate": "2023-06-12T20:30:00Z",
+               "endDate": "2023-06-12T22:00:00Z",
+               "isAccessibleForFree": true,
+               "maximumPhysicalAttendeeCapacity": "50",
+               "eventStatus": "EventScheduled",
+               "performers": [
                   {
-                     "name":"Jazz Band",
-                     "url":"https://jazzband.com/"
+                     "name": "Jazz Band",
+                     "url": "https://jazzband.com/"
                   }
                ],
-               "image":[
+               "image": [
                   {
-                     "@type":"ImageObject",
-                     "url":"http://urlimg1.png",
-                     "width":"800",
-                     "height":"600",
-                     "caption":"Band 1"
+                     "@type": "ImageObject",
+                     "url": "http://urlimg1.png",
+                     "width": "800",
+                     "height": "600",
+                     "caption": "Band 1"
                   },
                   {
-                     "@type":"ImageObject",
-                     "url":"http://urlimg2.png",
-                     "width":"1200",
-                     "height":"800",
-                     "caption":"Cafeteria Parabellum's interior"
+                     "@type": "ImageObject",
+                     "url": "http://urlimg2.png",
+                     "width": "1200",
+                     "height": "800",
+                     "caption": "Cafeteria Parabellum's interior"
                   }
                ],
-               "inLanguage":"ES"
+               "inLanguage": "ES"
             },
             {
-               "@context":"https://schema.org",
-               "@type":"Event",
-               "name":"Torneo Carcassone",
-               "about":"XX Torneo Carcassone patrocinado por asfsdg",
-               "audience":"Todas las edades",
-               "startDate":"2023-07-01T19:30:00Z",
-               "endDate":"2023-06-01T20:00:00Z",
-               "offers":{
-                  "@type":"Offer",
-                  "price":"5.00",
-                  "priceCurrency":"EUR"
+               "@context": "https://schema.org",
+               "@type": "Event",
+               "name": "Torneo Carcassone",
+               "about": "XX Torneo Carcassone patrocinado por asfsdg",
+               "audience": "Todas las edades",
+               "startDate": "2023-07-01T19:30:00Z",
+               "endDate": "2023-06-01T20:00:00Z",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "5.00",
+                  "priceCurrency": "EUR"
                },
-               "maximumPhysicalAttendeeCapacity":"50",
-               "eventStatus":"EventScheduled"
+               "maximumPhysicalAttendeeCapacity": "50",
+               "eventStatus": "EventScheduled"
             }
          ],
-         "keywords":[
+         "keywords": [
             "Juegos de Mesa",
             "Cartas",
             "Musica",
@@ -158,600 +149,600 @@
          ]
       },
       {
-         "@type":"CafeOrCoffeeShop",
-         "name":"Espai Suscultura Coop",
-         "description":"Suscultura es una microcooperativa de servicios culturales, de gestión de asociaciones, de producción y organización de acontecimientos y de actividades educativas y de ocio.",
-         "address":{
-            "streetAddress":" C. de Miquel Capllonch, 33",
-            "addressLocality":"Palma",
-            "addressRegion":"Illes Balears",
-            "postalCode":"07010",
-            "addressCountry":"ES"
+         "@type": "CafeOrCoffeeShop",
+         "name": "Espai Suscultura Coop",
+         "description": "Suscultura es una microcooperativa de servicios culturales, de gestión de asociaciones, de producción y organización de acontecimientos y de actividades educativas y de ocio.",
+         "address": {
+            "streetAddress": " C. de Miquel Capllonch, 33",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07010",
+            "addressCountry": "ES"
          },
-         "geo":{
-            "@type":"GeoCoordinates",
-            "latitude":"39.59383977758444",
-            "longitude":"2.6532940687194424"
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.59383977758444",
+            "longitude": "2.6532940687194424"
          },
-         "aggregateRating":{
-            "@type":"AggregateRating",
-            "ratingValue":"3",
-            "reviewCount":"0"
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "3",
+            "reviewCount": "0"
          },
-         "openingHours":[
+         "openingHours": [
             "We-Fr 18:00-22:00"
          ],
-         "contactPoint":{
-            "telephone":"+34 657185112",
-            "email":"suscultura@gmail.com"
+         "contactPoint": {
+            "telephone": "+34 657185112",
+            "email": "suscultura@gmail.com"
          },
-         "url":"https://www.suscultura.cat/",
-         "image":[
+         "url": "https://www.suscultura.cat/",
+         "image": [
             "assets/img/cafeterias/cafeteria-2.jpg"
          ],
-         "logo":"http://urlimg1.png",
-         "priceRange":"$",
-         "acceptsReservations":false,
-         "hasMenu":"",
-         "events":[
+         "logo": "http://urlimg1.png",
+         "priceRange": "$",
+         "acceptsReservations": false,
+         "hasMenu": "",
+         "events": [
             {
-               "@type":"Event",
-               "name":"",
-               "about":"",
-               "audience":"",
-               "startDate":"",
-               "endDate":"",
-               "offers":{
-                  "@type":"Offer",
-                  "price":"",
-                  "priceCurrency":"EUR",
-                  "url":""
+               "@type": "Event",
+               "name": "",
+               "about": "",
+               "audience": "",
+               "startDate": "",
+               "endDate": "",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "",
+                  "priceCurrency": "EUR",
+                  "url": ""
                },
-               "maximumPhysicalAttendeeCapacity":"",
-               "eventStatus":"",
-               "performers":[
+               "maximumPhysicalAttendeeCapacity": "",
+               "eventStatus": "",
+               "performers": [
                   {
-                     "name":"",
-                     "url":""
+                     "name": "",
+                     "url": ""
                   }
                ]
             }
          ],
-         "keywords":[
-            "Juegos de mesa", 
-			"Lectura", 
-			"Música", 
-			"Cultura"
-			]
+         "keywords": [
+            "Juegos de mesa",
+            "Lectura",
+            "Música",
+            "Cultura"
+         ]
       },
       {
-         "@type":"CafeOrCoffeeShop",
-         "name":"Café Lisboa",
-         "description":"Un bar con mucho recorrido, encanto y solera de Palma (Mallorca) situado en el fantástico barrio de Santa Catalina. con una oferta cultural inigualable: OPEN MICS, JAM SESSIONS de JAZZ, BLUES, GROOVE/FUNK y LATINJAZZ.",
-         "address":{
-            "streetAddress":"Carrer de Sant Magí 33",
-            "addressLocality":"Palma",
-            "addressRegion":"Illes Balears",
-            "postalCode":"07013",
-            "addressCountry":"ES"
+         "@type": "CafeOrCoffeeShop",
+         "name": "Café Lisboa",
+         "description": "Un bar con mucho recorrido, encanto y solera de Palma (Mallorca) situado en el fantástico barrio de Santa Catalina. con una oferta cultural inigualable: OPEN MICS, JAM SESSIONS de JAZZ, BLUES, GROOVE/FUNK y LATINJAZZ.",
+         "address": {
+            "streetAddress": "Carrer de Sant Magí 33",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07013",
+            "addressCountry": "ES"
          },
-         "geo":{
-            "@type":"GeoCoordinates",
-            "latitude":"39.59383977758444",
-            "longitude":"2.6532940687194424"
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.59383977758444",
+            "longitude": "2.6532940687194424"
          },
-         "aggregateRating":{
-            "@type":"AggregateRating",
-            "ratingValue":"1",
-            "reviewCount":"0"
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "1",
+            "reviewCount": "0"
          },
-         "openingHours":[
+         "openingHours": [
             "Mo-Sa 18:00-02:30"
          ],
-         "contactPoint":{
-            "telephone":"+34 661785667",
-            "email":"novocafelisboa@gmail.com"
+         "contactPoint": {
+            "telephone": "+34 661785667",
+            "email": "novocafelisboa@gmail.com"
          },
-         "url":"https://cafelisboa.es/",
-         "image":[
+         "url": "https://cafelisboa.es/",
+         "image": [
             "assets/img/cafeterias/cafeteria-2.jpg"
          ],
-         "logo":"",
-         "priceRange":"$$",
-         "acceptsReservations":true,
-         "hasMenu":"",
-         "events":[
+         "logo": "",
+         "priceRange": "$$",
+         "acceptsReservations": true,
+         "hasMenu": "",
+         "events": [
             {
-               "@type":"Event",
-               "name":"",
-               "about":"",
-               "audience":"",
-               "startDate":"",
-               "endDate":"",
-               "offers":{
-                  "@type":"Offer",
-                  "price":"",
-                  "priceCurrency":"EUR",
-                  "url":""
+               "@type": "Event",
+               "name": "",
+               "about": "",
+               "audience": "",
+               "startDate": "",
+               "endDate": "",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "",
+                  "priceCurrency": "EUR",
+                  "url": ""
                },
-               "maximumPhysicalAttendeeCapacity":"",
-               "eventStatus":"",
-               "performers":[
+               "maximumPhysicalAttendeeCapacity": "",
+               "eventStatus": "",
+               "performers": [
                   {
-                     "name":"",
-                     "url":""
+                     "name": "",
+                     "url": ""
                   }
                ]
             }
          ],
-         "keywords":[ 
-			"Música", 
-			"Cultura"
-			]
-		},
+         "keywords": [
+            "Música",
+            "Cultura"
+         ]
+      },
       {
-         "@type":"CafeOrCoffeeShop",
-         "name":"Cafè Barroco",
-         "description":"Tapas, ensaladas y postres en bar restaurante de ambiente sencillo, con juegos de mesa.",
-         "address":{
-            "streetAddress":"Carrer de Margalida Caimari, 17",
-            "addressLocality":"Palma",
-            "addressRegion":"Illes Balears",
-            "postalCode":"07005",
-            "addressCountry":"ES"
+         "@type": "CafeOrCoffeeShop",
+         "name": "Cafè Barroco",
+         "description": "Tapas, ensaladas y postres en bar restaurante de ambiente sencillo, con juegos de mesa.",
+         "address": {
+            "streetAddress": "Carrer de Margalida Caimari, 17",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07005",
+            "addressCountry": "ES"
          },
-         "geo":{
-            "@type":"GeoCoordinates",
-            "latitude":"39.57558081120033",
-            "longitude":"2.6570538827888535"
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.57558081120033",
+            "longitude": "2.6570538827888535"
          },
-         "aggregateRating":{
-            "@type":"AggregateRating",
-            "ratingValue":"5",
-            "reviewCount":"0"
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "0"
          },
-         "openingHours":[
+         "openingHours": [
             "Tu-Sa 17:00-00:00"
          ],
-         "contactPoint":{
-            "telephone":"+34 613 01 47 88",
-            "email":"noucafebarroco@gmail.com"
+         "contactPoint": {
+            "telephone": "+34 613 01 47 88",
+            "email": "noucafebarroco@gmail.com"
          },
-         "url":"https://www.facebook.com/cafebarroco",
-         "image":[
+         "url": "https://www.facebook.com/cafebarroco",
+         "image": [
             "assets/img/cafeterias/cafeteria-1.jpg"
          ],
-         "logo":"",
-         "priceRange":"$",
-         "acceptsReservations":true,
-         "hasMenu":"https://carta.menu/restaurants/palma-1/cafe-barroco",
-         "events":[
+         "logo": "",
+         "priceRange": "$",
+         "acceptsReservations": true,
+         "hasMenu": "https://carta.menu/restaurants/palma-1/cafe-barroco",
+         "events": [
             {
-               "@type":"Event",
-               "name":"",
-               "about":"",
-               "audience":"",
-               "startDate":"",
-               "endDate":"",
-               "offers":{
-                  "@type":"Offer",
-                  "price":"",
-                  "priceCurrency":"EUR",
-                  "url":""
+               "@type": "Event",
+               "name": "",
+               "about": "",
+               "audience": "",
+               "startDate": "",
+               "endDate": "",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "",
+                  "priceCurrency": "EUR",
+                  "url": ""
                },
-               "maximumPhysicalAttendeeCapacity":"",
-               "eventStatus":"",
-               "performers":[
+               "maximumPhysicalAttendeeCapacity": "",
+               "eventStatus": "",
+               "performers": [
                   {
-                     "name":"",
-                     "url":""
+                     "name": "",
+                     "url": ""
                   }
                ]
             }
          ],
-         "keywords":[ 
-			"Música", 
-			"Cultura",
-			"Magia"
-			]
-		},
+         "keywords": [
+            "Música",
+            "Cultura",
+            "Magia"
+         ]
+      },
       {
-         "@type":"CafeOrCoffeeShop",
-         "name":"Agua Bar",
-         "description":"Pub de conciertos de rock y jazz con micrófono abierto los domingos para que los músicos suban a tocar.",
-         "address":{
-            "streetAddress":"Carrer de Jaume Ferrer, 6",
-            "addressLocality":"Palma",
-            "addressRegion":"Illes Balears",
-            "postalCode":"07012",
-            "addressCountry":"ES"
+         "@type": "CafeOrCoffeeShop",
+         "name": "Agua Bar",
+         "description": "Pub de conciertos de rock y jazz con micrófono abierto los domingos para que los músicos suban a tocar.",
+         "address": {
+            "streetAddress": "Carrer de Jaume Ferrer, 6",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07012",
+            "addressCountry": "ES"
          },
-         "geo":{
-            "@type":"GeoCoordinates",
-            "latitude":"39.56891532261607",
-            "longitude":"2.6446060537398743"
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.56891532261607",
+            "longitude": "2.6446060537398743"
          },
-         "aggregateRating":{
-            "@type":"AggregateRating",
-            "ratingValue":"0",
-            "reviewCount":"0"
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "0",
+            "reviewCount": "0"
          },
-         "openingHours":[
+         "openingHours": [
             "Su-Th 19:00-01:00",
-			   "Fr-Sa 19:00-03:00"
+            "Fr-Sa 19:00-03:00"
          ],
-         "contactPoint":{
-            "telephone":"+34 676 30 65 31",
-            "email":"aguabar@gmail.com"
+         "contactPoint": {
+            "telephone": "+34 676 30 65 31",
+            "email": "aguabar@gmail.com"
          },
-         "url":"https://www.aguabar.com/",
-         "image":[
+         "url": "https://www.aguabar.com/",
+         "image": [
             "assets/img/cafeterias/cafeteria-2.jpg"
          ],
-         "logo":"",
-         "priceRange":"$$",
-         "acceptsReservations":true,
-         "hasMenu":"",
-         "events":[
+         "logo": "",
+         "priceRange": "$$",
+         "acceptsReservations": true,
+         "hasMenu": "",
+         "events": [
             {
-               "@type":"Event",
-               "name":"",
-               "about":"",
-               "audience":"",
-               "startDate":"",
-               "endDate":"",
-               "offers":{
-                  "@type":"Offer",
-                  "price":"",
-                  "priceCurrency":"EUR",
-                  "url":""
+               "@type": "Event",
+               "name": "",
+               "about": "",
+               "audience": "",
+               "startDate": "",
+               "endDate": "",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "",
+                  "priceCurrency": "EUR",
+                  "url": ""
                },
-               "maximumPhysicalAttendeeCapacity":"",
-               "eventStatus":"",
-               "performers":[
+               "maximumPhysicalAttendeeCapacity": "",
+               "eventStatus": "",
+               "performers": [
                   {
-                     "name":"",
-                     "url":""
+                     "name": "",
+                     "url": ""
                   }
                ]
             }
          ],
-         "keywords":[ 
-			"Música"
-			]
-		},
+         "keywords": [
+            "Música"
+         ]
+      },
       {
-         "@type":"CafeOrCoffeeShop",
-         "name":"Café a Tres Bandas",
-         "description":"Conciertos, libros, billares y videojuegos en un café con carta de tapas eclécticas y cervezas artesanas.",
-         "address":{
-            "streetAddress":"Plaça de Barcelona, 20",
-            "addressLocality":"Palma",
-            "addressRegion":"Illes Balears",
-            "postalCode":"07011",
-            "addressCountry":"ES"
+         "@type": "CafeOrCoffeeShop",
+         "name": "Café a Tres Bandas",
+         "description": "Conciertos, libros, billares y videojuegos en un café con carta de tapas eclécticas y cervezas artesanas.",
+         "address": {
+            "streetAddress": "Plaça de Barcelona, 20",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07011",
+            "addressCountry": "ES"
          },
-         "geo":{
-            "@type":"GeoCoordinates",
-            "latitude":"39.579586870681396",
-            "longitude":"2.6398806117517215"
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.579586870681396",
+            "longitude": "2.6398806117517215"
          },
-         "aggregateRating":{
-            "@type":"AggregateRating",
-            "ratingValue":"0",
-            "reviewCount":"0"
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "0",
+            "reviewCount": "0"
          },
-         "openingHours":[
+         "openingHours": [
             "Mo-Th 18:00-00:00",
-			"Fr-Sa 18:00-01:00"
+            "Fr-Sa 18:00-01:00"
          ],
-         "contactPoint":{
-            "telephone":"+34 971 28 26 03",
-            "email":"cafeatresbandas@gmail.com"
+         "contactPoint": {
+            "telephone": "+34 971 28 26 03",
+            "email": "cafeatresbandas@gmail.com"
          },
-         "url":"https://es-es.facebook.com/cafetresbandas/",
-         "image":[
+         "url": "https://es-es.facebook.com/cafetresbandas/",
+         "image": [
             "assets/img/cafeterias/cafeteria-2.jpg"
          ],
-         "logo":"",
-         "priceRange":"$$-$$$",
-         "acceptsReservations":true,
-         "hasMenu":"https://es.restaurantguru.com/A-Tres-Bandas-Palma",
-         "events":[
+         "logo": "",
+         "priceRange": "$$-$$$",
+         "acceptsReservations": true,
+         "hasMenu": "https://es.restaurantguru.com/A-Tres-Bandas-Palma",
+         "events": [
             {
-               "@type":"Event",
-               "name":"",
-               "about":"",
-               "audience":"",
-               "startDate":"",
-               "endDate":"",
-               "offers":{
-                  "@type":"Offer",
-                  "price":"",
-                  "priceCurrency":"EUR",
-                  "url":""
+               "@type": "Event",
+               "name": "",
+               "about": "",
+               "audience": "",
+               "startDate": "",
+               "endDate": "",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "",
+                  "priceCurrency": "EUR",
+                  "url": ""
                },
-               "maximumPhysicalAttendeeCapacity":"",
-               "eventStatus":"",
-               "performers":[
+               "maximumPhysicalAttendeeCapacity": "",
+               "eventStatus": "",
+               "performers": [
                   {
-                     "name":"",
-                     "url":""
+                     "name": "",
+                     "url": ""
                   }
                ]
             }
          ],
-         "keywords":[ 
-			"Música",
-			"Lectura",
-			"Juegos"
-			]
-		},
+         "keywords": [
+            "Música",
+            "Lectura",
+            "Juegos"
+         ]
+      },
       {
-         "@type":"CafeOrCoffeeShop",
-         "name":"Café l'Antiquari",
-         "description":"Tapas, ensaladas, sándwiches, sangría y cócteles en un bar llamativo de ambiente bohemio.",
-         "address":{
-            "streetAddress":"Carrer Arabí, 5",
-            "addressLocality":"Palma",
-            "addressRegion":"Illes Balears",
-            "postalCode":"07003",
-            "addressCountry":"ES"
+         "@type": "CafeOrCoffeeShop",
+         "name": "Café l'Antiquari",
+         "description": "Tapas, ensaladas, sándwiches, sangría y cócteles en un bar llamativo de ambiente bohemio.",
+         "address": {
+            "streetAddress": "Carrer Arabí, 5",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07003",
+            "addressCountry": "ES"
          },
-         "geo":{
-            "@type":"GeoCoordinates",
-            "latitude":"39.57740610044935",
-            "longitude":"2.651188859938025"
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.57740610044935",
+            "longitude": "2.651188859938025"
          },
-         "aggregateRating":{
-            "@type":"AggregateRating",
-            "ratingValue":"0",
-            "reviewCount":"0"
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "0",
+            "reviewCount": "0"
          },
-         "openingHours":[
+         "openingHours": [
             "Mo-Fr 18:00-00:30"
          ],
-         "contactPoint":{
-            "telephone":"+34 871 57 23 13",
-            "email":"cafeantiquaris@gmail.com"
+         "contactPoint": {
+            "telephone": "+34 871 57 23 13",
+            "email": "cafeantiquaris@gmail.com"
          },
-         "url":"https://es-es.facebook.com/cafeantiquari",
-         "image":[
+         "url": "https://es-es.facebook.com/cafeantiquari",
+         "image": [
             "assets/img/cafeterias/cafeteria-2.jpg"
          ],
-         "logo":"",
-         "priceRange":"$$-$$$",
-         "acceptsReservations":true,
-         "hasMenu":"https://es-es.facebook.com/cafeantiquari",
-         "events":[
+         "logo": "",
+         "priceRange": "$$-$$$",
+         "acceptsReservations": true,
+         "hasMenu": "https://es-es.facebook.com/cafeantiquari",
+         "events": [
             {
-               "@type":"Event",
-               "name":"",
-               "about":"",
-               "audience":"",
-               "startDate":"",
-               "endDate":"",
-               "offers":{
-                  "@type":"Offer",
-                  "price":"",
-                  "priceCurrency":"EUR",
-                  "url":""
+               "@type": "Event",
+               "name": "",
+               "about": "",
+               "audience": "",
+               "startDate": "",
+               "endDate": "",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "",
+                  "priceCurrency": "EUR",
+                  "url": ""
                },
-               "maximumPhysicalAttendeeCapacity":"",
-               "eventStatus":"",
-               "performers":[
+               "maximumPhysicalAttendeeCapacity": "",
+               "eventStatus": "",
+               "performers": [
                   {
-                     "name":"",
-                     "url":""
+                     "name": "",
+                     "url": ""
                   }
                ]
             }
          ],
-         "keywords":[ 
-			"Música",
-			"Cultura",
-			"Espesctáculos"
-			]
-		},
+         "keywords": [
+            "Música",
+            "Cultura",
+            "Espesctáculos"
+         ]
+      },
       {
-         "@type":"CafeOrCoffeeShop",
-         "name":"Mandragora cafe",
-         "description":"MANDRAGORA un espacio creado para entretener, shows de humor, conciertos en directo y un servicio de comida excelente.",
-         "address":{
-            "streetAddress":"Calle horaci, 36",
-            "addressLocality":"Palma",
-            "addressRegion":"Illes Balears",
-            "postalCode":"07610",
-            "addressCountry":"ES"
+         "@type": "CafeOrCoffeeShop",
+         "name": "Mandragora cafe",
+         "description": "MANDRAGORA un espacio creado para entretener, shows de humor, conciertos en directo y un servicio de comida excelente.",
+         "address": {
+            "streetAddress": "Calle horaci, 36",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07610",
+            "addressCountry": "ES"
          },
-         "geo":{
-            "@type":"GeoCoordinates",
-            "latitude":"39.5396521103593",
-            "longitude":"2.7140298587397407"
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.5396521103593",
+            "longitude": "2.7140298587397407"
          },
-         "aggregateRating":{
-            "@type":"AggregateRating",
-            "ratingValue":"0",
-            "reviewCount":"0"
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "0",
+            "reviewCount": "0"
          },
-         "openingHours":[
+         "openingHours": [
             "Tu-Th 15:00-02:00",
-		      "Fr-Sa 15:00-03:00"
+            "Fr-Sa 15:00-03:00"
          ],
-         "contactPoint":{
-            "telephone":"+34 664 86 11 50",
-            "email":"mandragoramallorca@gmail.com"
+         "contactPoint": {
+            "telephone": "+34 664 86 11 50",
+            "email": "mandragoramallorca@gmail.com"
          },
-         "url":"mandragoramallorca.com",
-         "image":[
+         "url": "mandragoramallorca.com",
+         "image": [
             "assets/img/cafeterias/cafeteria-2.jpg"
          ],
-         "logo":"",
-         "priceRange":"$$-$$$",
-         "acceptsReservations":true,
-         "hasMenu":"https://carta.menu/restaurants/palma-de-mallorca/mandragora-cafe-2",
-         "events":[
+         "logo": "",
+         "priceRange": "$$-$$$",
+         "acceptsReservations": true,
+         "hasMenu": "https://carta.menu/restaurants/palma-de-mallorca/mandragora-cafe-2",
+         "events": [
             {
-               "@type":"Event",
-               "name":"",
-               "about":"",
-               "audience":"",
-               "startDate":"",
-               "endDate":"",
-               "offers":{
-                  "@type":"Offer",
-                  "price":"",
-                  "priceCurrency":"EUR",
-                  "url":""
+               "@type": "Event",
+               "name": "",
+               "about": "",
+               "audience": "",
+               "startDate": "",
+               "endDate": "",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "",
+                  "priceCurrency": "EUR",
+                  "url": ""
                },
-               "maximumPhysicalAttendeeCapacity":"",
-               "eventStatus":"",
-               "performers":[
+               "maximumPhysicalAttendeeCapacity": "",
+               "eventStatus": "",
+               "performers": [
                   {
-                     "name":"",
-                     "url":""
+                     "name": "",
+                     "url": ""
                   }
                ]
             }
          ],
-         "keywords":[ 
-			"Música",
-			"Cultura",
-			"Espesctáculos",
-			"Entretenimiento"
-			]
-		},
+         "keywords": [
+            "Música",
+            "Cultura",
+            "Espesctáculos",
+            "Entretenimiento"
+         ]
+      },
       {
-         "@type":"CafeOrCoffeeShop",
-         "name":"La biblioteca de Babel",
-         "description":"Original librería de estética antigua que organiza conciertos y dispone de mesitas para tomarse un vino.",
-         "address":{
-            "streetAddress":"Carrer Arabí, 3",
-            "addressLocality":"Palma",
-            "addressRegion":"Illes Balears",
-            "postalCode":"07003",
-            "addressCountry":"ES"
+         "@type": "CafeOrCoffeeShop",
+         "name": "La biblioteca de Babel",
+         "description": "Original librería de estética antigua que organiza conciertos y dispone de mesitas para tomarse un vino.",
+         "address": {
+            "streetAddress": "Carrer Arabí, 3",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07003",
+            "addressCountry": "ES"
          },
-         "geo":{
-            "@type":"GeoCoordinates",
-            "latitude":"39.57682635942309",
-            "longitude":"2.6516766827017353"
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.57682635942309",
+            "longitude": "2.6516766827017353"
          },
-         "aggregateRating":{
-            "@type":"AggregateRating",
-            "ratingValue":"2",
-            "reviewCount":"0"
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "2",
+            "reviewCount": "0"
          },
-         "openingHours":[
-               "Mo-Sa 10:00-14:00",
-   		   "Mo-Sa 17:00-21:00"
+         "openingHours": [
+            "Mo-Sa 10:00-14:00",
+            "Mo-Sa 17:00-21:00"
          ],
-         "contactPoint":{
-            "telephone":"+34 971 72 14 42",
-            "email":"babel@labibliotecadebabel.es"
+         "contactPoint": {
+            "telephone": "+34 971 72 14 42",
+            "email": "babel@labibliotecadebabel.es"
          },
-         "url":"http://www.labibliotecadebabel.es/",
-         "image":[
+         "url": "http://www.labibliotecadebabel.es/",
+         "image": [
             "assets/img/cafeterias/cafeteria-2.jpg"
          ],
-         "logo":"",
-         "priceRange":"$$",
-         "acceptsReservations":true,
-         "hasMenu":"https://es.restaurantguru.com/La-Biblioteca-de-Babel-Palma/menu",
-         "events":[
+         "logo": "",
+         "priceRange": "$$",
+         "acceptsReservations": true,
+         "hasMenu": "https://es.restaurantguru.com/La-Biblioteca-de-Babel-Palma/menu",
+         "events": [
             {
-               "@type":"Event",
-               "name":"",
-               "about":"",
-               "audience":"",
-               "startDate":"",
-               "endDate":"",
-               "offers":{
-                  "@type":"Offer",
-                  "price":"",
-                  "priceCurrency":"EUR",
-                  "url":""
+               "@type": "Event",
+               "name": "",
+               "about": "",
+               "audience": "",
+               "startDate": "",
+               "endDate": "",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "",
+                  "priceCurrency": "EUR",
+                  "url": ""
                },
-               "maximumPhysicalAttendeeCapacity":"",
-               "eventStatus":"",
-               "performers":[
+               "maximumPhysicalAttendeeCapacity": "",
+               "eventStatus": "",
+               "performers": [
                   {
-                     "name":"",
-                     "url":""
+                     "name": "",
+                     "url": ""
                   }
                ]
             }
          ],
-         "keywords":[ 
-			"Lectura",
-			"Cultura"
-			]
-		},
+         "keywords": [
+            "Lectura",
+            "Cultura"
+         ]
+      },
       {
-         "@type":"CafeOrCoffeeShop",
-         "name":"Literanta",
-         "description":"Tertulias y talleres de literatura en librería-cafetería con cafés y cócteles con nombres de obras y autores.",
-         "address":{
-            "streetAddress":"Carrer del Call, 4",
-            "addressLocality":"Palma",
-            "addressRegion":"Illes Balears",
-            "postalCode":"07001",
-            "addressCountry":"ES"
+         "@type": "CafeOrCoffeeShop",
+         "name": "Literanta",
+         "description": "Tertulias y talleres de literatura en librería-cafetería con cafés y cócteles con nombres de obras y autores.",
+         "address": {
+            "streetAddress": "Carrer del Call, 4",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07001",
+            "addressCountry": "ES"
          },
-         "geo":{
-            "@type":"GeoCoordinates",
-            "latitude":"39.57357312164679",
-            "longitude":"2.650565137026839"
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.57357312164679",
+            "longitude": "2.650565137026839"
          },
-         "aggregateRating":{
-            "@type":"AggregateRating",
-            "ratingValue":"4.3",
-            "reviewCount":"0"
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.3",
+            "reviewCount": "0"
          },
-         "openingHours":[
+         "openingHours": [
             "Mo-Sa 10:00-13:30",
-   		   "Mo-Fr 17:00-20:00"
+            "Mo-Fr 17:00-20:00"
          ],
-         "contactPoint":{
-            "telephone":"+34 673 46 17 76",
-            "email":"literanta@literanta.com"
+         "contactPoint": {
+            "telephone": "+34 673 46 17 76",
+            "email": "literanta@literanta.com"
          },
-         "url":"https://www.literanta.com/",
-         "image":[
+         "url": "https://www.literanta.com/",
+         "image": [
             "assets/img/cafeterias/cafeteria-2.jpg"
          ],
-         "logo":"",
-         "priceRange":"$$-$$$",
-         "acceptsReservations":true,
-         "hasMenu":"https://es.restaurantguru.com/Literanta-Palma/menu",
-         "events":[
+         "logo": "",
+         "priceRange": "$$-$$$",
+         "acceptsReservations": true,
+         "hasMenu": "https://es.restaurantguru.com/Literanta-Palma/menu",
+         "events": [
             {
-               "@type":"Event",
-               "name":"",
-               "about":"",
-               "audience":"",
-               "startDate":"",
-               "endDate":"",
-               "offers":{
-                  "@type":"Offer",
-                  "price":"",
-                  "priceCurrency":"EUR",
-                  "url":""
+               "@type": "Event",
+               "name": "",
+               "about": "",
+               "audience": "",
+               "startDate": "",
+               "endDate": "",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "",
+                  "priceCurrency": "EUR",
+                  "url": ""
                },
-               "maximumPhysicalAttendeeCapacity":"",
-               "eventStatus":"",
-               "performers":[
+               "maximumPhysicalAttendeeCapacity": "",
+               "eventStatus": "",
+               "performers": [
                   {
-                     "name":"",
-                     "url":""
+                     "name": "",
+                     "url": ""
                   }
                ]
             }
          ],
-         "keywords":[ 
-			"Lectura",
-			"Cultura"
-			]
-		}
-    ]
+         "keywords": [
+            "Lectura",
+            "Cultura"
+         ]
+      }
+   ]
 }

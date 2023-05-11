@@ -114,7 +114,7 @@ function clickCafeteria(nombre) {
 }
 
 function cargarCafeteriaClickada(listaCafeterias, nombre) {
-    console.log("NOMBRE -> "+nombre);
+    console.log("NOMBRE -> " + nombre);
     // Seleccionamos el elemento HTML donde se agregarán las cafeterías
     var cafeteriaSelect = document.getElementById("cafeterias-sel");
     let cafeteriaEncontrada = null;
@@ -126,105 +126,155 @@ function cargarCafeteriaClickada(listaCafeterias, nombre) {
             break;
         }
     }
-    // Creamos los elementos HTML con los valores de la cafetería
-    const divMedia = document.createElement("div");
-    divMedia.className = "media-body row";
+    var pagina = '<div class="media-body row">';
 
-    const h3Nombre = document.createElement("h3");
-    h3Nombre.textContent = cafeteriaEncontrada.name;
+    pagina += '<div class="col-lg-4">';
+    pagina += '        <h3>' + cafeteriaEncontrada.name + '</h3>';
+    pagina += '        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">';
+    pagina += '          <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">';
+    pagina += '            <i class="bx bx-receipt"></i>';
+    pagina += '            <h4>Descripción</h4>';
+    pagina += '            <p>' + cafeteriaEncontrada.description + '</p>';
+    pagina += '          </div>';
+    pagina += '          <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">';
+    pagina += '            <i class="bx bx-cube-alt"></i>';
+    pagina += '            <h4>Rating</h4>';
+    pagina += '            <p>' + cafeteriaEncontrada.aggregateRating.ratingValue + '</p>';
+    pagina += '          </div>';
+    pagina += '        </div>';
+    pagina += '</div> ';
+    pagina += '<div class="image col-lg-4">';
+    pagina += '<img src="' + cafeteriaEncontrada.image + '" alt="Imagen de la cafetería">';
+    pagina += '</div>';
+    pagina += '      <div class="row-ev">';
+    pagina += '        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">';
+    pagina += '          <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">';
+    pagina += '            <i class="fas fa-microphone-alt"></i>';
+    pagina += '            <h4>Direccion</h4>';
+    pagina += '            <p>' + cafeteriaEncontrada.address.streetAddress + '</p>';
+    pagina += '            <div>';
+    pagina += '              <iframe style="border:0; width: 100%; height: 270px;"';
+    const latitud = cafeteriaEncontrada.geo.latitude;
+    const longitud = cafeteriaEncontrada.geo.longitude;
+    const urlUb = 'https://www.google.com/maps/embed/v1/view?key=AIzaSyDEttTnyKUn1uAIIjfqoOQoTJqbAncMym0&center=' + latitud + ',' + longitud + '&zoom=18';
+    pagina += '                src=' + urlUb;
+    pagina += '                frameborder="0" allowfullscreen></iframe>';
+    pagina += '            </div>';
+    pagina += '          </div>';
+    pagina += '        </div>';
+    pagina += '        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">';
+    pagina += '          <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">';
+    pagina += '            <i class="bx bx-cube-alt"></i>';
+    pagina += '            <h4>Horario</h4>';
+    pagina += '            <p>' + traducirHorarioApertura(cafeteriaEncontrada.openingHours) + '</p>';
+    pagina += '          </div>';
+    pagina += '          <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">';
+    pagina += '            <i class="bx bx-cube-alt"></i>';
+    pagina += '            <h4> Contacto </h4>';
+    pagina += '            <p>' + cafeteriaEncontrada.contactPoint.telephone + '<br>' + cafeteriaEncontrada.contactPoint.email + '<br>' + cafeteriaEncontrada.url + '</p>';
+    pagina += '          </div>';
+    pagina += '        </div>';
+    pagina += '      </div>';
+    pagina += '    </div>';
+    pagina += '    <div class="media cafeteria-events">';
+    pagina += '      <h3 class="cafeteria-events tittle">Proximos Eventos</h3>';
+    pagina += '      <div class="row">';
+    for (let i = 0; i < cafeteriaEncontrada.events.length; i++) {
 
-    const divCol1 = document.createElement("div");
-    divCol1.className = "col-lg-6";
-    divCol1.setAttribute("data-aos", "fade-left");
-    divCol1.setAttribute("data-aos-delay", "100");
+        pagina += '        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" onclick="cargarContenido\'evento.html\'">';
+        pagina += '          <a class="media cafeteria-event" href="#">';
+        const fechaInicioEvento = new Date(cafeteriaEncontrada.events[i].startDate);
+        const fecha = fechaInicioEvento.toLocaleString('es-ES', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false,
+            timeZone: 'UTC'
+        });
+        pagina += '            <h4>' + fecha + '</h4>';
+        pagina += '            <div class="icon"><i class="bx bxl-dribbble"></i></div>';
+        pagina += '            <h4>' + cafeteriaEncontrada.events[i].name + '</h4>';
+        pagina += '            <p>' + cafeteriaEncontrada.events[i].about + '</p>';
+        pagina += '          </a>';
+        pagina += '        </div>';
 
-    const divDesc = document.createElement("div");
-    divDesc.className = "icon-box mt-5 mt-lg-0";
-    divDesc.setAttribute("data-aos", "zoom-in");
-    divDesc.setAttribute("data-aos-delay", "150");
-
-    const iDesc = document.createElement("i");
-    iDesc.className = "bx bx-receipt";
-
-    const h4Desc = document.createElement("h4");
-    h4Desc.textContent = "Descripción";
-
-    const pDesc = document.createElement("p");
-    pDesc.textContent = cafeteriaEncontrada.description;
-
-    divDesc.appendChild(iDesc);
-    divDesc.appendChild(h4Desc);
-    divDesc.appendChild(pDesc);
-
-    const divRating = document.createElement("div");
-    divRating.className = "icon-box mt-5";
-    divRating.setAttribute("data-aos", "zoom-in");
-    divRating.setAttribute("data-aos-delay", "150");
-
-    const iRating = document.createElement("i");
-    iRating.className = "bx bx-cube-alt";
-
-    const h4Rating = document.createElement("h4");
-    h4Rating.textContent = "Rating";
-
-    const pRating = document.createElement("p");
-    pRating.textContent = cafeteriaEncontrada.aggregateRating.ratingValue;
-
-    divRating.appendChild(iRating);
-    divRating.appendChild(h4Rating);
-    divRating.appendChild(pRating);
-
-    divCol1.appendChild(divDesc);
-    divCol1.appendChild(divRating);
-
-    const divCol2 = document.createElement("div");
-    divCol2.className = "col-lg-6 carousel slide";
-    divCol2.id = "carouselExampleIndicators";
-
-    const divCarouselIndicators = document.createElement("div");
-    divCarouselIndicators.className = "carousel-indicators";
-
-    for (let j = 0; j < cafeteriaEncontrada.image.length; j++) {
-        const divCarouselIndicator = document.createElement("div");
-        divCarouselIndicator.setAttribute("data-target", "#carouselExampleIndicators");
-        divCarouselIndicator.setAttribute("data-slide-to", j.toString());
-        if (j === 0) {
-            divCarouselIndicator.className = "active";
-        }
-        divCarouselIndicators.appendChild(divCarouselIndicator);
     }
-
-    const divCarouselInner = document.createElement("div");
-    divCarouselInner.className = "carousel-inner";
-
-    for (var i = 0; i < cafeteriaEncontrada.image.length; i++) {
-        const divCarouselItem = document.createElement("div");
-        divCarouselItem.className = "carousel-item";
-
-        const img = document.createElement("img");
-        img.className = "d-block w-100";
-        img.setAttribute("src", cafeteriaEncontrada.image[i]);
-
-        divCarouselItem.appendChild(img);
-        divCarouselInner.appendChild(divCarouselItem);
-
-        if (i === 0) {
-            divCarouselItem.classList.add("active");
-        }
-
-        divCarouselIndicators.innerHTML += `<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" class="${i === 0 ? 'active' : ''}" aria-current="${i === 0 ? 'true' : 'false'}" aria-label="Slide ${i + 1}"></button>`;
-    }
-
-    divCol2.appendChild(divCarouselIndicators);
-    divCol2.appendChild(divCarouselInner);
-
-    divMedia.appendChild(h3Nombre);
-    divMedia.appendChild(divCol1);
-    divMedia.appendChild(divCol2);
-
-    //cafeteriasRating.innerHTML = "";
-    cafeteriaSelect.appendChild(divMedia);
+    pagina += '      </div>';
+    pagina += '    </div>';
+    cafeteriaSelect.innerHTML = pagina;
 }
+
+function traducirHorario(horario) {
+    const diasSemana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+
+    const diasTraducidos = {
+        Mo: 'Lunes',
+        Tu: 'Martes',
+        We: 'Miércoles',
+        Th: 'Jueves',
+        Fr: 'Viernes',
+        Sa: 'Sábado',
+        Su: 'Domingo'
+    };
+
+    const horarioTraducido = [];
+
+    horario.forEach(item => {
+        const [dias, horas] = item.split(' ');
+        const [diaInicio, diaFin] = dias.split('-');
+        const diaInicioTraducido = diasTraducidos[diaInicio];
+        const diaFinTraducido = diasTraducidos[diaFin]; 
+        horarioTraducido.push(`${diaInicioTraducido}-${diaFinTraducido} ${horas}`);
+
+        horarioTraducido.push('<br>');
+    });
+
+    return horarioTraducido;
+}
+
+function traducirHorarioApertura(horario) {
+    const diasSemana = {
+      Su: "Domingo",
+      Mo: "Lunes",
+      Tu: "Martes",
+      We: "Miércoles",
+      Th: "Jueves",
+      Fr: "Viernes",
+      Sa: "Sábado"
+    };
+  
+    let horarioAux = null;
+    const horarioTraducido = [];
+  
+    horario.forEach((horarioDia, index) => {
+      const diaHora = horarioDia.split(" ");
+      const dias = diaHora[0].split("-");
+      const hora = diaHora[1].split("-");
+  
+      const diaInicio = diasSemana[dias[0]];
+      const diaFin = diasSemana[dias[1]];
+  
+      let horarioDiaTraducido = `${diaInicio}-${diaFin} -> ${hora[0]}-${hora[1]}`;
+  
+      if (diaInicio === "Sábado" && diaFin === "Jueves") {
+        horarioAux = horarioDiaTraducido;
+      } else {
+        horarioTraducido.push(horarioDiaTraducido);
+      }
+    });
+  
+    if (horarioAux) {
+      horarioTraducido.push(horarioAux);
+    }
+  
+    return horarioTraducido.join("<br>");
+  }
+
+
+
 
 function cargarCafeteriasPorValoracion(listaCafeterias) {
     const nombresCafeterias = [];
@@ -329,11 +379,11 @@ function cargarCafeteriasPorValoracion(listaCafeterias) {
 }
 
 async function cargarCafeteriasPorCercania(listaCafeterias) {
-    
+
     await obtenerDistanciasCafeterias(listaCafeterias);
-    
+
     // Ordenamos por distancia
-    listaCafeterias = ordenarLista(listaCafeterias, "distancia", "ascendente"); // CONECTAR CON API PARA ENCONTRAR LAS DISTANCIAS
+    listaCafeterias = ordenarLista(listaCafeterias, "distancia", "ascendente");
 
     // // Seleccionamos el elemento HTML donde se agregarán las cafeterías
     const cafeteriasRating = document.getElementById("cafeterias-cercanas");
@@ -349,7 +399,7 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
         // Creamos los elementos HTML con los valores de la cafetería
         const divMedia = document.createElement("div");
         divMedia.className = "media";
-        divMedia.onclick = function() { cargarContenido('cafeteria.html', nombre, "") };
+        divMedia.onclick = function () { cargarContenido('cafeteria.html', nombre, "") };
 
         const divMediaBody = document.createElement("div");
         divMediaBody.className = "media-body row";
@@ -389,7 +439,7 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
 
         const pDistancia = document.createElement("p");
         pDistancia.textContent = ` ${distancia} Km`;
-        
+
         const iconoDistancia = document.createElement("i");
         iconoDistancia.classList.add("fa-solid", "fa-route", "fa-lg");
 
@@ -410,7 +460,7 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
         divUbicacion.appendChild(iconoUbicacion);
         divUbicacion.appendChild(pUbicacion);
         divFilas.appendChild(divUbicacion);
-        
+
         divMediaBody.appendChild(divFilas);
         divMediaBody.appendChild(divMediaNombre);
         divMediaBody.appendChild(divMediaImage);
@@ -423,7 +473,7 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
 }
 
 function cargarEventos(listaCafeterias) {
-    
+
     var listaEventos = obtenerListaEventos(listaCafeterias);
 
     // Ordenamos por valoración
@@ -449,17 +499,17 @@ function cargarEventos(listaCafeterias) {
 
         // Creamos los elementos HTML
         const divIconBox = document.createElement("div");
-        
+
         if (i == 0) {
             divIconBox.className = "icon-box mt-5 mt-lg-0";
         }
-        else{
+        else {
             divIconBox.className = "icon-box mt-5";
         }
-       
+
         divIconBox.setAttribute("data-aos", "zoom-in");
         divIconBox.setAttribute("data-aos-delay", "150");
-        divIconBox.onclick = function() { cargarContenido('evento.html', nombre, "") };
+        divIconBox.onclick = function () { cargarContenido('evento.html', nombre, "") };
 
         const divEventBody = document.createElement("div");
         divEventBody.className = "event-body";
@@ -507,14 +557,14 @@ function obtenerUbicacionUsuario() {
     return new Promise((resolve, reject) => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
-                function(position) {
+                function (position) {
                     const ubicacion = {
-                    latitud: position.coords.latitude,
-                    longitud: position.coords.longitude
+                        latitud: position.coords.latitude,
+                        longitud: position.coords.longitude
                     };
                     resolve(ubicacion);
                 },
-                function(error) {
+                function (error) {
                     reject(error);
                 }
             );
@@ -527,37 +577,37 @@ function obtenerUbicacionUsuario() {
 // Función para calcular la distancia entre dos coordenadas geográficas (en kilómetros)
 function calcularDistancia(latitud1, longitud1, latitud2, longitud2) {
     const radioTierra = 6371; // Radio de la Tierra en kilómetros
-  
+
     // Convertir las coordenadas a radianes
     const latitudRadianes1 = gradosARadianes(latitud1);
     const longitudRadianes1 = gradosARadianes(longitud1);
     const latitudRadianes2 = gradosARadianes(latitud2);
     const longitudRadianes2 = gradosARadianes(longitud2);
-  
+
     // Diferencias entre las coordenadas
     const diferenciaLatitudes = latitudRadianes2 - latitudRadianes1;
     const diferenciaLongitudes = longitudRadianes2 - longitudRadianes1;
-  
+
     // Fórmula de Haversine
     const a =
         Math.sin(diferenciaLatitudes / 2) * Math.sin(diferenciaLatitudes / 2) +
         Math.cos(latitudRadianes1) * Math.cos(latitudRadianes2) *
         Math.sin(diferenciaLongitudes / 2) * Math.sin(diferenciaLongitudes / 2);
-  
+
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  
+
     const distancia = (radioTierra * c).toFixed(2);
     return distancia;
 }
-  
+
 function gradosARadianes(grados) {
     return grados * (Math.PI / 180);
 }
-  
+
 // Función principal para obtener la posición del usuario y calcular las distancias
 async function obtenerDistanciasCafeterias(listaCafeterias) {
     // Obtener la posición del usuario
-    
+
     const ubicacionUsuario = await obtenerUbicacionUsuario();
     const latUsuario = ubicacionUsuario.latitud;
     const lonUsuario = ubicacionUsuario.longitud;
@@ -568,7 +618,7 @@ async function obtenerDistanciasCafeterias(listaCafeterias) {
         const lonCafeteria = cafeteria.geo.longitude;
         cafeteria.distancia = calcularDistancia(latUsuario, lonUsuario, latCafeteria, lonCafeteria);
     });
-    
+
 }
 
 function obtenerListaEventos(listaCafeterias) {
@@ -580,17 +630,17 @@ function obtenerListaEventos(listaCafeterias) {
                 place: cafeteria.name
             };
         });
-    
+
         return eventosTotales.concat(eventosConLugar);
     }, []);
-    
+
     const fechaActual = new Date();
-    
+
     // Filtramos los eventos que ya han sucedido
     const eventosFiltrados = listaEventos.filter(evento => {
         const fechaInicioEvento = new Date(evento.startDate);
         return fechaInicioEvento >= fechaActual;
     });
-    
+
     return eventosFiltrados;
 }

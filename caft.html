@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Café con Cultura</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome/css/all.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Icono -->
+  <link href="assets/favicon/favicon.ico" rel="icon" type="image/x-icon">
+
+</head>
+
+<body>
+  
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+      <img class="logo" src="assets/img/logo.png" alt="...">
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#main" onclick="cargarContenido('home.html','')">Home</a></li>
+          <li><a class="nav-link scrollto" href="#top-cafeterias">Mejores Cafeterías</a></li>
+          <li><a class="nav-link scrollto" href="#closest-cafeterias">Cafeterías cerca</a></li>
+          <li><a class="nav-link scrollto" href="#events">Próximos Eventos</a></li>
+          <li><a class="nav-link scrollto" href="#team">Equipo</a></li>
+          <li class="dropdown"><a href="#"><span>Buscador</span> <i class="fa-solid fa-chevron-down"></i> </a>
+            <ul>
+              <li><a href="#" onclick="cargarContenido('buscador.html', '')">Cafeterias</a></li>
+              <li><a href="#" onclick="cargarContenido('buscador.html', '')">Eventos</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#map" onclick="cargarContenidoMap()">Crea tu propia Ruta</a></li>
+        </ul>
+        <i class="fa-solid fa-bars mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Main ======= -->
+  <main id="main"></main>
+	<div class="margen-nav"></div>
+<!-- ======= Cafetería Section ======= -->
+<section id="cafeteria" class="cafeteria">
+  <div class="container">
+    <a class="media go-back-btn" href="#" onclick="cargarContenido('buscador.html')">
+      Volver Atrás
+    </a>
+    <div id="cafeteria-cont" class="media">
+      <div class="media-body row">
+        <h3>Cafeteria Parabellum</h3>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+          <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+            <i class="bx bx-receipt"></i>
+            <h4>Descripción</h4>
+            <p>descripcion JSON</p>
+          </div>
+          <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+            <i class="bx bx-cube-alt"></i>
+            <h4>Rating</h4>
+            <p>Rating JSON</p>
+          </div>
+        </div>
+        <div class="image col-lg-6" style='background-image: url("assets/img/stand-up.jpg");' data-aos="fade-right"></div>
+      </div>
+      <div class="row-ev">
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+          <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+            <i class="fas fa-microphone-alt"></i>
+            <h4>Direccion</h4>
+            <p>Direccion JSON</p>
+            <div>
+              <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen=""></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+          <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+            <i class="bx bx-cube-alt"></i>
+            <h4>Horario</h4>
+            <p>Horario JSON</p>
+          </div>
+          <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+            <i class="bx bx-cube-alt"></i>
+            <h4>Contacto y Url</h4>
+            <p>Contacto JSON</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="media cafeteria-events">
+      <h3 class="cafeteria-events tittle">Proximos Eventos</h3>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" onclick="cargarContenido('evento.html')">
+          <a class="media cafeteria-event" href="#">
+            <h4>24/03/2022 - 16:00</h4>
+            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+            <h4>Evento 1</h4>
+            <p>descripcion evento 1</p>
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <a class="media cafeteria-event" href="#">
+            <h4>30/03/2022 - 17:00</h4>
+            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+            <h4>Evento 3</h4>
+            <p>descripcion evento 2</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+  <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>Café con Cultura<span>.</span></h3>
+              <p>
+                Universitat de les Illes Balears <br>
+                Cra. de Valldemossa, km 7.5. 07122<br>
+                Palma (Illes Balears)<br><br>
+                <strong>Phone:</strong> +34 971 124 521<br>
+                <strong>Email:</strong> email.ejemplo1@estudiant.uib.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="fa-brands fa-skype"></i></a>
+                <a href="#" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="fa-solid fa-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="fa-solid fa-chevron-right"></i> <a href="#team">About us</a></li>
+              <li><i class="fa-solid fa-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="fa-solid fa-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="fa-solid fa-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Boletin informativo</h4>
+            <p>Mantente informado con las últimas actualizaciones.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribirse">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-arrow-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery-3.6.4.min.js"></script>
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Nuestro JS -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/utilidades.js"></script>
+  <script src="assets/js/navegacion.js"></script>
+  <script src="assets/js/maps-api.js"></script>
+
+</body>
+
+</html>
