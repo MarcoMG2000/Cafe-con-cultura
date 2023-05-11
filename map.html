@@ -1,35 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAP API Cafe Con Cultura</title>
-    <link rel="stylesheet" href="/assets/css/mapstyle.css">
-</head>
-<body>
-    <h1>Cafe con Cultura - Creador de Rutas</h1>
 
-    <div id="map"></div>
+ <div class="margen-nav"></div>
 
-       <script src="/assets/js/maps-api.js"></script>
+ <!-- ======= Mapa Section ======= -->
+    <section id="map-section" class="map-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          
+          <div id="map" class="col-lg-7 d-flex"></div>
 
-    <!--
-      Author:
-      https://github.com/JordiSM
-      
-      Replace API_KEY and MAP_ID with your own ones
-
-      Option1: Map with Food and Monuments Markers
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaIKV0ipX-n7b_RwquptRgH70iszT3G5Y&map_ids=ab4de70ad7fea2e0&callback=initMap"></script>
-    
-      Option2: Map with NO Markers
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaIKV0ipX-n7b_RwquptRgH70iszT3G5Y&map_ids=fcbac43d02c5a043&callback=initMap"></script>
-
-      NOTE: This API_Key is restricted. More about this here:
-      https://developers.google.com/maps/api-security-best-practices?hl=es-419
-    --> 
-    
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaIKV0ipX-n7b_RwquptRgH70iszT3G5Y&map_ids=fcbac43d02c5a043&callback=initMap"></script>
-</body>
-</html>
+          <div id="map-selected-item" class="col-lg-4 col-md-8d-flex align-items-stretch media">
+            <div class="media-body">
+              <h1 id="map-selected-item-name">Cafeteria Paco</h1>
+              <hr>
+              <h2>Info Cafeteria...</h2>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  <!-- End Mapa Section -->
