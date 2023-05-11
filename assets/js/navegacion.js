@@ -1,3 +1,4 @@
+
 /**
  * Función para cargar las distintas vistas al contenedor principal.
  * @param {*} nombreArchivo String con el nombre del archivo que se quiere cargar.
@@ -25,6 +26,9 @@ function cargarContenido(nombreArchivo, nombreCafeteria, nombreEvento) {
       }
       else if (nombreArchivo == "evento.html") {
         // FUNCIÓN PARA CARGAR INFO DEL EVENTO
+      }
+      else if (nombreArchivo == "cafeteria.html") {
+        clickCafeteria(nombre);
       }
     });
 }
@@ -70,7 +74,6 @@ function selectCafeteria(nombreArchivo) {
 
 function storeCafeteria() {
   if (typeof (Storage) != 'undefined') {
-    console.log(Storage);
     /*Con esto en caso de tener ya 5 cafeterías visitadas lo que hariamos
     es quedarnos con las 4 ultimas para despues añadir la visitada ahora*/
     let historialPrevio = localStorage.getItem("Cafeterias Visitadas");
@@ -81,15 +84,11 @@ function storeCafeteria() {
     if (historialPrevio != null) {
       if (historialPrevio.includes("Cafeteria Parabellum")) {
         let posicion = historialPrevio.indexOf("Cafeteria Parabellum");
-        console.log(posicion)
-        console.log(historialPrevio.length)
         for (let i = posicion; i <= historialPrevio.length - 2; i++) {
           historialPrevio[i] = historialPrevio[i + 1];
-          console.log(i)
         }
         historialNuevo = historialPrevio;
         historialNuevo[historialPrevio.length - 1] = "Cafeteria Parabellum"
-        console.log(historialPrevio);
       } else {
         if (historialPrevio.length >= 5) {
           for (let i = 1; i < historialPrevio.length; i++) {
@@ -106,7 +105,6 @@ function storeCafeteria() {
     localStorage.setItem("Cafeterias Visitadas", JSON.stringify(historialNuevo));
     //Aqui simplemente lo imprimo por consola, pero el getItem nos servirá para obtener la
     //información del historial de visitas
-    console.log(localStorage.getItem("Cafeterias Visitadas"))
   } else {
     alert("Storage no es compatible con este navegador");
   }
