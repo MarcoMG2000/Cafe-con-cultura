@@ -4,10 +4,10 @@ function ordenarLista(lista, atributo, orden = "ascendente") {
         const bValor = obtenerValor(b, atributo);
         let comparacion = 0;
         if (aValor < bValor) {
-        comparacion = -1;
+            comparacion = -1;
         }
         if (aValor > bValor) {
-        comparacion = 1;
+            comparacion = 1;
         }
         return orden === "descendente" ? comparacion * -1 : comparacion;
     });
@@ -18,10 +18,10 @@ function obtenerValor(objeto, ruta) {
     const partes = ruta.split(".");
     let valor = objeto;
     for (const parte of partes) {
-      if (!valor.hasOwnProperty(parte)) {
-        return null;
-      }
-      valor = valor[parte];
+        if (!valor.hasOwnProperty(parte)) {
+            return null;
+        }
+        valor = valor[parte];
     }
     return valor;
 }
@@ -29,52 +29,52 @@ function obtenerValor(objeto, ruta) {
 function comprobarEstadoDeNegocio(openingHours) {
     const hoy = new Date();
     const horaActual = hoy.getHours() + ":" + (hoy.getMinutes() < 10 ? "0" : "") + hoy.getMinutes();
-    
+
     for (let i = 0; i < openingHours.length; i++) {
-      const [dias, horario] = openingHours[i].split(" ");
-      const diasArray = dias.split("-");
-      const diaInicio = diasArray[0];
-      const diaFin = diasArray[1] || diasArray[0];
-      const [horaInicio, horaFin] = horario.split("-");
-      
-      if (comprobarSiEstaAbiertoEnEsteDia(diaInicio, diaFin) && comprobarSiEstaAbiertoEnEstaHora(horaInicio, horaFin, horaActual)) {
-        return "Abierto";
-      }
+        const [dias, horario] = openingHours[i].split(" ");
+        const diasArray = dias.split("-");
+        const diaInicio = diasArray[0];
+        const diaFin = diasArray[1] || diasArray[0];
+        const [horaInicio, horaFin] = horario.split("-");
+
+        if (comprobarSiEstaAbiertoEnEsteDia(diaInicio, diaFin) && comprobarSiEstaAbiertoEnEstaHora(horaInicio, horaFin, horaActual)) {
+            return "Abierto";
+        }
     }
-    
+
     return "Cerrado";
 }
-  
+
 function comprobarSiEstaAbiertoEnEsteDia(diaInicio, diaFin) {
     const diasSemana = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
     const hoy = new Date();
     const diaActual = diasSemana[hoy.getDay()];
-    
+
     let diaInicioIndex = diasSemana.indexOf(diaInicio);
     let diaFinIndex = diasSemana.indexOf(diaFin);
-    
+
     if (diaFinIndex < diaInicioIndex) {
-      diaFinIndex += 7;
+        diaFinIndex += 7;
     }
-    
+
     const diaActualIndex = diasSemana.indexOf(diaActual);
-    
+
     return diaActualIndex >= diaInicioIndex && diaActualIndex <= diaFinIndex;
 }
-  
+
 function comprobarSiEstaAbiertoEnEstaHora(horaInicio, horaFin, horaActual) {
     const [horaInicioH, horaInicioM] = horaInicio.split(":");
     const [horaFinH, horaFinM] = horaFin.split(":");
     const [horaActualH, horaActualM] = horaActual.split(":");
-    
+
     const horaInicioMs = (parseInt(horaInicioH) * 60 + parseInt(horaInicioM)) * 60 * 1000;
     var horaFinMs = (parseInt(horaFinH) * 60 + parseInt(horaFinM)) * 60 * 1000;
     const horaActualMs = (parseInt(horaActualH) * 60 + parseInt(horaActualM)) * 60 * 1000;
-    
+
     if (horaFinMs < horaInicioMs) {
-      horaFinMs += 24 * 60 * 60 * 1000;
+        horaFinMs += 24 * 60 * 60 * 1000;
     }
-    
+
     return horaActualMs >= horaInicioMs && horaActualMs <= horaFinMs;
 }
 
@@ -83,27 +83,164 @@ function cargarCafeterias() {
     const request = new XMLHttpRequest();
     request.open("GET", "/assets/JSON/cafeterias.json");
     request.responseType = 'text';
-    
+
     request.onload = () => {
         // Convertimos el JSON a objetos JS
         const objeto = JSON.parse(request.response);
         var listaCafeterias = objeto.itemListElement;
-        
+        window.cafeterias = listaCafeterias;
         cargarCafeteriasPorValoracion(listaCafeterias);
         cargarCafeteriasPorCercania(listaCafeterias);
     };
     request.send();
 }
 
+
+
+function clickCafeteria(nombre) {
+    // Hacemos el request del JSON
+    const request = new XMLHttpRequest();
+    request.open("GET", "/assets/JSON/cafeterias.json");
+    request.responseType = 'text';
+
+    request.onload = () => {
+        // Convertimos el JSON a objetos JS
+        const objeto = JSON.parse(request.response);
+        var listaCafeterias = objeto.itemListElement;
+        cargarCafeteriaClickada(listaCafeterias, nombre);
+    };
+    request.send();
+}
+
+function cargarCafeteriaClickada(listaCafeterias, nombre) {
+    console.log("NOMBRE -> "+nombre);
+    // Seleccionamos el elemento HTML donde se agregarán las cafeterías
+    var cafeteriaSelect = document.getElementById("cafeterias-sel");
+    let cafeteriaEncontrada = null;
+    //Buscamos la cafeteria que ha sido seleccionada
+    for (var i = 0; i < listaCafeterias.length; i++) {
+        //Una vez encontrada la guardamos en la variable declarada anteriormente
+        if (listaCafeterias[i].name === nombre) {
+            cafeteriaEncontrada = listaCafeterias[i];
+            break;
+        }
+    }
+    // Creamos los elementos HTML con los valores de la cafetería
+    const divMedia = document.createElement("div");
+    divMedia.className = "media-body row";
+
+    const h3Nombre = document.createElement("h3");
+    h3Nombre.textContent = cafeteriaEncontrada.name;
+
+    const divCol1 = document.createElement("div");
+    divCol1.className = "col-lg-6";
+    divCol1.setAttribute("data-aos", "fade-left");
+    divCol1.setAttribute("data-aos-delay", "100");
+
+    const divDesc = document.createElement("div");
+    divDesc.className = "icon-box mt-5 mt-lg-0";
+    divDesc.setAttribute("data-aos", "zoom-in");
+    divDesc.setAttribute("data-aos-delay", "150");
+
+    const iDesc = document.createElement("i");
+    iDesc.className = "bx bx-receipt";
+
+    const h4Desc = document.createElement("h4");
+    h4Desc.textContent = "Descripción";
+
+    const pDesc = document.createElement("p");
+    pDesc.textContent = cafeteriaEncontrada.description;
+
+    divDesc.appendChild(iDesc);
+    divDesc.appendChild(h4Desc);
+    divDesc.appendChild(pDesc);
+
+    const divRating = document.createElement("div");
+    divRating.className = "icon-box mt-5";
+    divRating.setAttribute("data-aos", "zoom-in");
+    divRating.setAttribute("data-aos-delay", "150");
+
+    const iRating = document.createElement("i");
+    iRating.className = "bx bx-cube-alt";
+
+    const h4Rating = document.createElement("h4");
+    h4Rating.textContent = "Rating";
+
+    const pRating = document.createElement("p");
+    pRating.textContent = cafeteriaEncontrada.aggregateRating.ratingValue;
+
+    divRating.appendChild(iRating);
+    divRating.appendChild(h4Rating);
+    divRating.appendChild(pRating);
+
+    divCol1.appendChild(divDesc);
+    divCol1.appendChild(divRating);
+
+    const divCol2 = document.createElement("div");
+    divCol2.className = "col-lg-6 carousel slide";
+    divCol2.id = "carouselExampleIndicators";
+
+    const divCarouselIndicators = document.createElement("div");
+    divCarouselIndicators.className = "carousel-indicators";
+
+    for (let j = 0; j < cafeteriaEncontrada.image.length; j++) {
+        const divCarouselIndicator = document.createElement("div");
+        divCarouselIndicator.setAttribute("data-target", "#carouselExampleIndicators");
+        divCarouselIndicator.setAttribute("data-slide-to", j.toString());
+        if (j === 0) {
+            divCarouselIndicator.className = "active";
+        }
+        divCarouselIndicators.appendChild(divCarouselIndicator);
+    }
+
+    const divCarouselInner = document.createElement("div");
+    divCarouselInner.className = "carousel-inner";
+
+    for (var i = 0; i < cafeteriaEncontrada.image.length; i++) {
+        const divCarouselItem = document.createElement("div");
+        divCarouselItem.className = "carousel-item";
+
+        const img = document.createElement("img");
+        img.className = "d-block w-100";
+        img.setAttribute("src", cafeteriaEncontrada.image[i]);
+
+        divCarouselItem.appendChild(img);
+        divCarouselInner.appendChild(divCarouselItem);
+
+        if (i === 0) {
+            divCarouselItem.classList.add("active");
+        }
+
+        divCarouselIndicators.innerHTML += `<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" class="${i === 0 ? 'active' : ''}" aria-current="${i === 0 ? 'true' : 'false'}" aria-label="Slide ${i + 1}"></button>`;
+    }
+
+    const aReservar = document.createElement("a");
+    aReservar.href = "#";
+    aReservar.className = "btn-book";
+    aReservar.textContent = "Reservar";
+
+    divCol2.appendChild(divCarouselIndicators);
+    divCol2.appendChild(divCarouselInner);
+    divCol2.appendChild(aReservar);
+
+    divMedia.appendChild(h3Nombre);
+    divMedia.appendChild(divCol1);
+    divMedia.appendChild(divCol2);
+
+    //cafeteriasRating.innerHTML = "";
+    cafeteriaSelect.appendChild(divMedia);
+}
+
 function cargarCafeteriasPorValoracion(listaCafeterias) {
+    const nombresCafeterias = [];
     // Ordenamos por valoración
     listaCafeterias = ordenarLista(listaCafeterias, "aggregateRating.ratingValue", "descendente");
-        
     // Seleccionamos el elemento HTML donde se agregarán las cafeterías
     const cafeteriasRating = document.getElementById("cafeterias-rating");
     for (let i = 0; i < 3; i++) { // Recorremos las tres cafeterías con mejor valoración
         // Obtenemos los valores de la cafetería del archivo JSON
         const nombre = listaCafeterias[i].name;
+        nombresCafeterias.push(nombre);
         const valoracion = listaCafeterias[i].aggregateRating.ratingValue;
         const ubicacion = listaCafeterias[i].address.streetAddress;
         const imagen = listaCafeterias[i].image;
@@ -112,7 +249,7 @@ function cargarCafeteriasPorValoracion(listaCafeterias) {
         // Creamos los elementos HTML con los valores de la cafetería
         const divMedia = document.createElement("div");
         divMedia.className = "media";
-        divMedia.onclick = function() { cargarContenido('cafeteria.html'); };
+        divMedia.onclick = function () { cargarContenido('cafeteria.html', nombre); };
 
         const divMediaBody = document.createElement("div");
         divMediaBody.className = "media-body row";
@@ -167,7 +304,7 @@ function cargarCafeteriasPorValoracion(listaCafeterias) {
             // Agregamos la estrella al contenedor
             pValoracion.appendChild(spanEstrella);
         }
-        
+
         divFilas.appendChild(pValoracion);
 
         const divUbicacion = document.createElement("div");
@@ -185,7 +322,7 @@ function cargarCafeteriasPorValoracion(listaCafeterias) {
         divUbicacion.appendChild(pUbicacion);
 
         divFilas.appendChild(divUbicacion);
-        
+
         divMediaBody.appendChild(divMediaImage);
         divMediaBody.appendChild(divMediaNombre);
         divMediaBody.appendChild(divFilas);
@@ -196,10 +333,11 @@ function cargarCafeteriasPorValoracion(listaCafeterias) {
     }
 }
 
+
 function cargarCafeteriasPorCercania(listaCafeterias) {
     // Ordenamos por distancia
     listaCafeterias = ordenarLista(listaCafeterias, "", "descendente"); // CONECTAR CON API PARA ENCONTRAR LAS DISTANCIAS
-        
+
     // // Seleccionamos el elemento HTML donde se agregarán las cafeterías
     // const cafeteriasRating = document.getElementById("cafeterias-cercanas");
     // for (let i = 0; i < 3; i++) { // Recorremos las tres cafeterías con mejor valoración
@@ -270,7 +408,7 @@ function cargarCafeteriasPorCercania(listaCafeterias) {
     //         // Agregamos la estrella al contenedor
     //         pValoracion.appendChild(spanEstrella);
     //     }
-        
+
     //     divFilas.appendChild(pValoracion);
 
     //     const divUbicacion = document.createElement("div");
@@ -288,7 +426,7 @@ function cargarCafeteriasPorCercania(listaCafeterias) {
     //     divUbicacion.appendChild(pUbicacion);
 
     //     divFilas.appendChild(divUbicacion);
-        
+
     //     divMediaBody.appendChild(divMediaImage);
     //     divMediaBody.appendChild(divMediaNombre);
     //     divMediaBody.appendChild(divFilas);
