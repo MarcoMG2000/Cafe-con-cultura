@@ -215,14 +215,8 @@ function cargarCafeteriaClickada(listaCafeterias, nombre) {
         divCarouselIndicators.innerHTML += `<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" class="${i === 0 ? 'active' : ''}" aria-current="${i === 0 ? 'true' : 'false'}" aria-label="Slide ${i + 1}"></button>`;
     }
 
-    const aReservar = document.createElement("a");
-    aReservar.href = "#";
-    aReservar.className = "btn-book";
-    aReservar.textContent = "Reservar";
-
     divCol2.appendChild(divCarouselIndicators);
     divCol2.appendChild(divCarouselInner);
-    divCol2.appendChild(aReservar);
 
     divMedia.appendChild(h3Nombre);
     divMedia.appendChild(divCol1);
@@ -251,7 +245,7 @@ function cargarCafeteriasPorValoracion(listaCafeterias) {
         const divMedia = document.createElement("div");
         divMedia.className = "media";
 
-        divMedia.onclick = function () { cargarContenido('cafeteria.html', nombre, ""); };
+        divMedia.onclick = function () { cargarContenido('cafeteria.html', nombre); };
 
 
         const divMediaBody = document.createElement("div");
