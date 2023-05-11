@@ -21,14 +21,11 @@ function cargarContenido(nombreArchivo, nombreCafeteria, nombreEvento) {
       if (nombreArchivo == "home.html") {
         cargarHome();
       }
-      else if (nombreArchivo == "cafeteria.html") {
-        // FUNCIÓN PARA CARGAR INFO DE CAFETERÍA
-      }
       else if (nombreArchivo == "evento.html") {
         // FUNCIÓN PARA CARGAR INFO DEL EVENTO
       }
       else if (nombreArchivo == "cafeteria.html") {
-        clickCafeteria(nombre);
+        clickCafeteria(nombreCafeteria);
       }
     });
 }

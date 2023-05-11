@@ -251,7 +251,7 @@ function cargarCafeteriasPorValoracion(listaCafeterias) {
         const divMedia = document.createElement("div");
         divMedia.className = "media";
 
-        divMedia.onclick = function () { cargarContenido('cafeteria.html', nombre); };
+        divMedia.onclick = function () { cargarContenido('cafeteria.html', nombre, ""); };
 
 
         const divMediaBody = document.createElement("div");
