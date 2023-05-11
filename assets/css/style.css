@@ -182,9 +182,18 @@
   margin-bottom: 0;
 }
 
-.ubicacion i {
+.info {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.info i {
   margin-right: 10px;
   color: #e2a324;
+  width: 17px;
+  text-align: -webkit-center;
 }
 
 .content span {
@@ -227,6 +236,7 @@
   padding: 5px;
   border-radius: 8px;
   transition: 0.3s;
+  cursor: pointer;
   /* border: 3px solid #ffe1a4; */
 }
 
@@ -237,11 +247,28 @@
   color: #c99327;
 }
 
-.event-body .i {
-  max-height: 1px;
-  max-width: 1px;
+.event-body p {
+  padding-left: 20px;
 }
 
+/*--------------------------------------------------------------
+# Mapa Café Con Cultura
+--------------------------------------------------------------*/
+#map {
+  border: 3px solid #000000;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  height: 75vh;
+}
+
+#map-selected-item {
+  padding-right: 10px;
+}
+
+.gm-style-iw-d{
+  color: #000000;
+}
 /*---------------------------------------------------------------------------------------
 # FIN DE NUESTRO CSS
 ---------------------------------------------------------------------------------------*/
@@ -1187,7 +1214,7 @@ section {
   margin: 5px 0 10px 60px;
 }
 
-.events .icon-box i {
+.events .icon-box .chevron {
   font-size: 40px;
   float: left;
   color: #ffc451;
@@ -1197,6 +1224,8 @@ section {
   font-size: 15px;
   color: #848484;
   margin-left: 60px;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .events .image {

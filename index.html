@@ -27,7 +27,6 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/mapstyle.css">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -45,8 +44,6 @@
 
 <body>
   
-  
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-lg-between">
@@ -61,7 +58,7 @@
           <li><a class="nav-link scrollto active" href="#main" onclick="cargarContenido('home.html','')">Home</a></li>
           <li><a class="nav-link scrollto" href="#top-cafeterias">Mejores Cafeterías</a></li>
           <li><a class="nav-link scrollto" href="#closest-cafeterias">Cafeterías cerca</a></li>
-          <li><a class="nav-link scrollto" href="#events">Proximos Eventos</a></li>
+          <li><a class="nav-link scrollto" href="#events">Próximos Eventos</a></li>
           <li><a class="nav-link scrollto" href="#team">Equipo</a></li>
           <li class="dropdown"><a href="#"><span>Buscador</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -69,7 +66,7 @@
               <li><a href="#" onclick="cargarContenido('buscador.html', '')">Eventos</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#rutas">Crea tu propia Ruta</a></li>
+          <li><a class="nav-link scrollto" href="#map" onclick="cargarContenidoMap()">Crea tu propia Ruta</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -161,6 +158,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/maps-api.js"></script>
+
 </body>
 
 </html>
