@@ -29,34 +29,54 @@
 
 <body>
   
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
-    <div class="container d-flex align-items-center justify-content-lg-between">
-      <img class="logo" src="assets/img/logo.png" alt="...">
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#main" onclick="cargarContenido('home.html','')">Home</a></li>
-          <li><a class="nav-link scrollto" href="#top-cafeterias">Mejores Cafeterías</a></li>
-          <li><a class="nav-link scrollto" href="#closest-cafeterias">Cafeterías cerca</a></li>
-          <li><a class="nav-link scrollto" href="#events">Próximos Eventos</a></li>
-          <li><a class="nav-link scrollto" href="#team">Equipo</a></li>
-          <li class="dropdown"><a href="#"><span>Buscador</span> <i class="fa-solid fa-chevron-down"></i> </a>
-            <ul>
-              <li><a href="#" onclick="cargarContenido('buscador.html', '')">Cafeterias</a></li>
-              <li><a href="#" onclick="cargarContenido('buscador.html', '')">Eventos</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#map" onclick="cargarContenidoMap()">Crea tu propia Ruta</a></li>
-        </ul>
-        <i class="fa-solid fa-bars mobile-nav-toggle"></i>
-      </nav>
-    </div>
-  </header>
-  <!-- End Header -->
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+  <div class="container d-flex align-items-center justify-content-lg-between">
+    <img class="logo" src="assets/img/logo.png" alt="...">
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link scrollto active" href="#main" onclick="cargarContenido('home.html','')">Home</a></li>
+        <li><a class="nav-link scrollto" href="#top-cafeterias">Mejores Cafeterías</a></li>
+        <li><a class="nav-link scrollto" href="#closest-cafeterias">Cafeterías cerca</a></li>
+        <li><a class="nav-link scrollto" href="#events">Próximos Eventos</a></li>
+        <li class="dropdown"><a href="#"><span>Buscador</span> <i class="fa-solid fa-chevron-down"></i> </a>
+          <ul>
+            <li><a href="#" onclick="cargarContenido('buscador.html', '')">Cafeterias</a></li>
+            <li><a href="#" onclick="cargarContenido('buscador.html', '')">Eventos</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link scrollto" href="#map" onclick="cargarContenidoMap()">Mapa</a></li>
+        <li><a class="nav-link scrollto" href="#music-section">Reproductor de Música</a></li>
+        <li><a class="nav-link scrollto" href="#team">Equipo</a></li>
+      </ul>
+      <i class="fa-solid fa-bars mobile-nav-toggle"></i>
+    </nav>
+  </div>
+</header>
+<!-- End Header -->
 
   <!-- ======= Main ======= -->
   <main id="main"></main>
   <!-- End #main -->
+
+<!-- ======= Music Section ======= -->
+<section id="music-section" class="music-section">
+  <div class="container" data-aos="fade-up">
+      <div class="row">
+          <div class="col-lg-12 pt-4 pt-lg-0 order-1 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+              <div class="section-title">
+                  <h2>Reproductor de Música</h2>
+                  <p>Playlist CafeConCultura</p>
+              </div>
+              <div class="cafeterias-rating">
+              </div>
+
+              <div id="cafeterias-rating" class="cafeterias-rating"></div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- End Music Section -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
