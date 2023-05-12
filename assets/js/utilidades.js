@@ -158,9 +158,14 @@ function filtrosSeleccionados() {
 function cargarBusqueda(listaCafeterias, filtros) {
     var cafeteriaSelect = document.getElementById("busqueda-filtro");
     var pagina = '<div class="row">';
+
+    const opcion = "distancia"; // MODIFICAR
+
     for (let i = 0; i < listaCafeterias.length; i++) {
         if (cumpleFiltros(listaCafeterias[i], filtros)) {
+            
             let abierto = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
+            
             pagina += '<a class="media" href="#" onclick="cargarContenido(\'cafeteria.html\',\'' + listaCafeterias[i].name + '\')">';
             pagina += '<div class="media-body row">';
             pagina += '<div class="media-image col-md-4">';
@@ -170,12 +175,44 @@ function cargarBusqueda(listaCafeterias, filtros) {
             pagina += '<h4>' + listaCafeterias[i].name + '</h4>';
             pagina += '</div>';
             pagina += '<div class="col-md-4 d-flex align-items-center div-filas">';
-            pagina += '<p>Valoración: ' + listaCafeterias[i].aggregateRating.ratingValue + '</p>';
-            pagina += '<p>Ubicación:' + listaCafeterias[i].address.streetAddress + '</p>';
             pagina += '<p class="'+ abierto.toLocaleLowerCase() +'">' + abierto +'</p>';
+
+            if (opcion == "valoracion") {
+                pagina += '<p>';
+                const numEstrellas = 5;
+                const valoracion = listaCafeterias[i].aggregateRating.ratingValue;
+                for (let i = 1; i <= numEstrellas; i++) {
+
+                    // Si la posición actual es menor o igual al valor de "rating", agregamos la clase "fa-solid" para marcar la estrella como "checked"
+                    if (i <= valoracion) {
+                        pagina += '<span class="fa-solid fa-star"> </span>';
+                    }
+                    // Si la posición actual es igual al valor de "valoracion" + 0.5, agregamos la clase "fa-solid fa-star-half-stroke" para mostrar una estrella parcialmente llena
+                    else if (i === Math.ceil(valoracion) && valoracion % 1 !== 0) {
+                        pagina += '<span class="fa-solid fa-star-half-stroke"> </span>';
+                    }
+                    else { // Si no, agregamos la clase "fa-regular fa-star" para mostrar una estrella vacía
+                        pagina += '<span class="fa-regular fa-star"> </span>';
+                    }
+                }
+                pagina += '</p>';
+            }
+            else if (opcion == "distancia") {
+                pagina += '<div class="info">';
+                pagina += '<i class="fa-solid fa-route fa-lg"></i>';
+                pagina += '<p> X Km </p>'; // CAMBIAR X Km por la distancia
+                pagina += '</div>';
+            }
+
+            pagina += '<div class="info">';
+            pagina += '<i class="fa-solid fa-location-dot fa-lg"></i>';
+            pagina += '<p>' + listaCafeterias[i].address.streetAddress + '</p>';
+            pagina += '</div>';
+            
             pagina += '</div>';
             pagina += '</div>';
             pagina += '</a>';
+
         }
     }
     pagina += '</div>';
