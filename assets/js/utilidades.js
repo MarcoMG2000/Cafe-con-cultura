@@ -227,16 +227,13 @@ function cumpleFiltros(cafeteria, filtros) {
     for (let i = 0; i < cafeteria.keywords.length; i++) {
         cafeteriaVal.concat(cafeteria.keywords[i]);
     }
-    let cumple = true;
+    let cumple = false;
     console.log("FILTRO:" + filtros);
     for (let i = 0; i < filtros.length; i++) {
-        if (!cafeteriaVal.includes(filtros[i])) {
-            cumple = false;
+        if (cafeteriaVal.includes(filtros[i])) {
+            cumple = true;
         }
     }
-    console.log(cafeteriaVal);
-    console.log(cafeteria.name);
-    console.log(cumple);
     return cumple;
 }
 
