@@ -75,6 +75,28 @@ h6 {
   justify-content: center;
 }
 
+.go-back-btn {
+  width: 200px;
+  height: 40px;
+  background-color: #151515;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.go-back-btn:hover {
+  color: #ffc451;
+  transition: 0.3s;
+}
+
+.margin-top-50 {
+  margin-top: 50px;
+}
+
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
@@ -111,22 +133,130 @@ h6 {
 /*--------------------------------------------------------------
 # Cafeteria Page
 --------------------------------------------------------------*/
-.cafeteria-events .title{
-  text-align: center;
-}
-
 #cafeteria-cont {
   margin-top: 30px;
 }
 
-.media.cafeteria-event {
-  color: #151515;
-  text-decoration: none;
-  width: 400px;
+.first-row {
+  margin-bottom: 15px;
 }
 
-.media.cafeteria-event:hover {
-  font-weight: bold;
+#cafeteria .section-title {
+  padding-bottom: 0px;
+}
+
+#cafeteria .section-title {
+  margin-bottom: 20px;
+}
+
+#cafeteria .rating {
+  margin-bottom:20px;
+}
+
+#cafeteria iframe {
+  border:0;
+  width: 100%;
+  height: 400px;
+  margin-top: 50px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-bottom: 50px;
+}
+
+#cafeteria h4, #cafeteria p {
+  font-family: "Poppins", sans-serif;
+}
+
+#cafeteria .first-row p {
+  margin-right: 90px;
+}
+
+#cafeteria i {
+  color: #e2a324;
+  padding-left: 10px;
+}
+
+#cafeteria h4 span:first-child {
+  color: #e2a324;
+  padding-left: 20px;
+}
+
+#cafeteria span {
+  color: #e2a324;
+}
+
+#carouselCafeteria {
+  position: relative;
+  width: 50%;
+  height: 0;
+  padding-bottom: 50%;
+}
+
+#carouselCafeteria .carousel-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#carouselCafeteria .carousel-inner .carousel-item {
+  width: 100%;
+  height: 100%;
+}
+
+#carouselCafeteria .carousel-inner .carousel-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.cafeteria-events .evento {
+  border-radius: 5px;
+  width: 30%;
+  margin: 10px;
+  padding-top: 20px;
+  background: #151515;
+  transition: 0.3s;
+  justify-content: center;
+}
+
+.cafeteria-events .evento:hover {
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.4);
+  transform: translateY(-10px);
+}
+
+.cafeteria-events .evento a {
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.cafeteria-events .evento a:hover {
+  color: #ffc451;
+  transition: 0.3s;
+}
+
+.cafeteria-events a, .cafeteria-events p {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.cafeteria-events p {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+@media screen and (max-width: 991px) {
+  
+  .first-row {
+    justify-content: center;
+  }
+
+  #carouselCafeteria {
+    margin-top: 30px;
+  }
+
 }
 
 /*--------------------------------------------------------------
@@ -336,7 +466,7 @@ h6 {
 ---------------------------------------------------------------------------------------*/
 
 .margen-nav {
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
 * {

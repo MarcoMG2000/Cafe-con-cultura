@@ -4,8 +4,8 @@
    "itemListElement": [
       {
          "@type": "CafeOrCoffeeShop",
-         "name": "Cafeteria Parabellum",
-         "description": "Cafeteria ",
+         "name": "Cafetería Parabellum",
+         "description": "¡Bienvenido a Cafetería Parabellum! Somos el lugar perfecto para los amantes de los juegos de mesa y las partidas de rol. Disfruta de deliciosas bebidas mientras juegas y sumérgete en la diversión. ¡Únete a nuestra comunidad de jugadores y vive una experiencia inolvidable!",
          "address": {
             "streetAddress": "Carrer del Bisbe Rafael Josep Verger, 6",
             "addressLocality": "Palma",
@@ -20,12 +20,12 @@
          },
          "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "4",
+            "ratingValue": "4.7",
             "reviewCount": "250"
          },
          "openingHours": [
             "Mo-Fr 11:00-22:00",
-            "Fr-Sa 17:00-22:00"
+            "Sa-Su 17:00-22:00"
          ],
          "contactPoint": {
             "telephone": "(408) 714-1489",
@@ -33,7 +33,26 @@
          },
          "url": "http://www.CafeteriaParabellum.com",
          "image": [
-            "assets/img/cafeterias/cafeteria-3.jpg"
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "name": "Imagen 1 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "name": "Imagen 2 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "name": "Imagen 3 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
+               "name": "Imagen 4 - Cafetería Parabellum"
+            }
          ],
          "logo": "http://urlimg1.png",
          "priceRange": "$$",
@@ -79,13 +98,28 @@
                      "url": "https://jazzband.com/"
                   }
                ],
-               "image": {
-                  "@type": "ImageObject",
-                  "url": "http://urlimg1.png",
-                  "width": "800",
-                  "height": "600",
-                  "caption": "Band 1"
-               }
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+                     "name": "Imagen 1 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+                     "name": "Imagen 2 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+                     "name": "Imagen 3 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
+                     "name": "Imagen 4 - Cafetería Parabellum"
+                  }
+               ]
             },
             {
                "@context": "https://schema.org",
@@ -107,17 +141,23 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "http://urlimg1.png",
-                     "width": "800",
-                     "height": "600",
-                     "caption": "Band 1"
+                     "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+                     "name": "Imagen 1 - Cafetería Parabellum"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "http://urlimg2.png",
-                     "width": "1200",
-                     "height": "800",
-                     "caption": "Cafeteria Parabellum's interior"
+                     "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+                     "name": "Imagen 2 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+                     "name": "Imagen 3 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
+                     "name": "Imagen 4 - Cafetería Parabellum"
                   }
                ],
                "inLanguage": "ES"
@@ -178,7 +218,26 @@
          },
          "url": "https://www.suscultura.cat/",
          "image": [
-            "assets/img/cafeterias/cafeteria-2.jpg"
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "name": "Imagen 1 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "name": "Imagen 2 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "name": "Imagen 3 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
+               "name": "Imagen 4 - Cafetería Parabellum"
+            }
          ],
          "logo": "http://urlimg1.png",
          "priceRange": "$",
@@ -245,7 +304,26 @@
          },
          "url": "https://cafelisboa.es/",
          "image": [
-            "assets/img/cafeterias/cafeteria-2.jpg"
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "name": "Imagen 1 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "name": "Imagen 2 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "name": "Imagen 3 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
+               "name": "Imagen 4 - Cafetería Parabellum"
+            }
          ],
          "logo": "",
          "priceRange": "$$",
@@ -310,7 +388,26 @@
          },
          "url": "https://www.facebook.com/cafebarroco",
          "image": [
-            "assets/img/cafeterias/cafeteria-1.jpg"
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "name": "Imagen 1 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "name": "Imagen 2 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "name": "Imagen 3 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
+               "name": "Imagen 4 - Cafetería Parabellum"
+            }
          ],
          "logo": "",
          "priceRange": "$",
@@ -377,7 +474,26 @@
          },
          "url": "https://www.aguabar.com/",
          "image": [
-            "assets/img/cafeterias/cafeteria-2.jpg"
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "name": "Imagen 1 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "name": "Imagen 2 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "name": "Imagen 3 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
+               "name": "Imagen 4 - Cafetería Parabellum"
+            }
          ],
          "logo": "",
          "priceRange": "$$",
@@ -442,7 +558,26 @@
          },
          "url": "https://es-es.facebook.com/cafetresbandas/",
          "image": [
-            "assets/img/cafeterias/cafeteria-2.jpg"
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "name": "Imagen 1 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "name": "Imagen 2 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "name": "Imagen 3 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
+               "name": "Imagen 4 - Cafetería Parabellum"
+            }
          ],
          "logo": "",
          "priceRange": "$$-$$$",
@@ -508,7 +643,26 @@
          },
          "url": "https://es-es.facebook.com/cafeantiquari",
          "image": [
-            "assets/img/cafeterias/cafeteria-2.jpg"
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "name": "Imagen 1 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "name": "Imagen 2 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "name": "Imagen 3 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
+               "name": "Imagen 4 - Cafetería Parabellum"
+            }
          ],
          "logo": "",
          "priceRange": "$$-$$$",
@@ -575,7 +729,26 @@
          },
          "url": "mandragoramallorca.com",
          "image": [
-            "assets/img/cafeterias/cafeteria-2.jpg"
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "name": "Imagen 1 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "name": "Imagen 2 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "name": "Imagen 3 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
+               "name": "Imagen 4 - Cafetería Parabellum"
+            }
          ],
          "logo": "",
          "priceRange": "$$-$$$",
@@ -643,7 +816,26 @@
          },
          "url": "http://www.labibliotecadebabel.es/",
          "image": [
-            "assets/img/cafeterias/cafeteria-2.jpg"
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "name": "Imagen 1 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "name": "Imagen 2 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "name": "Imagen 3 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
+               "name": "Imagen 4 - Cafetería Parabellum"
+            }
          ],
          "logo": "",
          "priceRange": "$$",
@@ -709,7 +901,26 @@
          },
          "url": "https://www.literanta.com/",
          "image": [
-            "assets/img/cafeterias/cafeteria-2.jpg"
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "name": "Imagen 1 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "name": "Imagen 2 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "name": "Imagen 3 - Cafetería Parabellum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
+               "name": "Imagen 4 - Cafetería Parabellum"
+            }
          ],
          "logo": "",
          "priceRange": "$$-$$$",
