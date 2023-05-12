@@ -241,6 +241,7 @@ h6 {
 .closest-cafeterias .media-nombre {
   justify-content: end;
   margin-right: 0px;
+  text-align: end;
 }
 
 @media screen and (max-width: 768px) {

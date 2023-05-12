@@ -411,7 +411,7 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
     for (let i = 0; i < 3; i++) { // Recorremos las tres cafeterías con mejor valoración
         // Obtenemos los valores de la cafetería del archivo JSON
         const nombre = listaCafeterias[i].name;
-        const distancia = listaCafeterias[i].distancia;
+        const distancia = (listaCafeterias[i].distancia/1000).toFixed(2);
         const ubicacion = listaCafeterias[i].address.streetAddress;
         const imagen = listaCafeterias[i].image;
         const estado = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
@@ -616,7 +616,7 @@ function calcularDistancia(latitud1, longitud1, latitud2, longitud2) {
 
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-    const distancia = (radioTierra * c).toFixed(2);
+    const distancia = (radioTierra * c) * 1000;
     return distancia;
 }
 
