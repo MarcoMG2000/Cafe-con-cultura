@@ -107,7 +107,6 @@ function cargarHome() {
         // Convertimos el JSON a objetos JS
         const objeto = JSON.parse(request.response);
         var listaCafeterias = objeto.itemListElement;
-        window.cafeterias = listaCafeterias;
         cargarCafeteriasPorValoracion(listaCafeterias);
         cargarCafeteriasPorCercania(listaCafeterias);
         cargarEventos(listaCafeterias)
@@ -115,7 +114,22 @@ function cargarHome() {
     request.send();
 }
 
+function cargarBuscador() {
+    // Hacemos el request del JSON
+    const request = new XMLHttpRequest();
+    request.open("GET", "/assets/JSON/cafeterias.json");
+    request.responseType = 'text';
 
+    request.onload = () => {
+        // Convertimos el JSON a objetos JS
+        const objeto = JSON.parse(request.response);
+        var listaCafeterias = objeto.itemListElement;
+        let filtros = filtrosSeleccionados();
+        console.log(filtros);
+        cargarBusqueda(listaCafeterias, filtros);
+    };
+    request.send();
+}
 
 function clickCafeteria(nombre) {
     // Hacemos el request del JSON
@@ -131,6 +145,62 @@ function clickCafeteria(nombre) {
         storeCafeteria(nombre);
     };
     request.send();
+}
+
+function filtrosSeleccionados() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    const ids = [];
+    checkboxes.forEach(checkbox => ids.push(checkbox.id));
+    return ids;
+}
+
+
+function cargarBusqueda(listaCafeterias, filtros) {
+    var cafeteriaSelect = document.getElementById("busqueda-filtro");
+    var pagina = '<div class="row">';
+    for (let i = 0; i < listaCafeterias.length; i++) {
+        if (cumpleFiltros(listaCafeterias[i], filtros)) {
+            let abierto = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
+            pagina += '<a class="media" href="#" onclick="cargarContenido(\'cafeteria.html\',\'' + listaCafeterias[i].name + '\')">';
+            pagina += '<div class="media-body row">';
+            pagina += '<div class="media-image col-md-4">';
+            pagina += '<img src="assets/img/cafeterias/cafeteria-1.jpg" class="mr-3" alt="...">';
+            pagina += '</div>';
+            pagina += '<div class="col-md-4 media-nombre d-flex align-items-center">';
+            pagina += '<h4>' + listaCafeterias[i].name + '</h4>';
+            pagina += '</div>';
+            pagina += '<div class="col-md-4 d-flex align-items-center div-filas">';
+            pagina += '<p>Valoración: ' + listaCafeterias[i].aggregateRating.ratingValue + '</p>';
+            pagina += '<p>Ubicación:' + listaCafeterias[i].address.streetAddress + '</p>';
+            pagina += '<p class="'+ abierto.toLocaleLowerCase() +'">' + abierto +'</p>';
+            pagina += '</div>';
+            pagina += '</div>';
+            pagina += '</a>';
+        }
+    }
+    pagina += '</div>';
+    cafeteriaSelect.innerHTML = pagina;
+}
+
+function cumpleFiltros(cafeteria, filtros) {
+    if (filtros.length === 0) {
+        return true;
+    }
+    let cafeteriaVal = [cafeteria.priceRange, cafeteria.aggregateRating.ratingValue];
+    for (let i = 0; i < cafeteria.keywords.length; i++) {
+        cafeteriaVal.concat(cafeteria.keywords[i]);
+    }
+    let cumple = true;
+    console.log("FILTRO:" + filtros);
+    for (let i = 0; i < filtros.length; i++) {
+        if (!cafeteriaVal.includes(filtros[i])) {
+            cumple = false;
+        }
+    }
+    console.log(cafeteriaVal);
+    console.log(cafeteria.name);
+    console.log(cumple);
+    return cumple;
 }
 
 function cargarCafeteriaClickada(listaCafeterias, nombre) {
@@ -285,7 +355,7 @@ function traducirHorario(horario) {
         const [dias, horas] = item.split(' ');
         const [diaInicio, diaFin] = dias.split('-');
         const diaInicioTraducido = diasTraducidos[diaInicio];
-        const diaFinTraducido = diasTraducidos[diaFin]; 
+        const diaFinTraducido = diasTraducidos[diaFin];
         horarioTraducido.push(`${diaInicioTraducido}-${diaFinTraducido} ${horas}`);
 
         horarioTraducido.push('<br>');
@@ -296,41 +366,41 @@ function traducirHorario(horario) {
 
 function traducirHorarioApertura(horario) {
     const diasSemana = {
-      Su: "Domingo",
-      Mo: "Lunes",
-      Tu: "Martes",
-      We: "Miércoles",
-      Th: "Jueves",
-      Fr: "Viernes",
-      Sa: "Sábado"
+        Su: "Domingo",
+        Mo: "Lunes",
+        Tu: "Martes",
+        We: "Miércoles",
+        Th: "Jueves",
+        Fr: "Viernes",
+        Sa: "Sábado"
     };
-  
+
     let horarioAux = null;
     const horarioTraducido = [];
-  
+
     horario.forEach((horarioDia, index) => {
-      const diaHora = horarioDia.split(" ");
-      const dias = diaHora[0].split("-");
-      const hora = diaHora[1].split("-");
-  
-      const diaInicio = diasSemana[dias[0]];
-      const diaFin = diasSemana[dias[1]];
-  
-      let horarioDiaTraducido = `${diaInicio}-${diaFin} -> ${hora[0]}-${hora[1]}`;
-  
-      if (diaInicio === "Sábado" && diaFin === "Jueves") {
-        horarioAux = horarioDiaTraducido;
-      } else {
-        horarioTraducido.push(horarioDiaTraducido);
-      }
+        const diaHora = horarioDia.split(" ");
+        const dias = diaHora[0].split("-");
+        const hora = diaHora[1].split("-");
+
+        const diaInicio = diasSemana[dias[0]];
+        const diaFin = diasSemana[dias[1]];
+
+        let horarioDiaTraducido = `${diaInicio}-${diaFin} -> ${hora[0]}-${hora[1]}`;
+
+        if (diaInicio === "Sábado" && diaFin === "Jueves") {
+            horarioAux = horarioDiaTraducido;
+        } else {
+            horarioTraducido.push(horarioDiaTraducido);
+        }
     });
-  
+
     if (horarioAux) {
-      horarioTraducido.push(horarioAux);
+        horarioTraducido.push(horarioAux);
     }
-  
+
     return horarioTraducido.join("<br>");
-  }
+}
 
 
 

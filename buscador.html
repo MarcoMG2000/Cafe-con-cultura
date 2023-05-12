@@ -10,15 +10,15 @@
             <h6 class="font-weight-bold">Categorias</h6>
             <form>
                 <div class="form-group">
-                    <input type="checkbox" id="artisan">
+                    <input type="checkbox" id="Musica">
                     <label for="artisan">Música</label>
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" id="breakfast">
+                    <input type="checkbox" id="Lectura">
                     <label for="breakfast">Lectura</label>
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" id="healthy">
+                    <input type="checkbox" id="Juegos de mesa">
                     <label for="healthy">Juegos de mesa</label>
                 </div>
             </form>
@@ -27,15 +27,15 @@
             <h6 class="font-weight-bold">Precios</h6>
             <form>
                 <div class="form-group">
-                    <input type="checkbox" id="tea">
+                    <input type="checkbox" id="$">
                     <label for="tea">€</label>
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" id="cookies">
+                    <input type="checkbox" id="$$">
                     <label for="cookies">€€</label>
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" id="pastries">
+                    <input type="checkbox" id="$$$">
                     <label for="pastries">€€€</label>
                 </div>
             </form>
@@ -44,27 +44,28 @@
             <h6 class="font-weight-bold">Valoración</h6>
             <form>
                 <div class="form-group">
-                    <input type="checkbox" id="25off">
+                    <input type="checkbox" id="1">
                     <label for="25">1 estrella</label>
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" id="25off">
+                    <input type="checkbox" id="2">
                     <label for="25">2 estrellas</label>
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" id="25off">
+                    <input type="checkbox" id="3">
                     <label for="25">3 estrellas</label>
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" id="25off">
+                    <input type="checkbox" id="4">
                     <label for="25">4 estrellas</label>
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" id="25off">
+                    <input type="checkbox" id="5">
                     <label for="25">5 estrellas</label>
                 </div>
             </form>
         </div>
+        <button type="button" class="btn btn-warning my-3 mx-3" onclick="cargarBuscador()">Aplicar filtro</button>
     </div>
     <!-- products section -->
     <div id="products">
@@ -72,52 +73,8 @@
             <div class="text-muted m-2" id="res">Resultados encontrados</div>
         </div>
         <div class="container">
-            <div class="row">
-                <a class="media" href="#" onclick="cargarContenido('cafeteria.html')">
-                    <div class="media-body row">
-                        <div class="media-image col-md-4">
-                            <img src="assets/img/cafeterias/cafeteria-1.jpg" class="mr-3" alt="...">
-                        </div>
-                        <div class="col-md-4 media-nombre d-flex align-items-center">
-                            <h4>Nombre de la cafetería 1</h4>
-                        </div>
-                        <div class="col-md-4 d-flex align-items-center div-filas">
-                            <p>Valoración: 4 estrellas</p>
-                            <p>Ubicación: Calle Principal 1</p>
-                            <p class="abierto">Abierto</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="media" href="#" onclick="cargarContenido('cafeteria.html')">
-                    <div class="media-body row">
-                        <div class="media-image col-md-4">
-                            <img src="assets/img/cafeterias/cafeteria-2.jpg" class="mr-3" alt="...">
-                        </div>
-                        <div class="col-md-4 media-nombre d-flex align-items-center">
-                            <h4 class="mt-0">Nombre de la cafetería 2</h4>
-                        </div>
-                        <div class="col-md-4 d-flex align-items-center div-filas">
-                            <p>Valoración: 5 estrellas</p>
-                            <p>Ubicación: Calle Principal 2</p>
-                            <p class="cerrado">Cerrado</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="media" href="#" onclick="cargarContenido('cafeteria.html')">
-                    <div class="media-body row">
-                        <div class="media-image col-md-4">
-                            <img src="assets/img/cafeterias/cafeteria-3.jpg" class="mr-3" alt="...">
-                        </div>
-                        <div class="col-md-4 media-nombre d-flex align-items-center">
-                            <h4 class="mt-0">Nombre de la cafetería 3</h4>
-                        </div>
-                        <div class="col-md-4 d-flex align-items-center div-filas">
-                            <p>Valoración: 5 estrellas</p>
-                            <p>Ubicación: Calle Principal 3</p>
-                            <p class="abierto">Abierto</p>
-                        </div>
-                    </div>
-                </a>
+            <div id="busqueda-filtro">
+
             </div>
         </div>
     </div>

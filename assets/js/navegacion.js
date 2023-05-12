@@ -27,14 +27,17 @@ function cargarContenido(nombreArchivo, nombreCafeteria, nombreEvento) {
       else if (nombreArchivo == "cafeteria.html") {
         clickCafeteria(nombreCafeteria);
       }
+      else if (nombreArchivo == "buscador.html") {
+        cargarBuscador();
+      }
     });
 }
 
-function cargarContenidoMap(){
+function cargarContenidoMap() {
   cargarContenido("map.html");
 
   scriptHtml = document.getElementById("script-api")
-  if(scriptHtml){
+  if (scriptHtml) {
     scriptHtml.remove();
   }
 
