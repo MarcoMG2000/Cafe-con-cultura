@@ -148,8 +148,8 @@ function cargarCafeteriaClickada(listaCafeterias, nombre) {
     }
     var pagina = '<div class="media-body row">';
 
-    pagina += '<div class="col-lg-4">';
     pagina += '        <h3>' + cafeteriaEncontrada.name + '</h3>';
+    
     pagina += '        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">';
     pagina += '          <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">';
     pagina += '            <i class="bx bx-receipt"></i>';
@@ -162,17 +162,53 @@ function cargarCafeteriaClickada(listaCafeterias, nombre) {
     pagina += '            <p>' + cafeteriaEncontrada.aggregateRating.ratingValue + '</p>';
     pagina += '          </div>';
     pagina += '        </div>';
-    pagina += '</div> ';
+    
+
+    /*
     pagina += '<div class="image col-lg-4">';
     pagina += '<img src="' + cafeteriaEncontrada.image + '" alt="Imagen de la cafetería">';
     pagina += '</div>';
-    pagina += '      <div class="row-ev">';
-    pagina += '        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">';
-    pagina += '          <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">';
-    pagina += '            <i class="fas fa-microphone-alt"></i>';
-    pagina += '            <h4>Direccion</h4>';
-    pagina += '            <p>' + cafeteriaEncontrada.address.streetAddress + '</p>';
-    pagina += '            <div>';
+    */
+    
+    
+    pagina += '<div id="carouselExampleIndicators" class="col-lg-6 carousel slide">';
+    pagina += '      <div class="carousel-indicators">'
+    
+    pagina += '        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"'
+    pagina += '          aria-current="true" aria-label="Slide 1"></button>'
+    pagina += '        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"'
+    pagina += '          aria-label="Slide 2"></button>'
+    pagina += '        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"'
+    pagina += '          aria-label="Slide 3"></button>'
+
+    pagina += '      </div>'
+    pagina += '      <div class="carousel-inner">'
+    pagina += '        <div class="carousel-item active">'
+    pagina += '          <img src="assets/img/cafeterias/cafeteria-1.jpg" class="d-block w-100 carousel-image" alt="...">'
+    pagina += '        </div>'
+    pagina += '        <div class="carousel-item">'
+    pagina += '          <img src="assets/img/cafeterias/cafeteria-2.jpg" class="d-block w-100 carousel-image" alt="...">'
+    pagina += '        </div>'
+    pagina += '        <div class="carousel-item">'
+    pagina += '          <img src="assets/img/cafeterias/cafeteria-3.jpg" class="d-block w-100 carousel-image" alt="...">'
+    pagina += '        </div>'
+    pagina += '      </div>'
+    
+    pagina += '      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"'
+    pagina += '        data-bs-slide="prev">'
+    pagina += '        <span class="carousel-control-prev-icon" aria-hidden="true"></span>'
+    pagina += '       <span class="visually-hidden">Previous</span>'
+    pagina += '      </button>'
+    pagina += '      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"'
+    pagina += '        data-bs-slide="next">'
+    pagina += '        <span class="carousel-control-next-icon" aria-hidden="true"></span>'
+    pagina += '        <span class="visually-hidden">Next</span>'
+    pagina += '      </button>'
+    pagina += '    </div>'
+    pagina += '  </div>';
+
+    pagina += '  <div class="row">'
+    pagina += '        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">    '
     pagina += '              <iframe style="border:0; width: 100%; height: 270px;"';
     const latitud = cafeteriaEncontrada.geo.latitude;
     const longitud = cafeteriaEncontrada.geo.longitude;
@@ -180,9 +216,12 @@ function cargarCafeteriaClickada(listaCafeterias, nombre) {
     pagina += '                src=' + urlUb;
     pagina += '                frameborder="0" allowfullscreen></iframe>';
     pagina += '            </div>';
-    pagina += '          </div>';
-    pagina += '        </div>';
-    pagina += '        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">';
+    pagina += '        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">    '
+    pagina += '          <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">';
+    pagina += '            <i class="fas fa-microphone-alt"></i>';
+    pagina += '            <h4>Direccion</h4>';
+    pagina += '            <p>' + cafeteriaEncontrada.address.streetAddress + '</p>';
+    pagina += '          <div>';
     pagina += '          <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">';
     pagina += '            <i class="bx bx-cube-alt"></i>';
     pagina += '            <h4>Horario</h4>';
@@ -193,9 +232,12 @@ function cargarCafeteriaClickada(listaCafeterias, nombre) {
     pagina += '            <h4> Contacto </h4>';
     pagina += '            <p>' + cafeteriaEncontrada.contactPoint.telephone + '<br>' + cafeteriaEncontrada.contactPoint.email + '<br>' + cafeteriaEncontrada.url + '</p>';
     pagina += '          </div>';
+    pagina += '         </div>';
     pagina += '        </div>';
+    pagina += '       </div>';
     pagina += '      </div>';
-    pagina += '    </div>';
+
+
     pagina += '    <div class="media cafeteria-events">';
     pagina += '      <h3 class="cafeteria-events tittle">Proximos Eventos</h3>';
     pagina += '      <div class="row">';
