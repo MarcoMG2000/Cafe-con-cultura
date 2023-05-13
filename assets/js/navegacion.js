@@ -3,7 +3,7 @@
  * Función para cargar las distintas vistas al contenedor principal.
  * @param {*} nombreArchivo String con el nombre del archivo que se quiere cargar.
  */
-function cargarContenido(nombreArchivo, nombre) {
+function cargarContenido(nombreArchivo, nombreCafeteria, nombreEvento) {
   document.querySelector('#main').innerHTML = '';
 
   fetch(nombreArchivo)
@@ -22,19 +22,19 @@ function cargarContenido(nombreArchivo, nombre) {
         cargarHome();
       }
       else if (nombreArchivo == "evento.html") {
-        // FUNCIÓN PARA CARGAR INFO DEL EVENTO
+        clickEvento(nombreCafeteria, nombreEvento);
       }
       else if (nombreArchivo == "cafeteria.html") {
-        clickCafeteria(nombre);
+        clickCafeteria(nombreCafeteria);
       }
       else if (nombreArchivo == "buscador.html") {
-        cargarBuscador(nombre,true);
+        cargarBuscador(nombreCafeteria, true);
       }
     });
 }
 
 function cargarContenidoMap() {
-  cargarContenido("map.html");
+  cargarContenido("map.html", null, null);
 
   scriptHtml = document.getElementById("script-api")
   if (scriptHtml) {
@@ -65,8 +65,4 @@ function cargarContenidoMap() {
   window.initMap = initMap;
 
   document.head.appendChild(script);
-}
-
-function selectCafeteria(nombreArchivo) {
-  cargarContenido(nombreArchivo);
 }

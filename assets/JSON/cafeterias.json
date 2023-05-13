@@ -50,7 +50,7 @@
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
                "name": "Imagen 4 - Cafetería Parabellum"
             }
          ],
@@ -80,6 +80,23 @@
                      "name": "Rock Band",
                      "url": "https://rockband.com/"
                   }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
+                     "name": "Imagen 1 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
+                     "name": "Imagen 2 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
+                     "name": "Imagen 3 - Cafetería Parabellum"
+                  }
                ]
             },
             {
@@ -96,29 +113,24 @@
                "performers": [
                   {
                      "name": "Jazz Band",
-                     "url": "https://jazzband.com/"
+                     "url": "https://google.com/"
                   }
                ],
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
                      "name": "Imagen 1 - Cafetería Parabellum"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
                      "name": "Imagen 2 - Cafetería Parabellum"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
                      "name": "Imagen 3 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
-                     "name": "Imagen 4 - Cafetería Parabellum"
                   }
                ]
             },
@@ -136,29 +148,24 @@
                "performers": [
                   {
                      "name": "Jazz Band",
-                     "url": "https://jazzband.com/"
+                     "url": "https://google.com/"
                   }
                ],
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
                      "name": "Imagen 1 - Cafetería Parabellum"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
                      "name": "Imagen 2 - Cafetería Parabellum"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
                      "name": "Imagen 3 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
-                     "name": "Imagen 4 - Cafetería Parabellum"
                   }
                ],
                "inLanguage": "ES"
@@ -172,13 +179,31 @@
                "isAccessibleForFree": false,
                "startDate": "2023-07-01T19:30:00Z",
                "endDate": "2023-06-01T20:00:00Z",
+               "performers":[],
                "offers": {
                   "@type": "Offer",
                   "price": "5.00",
                   "priceCurrency": "EUR"
                },
                "maximumPhysicalAttendeeCapacity": "50",
-               "eventStatus": "EventScheduled"
+               "eventStatus": "EventScheduled",
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
+                     "name": "Imagen 1 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
+                     "name": "Imagen 2 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
+                     "name": "Imagen 3 - Cafetería Parabellum"
+                  }
+               ]
             }
          ],
          "keywords": [
@@ -222,23 +247,18 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "url": "assets/img/cafeterias/cafeteria-1.jpg",
                "name": "Imagen 1 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "url": "assets/img/cafeterias/cafeteria-2.jpg",
                "name": "Imagen 2 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "url": "assets/img/cafeterias/cafeteria-3.jpg",
                "name": "Imagen 3 - Cafetería Parabellum"
-            },
-            {
-               "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
-               "name": "Imagen 4 - Cafetería Parabellum"
             }
          ],
          "logo": "http://urlimg1.png",
@@ -247,24 +267,37 @@
          "hasMenu": "",
          "events": [
             {
+               "@context": "https://schema.org",
                "@type": "Event",
-               "name": "",
-               "about": "",
-               "audience": "",
-               "startDate": "",
-               "endDate": "",
-               "offers": {
-                  "@type": "Offer",
-                  "price": "",
-                  "priceCurrency": "EUR",
-                  "url": ""
-               },
-               "maximumPhysicalAttendeeCapacity": "",
-               "eventStatus": "",
+               "name": "Concierto Jazz",
+               "about": "Musica en directo de Jazz por el artista tal",
+               "audience": "Todas las edades",
+               "startDate": "2023-05-22T18:30:00Z",
+               "endDate": "2023-05-22T20:00:00Z",
+               "isAccessibleForFree": true,
+               "maximumPhysicalAttendeeCapacity": "50",
+               "eventStatus": "EventScheduled",
                "performers": [
                   {
-                     "name": "",
-                     "url": ""
+                     "name": "Jazz Band",
+                     "url": "https://google.com/"
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
+                     "name": "Imagen 1 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
+                     "name": "Imagen 2 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
+                     "name": "Imagen 3 - Cafetería Parabellum"
                   }
                ]
             }
@@ -308,23 +341,18 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "url": "assets/img/cafeterias/cafeteria-1.jpg",
                "name": "Imagen 1 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "url": "assets/img/cafeterias/cafeteria-2.jpg",
                "name": "Imagen 2 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "url": "assets/img/cafeterias/cafeteria-3.jpg",
                "name": "Imagen 3 - Cafetería Parabellum"
-            },
-            {
-               "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
-               "name": "Imagen 4 - Cafetería Parabellum"
             }
          ],
          "logo": "",
@@ -351,6 +379,23 @@
                   {
                      "name": "",
                      "url": ""
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
+                     "name": "Imagen 1 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
+                     "name": "Imagen 2 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
+                     "name": "Imagen 3 - Cafetería Parabellum"
                   }
                ]
             }
@@ -392,23 +437,18 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "url": "assets/img/cafeterias/cafeteria-1.jpg",
                "name": "Imagen 1 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "url": "assets/img/cafeterias/cafeteria-2.jpg",
                "name": "Imagen 2 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "url": "assets/img/cafeterias/cafeteria-3.jpg",
                "name": "Imagen 3 - Cafetería Parabellum"
-            },
-            {
-               "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
-               "name": "Imagen 4 - Cafetería Parabellum"
             }
          ],
          "logo": "",
@@ -418,23 +458,40 @@
          "events": [
             {
                "@type": "Event",
-               "name": "",
-               "about": "",
-               "audience": "",
-               "startDate": "",
-               "endDate": "",
+               "name": "Club de Lectura: MistBorn",
+               "about": "Club de Lectura del Libro 1 de la Saga MistBorn, por Brandom Sanderson",
+               "audience": "Todas las edades",
+               "startDate": "2023-05-21T16:30:00Z",
+               "endDate": "2023-05-21T18:00:00Z",
                "offers": {
                   "@type": "Offer",
-                  "price": "",
+                  "price": "13.00",
                   "priceCurrency": "EUR",
-                  "url": ""
+                  "url": "http://www.ticketfly.com/purchase/309433"
                },
-               "maximumPhysicalAttendeeCapacity": "",
-               "eventStatus": "",
+               "maximumPhysicalAttendeeCapacity": "50",
+               "eventStatus": "EventScheduled",
                "performers": [
                   {
-                     "name": "",
-                     "url": ""
+                     "name": "Rock Band",
+                     "url": "https://rockband.com/"
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
+                     "name": "Imagen 1 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
+                     "name": "Imagen 2 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
+                     "name": "Imagen 3 - Cafetería Parabellum"
                   }
                ]
             }
@@ -478,23 +535,18 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "url": "assets/img/cafeterias/cafeteria-1.jpg",
                "name": "Imagen 1 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "url": "assets/img/cafeterias/cafeteria-2.jpg",
                "name": "Imagen 2 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "url": "assets/img/cafeterias/cafeteria-3.jpg",
                "name": "Imagen 3 - Cafetería Parabellum"
-            },
-            {
-               "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
-               "name": "Imagen 4 - Cafetería Parabellum"
             }
          ],
          "logo": "",
@@ -521,6 +573,23 @@
                   {
                      "name": "",
                      "url": ""
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
+                     "name": "Imagen 1 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
+                     "name": "Imagen 2 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
+                     "name": "Imagen 3 - Cafetería Parabellum"
                   }
                ]
             }
@@ -562,23 +631,18 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "url": "assets/img/cafeterias/cafeteria-1.jpg",
                "name": "Imagen 1 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "url": "assets/img/cafeterias/cafeteria-2.jpg",
                "name": "Imagen 2 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "url": "assets/img/cafeterias/cafeteria-3.jpg",
                "name": "Imagen 3 - Cafetería Parabellum"
-            },
-            {
-               "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
-               "name": "Imagen 4 - Cafetería Parabellum"
             }
          ],
          "logo": "",
@@ -605,6 +669,23 @@
                   {
                      "name": "",
                      "url": ""
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
+                     "name": "Imagen 1 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
+                     "name": "Imagen 2 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
+                     "name": "Imagen 3 - Cafetería Parabellum"
                   }
                ]
             }
@@ -647,23 +728,18 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "url": "assets/img/cafeterias/cafeteria-1.jpg",
                "name": "Imagen 1 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "url": "assets/img/cafeterias/cafeteria-2.jpg",
                "name": "Imagen 2 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "url": "assets/img/cafeterias/cafeteria-3.jpg",
                "name": "Imagen 3 - Cafetería Parabellum"
-            },
-            {
-               "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
-               "name": "Imagen 4 - Cafetería Parabellum"
             }
          ],
          "logo": "",
@@ -690,6 +766,23 @@
                   {
                      "name": "",
                      "url": ""
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
+                     "name": "Imagen 1 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
+                     "name": "Imagen 2 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
+                     "name": "Imagen 3 - Cafetería Parabellum"
                   }
                ]
             }
@@ -733,23 +826,18 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "url": "assets/img/cafeterias/cafeteria-1.jpg",
                "name": "Imagen 1 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "url": "assets/img/cafeterias/cafeteria-2.jpg",
                "name": "Imagen 2 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "url": "assets/img/cafeterias/cafeteria-3.jpg",
                "name": "Imagen 3 - Cafetería Parabellum"
-            },
-            {
-               "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
-               "name": "Imagen 4 - Cafetería Parabellum"
             }
          ],
          "logo": "",
@@ -776,6 +864,23 @@
                   {
                      "name": "",
                      "url": ""
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
+                     "name": "Imagen 1 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
+                     "name": "Imagen 2 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
+                     "name": "Imagen 3 - Cafetería Parabellum"
                   }
                ]
             }
@@ -820,23 +925,18 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "url": "assets/img/cafeterias/cafeteria-1.jpg",
                "name": "Imagen 1 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "url": "assets/img/cafeterias/cafeteria-2.jpg",
                "name": "Imagen 2 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "url": "assets/img/cafeterias/cafeteria-3.jpg",
                "name": "Imagen 3 - Cafetería Parabellum"
-            },
-            {
-               "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
-               "name": "Imagen 4 - Cafetería Parabellum"
             }
          ],
          "logo": "",
@@ -863,6 +963,23 @@
                   {
                      "name": "",
                      "url": ""
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
+                     "name": "Imagen 1 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
+                     "name": "Imagen 2 - Cafetería Parabellum"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
+                     "name": "Imagen 3 - Cafetería Parabellum"
                   }
                ]
             }
@@ -905,53 +1022,25 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "url": "assets/img/cafeterias/cafeteria-1.jpg",
                "name": "Imagen 1 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "url": "assets/img/cafeterias/cafeteria-2.jpg",
                "name": "Imagen 2 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "url": "assets/img/cafeterias/cafeteria-3.jpg",
                "name": "Imagen 3 - Cafetería Parabellum"
-            },
-            {
-               "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-4.jpg",
-               "name": "Imagen 4 - Cafetería Parabellum"
             }
          ],
          "logo": "",
          "priceRange": "$$-$$$",
          "acceptsReservations": true,
          "hasMenu": "https://es.restaurantguru.com/Literanta-Palma/menu",
-         "events": [
-            {
-               "@type": "Event",
-               "name": "",
-               "about": "",
-               "audience": "",
-               "startDate": "",
-               "endDate": "",
-               "offers": {
-                  "@type": "Offer",
-                  "price": "",
-                  "priceCurrency": "EUR",
-                  "url": ""
-               },
-               "maximumPhysicalAttendeeCapacity": "",
-               "eventStatus": "",
-               "performers": [
-                  {
-                     "name": "",
-                     "url": ""
-                  }
-               ]
-            }
-         ],
+         "events": [],
          "keywords": [
             "Lectura",
             "Cultura"

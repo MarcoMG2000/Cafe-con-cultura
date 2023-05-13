@@ -95,6 +95,10 @@ function storeCafeteria(nombre) {
     }
 }
 
+function storeEvento(nombre) {
+    // TODO;
+}
+
 function comprobarSiEstaAbiertoEnEstaHora(horaInicio, horaFin, horaActual) {
     const [horaInicioH, horaInicioM] = horaInicio.split(":");
     const [horaFinH, horaFinM] = horaFin.split(":");
@@ -152,7 +156,7 @@ function cargarBuscador(nombre, bool) {
     request.send();
 }
 
-function clickCafeteria(nombre) {
+function clickCafeteria(nombreCafeteria) {
     // Hacemos el request del JSON
     const request = new XMLHttpRequest();
     request.open("GET", "/assets/JSON/cafeterias.json");
@@ -162,8 +166,24 @@ function clickCafeteria(nombre) {
         // Convertimos el JSON a objetos JS
         const objeto = JSON.parse(request.response);
         var listaCafeterias = objeto.itemListElement;
-        cargarCafeteriaClickada(listaCafeterias, nombre);
-        storeCafeteria(nombre);
+        cargarCafeteriaClickada(listaCafeterias, nombreCafeteria);
+        storeCafeteria(nombreCafeteria);
+    };
+    request.send();
+}
+
+function clickEvento(nombreCafetria, nombreEvento) {
+    // Hacemos el request del JSON
+    const request = new XMLHttpRequest();
+    request.open("GET", "/assets/JSON/cafeterias.json");
+    request.responseType = 'text';
+
+    request.onload = () => {
+        // Convertimos el JSON a objetos JS
+        const objeto = JSON.parse(request.response);
+        var listaCafeterias = objeto.itemListElement;
+        cargarEventoClickado(listaCafeterias, nombreCafetria, nombreEvento);
+        storeEvento(nombreEvento);
     };
     request.send();
 }
@@ -261,7 +281,7 @@ async function cargarBusquedaCafe(listaCafeterias, filtros, primeraVez) {
             pagina += '<a class="media" href="#" onclick="cargarContenido(\'cafeteria.html\',\'' + listaCafeterias[i].name + '\')">';
             pagina += '<div class="media-body row">';
             pagina += '<div class="media-image col-md-4">';
-            pagina += '<img src="assets/img/cafeterias/cafeteria-1.jpg" class="mr-3" alt="...">';
+            pagina += '<img src="' + listaCafeterias[i].image[0].url + '" class="mr-3" alt="' + listaCafeterias[i].image[0].name + '">';
             pagina += '</div>';
             pagina += '<div class="col-md-4 media-nombre d-flex align-items-center">';
             pagina += '<h4>' + listaCafeterias[i].name + '</h4>';
@@ -382,7 +402,7 @@ function cargarBuscadorEvent() {
             pagina += '<a class="media" href="#" onclick="cargarContenido(>';
             pagina += '<div class="media-body row">';
             pagina += '<div class="media-image col-md-4">';
-            pagina += '<img src="assets/img/cafeterias/cafeteria-1.jpg" class="mr-3" alt="...">';
+            pagina += '<img src="' + listaCafeterias[i].image[0].url + '" class="mr-3" alt="' + listaCafeterias[i].image[0].name + '">';
             pagina += '</div>';
             pagina += '<div class="col-md-4 media-nombre d-flex align-items-center">';
             pagina += '<h4>' + listaEventos[i].name + '</h4>';
@@ -430,15 +450,15 @@ function cumpleFiltros(cafeteria, filtros) {
     return cumple;
 }
 
-function cargarCafeteriaClickada(listaCafeterias, nombre) {
-    console.log("NOMBRE -> " + nombre);
+function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
+    console.log("NOMBRE -> " + nombreCafeteria);
     // Seleccionamos el elemento HTML donde se agregarán las cafeterías
     var cafeteriaSelect = document.getElementById("cafeterias-sel");
     let cafeteriaEncontrada = null;
     //Buscamos la cafeteria que ha sido seleccionada
     for (var i = 0; i < listaCafeterias.length; i++) {
         //Una vez encontrada la guardamos en la variable declarada anteriormente
-        if (listaCafeterias[i].name === nombre) {
+        if (listaCafeterias[i].name === nombreCafeteria) {
             cafeteriaEncontrada = listaCafeterias[i];
             break;
         }
@@ -482,8 +502,8 @@ function cargarCafeteriaClickada(listaCafeterias, nombre) {
     pagina += '      <h4>Ubicación <i class="fa-solid fa-location-dot"></i></h4>';
     pagina += '      <p>' + cafeteriaEncontrada.address.streetAddress + '</p>';
     pagina += '    </div>';
-    pagina += '    <div data-aos="zoom-in" data-aos-delay="100">';
-    pagina += '      <h4> Contacto </h4>';
+    pagina += '    <div>';
+    pagina += '      <h4> Contacto <i class="fa-solid fa-at"></i></h4>';
     pagina += '      <p>' + cafeteriaEncontrada.contactPoint.telephone + '<br>' + cafeteriaEncontrada.contactPoint.email + '<br>' + cafeteriaEncontrada.url + '</p>';
     pagina += '    </div>';
     pagina += '  </div>';
@@ -524,117 +544,161 @@ function cargarCafeteriaClickada(listaCafeterias, nombre) {
     const latitud = cafeteriaEncontrada.geo.latitude;
     const longitud = cafeteriaEncontrada.geo.longitude;
     const urlUb = 'https://www.google.com/maps/embed/v1/view?key=AIzaSyDEttTnyKUn1uAIIjfqoOQoTJqbAncMym0&center=' + latitud + ',' + longitud + '&zoom=18';
-
     pagina += '<div class="row" data-aos="zoom-in" data-aos-delay="100">';
     pagina += '  <iframe src="' + urlUb + '" frameborder="0" allowfullscreen></iframe>';
     pagina += '</div>';
 
+    if (cafeteriaEncontrada.events.length > 0) {
+        pagina += '<div class="section-title margin-top-50">';
+        pagina += '  <h2>Eventos</h2>';
+        pagina += '  <p>Próximos eventos en esta cafetería</p>';
+        pagina += '</div>';
+        pagina += '<div class="row cafeteria-events" data-aos="zoom-in" data-aos-delay="100">';
+        for (let i = 0; i < cafeteriaEncontrada.events.length; i++) {
 
-    pagina += '<div class="section-title margin-top-50">';
-    pagina += '  <h2>Eventos</h2>';
-    pagina += '  <p>Próximos eventos en esta cafetería</p>';
-    pagina += '</div>';
-    pagina += '<div class="row cafeteria-events" data-aos="zoom-in" data-aos-delay="100">';
-    for (let i = 0; i < cafeteriaEncontrada.events.length; i++) {
+            pagina += '  <div class="evento col-lg-4 col-md-6 d-flex align-items-stretch"';
+            pagina += '                   onclick="cargarContenido(\'evento.html\', \''+ nombreCafeteria + '\', \'' + cafeteriaEncontrada.events[i].name + '\')">';
+            pagina += '    <a class="cafeteria-event">';
 
-        pagina += '  <div class="evento col-lg-4 col-md-6 d-flex align-items-stretch" onclick="cargarContenido\'evento.html\'">';
-        pagina += '    <a class="cafeteria-event" href="#">';
+            const fechaInicioEvento = new Date(cafeteriaEncontrada.events[i].startDate);
+            const fecha = fechaInicioEvento.toLocaleString('es-ES', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false,
+                timeZone: 'UTC'
+            });
 
-        const fechaInicioEvento = new Date(cafeteriaEncontrada.events[i].startDate);
-        const fecha = fechaInicioEvento.toLocaleString('es-ES', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: false,
-            timeZone: 'UTC'
-        });
+            pagina += '      <h4>' + cafeteriaEncontrada.events[i].name + '</h4>';
+            pagina += '      <h4>' + fecha + '</h4>';
+            pagina += '      <p>' + cafeteriaEncontrada.events[i].about + '</p>';
+            pagina += '    </a>';
+            pagina += '  </div>';
 
-        pagina += '      <h4>' + cafeteriaEncontrada.events[i].name + '</h4>';
-        pagina += '      <h4>' + fecha + '</h4>';
-        pagina += '      <p>' + cafeteriaEncontrada.events[i].about + '</p>';
-        pagina += '    </a>';
-        pagina += '  </div>';
-
+        }
+        pagina += '</div>';
     }
-    pagina += '</div>';
+    
     cafeteriaSelect.innerHTML = pagina;
 }
 
-function cargarEventoClickado(listaCafeterias, nombre) {
-    console.log("NOMBRE -> " + nombre);
+function cargarEventoClickado(listaCafeterias, nombreCafeteria, nombreEvento) {
+    console.log("NOMBRE -> " + nombreEvento);
     // Seleccionamos el elemento HTML donde se agregarán las cafeterías
-    var cafeteriaSelect = document.getElementById("cafeterias-sel");
-    let cafeteriaEncontrada = null;
-    //Buscamos la cafeteria que ha sido seleccionada
+    var eventoSelect = document.getElementById("evento-sel");
+    
+    let eventoEncontrado = null;  // Evento clicado
+    let cafeteria = null;         // Cafetería donde tiene lugar el evento clicado
+    let cafeteriasDelEvento = []; // Lista de cafeterías donde está programado el evento
+
+    //Buscamos el evento que ha sido seleccionado y las cafeterías donde sucede
     for (var i = 0; i < listaCafeterias.length; i++) {
-        //Una vez encontrada la guardamos en la variable declarada anteriormente
-        if (listaCafeterias[i].name === nombre) {
-            cafeteriaEncontrada = listaCafeterias[i];
-            break;
+        
+        if (nombreCafeteria === listaCafeterias[i].name) cafeteria = listaCafeterias[i];
+        
+        for (var j = 0; j < listaCafeterias[i].events.length; j++) {
+            if (listaCafeterias[i].events[j].name === nombreEvento) {
+                if (eventoEncontrado == null) eventoEncontrado = listaCafeterias[i].events[j]; // Guardamos el evento una sola vez
+                var registrado = false;
+                for (var k = 0; k < cafeteriasDelEvento.length; k++) {
+                    if (listaCafeterias[i].name === cafeteriasDelEvento[k].name) registrado = true;
+                }
+                if (!registrado) cafeteriasDelEvento.push(listaCafeterias[i]); // Guardamos todas las cafeterías donde aparece el evento
+            }
         }
     }
+
+    var fechaInicioEvento = new Date(eventoEncontrado.startDate);
+    fechaInicioEvento = fechaInicioEvento.toLocaleString('es-ES', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+        timeZone: 'UTC'
+    });
+
+    var fechaFinEvento = new Date(eventoEncontrado.endDate);
+    fechaFinEvento = fechaFinEvento.toLocaleString('es-ES', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+        timeZone: 'UTC'
+    });
 
     var pagina = '<div class="row first-row">';
     pagina += '  <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">';
     pagina += '    <div class="section-title">';
-    pagina += '      <h2>Cafetería</h2>';
-    pagina += '      <p>' + cafeteriaEncontrada.name + '</p>';
+    pagina += '      <h2>Evento</h2>';
+    pagina += '      <p>' + eventoEncontrado.name + '</p>';
     pagina += '    </div>';
     pagina += '    <div>';
-    pagina += '      <h4>Conócenos <i class="fa-solid fa-clipboard-list"></i></h4>';
-    pagina += '      <p>' + cafeteriaEncontrada.description + '</p>';
+    pagina += '      <h4>Info<i class="fa-solid fa-circle-info"></i></h4>';
+    pagina += '      <p>' + eventoEncontrado.about + '</p>';
     pagina += '    </div>';
-    pagina += '    <div class="rating">';
-    pagina += '      <h4>Rating';
-    const numEstrellas = 5;
-    const valoracion = cafeteriaEncontrada.aggregateRating.ratingValue;
-    for (let i = 1; i <= numEstrellas; i++) {
-
-        // Si la posición actual es menor o igual al valor de "rating", agregamos la clase "fa-solid" para marcar la estrella como "checked"
-        if (i <= valoracion) {
-            pagina += '<span class="fa-solid fa-star"> </span>';
-        }
-        // Si la posición actual es igual al valor de "valoracion" + 0.5, agregamos la clase "fa-solid fa-star-half-stroke" para mostrar una estrella parcialmente llena
-        else if (i === Math.ceil(valoracion) && valoracion % 1 !== 0) {
-            pagina += '<span class="fa-solid fa-star-half-stroke"> </span>';
-        }
-        else { // Si no, agregamos la clase "fa-regular fa-star" para mostrar una estrella vacía
-            pagina += '<span class="fa-regular fa-star"> </span>';
-        }
-    }
-    pagina += '      </h4>';
+    pagina += '    <div>';
+    pagina += '      <h4>Audiencia<i class="fa-solid fa-address-card"></i></h4>';
+    pagina += '      <p>' + eventoEncontrado.audience + '</p>';
     pagina += '    </div>';
     pagina += '    <div>';
     pagina += '      <h4>Horario <i class="fa-solid fa-clock"></i></h4>';
-    pagina += '      <p>' + traducirHorarioApertura(cafeteriaEncontrada.openingHours) + '</p>';
+    pagina += '      <div class="row horario">';
+    pagina += '        <div class="col-4">Inicio<br>' + fechaInicioEvento + '</div>';
+    pagina += '        <div class="col-4">Fin<br>' + fechaFinEvento + '</div>';
+    pagina += '      </div>';
     pagina += '    </div>';
     pagina += '    <div>';
+    pagina += '      <h4>Precio de la entrada<i class="fa-solid fa-hand-holding-dollar"></i></h4>';
+    if (eventoEncontrado.isAccessibleForFree) { pagina += '      <p>Gratuita</p>'; }
+    else { pagina += '      <p>' + eventoEncontrado.offers.price + getCurrencySymbol(eventoEncontrado.offers.priceCurrency) + '</p>' }
+    pagina += '    </div>';
+    
+    if (eventoEncontrado.performers.length > 0) {
+        pagina += '    <div class="performers">';
+        pagina += '      <h4>Performers<i class="fa-solid fa-masks-theater"></i></h4>';
+        for (let i = 0; i < eventoEncontrado.performers.length; i++) {
+            pagina += '      <a href="' + eventoEncontrado.performers[i].url + '">';
+            pagina += '        <i class="fa-solid fa-chevron-right"></i>';
+            pagina +=          eventoEncontrado.performers[i].name;
+            pagina += '      </a>';
+        }
+        pagina += '    </div>';
+    }
+    
+    pagina += '    <div>';
+    pagina += '      <h4>Aforo<i class="fa-solid fa-users"></i></h4>';
+    pagina += '      <p>' + eventoEncontrado.maximumPhysicalAttendeeCapacity + ' personas </p>';
+    pagina += '    </div>';
+    pagina += '    <div class="ubicacion">';
     pagina += '      <h4>Ubicación <i class="fa-solid fa-location-dot"></i></h4>';
-    pagina += '      <p>' + cafeteriaEncontrada.address.streetAddress + '</p>';
-    pagina += '    </div>';
-    pagina += '    <div>';
-    pagina += '      <h4> Contacto </h4>';
-    pagina += '      <p>' + cafeteriaEncontrada.contactPoint.telephone + '<br>' + cafeteriaEncontrada.contactPoint.email + '<br>' + cafeteriaEncontrada.url + '</p>';
+    pagina += '      <h6 style="font-weight: bold" onclick="cargarContenido(\'cafeteria.html\', \''+ nombreCafeteria + '\', null)">' + nombreCafeteria + '</h6>';
+    pagina += '      <p>' + cafeteria.address.streetAddress + '</p>';
     pagina += '    </div>';
     pagina += '  </div>';
 
     // CAROUSEL DE IMAGENES DE LA CAFETERÍA
-    pagina += '  <div id="carouselCafeteria" class="carousel slide col-lg-6" data-ride="carousel" data-aos="fade-left" data-aos-delay="100">';
+    pagina += '  <div id="carouselEvento" class="carousel slide col-lg-6" data-ride="carousel" data-aos="fade-left" data-aos-delay="100">';
     var indicators = '<div class="carousel-indicators">';
     var items = '<div class="carousel-inner">';
-    const imagenes = cafeteriaEncontrada.image;
+    const imagenes = eventoEncontrado.image;
     for (var i = 0; i < imagenes.length; i++) {
         if (i == 0) {
-            indicators += '<button type="button" data-bs-target="#carouselCafeteria" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
+            indicators += '<button type="button" data-bs-target="#carouselEvento" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
 
             items += '<div class="carousel-item active">';
             items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '">';
             items += '</div>';
         } else {
-            indicators += '<button type="button" data-bs-target="#carouselCafeteria" data-bs-slide-to="' + i + '" aria-label="Slide ' + i + '"></button>';
+            indicators += '<button type="button" data-bs-target="#carouselEvento" data-bs-slide-to="' + i + '" aria-label="Slide ' + i + '"></button>';
 
             items += '<div class="carousel-item">';
             items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '">';
@@ -643,57 +707,85 @@ function cargarEventoClickado(listaCafeterias, nombre) {
     }
     pagina += indicators + '</div>';
     pagina += items + '</div>';
-    pagina += '    <button class="carousel-control-prev" type="button" data-bs-target="#carouselCafeteria" data-bs-slide="prev">';
+    pagina += '    <button class="carousel-control-prev" type="button" data-bs-target="#carouselEvento" data-bs-slide="prev">';
     pagina += '      <span class="carousel-control-prev-icon" aria-hidden="true"></span>';
     pagina += '      <span class="visually-hidden">Previous</span>';
     pagina += '    </button>';
-    pagina += '    <button class="carousel-control-next" type="button" data-bs-target="#carouselCafeteria" data-bs-slide="next">';
+    pagina += '    <button class="carousel-control-next" type="button" data-bs-target="#carouselEvento" data-bs-slide="next">';
     pagina += '      <span class="carousel-control-next-icon" aria-hidden="true"></span>';
     pagina += '      <span class="visually-hidden">Next</span>';
     pagina += '    </button>';
     pagina += '  </div>';
     pagina += '</div>';
 
-    const latitud = cafeteriaEncontrada.geo.latitude;
-    const longitud = cafeteriaEncontrada.geo.longitude;
+    const latitud = cafeteria.geo.latitude;
+    const longitud = cafeteria.geo.longitude;
     const urlUb = 'https://www.google.com/maps/embed/v1/view?key=AIzaSyDEttTnyKUn1uAIIjfqoOQoTJqbAncMym0&center=' + latitud + ',' + longitud + '&zoom=18';
-
     pagina += '<div class="row" data-aos="fade-up" data-aos-delay="100">';
     pagina += '  <iframe src="' + urlUb + '" frameborder="0" allowfullscreen></iframe>';
     pagina += '</div>';
 
+    // Si hay al menos una cafetería más a parte de esta, las mostramos en lista
+    if (cafeteriasDelEvento.length > 1) {
+        pagina += '<div class="section-title margin-top-50">';
+        pagina += '  <h2>Alternativas</h2>';
+        pagina += '  <p>Otras cafeterías donde está programado el evento</p>';
+        pagina += '</div>';
+        pagina += '<div class="row" data-aos="zoom-in" data-aos-delay="100">';
 
-    pagina += '<div class="section-title margin-top-50">';
-    pagina += '  <h2>Eventos</h2>';
-    pagina += '  <p>Próximos eventos en esta cafetería</p>';
-    pagina += '</div>';
-    pagina += '<div class="row cafeteria-events" data-aos="zoom-in" data-aos-delay="100">';
-    for (let i = 0; i < cafeteriaEncontrada.events.length; i++) {
+        for (let i = 0; i < cafeteriasDelEvento.length; i++) {
+            
+            // No mostramos la propia cafetería del evento
+            if (cafeteriasDelEvento[i].name === nombreCafeteria) continue;
+            
+            // Obtenemos los valores de la cafetería del archivo JSON
+            const nombre = cafeteriasDelEvento[i].name;
+            const valoracion = cafeteriasDelEvento[i].aggregateRating.ratingValue;
+            const ubicacion = cafeteriasDelEvento[i].address.streetAddress;
+            const imagen = cafeteriasDelEvento[i].image[0].url;
+            const estado = comprobarEstadoDeNegocio(cafeteriasDelEvento[i].openingHours);
 
-        pagina += '  <div class="evento col-lg-4 col-md-6 d-flex align-items-stretch" onclick="cargarContenido\'evento.html\'">';
-        pagina += '    <a class="cafeteria-event" href="#">';
+            // Generamos el html del estado
+            var abierto_cerrado = "";
+            if (estado === "Abierto") {
+                abierto_cerrado = '        <p class="abierto">Abierto</p>';
+            } else if (estado === "Cerrado") {
+                abierto_cerrado = '        <p class="cerrado">Cerrado</p>';
+            }
 
-        const fechaInicioEvento = new Date(cafeteriaEncontrada.events[i].startDate);
-        const fecha = fechaInicioEvento.toLocaleString('es-ES', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: false,
-            timeZone: 'UTC'
-        });
+            // Generamos el html de la valoración
+            var estrellas = '<p>';
+            const numEstrellas = 5;
+            for (let i = 1; i <= numEstrellas; i++) {
+                if (i <= valoracion) { estrellas += '<span class="fa-solid fa-star"></span>'; }
+                else if (i === Math.ceil(valoracion) && valoracion % 1 !== 0) { estrellas += '<span class="fa-solid fa-star-half-stroke"></span>'; }
+                else { estrellas += '<span class="fa-regular fa-star"></span>'; }
+            }
+            estrellas += '</p>';
 
-        pagina += '      <h4>' + cafeteriaEncontrada.events[i].name + '</h4>';
-        pagina += '      <h4>' + fecha + '</h4>';
-        pagina += '      <p>' + cafeteriaEncontrada.events[i].about + '</p>';
-        pagina += '    </a>';
-        pagina += '  </div>';
-
+            pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \''+ nombre + '\', null)">';
+            pagina += '  <div class="media-body row">';
+            pagina += '    <div class="media-image col-md-4">';
+            pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i +'>'; 
+            pagina += '    </div>';
+            pagina += '    <div class="col-md-4 media-nombre d-flex align-items-center">';
+            pagina += '      <h4>' + nombre + '</h4>';
+            pagina += '    </div>';
+            pagina += '    <div class="col-md-4 d-flex align-items-center div-filas">';
+            pagina +=        abierto_cerrado;
+            pagina +=        estrellas;
+            pagina += '      <div class="info">';
+            pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>';
+            pagina += '        <p>' + ubicacion + '</p>';
+            pagina += '      </div>';
+            pagina += '    </div>';
+            pagina += '  </div>'
+            pagina += '</div>';
+        }
+        pagina += '</div>';
     }
-    pagina += '</div>';
-    cafeteriaSelect.innerHTML = pagina;
+
+    eventoSelect.innerHTML = pagina;
 }
 
 function traducirHorarioApertura(horario) {
@@ -771,7 +863,7 @@ function cargarCafeteriasPorValoracion(listaCafeterias) {
         }
         estrellas += '</p>';
 
-        pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \''+ nombre + '\', \'\')">';
+        pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \''+ nombre + '\', null)">';
         pagina += '  <div class="media-body row">';
         pagina += '    <div class="media-image col-md-4">';
         pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i +'>'; 
@@ -817,7 +909,7 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
             abierto_cerrado = '        <p class="cerrado">Cerrado</p>';
         }
 
-        pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \''+ nombre + '\', \'\')">';
+        pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \''+ nombre + '\', null)">';
         pagina += '  <div class="media-body row">';
         pagina += '    <div class="col-md-4 d-flex align-items-center div-filas">'
         pagina +=        abierto_cerrado;
@@ -880,7 +972,7 @@ function cargarEventos(listaCafeterias) {
 
         divIconBox.setAttribute("data-aos", "zoom-in");
         divIconBox.setAttribute("data-aos-delay", "150");
-        divIconBox.onclick = function () { cargarContenido('evento.html', nombre, "") };
+        divIconBox.onclick = function () { cargarContenido('evento.html', lugar, nombre) };
 
         const divEventBody = document.createElement("div");
         divEventBody.className = "event-body";
@@ -1014,4 +1106,28 @@ function obtenerListaEventos(listaCafeterias) {
     });
 
     return eventosFiltrados;
+}
+
+function getCurrencySymbol(priceCurrency) {
+    
+    const currencySymbols = {
+        USD: '$',
+        EUR: '€',
+        GBP: '£',
+        JPY: '¥',
+        AUD: 'A$',
+        CAD: 'C$',
+        CHF: 'SFr',
+        CNY: '¥',
+        SEK: 'kr',
+        NZD: 'NZ$',
+        KRW: '₩',
+        PGY: '₲'
+    };
+    
+    if (currencySymbols.hasOwnProperty(priceCurrency)) {
+        return currencySymbols[priceCurrency];
+    }
+
+    return '';
 }

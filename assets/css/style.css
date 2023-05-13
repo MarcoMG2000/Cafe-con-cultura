@@ -196,6 +196,14 @@ h6 {
   margin-bottom: 50px;
 }
 
+#cafeteria .section-title p {
+  padding-left: 0px;
+}
+
+#cafeteria p, #cafeteria .horario {
+  padding-left: 15px;
+}
+
 #cafeteria h4, #cafeteria p {
   font-family: "Poppins", sans-serif;
 }
@@ -252,6 +260,7 @@ h6 {
   background: #151515;
   transition: 0.3s;
   justify-content: center;
+  cursor: pointer;
 }
 
 .cafeteria-events .evento:hover {
@@ -295,7 +304,132 @@ h6 {
 /*--------------------------------------------------------------
 # Event Page
 --------------------------------------------------------------*/
+#evento-cont {
+  margin-top: 30px;
+}
 
+#evento .first-row {
+  margin-bottom: 15px;
+}
+
+#evento .section-title {
+  padding-bottom: 0px;
+}
+
+#evento .section-title {
+  margin-bottom: 20px;
+}
+
+#evento .horario {
+  margin-bottom: 15px;
+}
+
+#evento iframe {
+  border:0;
+  width: 100%;
+  height: 400px;
+  margin-top: 50px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-bottom: 50px;
+}
+
+#evento h4 {
+  margin-top: 10px;
+}
+
+#evento .section-title p {
+  padding-left: 0px;
+}
+
+#evento p, #evento .horario, #evento h6 {
+  padding-left: 15px;
+}
+
+#evento h4, #evento p, #evento .horario, #evento h6, #evento a {
+  font-family: "Poppins", sans-serif;
+}
+
+#evento .performers a {
+  color: #e2a324;
+  font-weight: 700;
+}
+
+#evento .performers i {
+  margin-right: 10px;
+}
+
+#evento .first-row p {
+  margin-right: 90px;
+}
+
+#evento i {
+  color: #e2a324;
+  padding-left: 10px;
+}
+
+#carouselEvento {
+  position: relative;
+  width: 50%;
+  height: 0;
+  padding-bottom: 50%;
+}
+
+#carouselEvento .carousel-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#carouselEvento .carousel-inner .carousel-item {
+  width: 100%;
+  height: 100%;
+}
+
+#carouselEvento .carousel-inner .carousel-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#evento .media-body p{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#evento .info {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  justify-content: baseline;
+}
+
+#evento .info i {
+  margin-right: 10px;
+  color: #e2a324;
+  width: 17px;
+}
+
+#evento span {
+  color: #e2a324;
+}
+
+@media screen and (max-width: 991px) {
+  
+  .first-row {
+    justify-content: center;
+  }
+
+  #carouselEvento {
+    margin-top: 30px;
+  }
+
+}
 
 
 /*--------------------------------------------------------------
@@ -595,6 +729,13 @@ label {
 
 h6 {
   margin-bottom: 0px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+h6:hover {
+  color: #e2a324;
+  transition: 0.3s;
 }
 
 #sort {
@@ -727,10 +868,6 @@ h6 {
   }
 
 }
-
-/*---------------------------------------------------------------------------------------
-# FIN DEL CSS DEL BUSCADOR
----------------------------------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -1237,6 +1374,11 @@ section {
   min-height: 400px;
 }
 
+.events .content h3 {
+  font-weight: 700;
+  font-size: 28px;
+  font-family: "Poppins", sans-serif;
+}
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
