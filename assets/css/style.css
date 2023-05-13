@@ -35,10 +35,6 @@ a {
   display: none;
 }
 
-.closest-cafeterias .media-body {
-  justify-content: end;
-}
-
 a:hover {
   color: #ffd584;
   text-decoration: none;
