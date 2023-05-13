@@ -312,64 +312,35 @@ function cargarBusquedaEvent(listaCafeterias, primeraVez) {
             '<h4 id="burgundy">Filtros</h4>' +
             '</div>' +
             '<div class="py-2 border-bottom ml-3">' +
-            '<h6 class="font-weight-bold">Categorias</h6>' +
+            '<h6 class="font-weight-bold">Coste</h6>' +
             '<form>' +
             '<div class="form-group">' +
-            '<input type="checkbox" id="Musica">' +
-            '<label for="artisan">Música</label>' +
+            '<input type="checkbox" id="gratis">' +
+            '<label for="artisan">gratuito</label>' +
             '</div>' +
             '<div class="form-group">' +
-            '<input type="checkbox" id="Lectura">' +
-            '<label for="breakfast">Lectura</label>' +
-            '</div>' +
-            '<div class="form-group">' +
-            '<input type="checkbox" id="Juegos de mesa">' +
-            '<label for="healthy">Juegos de mesa</label>' +
+            '<input type="checkbox" id="pago">' +
+            '<label for="breakfast">De pago</label>' +
             '</div>' +
             '</form>' +
             '</div>' +
             '<div class="py-2 border-bottom ml-3">' +
-            '<h6 class="font-weight-bold">Precios</h6>' +
+            '<h6 class="font-weight-bold">Audiencia</h6>' +
             '<form>' +
             '<div class="form-group">' +
-            '<input type="checkbox" id="$">' +
-            '<label for="tea">€</label>' +
+            '<input type="checkbox" id="Todas las edades">' +
+            '<label for="tea">ATP</label>' +
             '</div>' +
             '<div class="form-group">' +
-            '<input type="checkbox" id="$$">' +
-            '<label for="cookies">€€</label>' +
+            '<input type="checkbox" id="16">' +
+            '<label for="cookies">+16</label>' +
             '</div>' +
             '<div class="form-group">' +
-            '<input type="checkbox" id="$$$">' +
-            '<label for="pastries">€€€</label>' +
+            '<input type="checkbox" id="18">' +
+            '<label for="pastries">+18</label>' +
             '</div>' +
             '</form>' +
-            '</div>' +
-            '<div class="py-2 ml-3">' +
-            '<h6 class="font-weight-bold">Valoración</h6>' +
-            '<form>' +
-            '<div class="form-group">' +
-            '<input type="checkbox" id="1">' +
-            '<label for="25">1 estrella</label>' +
-            '</div>' +
-            '<div class="form-group">' +
-            '<input type="checkbox" id="2">' +
-            '<label for="25">2 estrellas</label>' +
-            '</div>' +
-            '<div class="form-group">' +
-            '<input type="checkbox" id="3">' +
-            '<label for="25">3 estrellas</label>' +
-            '</div>' +
-            '<div class="form-group">' +
-            '<input type="checkbox" id="4">' +
-            '<label for="25">4 estrellas</label>' +
-            '</div>' +
-            '<div class="form-group">' +
-            '<input type="checkbox" id="5">' +
-            '<label for="25">5 estrellas</label>' +
-            '</div>' +
-            '</form>' +
-            '</div>';
+            '</div>' ;
         filt.insertAdjacentHTML('afterbegin', filterS);
     }
     var cafeteriaSelect = document.getElementById("busqueda-filtro");

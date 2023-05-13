@@ -64,6 +64,7 @@
                "name": "Club de Lectura: MistBorn",
                "about": "Club de Lectura del Libro 1 de la Saga MistBorn, por Brandom Sanderson",
                "audience": "Todas las edades",
+               "isAccessibleForFree": false,
                "startDate": "2023-05-20T18:30:00Z",
                "endDate": "2023-05-20T20:00:00Z",
                "offers": {
@@ -168,6 +169,7 @@
                "name": "Torneo Carcassone",
                "about": "XX Torneo Carcassone patrocinado por asfsdg",
                "audience": "Todas las edades",
+               "isAccessibleForFree": false,
                "startDate": "2023-07-01T19:30:00Z",
                "endDate": "2023-06-01T20:00:00Z",
                "offers": {
