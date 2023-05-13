@@ -27,6 +27,19 @@ function obtenerValor(objeto, ruta) {
     return valor;
 }
 
+function getMaxDistance(listaCafeterias) {
+    var max = 0;
+    for (let i = 0; i < listaCafeterias; i++) {
+        if (listaCafeterias[i].distancia == undefined) {
+            return 50;
+        }
+        if (listaCafeterias[i].distancia > max) {
+            max = listaCafeterias[i].distancia;
+        }
+    }
+    return Math.ceil(max/1000);
+}
+
 function comprobarEstadoDeNegocio(openingHours) {
     const hoy = new Date();
     const horaActual = hoy.getHours() + ":" + (hoy.getMinutes() < 10 ? "0" : "") + hoy.getMinutes();
@@ -202,7 +215,7 @@ async function cargarBusquedaCafe(listaCafeterias, filtros) {
             pagina += '</p>';
             pagina += '<div class="info">';
             pagina += '<i class="fa-solid fa-route fa-lg"></i>';
-            pagina += '<p>'+ (listaCafeterias[i].distancia / 1000).toFixed(2); +'</p>'; // CAMBIAR X Km por la distancia
+            pagina += '<p>'+ (listaCafeterias[i].distancia / 1000).toFixed(2); +'</p>';
             pagina += '</div>';
             pagina += '<div class="info">';
             pagina += '<i class="fa-solid fa-location-dot fa-lg"></i>';
@@ -275,13 +288,6 @@ function cargarBuscadorEvent(){
     }
     pagina += '</div>';
     cafeteriaSelect.innerHTML = pagina;
-    /* 
-    
-    <p class="info">
-    <div>
-    <i class="fa-solid fa-location-dot fa-lg"></i>Cafetería Parabellum</div>
-    <div><i class="fa-solid fa-calendar fa-lg"></i>20/05/2023, 18:30:00</div>
-    </p></div></div>*/
 }
 
 function cargarBuscadorEvent(){
@@ -393,7 +399,7 @@ function cargarCafeteriaClickada(listaCafeterias, nombre) {
     }
 
     var pagina = '<div class="row first-row">';
-    pagina += '  <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">';
+    pagina += '  <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">';
     pagina += '    <div class="section-title">';
     pagina += '      <h2>Cafetería</h2>';
     pagina += '      <p>' + cafeteriaEncontrada.name + '</p>';
@@ -422,22 +428,22 @@ function cargarCafeteriaClickada(listaCafeterias, nombre) {
     }
     pagina += '      </h4>';
     pagina += '    </div>';
-    pagina += '    <div data-aos="zoom-in" data-aos-delay="100">';
+    pagina += '    <div>';
     pagina += '      <h4>Horario <i class="fa-solid fa-clock"></i></h4>';
     pagina += '      <p>' + traducirHorarioApertura(cafeteriaEncontrada.openingHours) + '</p>';
     pagina += '    </div>';
-    pagina += '    <div data-aos="zoom-in" data-aos-delay="100">';
+    pagina += '    <div>';
     pagina += '      <h4>Ubicación <i class="fa-solid fa-location-dot"></i></h4>';
     pagina += '      <p>' + cafeteriaEncontrada.address.streetAddress + '</p>';
     pagina += '    </div>';
-    pagina += '    <div data-aos="zoom-in" data-aos-delay="100">';
+    pagina += '    <div>';
     pagina += '      <h4> Contacto </h4>';
     pagina += '      <p>' + cafeteriaEncontrada.contactPoint.telephone + '<br>' + cafeteriaEncontrada.contactPoint.email + '<br>' + cafeteriaEncontrada.url + '</p>';
     pagina += '    </div>';
     pagina += '  </div>';
 
     // CAROUSEL DE IMAGENES DE LA CAFETERÍA
-    pagina += '  <div id="carouselCafeteria" class="carousel slide col-lg-6" data-ride="carousel" data-aos="zoom-in" data-aos-delay="100">';
+    pagina += '  <div id="carouselCafeteria" class="carousel slide col-lg-6" data-ride="carousel" data-aos="fade-left" data-aos-delay="100">';
     var indicators = '<div class="carousel-indicators">';
     var items = '<div class="carousel-inner">';
     const imagenes = cafeteriaEncontrada.image;
@@ -473,7 +479,7 @@ function cargarCafeteriaClickada(listaCafeterias, nombre) {
     const longitud = cafeteriaEncontrada.geo.longitude;
     const urlUb = 'https://www.google.com/maps/embed/v1/view?key=AIzaSyDEttTnyKUn1uAIIjfqoOQoTJqbAncMym0&center=' + latitud + ',' + longitud + '&zoom=18';
 
-    pagina += '<div class="row" data-aos="zoom-in" data-aos-delay="100">';
+    pagina += '<div class="row" data-aos="fade-up" data-aos-delay="100">';
     pagina += '  <iframe src="' + urlUb + '" frameborder="0" allowfullscreen></iframe>';
     pagina += '</div>';
 
@@ -700,11 +706,15 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
         const imagen = listaCafeterias[i].image[0].url;
         const estado = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
 
-        // Creamos los elementos HTML con los valores de la cafetería
-        const divMedia = document.createElement("div");
-        divMedia.className = "media";
-        divMedia.onclick = function () { cargarContenido('cafeteria.html', nombre, "") };
+        var pagina = '<div class="media" onclick="cargarContenido("cafeteria.html", '+ nombre + ', "")';
+        pagina += '</div>';
 
+        // Creamos los elementos HTML con los valores de la cafetería
+        // const divMedia = document.createElement("div");
+        // divMedia.className = "media";
+        // divMedia.onclick = function () { cargarContenido('cafeteria.html', nombre, "") };
+
+        
         const divMediaBody = document.createElement("div");
         divMediaBody.className = "media-body row";
 
