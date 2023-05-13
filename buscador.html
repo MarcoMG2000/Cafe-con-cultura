@@ -65,7 +65,14 @@
                 </div>
             </form>
         </div>
-        <button type="button" class="boton-filtro" onclick="cargarBuscador()">Aplicar filtro</button>
+        <div class="py-2 border-bottom ml-3">
+            <h6 class="font-weight-bold">Distancia</h6>
+                <div class="form-group">
+                    <input type="range" class="form-range" id="distancia" min="0" max="50" step="1" value="0" oninput="document.getElementById('distancia-value').innerText = this.value + ' km';">
+                    <span id="distancia-value">0 km</span>
+                </div>
+        </div>        
+        <button type="button" class="btn btn-warning my-3 mx-3" onclick="cargarBuscador(tipoFiltro)">Aplicar filtro</button>
     </div>
     <!-- products section -->
     <div id="products">

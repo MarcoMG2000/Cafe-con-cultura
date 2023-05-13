@@ -14,6 +14,18 @@ body {
   color: #444444;
 }
 
+.event-body {
+  border: 2px solid rgb(248, 214, 23);  
+}
+
+.form-range::-webkit-slider-runnable-track {
+  background-color: rgb(241, 222, 110);
+}
+
+.form-range::-webkit-slider-thumb {
+  background-color: rgb(248, 214, 23);
+}
+
 a {
   color: #ffc451;
   text-decoration: none;
