@@ -915,7 +915,7 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
         pagina +=        abierto_cerrado;
         pagina += '      <div class="info">';
         pagina += '        <i class="fa-solid fa-route fa-lg"></i>';
-        pagina += '        <p>' + listaCafeterias[i].distancia + ' Km</p>';
+        pagina += '        <p>' + (listaCafeterias[i].distancia / 1000).toFixed(2) + ' Km</p>';
         pagina += '      </div>';
         pagina += '      <div class="info">';
         pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>';
