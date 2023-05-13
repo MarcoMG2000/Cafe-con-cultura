@@ -273,8 +273,13 @@ async function cargarBusquedaCafe(listaCafeterias, filtros, primeraVez) {
             '</div>';
         filt.insertAdjacentHTML('afterbegin', filterS);
     }
+
+    let resultados = 0;
+
     for (let i = 0; i < listaCafeterias.length; i++) {
         if (cumpleFiltros(listaCafeterias[i], filtros)) {
+
+            resultados++;
 
             let abierto = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
 
@@ -321,6 +326,9 @@ async function cargarBusquedaCafe(listaCafeterias, filtros, primeraVez) {
         }
     }
     pagina += '</div>';
+
+    document.getElementById("totalResultados").textContent = "Resultados encontrados: " + resultados
+
     cafeteriaSelect.innerHTML = pagina;
 }
 
@@ -366,7 +374,14 @@ function cargarBusquedaEvent(listaCafeterias, primeraVez) {
     var cafeteriaSelect = document.getElementById("busqueda-filtro");
     var pagina = '<div class="row-filt-ev">';
     pagina += '<div id="past-events" class="col-lg-6 aos-init aos-animate" data-aos="fade-left" data-aos-delay="100">';
+
+    let resultados = 0;
+
     for (let i = listaEventos.length - 1; i >= 0; i--) {
+
+        //MOVER LINEA DENTRO DE CONDICIÓN DE FILTROS UNA VEZ IMPLEMENTADO
+        resultados++;
+
         const fechaInicioEvento = new Date(listaEventos[i].startDate);
         const fecha = fechaInicioEvento.toLocaleString('es-ES', {
             year: 'numeric',
@@ -386,6 +401,9 @@ function cargarBusquedaEvent(listaCafeterias, primeraVez) {
         pagina += '<div><i class="fa-solid fa-calendar fa-lg"></i>' + fecha + '</div></p></div></div>';
     }
     pagina += '</div></div>';
+
+    document.getElementById("totalResultados").textContent = "Resultados encontrados: " + resultados
+
     cafeteriaSelect.innerHTML = pagina;
 }
 
@@ -393,8 +411,14 @@ function cargarBuscadorEvent() {
     var listaEventos = obtenerListaEventos(listaCafeterias);
     var cafeteriaSelect = document.getElementById("busqueda-filtro");
     var pagina = '<div class="row">';
+
+    let resultados = 0;
+
     for (let i = 0; i < listaEventos.length; i++) {
         if (cumpleFiltros(listaEventos[i], filtros)) {
+
+            resultados++;
+
             //let abierto = comprobarEstadoDeNegocio(listaEventos[i].openingHours);
             pagina += '<div class="icon-box mt-5 mt-lg-0 aos-init aos-animate" onclick="cargarContenido(\'evento.html\', ' + listaEventos[i].name + ', \'\')" data-aos="zoom-in" data-aos-delay="150">';
             pagina += '<div class="event-body"><i class="fa-solid fa-chevron-right chevron">';
@@ -417,6 +441,9 @@ function cargarBuscadorEvent() {
         }
     }
     pagina += '</div>';
+
+    document.getElementById("totalResultados").textContent = "Resultados encontrados: " + resultados
+
     cafeteriaSelect.innerHTML = pagina;
 }
 
