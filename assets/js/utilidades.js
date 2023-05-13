@@ -829,11 +829,15 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
 
     // Ordenamos por distancia
     listaCafeterias = ordenarLista(listaCafeterias, "distancia", "ascendente");
+    obtenerDistanciasCafeterias(listaCafeterias);
     const cafeteriasRating = document.getElementById("cafeterias-cercanas");
     var pagina = ''; // Construimos la sección en este mensaje
 
     for (let i = 0; i < 3; i++) { // Recorremos las tres cafeterías con mejor valoración
         const estado = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
+        const nombre = listaCafeterias[i].name;
+        const ubicacion = listaCafeterias[i].address.streetAddress;
+        const imagen = listaCafeterias[i].image[0].url;
         // Generamos el html del estado
         var abierto_cerrado = "";
         if (estado === "Abierto") {
@@ -848,7 +852,7 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
         pagina +=        abierto_cerrado;
         pagina += '      <div class="info">';
         pagina += '        <i class="fa-solid fa-route fa-lg"></i>';
-        pagina += '        <p>' + distancia + ' Km</p>';
+        pagina += '        <p>' + listaCafeterias[i].distancia + ' Km</p>';
         pagina += '      </div>';
         pagina += '      <div class="info">';
         pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>';
