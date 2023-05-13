@@ -14,8 +14,15 @@ body {
   color: #444444;
 }
 
+.row-filt-ev {
+  display: flex;
+  justify-content: left;
+}
+
 .event-body {
-  border: 2px solid rgb(248, 214, 23);  
+  width: 160%;
+  margin: 0 auto 20px;
+  border: 2px solid rgb(248, 214, 23);
 }
 
 .form-range::-webkit-slider-runnable-track {

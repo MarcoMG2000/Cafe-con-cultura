@@ -28,7 +28,7 @@ function cargarContenido(nombreArchivo, nombre) {
         clickCafeteria(nombre);
       }
       else if (nombreArchivo == "buscador.html") {
-        cargarBuscador(nombre);
+        cargarBuscador(nombre,true);
       }
     });
 }
