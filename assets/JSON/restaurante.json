@@ -1,0 +1,1670 @@
+{
+    "@context": "http://schema.org",
+    "@type": "itemList",
+    "itemListElement": [
+    {
+		"@type": "Restaurant",
+		"id": 1,
+		"name": "Es cruce",
+		"description": "Contundentes platos de carne a la brasa y marisco de la región en un restaurante amplio y sencillo con una terraza con sombra.",
+		"url": "http://restaurantescruce.com/",
+		"acceptsReservations": true,
+		"hasMenu": "https://es.restaurantguru.com/Es-Cruce-Spain/menu",
+		"servesCuisine": "Restaurante mallorquín",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Wed 06:00-23:15",
+			"Thu 06:00-23:15",
+			"Fri 06:00-23:15",
+			"Sat 06:00-23:15",
+			"Sun 06:00-23:15",
+			"Mon 06:00-23:15"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Villafranca de Bonany",
+			"addressRegion": "ES",
+			"postalCode": "07250",
+			"streetAddress": "Carretera Palma-Manacor, Km. 41"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.57516416947697",
+			"longitude": "3.120431"
+		},
+		"email": "crucegm@restaurantescruce.es",
+		"telephone": "971832222",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.4",
+			"reviewCount": "14300"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/elCruceFuera.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Fachada Restaurante El Cruce"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/crucePlatos.png",
+				"datePublished": "2023-03-06",
+				"name": "Platos Restaurante El Cruce"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/elCruceMesas.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Restaurante El Cruce"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "El restaurante 'Es Cruce' celebra Sant Marc con una 'caragolada'",
+					"contentUrl": "https://www.diariodemallorca.es/videos/part-forana/2018/04/24/restaurante-cruce-celebra-sant-marc-3015256.html"
+				}
+			]
+		}
+	},
+	{
+		"@type": "Restaurant",
+		"id": 2,
+		"name": "Sa Farinera",
+		"description": "En el entrañable marco de una centenaria harinera artesanal, con sus molinos en perfecto estado de conservación (“Molí de sang”,”Molí de vent”, “Molí de foc”...), podrá degustar las mejores carnes cocinadas a la brasa de leña en la parrilla pionera de Mallorca.",
+		"url": "https://safarinera.com/es",
+		"acceptsReservations": true,
+		"hasMenu": [
+			"https://lh3.googleusercontent.com/p/AF1QipP30etuReaeLyjv8bmHV0oJHHaMcnwK0qqp_MZL=s1360-w1360-h1020",
+			"https://lh3.googleusercontent.com/p/AF1QipPzgcH298Icd0N2gRaAIYrmkGGCZ0pNI0CaDGa8=s1360-w1360-h1020"
+		],
+		"servesCuisine": "Parrilla",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Mon 19:00-02:00",
+			"Tue 19:00-02:00",
+			"Wed 19:00-02:00",
+			"Thu 19:00-02:00",
+			"Fri 19:00-02:00",
+			"Sat 19:00-02:00",
+			"Sun 19:00-02:00"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Palma de Mallorca",
+			"addressRegion": "ES",
+			"postalCode": "07610",
+			"streetAddress": "Camino Son Fangos, S/N"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.53751788468554",
+			"longitude": "2.7297417460181284"
+		},
+		"email": "reservas@safarinera.com",
+		"telephone": "971262011",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.5",
+			"reviewCount": "4473"
+		}, "image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/safarinera1.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Interior Sa Farinera"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/safarinera2.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Platos Sa Farinera"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/safarinera3.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Exterior Sa Farinera"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/safarinera4.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Carne a la brasa Sa Farinera"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "Entrada al restaurante Sa Farinera",
+					"contentUrl": "sa farinera restaurante.html"
+				},
+				{
+					"@type": "VideoObject",
+					"name": "Cocina de Sa Farinera",
+					"contentUrl": "sa farinera cocina.html"
+				}
+			]
+		}
+
+	},
+
+	{
+		"@type": "Restaurant",
+		"id": 3,
+		"name": "Arroseria Sa Cranca",
+		"description": "Este restaurante situado en un primer piso con buenas vistas al paseo marítimo de Palma está especializado en arroces que cocinan de muy diferentes formas.",
+		"url": "http://www.sacranca.com/",
+		"acceptsReservations": true,
+		"hasMenu": "",
+		"servesCuisine": "Arroceria",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Tue 13:00-16:00",
+			"Tue 19:30-23:30",
+			"Wed 13:00-16:00",
+			"Wed 19:30-23:30",
+			"Thu 13:00-16:00",
+			"Thu 19:30-23:30",
+			"Fri 13:00-16:00",
+			"Fri 19:30-23:30",
+			"Sat 13:00-16:00",
+			"Sat 19:30-23:30",
+			"Sun 13:00-16:00"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Palma de Mallorca",
+			"addressRegion": "ES",
+			"postalCode": "07014",
+			"streetAddress": "Avenida de Gabriel Roca, 13"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.56850068883853",
+			"longitude": "2.6304564693173638"
+		},
+		"email": "info@sacranca.com",
+		"telephone": "971737447",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.3",
+			"reviewCount": "2147"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/cranca1.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Interior sa Cranca"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/crancaPlato.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Platos sa Cranca"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/cranca3.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Interior sa Cranca"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "Paella servida en Sa Cranca",
+					"contentUrl": "sa cranca palma.html"
+				}
+			]
+		}
+	},
+
+
+	{
+		"@type": "Restaurant",
+		"id": 4,
+		"name": "La Casa Gallega Avenidas",
+		"description": "Cocina gallega en Mallorca para comer a cualquier hora del día. La exquisita carta de los restaurantes del Grupo Babuxa le invita a disfrutar de pescado y marisco fresco procedentes de Galicia, carnes a la parrilla de calidad, ensaladas y platos mediterráneos, además de una seleccionada carta de vinos mallorquines y españoles. Una selección de restaurantes de tapas en Mallorca ubicados en el centro, cerca de todos los comercios y transportes.",
+		"url": "https://casagallegamallorca.com/",
+		"acceptsReservations": true,
+		"hasMenu": "",
+		"servesCuisine": "Restaurante gallego",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Mon 11:00-23:00",
+			"Tue 11:00-23:00",
+			"Wed 11:00-23:00",
+			"Thu 11:00-23:00",
+			"Fri 11:00-23:00",
+			"Sat 11:00-23:00",
+			"Sun 11:00-23:00"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Palma de Mallorca",
+			"addressRegion": "ES",
+			"postalCode": "07003",
+			"streetAddress": "Avinguda del Comte de Sallent, 19"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.5786184827699",
+			"longitude": "2.6500212693173637"
+		},
+		"email": "pedidos.avenidas@gmail.com",
+		"telephone": "871948115",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.2",
+			"reviewCount": "4563"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/gallega1.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Platos Casa Gallega"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/gallega2.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Entrada Casa Gallega"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/gallega3.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Interior Casa Gallega"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "El restaurante 'Es Cruce' celebra Sant Marc con una 'caragolada'",
+					"contentUrl": "https://www.diariodemallorca.es/videos/part-forana/2018/04/24/restaurante-cruce-celebra-sant-marc-3015256.html"
+				}
+			]
+		}
+	},
+
+
+	{
+		"@type": "Restaurant",
+		"id": 5,
+		"name": "Es celler sa premsa",
+		"description": "La cocina del Celler Sa Premsa se distingue por los sabores de la cocina mallorquina de siempre. Frito de matanzas, lengua con alcaparras, sopas mallorquinas, berenjenas rellenas, arroz brut, gató con helado de almendra y un largo etcétera, son algunas de las especialidades de la casa.",
+		"url": "https://www.cellersapremsa.com/",
+		"acceptsReservations": true,
+		"hasMenu": "https://www.cellersapremsa.com/pdfs/menu%20dia%20-%20CASTELLANO.pdf",
+		"servesCuisine": "Restaurante mallorquín",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Mon 12:00-16:00",
+			"Tue 12:00-16:00",
+			"Wed 12:00-16:00",
+			"Thr 12:00-16:00",
+			"Fri 12:00-16:00",
+			"Sat 12:00-16:00",
+			"Mon 19:30-23:30",
+			"Tue 19:30-23:30",
+			"Wed 19:30-23:30",
+			"Thr 19:30-23:30",
+			"Fri 19:30-23:30",
+			"Sat 19:30-23:30"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Palma de Mallorca",
+			"addressRegion": "ES",
+			"postalCode": "07003",
+			"streetAddress": "Plaça Obispo Berenguer de Palou, 8"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.57580703919605",
+			"longitude": "2.649849138634727"
+		},
+		"email": "mail@cellersapremsa.com",
+		"telephone": "971 72 35 29",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.1",
+			"reviewCount": "4963"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/premsa1.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Interior Es celler sa Premsa"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/premsa2.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Fachada Es celler sa Premsa"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/premsa3.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Interior Es celler sa Premsa"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "El restaurante 'Es Cruce' celebra Sant Marc con una 'caragolada'",
+					"contentUrl": "https://www.google.com/search?q=es+celler+sa+premsa&source=lmns&tbm=vid&bih=649&biw=1366&rlz=1C1VDKB_esES1024ES1024&hl=es&sa=X&ved=2ahUKEwjS47-kt_L9AhXfTKQEHWm6D-cQ_AUoBHoECAEQBA#fpstate=ive&vld=cid:2f9e2e65,vid:JVhnaU01nKQ"
+				}
+			]
+		}
+	},
+
+
+
+	{
+		"@type": "Restaurant",
+		"id": 6,
+		"name": "Ses Torres",
+		"description": "Restaurant Ses Torres, en Ariany, en la rotonda entre Petra y Santa Margarita, es un amplio local que acoge tanto a turistas y gente de paso como a clientela asidua. Por las mañanas pueden disfrutar de nuestras meriendas, pa amb olis, carne al grill, tapas,… Al mediodía pueden optar por nuestra amplia carta o por nuestro buffet diario a un precio económico, con gran variedad de comidas: paella, lechona, ensaladas, pastas, pescados, carne al grill y buffet de postres. Los Sábados, Domingos y Festivos ofrecemos buffet especial con mayor variedad de comida a un buen precio. Por la noche les ofrecemos a diario nuestra amplia carta, pudiendo elegir entre carne cocinada en nuestra barbacoa, pescados, pastas,… Además, tenemos un amplio párquing y una bonita terraza con bonitas vistas al campo.",
+		"url": "http://grcm.es/ses-torres/",
+		"acceptsReservations": true,
+		"hasMenu": "",
+		"servesCuisine": "Buffet libre",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Mon 06:00-01:00",
+			"Tue 06:00-01:00",
+			"Wed 06:00-01:00",
+			"Thu 06:00-01:00",
+			"Fri 06:00-01:00",
+			"Sat 06:00-01:00",
+			"Sun 06:00-01:00"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Ariany",
+			"addressRegion": "ES",
+			"postalCode": "07529",
+			"streetAddress": "Carretera de Petra a Santa Margarita, Km 7"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.646093686816585",
+			"longitude": "3.1009263306826367"
+		},
+		"email": "info@grcm.com",
+		"telephone": "971 83 04 29",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.2",
+			"reviewCount": "5195"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/sestorres1.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Interior Ses Torres"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/sestorres2.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Platos Ses Torres"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/sestorres3.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Interior Ses Torres"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "El restaurante 'Es Cruce' celebra Sant Marc con una 'caragolada'",
+					"contentUrl": "https://www.diariodemallorca.es/videos/part-forana/2018/04/24/restaurante-cruce-celebra-sant-marc-3015256.html"
+				}
+			]
+		}
+	},
+
+	{
+		"@type": "Restaurant",
+		"id": 7,
+		"name": "Bens d'Avall",
+		"description": "Restaurante de alta cocina situado en una zona rural cerca de Sóller, con vistas al mar y una amplia selección de platos de autor basados en ingredientes locales frescos y de temporada.",
+		"url": "https://www.bensdavall.com/",
+		"acceptsReservations": true,
+		"hasMenu": "https://www.bensdavall.com/wp-content/uploads/2023/03/Menu_Anima_ES.pdf",
+		"servesCuisine": "Cocina mediterránea de autor",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Wen 13:00-14:30",
+			"Thu 13:00-14:30",
+			"Fri 13:00-14:30",
+			"Sat 13:00-14:30",
+			"Sun 13:00-14:30"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€€€",
+		"address": {
+			"addressLocality": "Sóller",
+			"addressRegion": "ES",
+			"postalCode": "07100",
+			"streetAddress": "Carretera de Deià, km.56, 07100 Sóller, Illes Balears"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.77672854547582",
+			"longitude": "2.66659744014669"
+		},
+		"email": "info@bensdavall.com",
+		"telephone": "+34 971 63 28 81",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.6",
+			"reviewCount": "597"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/bens_davall1.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Vistas terraza Bens D'avall",
+				"name": "Vistas terraza Bens D'avall"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/bens_davall2.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Terraza Bens D'avall",
+				"name": "Terraza Bens D'avall"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/bens_davall3.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Entrada Bens D'avall",
+				"name": "Entrada Bens D'avall"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "El restaurante bens davall",
+					"contentUrl": "https://www.youtube.com/watch?v=wU6KqkwcFPg&ab_channel=abcMallorca"
+				}
+			]
+		}
+	},
+
+
+
+	{
+		"@type": "Restaurant",
+		"id": 8,
+		"name": "Binicomprat",
+		"description": "Nuestra cocina ofrece una amplia combinación de platos, desde la cocina más tradicional mallorquina, hasta las nuevas tendencias en la alimentación del siglo XXI. En los entrantes, pescados y carnes, con la mejor selección en nuestra materia prima, siempre de alta calidad, que al combinarla con nuestra cuidada elaboración y manipulacion, nos concede nuestra base más sólida. Mención especial merece también nuestra repostería, la cual presume de ser absolutamente artesanal y elaborada en nuestra cocina. Aquí combinamos colores y sabores, y sin dudas estamos en la vanguardia en sus presentaciones. Postres elaborados con tradición e innovación, pero siempre con los mejores productos de nuestro mercado.",
+		"url": "https://www.binicomprat.com/",
+		"acceptsReservations": true,
+		"hasMenu": "",
+		"servesCuisine": "Restaurante mallorquín",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Fri 12:30-16:00",
+			"Sat 12:30-16:00",
+			"Sun 12:30-16:00"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Algaida",
+			"addressRegion": "ES",
+			"postalCode": "07210",
+			"streetAddress": "Ctra. Manacor, km 22, 7"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.56622040461375",
+			"longitude": "2.9154921846586817"
+		},
+		"email": "info@binicomprat.com",
+		"telephone": "971 12 54 11",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.1",
+			"reviewCount": "3389"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/Binicomprat1.png",
+				"datePublished": "2023-03-06",
+				"description": "Imagen del exterior del restaurante",
+				"name": "Fachada Restaurante El Cruce"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/Binicomprat2.png",
+				"datePublished": "2023-03-06",
+				"description": "Imagen del interior del restaurante",
+				"name": "Platos Restaurante El Cruce"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/Binicomprat3.png",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de la parte exterior del restaurante",
+				"name": "Carta Restaurante El Cruce"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "El restaurante 'Es Cruce' celebra Sant Marc con una 'caragolada'",
+					"contentUrl": "https://www.diariodemallorca.es/videos/part-forana/2018/04/24/restaurante-cruce-celebra-sant-marc-3015256.html"
+				}
+			]
+		}
+	},
+
+
+
+	{
+		"@type": "Restaurant",
+		"id": 9,
+		"name": "Illeta",
+		"description": "Sa Illeta es la imagen del verano en Camp de Mar. Entre nuestras especialidades destaca como plato estrella la paella, aunque disponemos de una extensa y variada carta que satisfará todos los gustos.",
+		"url": "https://illeta.com",
+		"acceptsReservations": true,
+		"hasMenu": [
+			"https://illeta.com/carta_comida_illeta_2022.pdf",
+			"https://illeta.com/carta_bebidas_illeta_2022.pdf"
+		],
+		"servesCuisine": "Marisco, Mediterránea",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Mon 12:00-23:00",
+			"Tue 12:00-23:00",
+			"Wed 12:00-23:00",
+			"Thu 12:00-23:00",
+			"Fri 12:00-23:00",
+			"Sat 12:00-23:00",
+			"Sun 12:00-23:00"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Andratx, Illes Balears",
+			"addressRegion": "ES",
+			"postalCode": "07160 ",
+			"streetAddress": "Playa de Camp de Mar, s/n"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.53714668333281",
+			"longitude": "2.422336855482791"
+		},
+		"email": "",
+		"telephone": "+34 971 23 58 84",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.0",
+			"reviewCount": "1245"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/illeta1.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Restaurante illeta de dia"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/illeta2.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Puente del restaurante Illeta"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/illeta3.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Restaurante illeta de noche"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "El restaurante Illeta",
+					"contentUrl": "https://youtu.be/1ljMc_24YSY"
+				}
+			]
+		}
+	},
+
+
+
+	{
+		"@type": "Restaurant",
+		"id": 10,
+		"name": "Ca'n torrat",
+		"description": "En nuestra cocina no hay cocineros, hay carniceros. La carne es tan fresca que se corta en el mismo momento en que la ordenan desde la mesa. Así es el proceso, tú pides tu carne preferida, el carnicero corta la pieza y la prepara para llevar a parrilla, y es allí, en la misma parrilla donde nos encargamos de ‘torrarla’ en el punto exacto que nos pides. Todas nuestras carnes están aderezadas con un picadillo tradicional mallorquín a base del mejor aceite de oliva virgen, asadas en su justo punto y al fuego de leña de encina y almendro, acompañadas por exquisitas patatas con ajos y pimientos, y unas deliciosas salsas de alioli y de tomate. Así es como conseguimos un restaurante especializado en carnes a la brasa, dedicándonos única y exclusivamente a lo que sabemos hacer y mejorando cada día, a través de la calidad, la frescura y el sabor de nuestras carnes, sin dejar de lado la tradición.",
+		"url": "https://www.cantorrat.com/",
+		"acceptsReservations": true,
+		"hasMenu": "cartaCanTorrat.jpg",
+		"servesCuisine": "Restaurante especializado en barbacoa",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Mon 12:30-00:30",
+			"Tue 12:30-00:30",
+			"Wed 12:30-00:30",
+			"Thu 12:30-00:30",
+			"Fri 12:30-00:30",
+			"Sat 12:30-00:30",
+			"Sun 12:30-00:30"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Palma de Mallorca",
+			"addressRegion": "ES",
+			"postalCode": "07610",
+			"streetAddress": "Camí de les Meravelles, 25"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.52266069399725",
+			"longitude": "2.7508755539760448"
+		},
+		"email": "",
+		"telephone": "971 26 20 55",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.2",
+			"reviewCount": "5205"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/canTorrat1.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Imagen de un plato de Can Torrat"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/canTorrat5.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Imagen de una mesa de Can Torrat"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/canTorrat3.jpg",
+				"datePublished": "2023-03-06",
+				"name": "Imagen de carne de Can Torrat"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "El restaurante Can Torrat",
+					"contentUrl": "can_torrat.mp4"
+				}
+			]
+		}
+	},
+
+
+
+	{
+		"@type": "Restaurant",
+		"id": 11,
+		"name": "Can Polit Tapas",
+		"description": "Presenta una línea de decoración muy atractiva con grandes espacios en combinación con la antigua arquitectura y diseños modernos con una construcción y decoración totalmente con materiales naturales, piedra, mares, madera, granito, agua y luz natural. Aquí el equipo de Cocina Biel, Encarni y Criss siempre busca sorprenderles con tapas y pinchos clásicos y modernos con ingredientes frescos de la tierra y del mar. También encontrarán siempre para atenderles a nuestro equipo Alex, Maria y Walter que les informaran de todas las novedades o clásicos que no deben perderse para que su visita a Can Polit sea todo un acierto.",
+		"url": "https://www.essenciamediterrania.com/en/restaurante-can-polit.php",
+		"acceptsReservations": true,
+		"hasMenu": "https://www.essenciamediterrania.com/pdf/carta-can-polit-2023-es.pdf",
+		"servesCuisine": "Taperia",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Mon 18:00-22:00",
+			"Tue 12:00-16:00",
+			"Wed 12:00-16:00",
+			"Thu 12:00-16:00",
+			"Fri 12:00-16:00",
+			"Sat 12:00-16:00",
+			"Sun 12:00-16:00",
+			"Tue 18:00-22:00",
+			"Wed 18:00-22:00",
+			"Thu 18:00-22:00",
+			"Fri 18:00-22:00",
+			"Sat 18:00-22:00",
+			"Sun 18:00-22:00"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Alcudia",
+			"addressRegion": "ES",
+			"postalCode": "07400",
+			"streetAddress": "Carrer dels Albellons, 10"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.85276569229567",
+			"longitude": "3.1208755112425655"
+		},
+		"email": "info@essenciamediterrania.com",
+		"telephone": "971 54 67 70",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.2",
+			"reviewCount": "755"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/canPolitVistas.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de las vistas del restaurante Can Polit",
+				"name": "Vistas restaurante can polit"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/canPolitPlatos.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de algunos platos del restaurante Can Polit",
+				"name": "Platos Restaurante Can Polit"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/canPolitTapa.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de una tapa",
+				"name": "Tapa del Restaurante Can Polit"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "El ",
+					"contentUrl": "https://www.diariodemallorca.es/videos/part-forana/2018/04/24/restaurante-cruce-celebra-sant-marc-3015256.html"
+				}
+			]
+		}
+	},
+
+	{
+		"@type": "Restaurant",
+		"id": 12,
+		"name": "mÁxime",
+		"description": "En un entorno privilegiado, situado en el corazón de Vall d’Or Golf, y con unas espectaculares vistas de la costa de Portocolom. Disfrutarás de los platos creativos de nuestro chef, Maxime Deymier.",
+		"url": "https://www.restaurantemaxime.com",
+		"acceptsReservations": true,
+		"hasMenu": "https://www.restaurantemaxime.com/wp-content/uploads/2023/03/carta-espanol-web-scaled.jpg",
+		"servesCuisine": "Cocina mediterránea y de fusión",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Mon 09:00-21:00",
+			"Tue 09:00-21:00",
+			"Wed 09:00-21:00",
+			"Thu 09:00-21:00",
+			"Fri 09:00-21:00",
+			"Sat 09:00-21:00",
+			"Sun 09:00-21:00"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€-€€€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Portocolom",
+			"addressRegion": "ES",
+			"postalCode": "07669",
+			"streetAddress": "Carretera Cala d'Or, km 7, 7"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.43121112391265",
+			"longitude": "3.217213367120593"
+		},
+		"email": "info@restaurantemaxime.com",
+		"telephone": " 971 83 75 79",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.6",
+			"reviewCount": "303"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/maximePostre.png",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de un plato dulce del restaurante",
+				"name": "Plato del restaurante mÁxime"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/maximePlatoPrincipal.png",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de un plato del restaurante",
+				"name": "Platos Restaurante mÁxime"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/maximeQueso.png",
+				"datePublished": "2023-03-06",
+				"description": "Imagen del queso del restaurante maxime",
+				"name": "Queso restaurante mÁxime"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "El restaurante mÁxime'",
+					"contentUrl": "https://www.youtube.com/watch?v=DGVIrqxn-Pg&ab_channel=BodaclickEmpresas"
+				}
+			]
+		}
+	},
+
+	{
+		"@type": "Restaurant",
+		"id": 13,
+		"name": "LILA Portals",
+		"description": "El Lila Portals combina una cocina de alta calidad con un servicio personalizado y un ambiente relajado y todo esto frente a un telón de fondo de una belleza única. Ya sean clásicos culinarios con carnes y mariscos o creaciones veganas modernas, todos encontrarán su plato favorito en el restaurante y bar Lila Portals. También ofrecemos menús cambiantes y grandes eventos culinarios.",
+		"url": "https://www.lila-portals.com/es/",
+		"acceptsReservations": true,
+		"hasMenu": "",
+		"servesCuisine": "Restaurante",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Mon 12:00-16:00",
+			"Tue 12:00-16:00",
+			"Wed 12:00-16:00",
+			"Thu 12:00-16:00",
+			"Fri 12:00-16:00",
+			"Sat 12:00-16:00",
+			"Sun 12:00-16:00"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Portals Nous",
+			"addressRegion": "ES",
+			"postalCode": "07181",
+			"streetAddress": "Passatge Mar, 1"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.5323780486719",
+			"longitude": "2.5727544693173634"
+		},
+		"email": "INFO@LILA-PORTALS.COM",
+		"telephone": "971 67 68 94",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.5",
+			"reviewCount": "1082"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/LILA1.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de un plato del restaurante",
+				"name": "Plato del restaurante LILA Portals"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/LILA2.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de un plato del restaurante",
+				"name": "Plato Restaurante LILA Portals"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/LILA3.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de un plato del restaurante",
+				"name": "Plato restaurante LILA Portals"
+			}
+,
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/LILA4.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de un plato del restaurante",
+				"name": "Plato Restaurante LILA Portals"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/LILA5.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de un plato del restaurante",
+				"name": "Plato Restaurante LILA Portals"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "LILAVistas.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen vistas del restaurante",
+				"name": "Vistas Restaurante LILA Portals"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/LILAVistas2.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen vistas del restaurante",
+				"name": "Vistas Restaurante LILA Portals"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/LILAVistas3.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen vistas del restaurante",
+				"name": "Vistas Restaurante LILA Portals"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "El restaurante LILA Portals",
+					"contentUrl": "LILAVideo.mp4"
+				}
+			]
+		}
+	},
+
+	{
+		"@type": "Restaurant",
+		"id": 14,
+		"name": "Ola del Mar",
+		"description": "Cocina española original, como pescados, carnes y arroces, en un restaurante refinado con terraza frente al mar.",
+		"url": "https://oladelmar.es/",
+		"acceptsReservations": true,
+		"hasMenu": "menu_ola.pdf",
+		"servesCuisine": "Restaurante mediterráneo",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Tue 13:00-15:30",
+			"Wed 13:00-15:30",
+			"Thu 13:00-15:30",
+			"Fri 13:00-15:30",
+			"Sat 13:00-15:30",
+			"Sun 13:00-15:30",
+			"Tue 19:30-22:30",
+			"Wed 19:30-22:30",
+			"Thu 19:30-22:30",
+			"Fri 19:30-22:30",
+			"Sat 19:30-22:30",
+			"Sun 19:30-22:30"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Palma de Mallorca",
+			"addressRegion": "ES",
+			"postalCode": "07006",
+			"streetAddress": "Calle Vicario Joaquín Fuster, 1"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.5605957141637",
+			"longitude": "2.6708950693173636"
+		},
+		"email": "event@oladelmar.es",
+		"telephone": "971 27 42 75",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.4",
+			"reviewCount": "1230"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "imag/ola3.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de un plato del restaurante",
+				"name": "Plato del restaurante Ola del Mar"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/ola4.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de un plato del restaurante",
+				"name": "Plato Restaurante Ola del Mar"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/ola1.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de las vistas del restaurante",
+				"name": "Vistas restaurante Ola del Mar"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/ola2.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de las vistas del restaurante",
+				"name": "Vistas restaurante Ola del Mar"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "",
+					"contentUrl": ""
+				}
+			]
+		}
+	},
+
+	{
+		"@type": "Restaurant",
+		"id": 15,
+		"name": "El Náutico",
+		"description": "Una terraza privilegiada sobre la bahía de Palma con la ciudad a sus pies, desde el Castillo de Bellver hasta la Catedral. Alma y cuerpo mediterráneos en su carta y en su ambiente, donde disfrutar de día, viendo ponerse el sol y de la noche sobre el mar.",
+		"url": "https://tast.com/es/restaurant/el-nautico/",
+		"acceptsReservations": true,
+		"hasMenu": "MenuNautico.pdf",
+		"servesCuisine": "Restaurante mediterráneo",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Tue 13:00-16:00",
+			"Wed 13:00-16:00",
+			"Thu 13:00-01:00",
+			"Fri 13:00-16:00",
+			"Sat 13:00-16:00",
+			"Sun 13:00-16:00",
+			"Fri 19:00-24:00",
+			"Sat 19:00-24:00"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Palma de Mallorca",
+			"addressRegion": "ES",
+			"postalCode": "07012",
+			"streetAddress": "Muelle de San Pedro, s/n"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.56692194131581",
+			"longitude": "2.638223284658681"
+		},
+		"email": "elnautico@tast.com",
+		"telephone": "971 72 66 00",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.2",
+			"reviewCount": "628"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/nautico1.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de las vistas del restaurante",
+				"name": "Vistas del Restaurante El Nautico"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/nautico2.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de las vistas del restaurante",
+				"name": "Vistas del Restaurante El Nautico"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/nautico3.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de las vistas del restaurante",
+				"name": "Vistas Restaurante El Nautico"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "",
+					"contentUrl": ""
+				}
+			]
+		}
+	},
+
+	{
+		"@type": "Restaurant",
+		"id": 16,
+		"name": "Trattoria Vino del Mar",
+		"description": "El Restaurante de pasta en Mallorca Vino del Mar, es uno de los restaurantes en Port Adriano de referencia. Venga y disfrute de una auténtica Trattoria en Mallorca y saboree nuestra cuidada y elaborada carta de Restaurante de cocina de autor en Mallorca Recuerde que también es un Restaurante para celiacos en Mallorca",
+		"url": "https://vinodelmar.es/",
+		"acceptsReservations": true,
+		"hasMenu": "",
+		"servesCuisine": "Restaurante italiano",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Mon 12:00-18:00",
+			"Tue 12:00-18:00",
+			"Wed 12:00-18:00",
+			"Thu 12:00-18:00",
+			"Fri 12:00-18:00",
+			"Sat 12:00-19:00",
+			"Sun 12:00-19:00"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Calvia",
+			"addressRegion": "ES",
+			"postalCode": "07181",
+			"streetAddress": "Puerto Adriano Local 3"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.48890151947019",
+			"longitude": "2.478539053976045"
+		},
+		"email": "info@restaurantemaxime.com",
+		"telephone": "971 23 73 60",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.4",
+			"reviewCount": "205"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/vino1.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de un plato del restaurante",
+				"name": "Plato del restaurante"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/vino3.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de un plato del restaurante",
+				"name": "Plato Restaurante"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/vino3.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de un plato del restaurante",
+				"name": "Plato restaurante"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/vino4.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de las vistas del restaurante",
+				"name": "Vistas restaurante"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "",
+					"contentUrl": ""
+				}
+			]
+		}
+	},
+
+	{
+		"@type": "Restaurant",
+		"id": 17,
+		"name": "Ca n'Ignasi",
+		"description": "Un restaurante único y especial. Nacimos un buen día alrededor de una buena mesa, comentando con unos amigos las mejores maneras de dar a conocer los productos autóctonos de nuestra tierra y recopilando recetas de la tradición de nuestra gastronomía: la mallorquina.",
+		"url": "https://canignasi.es/",
+		"acceptsReservations": true,
+		"hasMenu": "",
+		"servesCuisine": "Restaurante mallorquín",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Tue 19:30-22:30",
+			"Wed 19:30-22:30",
+			"Thu 19:30-22:30",
+			"Fri 19:30-22:30",
+			"Sat 19:30-22:30",
+			"Sat 12:30-15:00"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Inca",
+			"addressRegion": "ES",
+			"postalCode": "07300 ",
+			"streetAddress": "Carrer de s'Aigua"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.72342049900242",
+			"longitude": "2.9121612802908654"
+		},
+		"email": "gastronomia@canignasi.es",
+		"telephone": "665 38 34 12",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.8",
+			"reviewCount": "290"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/ignasi1.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de las vistas del restaurante",
+				"name": "Vistas Restaurante Ca n'Ignasi"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/ignasi2.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de las vistas del restaurante",
+				"name": "Vistas Restaurante Ca n'Ignasi"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/ignasi3.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de las vistas del restaurante",
+				"name": "Vistas Restaurante Ca n'Ignasi"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "",
+					"contentUrl": ""
+				}
+			]
+		}
+	},
+
+	{
+		"@type": "Restaurant",
+		"id": 18,
+		"name": "Flor d'Ametler",
+		"description": "",
+		"url": "http://flordametler.chezmati.com/",
+		"acceptsReservations": true,
+		"hasMenu": "",
+		"servesCuisine": "Restaurante",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Tue 10:30-16:00",
+			"Wed 10:30-16:00",
+			"Thu 10:30-16:00",
+			"Fri 10:30-16:00",
+			"Sat 10:30-16:00",
+			"Sun 10:30-16:00",
+			"Fri 19:30-21:30",
+			"Sat 19:30-21:30"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Colonia de San Jordi",
+			"addressRegion": "ES",
+			"postalCode": "07638",
+			"streetAddress": " ESQUINA CALLE BONANZA, Av. Marquès del Palmer, 16"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.31774960554215",
+			"longitude": "2.994940584657774"
+		},
+		"email": "",
+		"telephone": "971 65 55 82",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.6",
+			"reviewCount": "155"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/colonia1.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de platos del restaurante",
+				"name": "Plato Restaurante Ca n'Ignasi"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/colonia2.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de de platos del restaurante",
+				"name": "Plato Restaurante Ca n'Ignasi"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/colonia3.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de de platos del restaurante",
+				"name": "Plato Restaurante Ca n'Ignasi"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/colonia4.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen del interior del restaurante",
+				"name": "Interior Restaurante Ca n'Ignasi"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "",
+					"contentUrl": ""
+				}
+			]
+		}
+	},
+
+	{
+		"@type": "Restaurant",
+		"id": 19,
+		"name": "Quita Penas Valldemossa",
+		"description": "Pa amb Oli significa pan con aceite y, por lo que parece, es el mejor pan tostado, suavemente frotado con ajo, tomates locales “de ramallet” y aceite de oliva hecho en la Sierra de Tramuntana.",
+		"url": "https://www.quitapenasvalldemossa.com/",
+		"acceptsReservations": true,
+		"hasMenu": "",
+		"servesCuisine": "Restaurante especializado en tapas",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Mon 12:00-16:00",
+			"Tue 12:00-16:00",
+			"Wed 12:00-16:00",
+			"Thu 12:00-16:00",
+			"Fri 12:00-16:00",
+			"Sat 12:00-16:00",
+			"Sun 12:00-16:00",
+			"Mon 19:00-22:30",
+			"Tue 19:00-22:30",
+			"Wed 19:00-22:30",
+			"Thu 19:00-22:30",
+			"Fri 19:00-22:30",
+			"Sat 19:00-22:30",
+			"Sun 19:00-22:30"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Valldemossa",
+			"addressRegion": "ES",
+			"postalCode": "07170 ",
+			"streetAddress": "Carrer Vell, 4"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.710747118751534",
+			"longitude": "2.623160484657774"
+		},
+		"email": "quitapenas.valldemossa@gmail.es",
+		"telephone": "600 73 96 66",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.7",
+			"reviewCount": "1084"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/quitapenas2.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de los platos del restaurante",
+				"name": "Plato Restaurante Quita Penas Valldemossa"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/quitapenas1.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de los platos del restaurante",
+				"name": "Plato Restaurante Quita Penas Valldemossa"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/quitapenas3.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de los platos del restaurante",
+				"name": "Plato Restaurante Quita Penas Valldemossa"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/quitapenas4.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen del interior del restaurante",
+				"name": "Interior Restaurante Quita Penas Valldemossa"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "",
+					"contentUrl": ""
+				}
+			]
+		}
+	},
+
+	{
+		"@type": "Restaurant",
+		"id": 20,
+		"name": "Can Pep",
+		"description": "",
+		"url": "https://www.canpep.net/",
+		"acceptsReservations": true,
+		"hasMenu": "menuCanPep.jpg",
+		"servesCuisine": "Hamburgueseria",
+		"currenciesAccepted": "EUR",
+		"openingHours": [
+			"Tue 19:00-23:30",
+			"Wed 19:00-23:30",
+			"Thu 19:00-23:30",
+			"Fri 19:00-23:30",
+			"Sat 19:00-23:30",
+			"Sun 19:00-23:30"
+		],
+		"paymentAccepted": "Cash, Credit Card",
+		"priceRange": "€€",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Sineu",
+			"addressRegion": "ES",
+			"postalCode": "07510",
+			"streetAddress": "Plaza del fossar 14"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "39.64291736228916",
+			"longitude": "3.012129815342225"
+		},
+		"email": "",
+		"telephone": "971 94 05 45",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.4",
+			"reviewCount": "244"
+		},
+		"image": [
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/pep2.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de los platos del restaurante",
+				"name": "Plato Restaurante Can Pep"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/pep1.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de los refrescos del restaurante",
+				"name": "Refresco Restaurante Can Pep"
+			},
+			{
+				"@type": "ImageObject",
+				"contentUrl": "img/pep3.jpg",
+				"datePublished": "2023-03-06",
+				"description": "Imagen de la fachada del restaurante",
+				"name": "Fachada Restaurante Can Pep"
+			}
+		],
+		"subjectOf": {
+			"@type": "CreativeWork",
+			"video": [
+				{
+					"@type": "VideoObject",
+					"name": "",
+					"contentUrl": ""
+				}
+			]
+		}
+	},
+        
+        {
+            "@type": "Restaurant",
+			"id": 21,
+            "name": "Franky's Pizzaa",
+            "description":"Frankys Pizzas en Cala Millor desde 1995! Pizzas buenas - Visita Frankys Pizzas en Cala Millor y prueba!",
+            "url": "https://frankys-pizzas.com/",
+            "acceptsReservations": true,
+            "hasMenu": "img/carta-pizza.png",
+            "servesCuisine":"Pizzeria",
+            "currenciesAccepted": "EUR",
+            "openingHours":[
+                "Wed 13:00-15:00",
+                "Thu 13:00-15:00",
+                "Fri 13:00-15:00",
+                "Sat 13:00-15:00",
+                "Sun 13:00-15:00",
+                "Wed 18:00-24:00",
+                "Thu 18:00-24:00",
+                "Fri 18:00-24:00",
+                "Sat 18:00-24:00",
+                "Sun 18:00-24:00"
+            ],
+            "paymentAccepted":"Cash, Credit Card",
+            "priceRange":"€",
+            "address":{
+                "@type":"PostalAddress",
+                "addressLocality":"Cala Millor",
+                "addressRegion":"ES",
+                "postalCode":"07560",
+                "streetAddress":"Av. del Bon Temps, 13"
+            },
+            "geo":{
+                "@type":"GeoCoordinates",
+                "latitude":"39.600534246087356",
+                "longitude":"3.3822510842844977"
+            },
+            "email":"info@frankys-pizzas.com",
+            "telephone":" 971 58 62 68",
+            "aggregateRating":{
+                "@type":"AggregateRating",
+                "ratingValue":"4.8",
+                "reviewCount":"489"
+            },
+            "image": [
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "img/frankys1.jpg",
+                    "datePublished": "2023-03-06",
+                    "description": "Imagen de un plato dulce del restaurante",
+                    "name": "Plato del restaurante Franky's"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "img/frankys2.jpg",
+                    "datePublished": "2023-03-06",
+                    "description": "Imagen de un plato del restaurante",
+                    "name": "Caja del restaurante Franky's"
+                },
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": "img/frankys3.jpg",
+                    "datePublished": "2023-03-06",
+                    "description": "Imagen del queso del restaurante maxime",
+                    "name": "Plato del restaurante Franky's"
+                }
+            ],
+            "subjectOf": {
+                "@type": "CreativeWork",
+                "video": [
+                    {
+                        "@type": "VideoObject",
+                        "name": "",
+                        "contentUrl":""
+                    }
+                ]
+            }
+        }
+    ]
+    }
