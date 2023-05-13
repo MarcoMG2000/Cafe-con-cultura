@@ -19,10 +19,28 @@ body {
   justify-content: left;
 }
 
-.event-body {
+.event-body-bus {
   width: 160%;
   margin: 0 auto 20px;
   border: 2px solid rgb(248, 214, 23);
+}
+.event-body-bus {
+  padding: 5px;
+  border-radius: 8px;
+  transition: 0.3s;
+  cursor: pointer;
+  /* border: 3px solid #ffe1a4; */
+}
+
+.event-body-bus:hover {
+  border-color: #ffc451;
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.4);
+  transform: translateY(-10px);
+  color: #c99327;
+}
+
+.event-body-bus p {
+  padding-left: 20px;
 }
 
 .form-range::-webkit-slider-runnable-track {

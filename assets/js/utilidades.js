@@ -146,7 +146,7 @@ function cargarBuscador(nombre, bool) {
             cargarBusquedaCafe(listaCafeterias, filtros, bool);
         } else {
             tipoFiltro = 'Eventos';
-            cargarBusquedaEvent(listaCafeterias);
+            cargarBusquedaEvent(listaCafeterias,filtros,bool);
         }
     };
     request.send();
@@ -304,8 +304,74 @@ async function cargarBusquedaCafe(listaCafeterias, filtros, primeraVez) {
     cafeteriaSelect.innerHTML = pagina;
 }
 
-function cargarBusquedaEvent(listaCafeterias) {
+function cargarBusquedaEvent(listaCafeterias, primeraVez) {
     var listaEventos = obtenerListaEventos(listaCafeterias);
+    if (primeraVez) {
+        var filt = document.getElementById("sidebar");
+        var filterS = '<div class="border-bottom pb-2 ml-2">' +
+            '<h4 id="burgundy">Filtros</h4>' +
+            '</div>' +
+            '<div class="py-2 border-bottom ml-3">' +
+            '<h6 class="font-weight-bold">Categorias</h6>' +
+            '<form>' +
+            '<div class="form-group">' +
+            '<input type="checkbox" id="Musica">' +
+            '<label for="artisan">Música</label>' +
+            '</div>' +
+            '<div class="form-group">' +
+            '<input type="checkbox" id="Lectura">' +
+            '<label for="breakfast">Lectura</label>' +
+            '</div>' +
+            '<div class="form-group">' +
+            '<input type="checkbox" id="Juegos de mesa">' +
+            '<label for="healthy">Juegos de mesa</label>' +
+            '</div>' +
+            '</form>' +
+            '</div>' +
+            '<div class="py-2 border-bottom ml-3">' +
+            '<h6 class="font-weight-bold">Precios</h6>' +
+            '<form>' +
+            '<div class="form-group">' +
+            '<input type="checkbox" id="$">' +
+            '<label for="tea">€</label>' +
+            '</div>' +
+            '<div class="form-group">' +
+            '<input type="checkbox" id="$$">' +
+            '<label for="cookies">€€</label>' +
+            '</div>' +
+            '<div class="form-group">' +
+            '<input type="checkbox" id="$$$">' +
+            '<label for="pastries">€€€</label>' +
+            '</div>' +
+            '</form>' +
+            '</div>' +
+            '<div class="py-2 ml-3">' +
+            '<h6 class="font-weight-bold">Valoración</h6>' +
+            '<form>' +
+            '<div class="form-group">' +
+            '<input type="checkbox" id="1">' +
+            '<label for="25">1 estrella</label>' +
+            '</div>' +
+            '<div class="form-group">' +
+            '<input type="checkbox" id="2">' +
+            '<label for="25">2 estrellas</label>' +
+            '</div>' +
+            '<div class="form-group">' +
+            '<input type="checkbox" id="3">' +
+            '<label for="25">3 estrellas</label>' +
+            '</div>' +
+            '<div class="form-group">' +
+            '<input type="checkbox" id="4">' +
+            '<label for="25">4 estrellas</label>' +
+            '</div>' +
+            '<div class="form-group">' +
+            '<input type="checkbox" id="5">' +
+            '<label for="25">5 estrellas</label>' +
+            '</div>' +
+            '</form>' +
+            '</div>';
+        filt.insertAdjacentHTML('afterbegin', filterS);
+    }
     var cafeteriaSelect = document.getElementById("busqueda-filtro");
     var pagina = '<div class="row-filt-ev">';
     pagina += '<div id="past-events" class="col-lg-6 aos-init aos-animate" data-aos="fade-left" data-aos-delay="100">';
@@ -322,7 +388,7 @@ function cargarBusquedaEvent(listaCafeterias) {
             timeZone: 'UTC'
         });
         pagina += '<div class="icon-box mt-5 mt-lg-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">';
-        pagina += '<div class="event-body"><i class="fa-solid fa-chevron-right chevron"></i>';
+        pagina += '<div class="event-body-bus"><i class="fa-solid fa-chevron-right chevron"></i>';
         pagina += '<h4>' + listaEventos[i].name + '</h4>'
         pagina += '<p class="info">';
         pagina += '<div><i class="fa-solid fa-location-dot fa-lg"></i>' + listaEventos[i].place + '</div>';
@@ -764,10 +830,10 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
     // Ordenamos por distancia
     listaCafeterias = ordenarLista(listaCafeterias, "distancia", "ascendente");
     const cafeteriasRating = document.getElementById("cafeterias-cercanas");
-    const estado = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
     var pagina = ''; // Construimos la sección en este mensaje
 
     for (let i = 0; i < 3; i++) { // Recorremos las tres cafeterías con mejor valoración
+        const estado = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
         // Generamos el html del estado
         var abierto_cerrado = "";
         if (estado === "Abierto") {
