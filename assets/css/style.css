@@ -217,9 +217,22 @@ h6 {
   padding-left: 10px;
 }
 
+#cafeteria p i, #cafeteria p a {
+  margin-right: 10px;
+}
+
+#cafeteria p a {
+  margin-right: 10px;
+  color: #e2a324;
+}
+
 #cafeteria h4 span:first-child {
   color: #e2a324;
   padding-left: 20px;
+}
+
+#cafeteria .price-range {
+  margin-left: 15px;
 }
 
 #cafeteria span {
@@ -351,8 +364,14 @@ h6 {
 }
 
 #evento .performers a {
-  color: #e2a324;
+  color: #151515;
   font-weight: 700;
+  transition: 0.3s;
+}
+
+#evento .performers a:hover {
+  color: #e2a324;
+  transition: 0.3s;
 }
 
 #evento .performers i {

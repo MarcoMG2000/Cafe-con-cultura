@@ -21,17 +21,17 @@
          "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.7",
-            "reviewCount": "250"
+            "reviewCount": "49"
          },
          "openingHours": [
             "Mo-Fr 11:00-22:00",
             "Sa-Su 17:00-22:00"
          ],
          "contactPoint": {
-            "telephone": "(408) 714-1489",
+            "telephone": "971 91 91 31",
             "email": "cafeparabellum@gmail.com"
          },
-         "url": "http://www.CafeteriaParabellum.com",
+         "url": "https://www.instagram.com/parabellumcafeteria/?hl=es",
          "image": [
             {
                "@type": "ImageObject",
@@ -47,17 +47,11 @@
                "@type": "ImageObject",
                "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
                "name": "Imagen 3 - Cafetería Parabellum"
-            },
-            {
-               "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
-               "name": "Imagen 4 - Cafetería Parabellum"
             }
          ],
-         "logo": "http://urlimg1.png",
-         "priceRange": "$$",
+         "priceRange": "$",
          "acceptsReservations": false,
-         "hasMenu": "https://CafeteriaParabellum.com/carta",
+         "hasMenu": false,
          "events": [
             {
                "@type": "Event",
@@ -179,7 +173,7 @@
                "isAccessibleForFree": false,
                "startDate": "2023-07-01T19:30:00Z",
                "endDate": "2023-06-01T20:00:00Z",
-               "performers":[],
+               "performers": [],
                "offers": {
                   "@type": "Offer",
                   "price": "5.00",
@@ -218,9 +212,9 @@
       {
          "@type": "CafeOrCoffeeShop",
          "name": "Espai Suscultura Coop",
-         "description": "Suscultura es una microcooperativa de servicios culturales, de gestión de asociaciones, de producción y organización de acontecimientos y de actividades educativas y de ocio.",
+         "description": "El espacio Suscultura coop, gestionado por la Cooperativa de Consumo Corda i Poal de Palma, quiere desarrollar actividades culturales y de ajedrez y promocionar el producto local y Km 0 en su Bar.",
          "address": {
-            "streetAddress": " C. de Miquel Capllonch, 33",
+            "streetAddress": " C. de Miquel Capllonch, 33, local 1",
             "addressLocality": "Palma",
             "addressRegion": "Illes Balears",
             "postalCode": "07010",
@@ -233,75 +227,33 @@
          },
          "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "3",
-            "reviewCount": "0"
+            "ratingValue": "4.6",
+            "reviewCount": "48"
          },
          "openingHours": [
             "We-Fr 18:00-22:00"
          ],
          "contactPoint": {
-            "telephone": "+34 657185112",
+            "telephone": "657 18 51 12",
             "email": "suscultura@gmail.com"
          },
          "url": "https://www.suscultura.cat/",
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-1.jpg",
-               "name": "Imagen 1 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Espai Suscultura Coop/imagen-1.jpg",
+               "name": "Imagen 1 - Espai Suscultura Coop"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-2.jpg",
-               "name": "Imagen 2 - Cafetería Parabellum"
-            },
-            {
-               "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-3.jpg",
-               "name": "Imagen 3 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Espai Suscultura Coop/imagen-2.jpg",
+               "name": "Imagen 2 - Espai Suscultura Coop"
             }
          ],
-         "logo": "http://urlimg1.png",
          "priceRange": "$",
          "acceptsReservations": false,
-         "hasMenu": "",
-         "events": [
-            {
-               "@context": "https://schema.org",
-               "@type": "Event",
-               "name": "Concierto Jazz",
-               "about": "Musica en directo de Jazz por el artista tal",
-               "audience": "Todas las edades",
-               "startDate": "2023-05-22T18:30:00Z",
-               "endDate": "2023-05-22T20:00:00Z",
-               "isAccessibleForFree": true,
-               "maximumPhysicalAttendeeCapacity": "50",
-               "eventStatus": "EventScheduled",
-               "performers": [
-                  {
-                     "name": "Jazz Band",
-                     "url": "https://google.com/"
-                  }
-               ],
-               "image": [
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
-                     "name": "Imagen 1 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
-                     "name": "Imagen 2 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
-                     "name": "Imagen 3 - Cafetería Parabellum"
-                  }
-               ]
-            }
-         ],
+         "hasMenu": false,
+         "events": [],
          "keywords": [
             "Juegos de mesa",
             "Lectura",
@@ -327,79 +279,43 @@
          },
          "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "1",
-            "reviewCount": "0"
+            "ratingValue": "4.3",
+            "reviewCount": "609"
          },
          "openingHours": [
             "Mo-Sa 18:00-02:30"
          ],
          "contactPoint": {
-            "telephone": "+34 661785667",
+            "telephone": "661 78 56 67",
             "email": "novocafelisboa@gmail.com"
          },
          "url": "https://cafelisboa.es/",
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-1.jpg",
-               "name": "Imagen 1 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Café Lisboa/imagen-1.jpg",
+               "name": "Imagen 1 - Café Lisboa"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-2.jpg",
-               "name": "Imagen 2 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Café Lisboa/imagen-2.jpg",
+               "name": "Imagen 2 - Café Lisboa"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-3.jpg",
-               "name": "Imagen 3 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Café Lisboa/imagen-3.jpg",
+               "name": "Imagen 3 - Café Lisboa"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Café Lisboa/imagen-4.jpg",
+               "name": "Imagen 4 - Café Lisboa"
             }
          ],
-         "logo": "",
-         "priceRange": "$$",
+         "priceRange": "$",
          "acceptsReservations": true,
-         "hasMenu": "",
-         "events": [
-            {
-               "@type": "Event",
-               "name": "",
-               "about": "",
-               "audience": "",
-               "startDate": "",
-               "endDate": "",
-               "offers": {
-                  "@type": "Offer",
-                  "price": "",
-                  "priceCurrency": "EUR",
-                  "url": ""
-               },
-               "maximumPhysicalAttendeeCapacity": "",
-               "eventStatus": "",
-               "performers": [
-                  {
-                     "name": "",
-                     "url": ""
-                  }
-               ],
-               "image": [
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
-                     "name": "Imagen 1 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
-                     "name": "Imagen 2 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
-                     "name": "Imagen 3 - Cafetería Parabellum"
-                  }
-               ]
-            }
-         ],
+         "hasMenu": true,
+         "events": [],
          "keywords": [
             "Música",
             "Cultura"
@@ -408,7 +324,7 @@
       {
          "@type": "CafeOrCoffeeShop",
          "name": "Cafè Barroco",
-         "description": "Tapas, ensaladas y postres en bar restaurante de ambiente sencillo, con juegos de mesa.",
+         "description": "Cafè Barroco, un café al que venir con tu pareja o con tus amigos a jugar, a tomarte un chocolate a la taza, a cenar o un buen postre después de tu cena favorita. Nuestro objetivo, hacerte sentir como si estuvieras en tu casa.",
          "address": {
             "streetAddress": "Carrer de Margalida Caimari, 17",
             "addressLocality": "Palma",
@@ -423,79 +339,38 @@
          },
          "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "0"
+            "ratingValue": "4.5",
+            "reviewCount": "464"
          },
          "openingHours": [
             "Tu-Sa 17:00-00:00"
          ],
          "contactPoint": {
-            "telephone": "+34 613 01 47 88",
+            "telephone": "613 01 47 88",
             "email": "noucafebarroco@gmail.com"
          },
          "url": "https://www.facebook.com/cafebarroco",
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-1.jpg",
-               "name": "Imagen 1 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Cafè Barroco/imagen-1.jpg",
+               "name": "Imagen 1 - Cafè Barroco"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-2.jpg",
-               "name": "Imagen 2 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Cafè Barroco/imagen-2.jpg",
+               "name": "Imagen 2 - Cafè Barroco"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-3.jpg",
-               "name": "Imagen 3 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Cafè Barroco/imagen-3.jpg",
+               "name": "Imagen 3 - Cafè Barroco"
             }
          ],
-         "logo": "",
          "priceRange": "$",
          "acceptsReservations": true,
-         "hasMenu": "https://carta.menu/restaurants/palma-1/cafe-barroco",
-         "events": [
-            {
-               "@type": "Event",
-               "name": "Club de Lectura: MistBorn",
-               "about": "Club de Lectura del Libro 1 de la Saga MistBorn, por Brandom Sanderson",
-               "audience": "Todas las edades",
-               "startDate": "2023-05-21T16:30:00Z",
-               "endDate": "2023-05-21T18:00:00Z",
-               "offers": {
-                  "@type": "Offer",
-                  "price": "13.00",
-                  "priceCurrency": "EUR",
-                  "url": "http://www.ticketfly.com/purchase/309433"
-               },
-               "maximumPhysicalAttendeeCapacity": "50",
-               "eventStatus": "EventScheduled",
-               "performers": [
-                  {
-                     "name": "Rock Band",
-                     "url": "https://rockband.com/"
-                  }
-               ],
-               "image": [
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
-                     "name": "Imagen 1 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
-                     "name": "Imagen 2 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
-                     "name": "Imagen 3 - Cafetería Parabellum"
-                  }
-               ]
-            }
-         ],
+         "hasMenu": true,
+         "events": [],
          "keywords": [
             "Música",
             "Cultura",
@@ -520,82 +395,43 @@
          },
          "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "0",
-            "reviewCount": "0"
+            "ratingValue": "4.3",
+            "reviewCount": "377"
          },
          "openingHours": [
             "Su-Th 19:00-01:00",
             "Fr-Sa 19:00-03:00"
          ],
          "contactPoint": {
-            "telephone": "+34 676 30 65 31",
+            "telephone": "676 30 65 31",
             "email": "aguabar@gmail.com"
          },
          "url": "https://www.aguabar.com/",
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-1.jpg",
-               "name": "Imagen 1 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Agua Bar/imagen-1.jpg",
+               "name": "Imagen 1 - Agua Bar"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-2.jpg",
-               "name": "Imagen 2 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Agua Bar/imagen-2.jpg",
+               "name": "Imagen 2 - Agua Bar"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-3.jpg",
-               "name": "Imagen 3 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Agua Bar/imagen-3.jpg",
+               "name": "Imagen 3 - Agua Bar"
             }
          ],
-         "logo": "",
-         "priceRange": "$$",
-         "acceptsReservations": true,
-         "hasMenu": "",
-         "events": [
-            {
-               "@type": "Event",
-               "name": "",
-               "about": "",
-               "audience": "",
-               "startDate": "",
-               "endDate": "",
-               "offers": {
-                  "@type": "Offer",
-                  "price": "",
-                  "priceCurrency": "EUR",
-                  "url": ""
-               },
-               "maximumPhysicalAttendeeCapacity": "",
-               "eventStatus": "",
-               "performers": [
-                  {
-                     "name": "",
-                     "url": ""
-                  }
-               ],
-               "image": [
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
-                     "name": "Imagen 1 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
-                     "name": "Imagen 2 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
-                     "name": "Imagen 3 - Cafetería Parabellum"
-                  }
-               ]
-            }
-         ],
+         "priceRange": "$",
+         "acceptsReservations": false,
+         "hasMenu": false,
+         "events": [],
          "keywords": [
-            "Música"
+            "Música",
+            "Monólogos",
+            "Open Mic"
          ]
       },
       {
@@ -616,84 +452,222 @@
          },
          "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "0",
-            "reviewCount": "0"
+            "ratingValue": "4.6",
+            "reviewCount": "193"
          },
          "openingHours": [
             "Mo-Th 18:00-00:00",
             "Fr-Sa 18:00-01:00"
          ],
          "contactPoint": {
-            "telephone": "+34 971 28 26 03",
+            "telephone": "971 28 26 03",
             "email": "cafeatresbandas@gmail.com"
          },
          "url": "https://es-es.facebook.com/cafetresbandas/",
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-1.jpg",
-               "name": "Imagen 1 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Café a Tres Bandas/imagen-1.jpg",
+               "name": "Imagen 1 - Café a Tres Bandas"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-2.jpg",
-               "name": "Imagen 2 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Café a Tres Bandas/imagen-2.jpg",
+               "name": "Imagen 2 - Café a Tres Bandas"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-3.jpg",
-               "name": "Imagen 3 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Café a Tres Bandas/imagen-3.jpg",
+               "name": "Imagen 3 - Café a Tres Bandas"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Café a Tres Bandas/imagen-4.jpg",
+               "name": "Imagen 4 - Café a Tres Bandas"
             }
          ],
-         "logo": "",
-         "priceRange": "$$-$$$",
+         "priceRange": "$",
          "acceptsReservations": true,
-         "hasMenu": "https://es.restaurantguru.com/A-Tres-Bandas-Palma",
+         "hasMenu": true,
          "events": [
             {
                "@type": "Event",
-               "name": "",
-               "about": "",
-               "audience": "",
-               "startDate": "",
-               "endDate": "",
+               "name": "Clara Andrés en Café a Tres Bandas",
+               "about": "La cantautora valenciana Clara Andrés visita el Café a Tres Bandas para presentar su galardonado “Capfico”, premio Carles Santos de la música valenciana al mejor disco de canción de autor.",
+               "audience": "Todas las edades",
+               "isAccessibleForFree": false,
+               "startDate": "2023-05-13T21:00:00Z",
+               "endDate": "2023-05-13T23:00:00Z",
                "offers": {
                   "@type": "Offer",
-                  "price": "",
+                  "price": "10.40",
                   "priceCurrency": "EUR",
-                  "url": ""
+                  "url": "https://ticketandroll.com/evento/clara-andres-en-cafe-a-tres-bandas/"
                },
-               "maximumPhysicalAttendeeCapacity": "",
-               "eventStatus": "",
+               "maximumPhysicalAttendeeCapacity": "50",
+               "eventStatus": "EventScheduled",
                "performers": [
                   {
-                     "name": "",
-                     "url": ""
+                     "name": "Clara Andrés",
+                     "url": "https://twitter.com/clara_andres?lang=es"
                   }
                ],
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
-                     "name": "Imagen 1 - Cafetería Parabellum"
+                     "url": "assets/img/eventos/Clara Andrés en Café a Tres Bandas/imagen-1.jpg",
+                     "name": "Imagen 1 - Clara Andrés en Café a Tres Bandas"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
-                     "name": "Imagen 2 - Cafetería Parabellum"
+                     "url": "assets/img/eventos/Clara Andrés en Café a Tres Bandas/imagen-2.jpg",
+                     "name": "Imagen 2 - Clara Andrés en Café a Tres Bandas"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
-                     "name": "Imagen 3 - Cafetería Parabellum"
+                     "url": "assets/img/eventos/Clara Andrés en Café a Tres Bandas/imagen-3.jpg",
+                     "name": "Imagen 3 - Clara Andrés en Café a Tres Bandas"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Clara Andrés en Café a Tres Bandas/imagen-4.jpg",
+                     "name": "Imagen 4 - Clara Andrés en Café a Tres Bandas"
+                  }
+               ]
+            },
+            {
+               "@type": "Event",
+               "name": "Daniel Higiénico",
+               "about": "Daniel Higiénico presenta \"Cancionólogos\" en el Café A Tres Bandas de Palma.",
+               "audience": "+16 años",
+               "isAccessibleForFree": false,
+               "startDate": "2023-05-26T21:00:00Z",
+               "endDate": "2023-05-26T23:00:00Z",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "10.00",
+                  "priceCurrency": "EUR",
+                  "url": "https://ticketib.com/es/events/daniel-higienico-en-palma-de-mallorca-07011-palma"
+               },
+               "maximumPhysicalAttendeeCapacity": "50",
+               "eventStatus": "EventScheduled",
+               "performers": [
+                  {
+                     "name": "Daniel Higiénico",
+                     "url": "https://www.danielhigienico.com"
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Daniel Higiénico/imagen-1.jpg",
+                     "name": "Imagen 1 - Daniel Higiénico"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Daniel Higiénico/imagen-2.jpg",
+                     "name": "Imagen 2 - Daniel Higiénico"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Daniel Higiénico/imagen-3.jpg",
+                     "name": "Imagen 3 - Daniel Higiénico"
+                  }
+               ]
+            },
+            {
+               "@type": "Event",
+               "name": "Monólogo Edén Serrano (De aquí no sale)",
+               "about": "«De aquí no sale» es el típico nombre de show de comedia que pretende ir de canallita y transgresor. El típico título que quiere llamar tu atención sobre el resto de planes que te puedan surgir.",
+               "audience": "+16 años",
+               "isAccessibleForFree": false,
+               "startDate": "2023-06-10T21:30:00Z",
+               "endDate": "2023-06-10T23:00:00Z",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "8.00",
+                  "priceCurrency": "EUR",
+                  "url": "https://entradas.ticketrona.com/events/de-aqui-no-sale-eden-serrano"
+               },
+               "maximumPhysicalAttendeeCapacity": "50",
+               "eventStatus": "EventScheduled",
+               "performers": [
+                  {
+                     "name": "Edén Serrano",
+                     "url": "https://edenserrano.es"
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Monólogo Edén Serrano (De aquí no sale)/imagen-1.jpg",
+                     "name": "Imagen 1 - Monólogo Edén Serrano (De aquí no sale)"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Monólogo Edén Serrano (De aquí no sale)/imagen-2.jpg",
+                     "name": "Imagen 2 - Monólogo Edén Serrano (De aquí no sale)"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Monólogo Edén Serrano (De aquí no sale)/imagen-3.jpg",
+                     "name": "Imagen 3 - Monólogo Edén Serrano (De aquí no sale)"
+                  }
+               ]
+            },
+            {
+               "@type": "Event",
+               "name": "Dani Flaco en Palma de Mallorca",
+               "about": "Gira «Bailemos un bis» 2023. Entradas a la venta a partir del 2 de Enero a las 10h.",
+               "audience": "Todas las edades",
+               "isAccessibleForFree": false,
+               "startDate": "2023-07-08T19:00:00Z",
+               "endDate": "2023-07-08T23:00:00Z",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "15.60",
+                  "priceCurrency": "EUR",
+                  "url": "https://ticketandroll.com/evento/dani-flaco-en-palma-de-mallorca/"
+               },
+               "maximumPhysicalAttendeeCapacity": "50",
+               "eventStatus": "EventScheduled",
+               "performers": [
+                  {
+                     "name": "Dani Flaco",
+                     "url": "http://daniflaco.es"
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Dani Flaco en Palma de Mallorca/imagen-1.jpg",
+                     "name": "Imagen 1 - Dani Flaco en Palma de Mallorca"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Dani Flaco en Palma de Mallorca/imagen-2.jpg",
+                     "name": "Imagen 2 - Dani Flaco en Palma de Mallorca"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Dani Flaco en Palma de Mallorca/imagen-3.jpg",
+                     "name": "Imagen 3 - Dani Flaco en Palma de Mallorca"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Dani Flaco en Palma de Mallorca/imagen-4.jpg",
+                     "name": "Imagen 4 - Dani Flaco en Palma de Mallorca"
                   }
                ]
             }
          ],
          "keywords": [
             "Música",
-            "Lectura",
-            "Juegos"
+            "Monólogos",
+            "Stand up comedy",
+            "Canción de Autor",
+            "Folk",
+            "Pop"
          ]
       },
       {
@@ -714,89 +688,50 @@
          },
          "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "0",
-            "reviewCount": "0"
+            "ratingValue": "4.4",
+            "reviewCount": "1350"
          },
          "openingHours": [
-            "Mo-Fr 18:00-00:30"
+            "Mo-Fr 18:00-00:30",
+            "Sa 10:30-17:00"
          ],
          "contactPoint": {
-            "telephone": "+34 871 57 23 13",
+            "telephone": "871 57 23 13",
             "email": "cafeantiquaris@gmail.com"
          },
          "url": "https://es-es.facebook.com/cafeantiquari",
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-1.jpg",
-               "name": "Imagen 1 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Café l'Antiquari/imagen-1.jpg",
+               "name": "Imagen 1 - Café l'Antiquari"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-2.jpg",
-               "name": "Imagen 2 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Café l'Antiquari/imagen-2.jpg",
+               "name": "Imagen 2 - Café l'Antiquari"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-3.jpg",
-               "name": "Imagen 3 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Café l'Antiquari/imagen-3.jpg",
+               "name": "Imagen 3 - Café l'Antiquari"
             }
          ],
-         "logo": "",
-         "priceRange": "$$-$$$",
+         "priceRange": "$$$",
          "acceptsReservations": true,
-         "hasMenu": "https://es-es.facebook.com/cafeantiquari",
-         "events": [
-            {
-               "@type": "Event",
-               "name": "",
-               "about": "",
-               "audience": "",
-               "startDate": "",
-               "endDate": "",
-               "offers": {
-                  "@type": "Offer",
-                  "price": "",
-                  "priceCurrency": "EUR",
-                  "url": ""
-               },
-               "maximumPhysicalAttendeeCapacity": "",
-               "eventStatus": "",
-               "performers": [
-                  {
-                     "name": "",
-                     "url": ""
-                  }
-               ],
-               "image": [
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
-                     "name": "Imagen 1 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
-                     "name": "Imagen 2 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
-                     "name": "Imagen 3 - Cafetería Parabellum"
-                  }
-               ]
-            }
-         ],
+         "hasMenu": true,
+         "events": [],
          "keywords": [
             "Música",
             "Cultura",
-            "Espesctáculos"
+            "Espesctáculos",
+            "Comida"
          ]
       },
       {
          "@type": "CafeOrCoffeeShop",
          "name": "Mandragora cafe",
-         "description": "MANDRAGORA un espacio creado para entretener, shows de humor, conciertos en directo y un servicio de comida excelente.",
+         "description": "Local ubicado en cala estancia, con música en directo cada fin de semana y cocina 100% casera , festejamos cumpleaños , cenas de empresas , organizamos tu evento a tu medida !!",
          "address": {
             "streetAddress": "Calle horaci, 36",
             "addressLocality": "Palma",
@@ -811,80 +746,40 @@
          },
          "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "0",
-            "reviewCount": "0"
+            "ratingValue": "4.4",
+            "reviewCount": "387"
          },
          "openingHours": [
             "Tu-Th 15:00-02:00",
-            "Fr-Sa 15:00-03:00"
+            "Fr-Sa 15:00-03:00",
+            "Su 15:00-2:00"
          ],
          "contactPoint": {
-            "telephone": "+34 664 86 11 50",
+            "telephone": "664 86 11 50",
             "email": "mandragoramallorca@gmail.com"
          },
          "url": "mandragoramallorca.com",
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-1.jpg",
-               "name": "Imagen 1 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Mandragora cafe/imagen-1.jpg",
+               "name": "Imagen 1 - Mandragora cafe"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-2.jpg",
-               "name": "Imagen 2 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Mandragora cafe/imagen-2.jpg",
+               "name": "Imagen 2 - Mandragora cafe"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-3.jpg",
-               "name": "Imagen 3 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Mandragora cafe/imagen-3.jpg",
+               "name": "Imagen 3 - Mandragora cafe"
             }
          ],
-         "logo": "",
-         "priceRange": "$$-$$$",
+         "priceRange": "$",
          "acceptsReservations": true,
-         "hasMenu": "https://carta.menu/restaurants/palma-de-mallorca/mandragora-cafe-2",
-         "events": [
-            {
-               "@type": "Event",
-               "name": "",
-               "about": "",
-               "audience": "",
-               "startDate": "",
-               "endDate": "",
-               "offers": {
-                  "@type": "Offer",
-                  "price": "",
-                  "priceCurrency": "EUR",
-                  "url": ""
-               },
-               "maximumPhysicalAttendeeCapacity": "",
-               "eventStatus": "",
-               "performers": [
-                  {
-                     "name": "",
-                     "url": ""
-                  }
-               ],
-               "image": [
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
-                     "name": "Imagen 1 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
-                     "name": "Imagen 2 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
-                     "name": "Imagen 3 - Cafetería Parabellum"
-                  }
-               ]
-            }
-         ],
+         "hasMenu": true,
+         "events": [],
          "keywords": [
             "Música",
             "Cultura",
@@ -910,83 +805,50 @@
          },
          "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "2",
-            "reviewCount": "0"
+            "ratingValue": "4.6",
+            "reviewCount": "702"
          },
          "openingHours": [
             "Mo-Sa 10:00-14:00",
             "Mo-Sa 17:00-21:00"
          ],
          "contactPoint": {
-            "telephone": "+34 971 72 14 42",
+            "telephone": "971 72 14 42",
             "email": "babel@labibliotecadebabel.es"
          },
          "url": "http://www.labibliotecadebabel.es/",
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-1.jpg",
-               "name": "Imagen 1 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/La biblioteca de Babel/imagen-1.jpg",
+               "name": "Imagen 1 - La biblioteca de Babel"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-2.jpg",
-               "name": "Imagen 2 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/La biblioteca de Babel/imagen-2.jpg",
+               "name": "Imagen 2 - La biblioteca de Babel"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-3.jpg",
-               "name": "Imagen 3 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/La biblioteca de Babel/imagen-3.jpg",
+               "name": "Imagen 3 - La biblioteca de Babel"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/La biblioteca de Babel/imagen-4.jpg",
+               "name": "Imagen 4 - La biblioteca de Babel"
             }
          ],
-         "logo": "",
          "priceRange": "$$",
          "acceptsReservations": true,
          "hasMenu": "https://es.restaurantguru.com/La-Biblioteca-de-Babel-Palma/menu",
-         "events": [
-            {
-               "@type": "Event",
-               "name": "",
-               "about": "",
-               "audience": "",
-               "startDate": "",
-               "endDate": "",
-               "offers": {
-                  "@type": "Offer",
-                  "price": "",
-                  "priceCurrency": "EUR",
-                  "url": ""
-               },
-               "maximumPhysicalAttendeeCapacity": "",
-               "eventStatus": "",
-               "performers": [
-                  {
-                     "name": "",
-                     "url": ""
-                  }
-               ],
-               "image": [
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
-                     "name": "Imagen 1 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
-                     "name": "Imagen 2 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
-                     "name": "Imagen 3 - Cafetería Parabellum"
-                  }
-               ]
-            }
-         ],
+         "events": [],
          "keywords": [
-            "Lectura",
-            "Cultura"
+            "Copas",
+            "Cenas",
+            "Conciertos",
+            "Cumpleaños",
+            "Libros"
          ]
       },
       {
@@ -1007,39 +869,38 @@
          },
          "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "4.3",
-            "reviewCount": "0"
+            "ratingValue": "4.7",
+            "reviewCount": "186"
          },
          "openingHours": [
             "Mo-Sa 10:00-13:30",
             "Mo-Fr 17:00-20:00"
          ],
          "contactPoint": {
-            "telephone": "+34 673 46 17 76",
+            "telephone": "673 46 17 76",
             "email": "literanta@literanta.com"
          },
          "url": "https://www.literanta.com/",
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-1.jpg",
-               "name": "Imagen 1 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Literanta/imagen-1.jpg",
+               "name": "Imagen 1 - Literanta"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-2.jpg",
-               "name": "Imagen 2 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Literanta/imagen-2.jpg",
+               "name": "Imagen 2 - Literanta"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/cafeteria-3.jpg",
-               "name": "Imagen 3 - Cafetería Parabellum"
+               "url": "assets/img/cafeterias/Literanta/imagen-3.jpg",
+               "name": "Imagen 3 - Literanta"
             }
          ],
-         "logo": "",
-         "priceRange": "$$-$$$",
+         "priceRange": "$$",
          "acceptsReservations": true,
-         "hasMenu": "https://es.restaurantguru.com/Literanta-Palma/menu",
+         "hasMenu": true,
          "events": [],
          "keywords": [
             "Lectura",
