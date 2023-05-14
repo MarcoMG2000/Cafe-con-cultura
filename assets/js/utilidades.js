@@ -277,7 +277,7 @@ async function cargarBusquedaCafe(listaCafeterias, filtros, primeraVez) {
     let resultados = 0;
 
     for (let i = 0; i < listaCafeterias.length; i++) {
-        if (cumpleFiltros(listaCafeterias[i], filtros)) {
+        if (cumpleFiltrosCaf(listaCafeterias[i], filtros)) {
 
             resultados++;
 
@@ -332,8 +332,11 @@ async function cargarBusquedaCafe(listaCafeterias, filtros, primeraVez) {
     cafeteriaSelect.innerHTML = pagina;
 }
 
-function cargarBusquedaEvent(listaCafeterias, primeraVez) {
-    var listaEventos = obtenerListaTotalEventos(listaCafeterias);
+async function cargarBusquedaEvent(listaCafeterias, filtros, primeraVez) {
+    var listaEventos = obtenerListaEventos(listaCafeterias);
+    await obtenerDistanciasCafeterias(listaCafeterias);
+    var slider = document.getElementById("distancia");
+    slider.max = getMaxDistance(listaCafeterias);
     if (primeraVez) {
         var filt = document.getElementById("sidebar");
         var filterS = '<div class="border-bottom pb-2 ml-2">' +
@@ -343,11 +346,11 @@ function cargarBusquedaEvent(listaCafeterias, primeraVez) {
             '<h6 class="font-weight-bold">Coste</h6>' +
             '<form>' +
             '<div class="form-group">' +
-            '<input type="checkbox" id="gratis">' +
+            '<input type="checkbox" id="false">' +
             '<label for="artisan">gratuito</label>' +
             '</div>' +
             '<div class="form-group">' +
-            '<input type="checkbox" id="pago">' +
+            '<input type="checkbox" id="true">' +
             '<label for="breakfast">De pago</label>' +
             '</div>' +
             '</form>' +
@@ -378,27 +381,29 @@ function cargarBusquedaEvent(listaCafeterias, primeraVez) {
     let resultados = 0;
 
     for (let i = listaEventos.length - 1; i >= 0; i--) {
+        if (cumpleFiltrosEv(listaEventos[i], listaCafeterias[i], filtros)) {
 
-        //MOVER LINEA DENTRO DE CONDICIÓN DE FILTROS UNA VEZ IMPLEMENTADO
-        resultados++;
+            //MOVER LINEA DENTRO DE CONDICIÓN DE FILTROS UNA VEZ IMPLEMENTADO
+            resultados++;
 
-        const fechaInicioEvento = new Date(listaEventos[i].startDate);
-        const fecha = fechaInicioEvento.toLocaleString('es-ES', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: false,
-            timeZone: 'UTC'
-        });
-        pagina += '<div class="icon-box mt-5 mt-lg-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">';
-        pagina += '<div class="event-body-bus" onclick="cargarContenido(\'evento.html\', \'' + listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')"><i class="fa-solid fa-chevron-right chevron"></i>';
-        pagina += '<h4>' + listaEventos[i].name + '</h4>'
-        pagina += '<p class="info">';
-        pagina += '<div><i class="fa-solid fa-location-dot fa-lg"></i>' + listaEventos[i].place + '</div>';
-        pagina += '<div><i class="fa-solid fa-calendar fa-lg"></i>' + fecha + '</div></p></div></div>';
+            const fechaInicioEvento = new Date(listaEventos[i].startDate);
+            const fecha = fechaInicioEvento.toLocaleString('es-ES', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false,
+                timeZone: 'UTC'
+            });
+            pagina += '<div class="icon-box mt-5 mt-lg-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">';
+            pagina += '<div class="event-body-bus" onclick="cargarContenido(\'evento.html\', \'' + listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')"><i class="fa-solid fa-chevron-right chevron"></i>';
+            pagina += '<h4>' + listaEventos[i].name + '</h4>'
+            pagina += '<p class="info">';
+            pagina += '<div><i class="fa-solid fa-location-dot fa-lg"></i>' + listaEventos[i].place + '</div>';
+            pagina += '<div><i class="fa-solid fa-calendar fa-lg"></i>' + fecha + '</div></p></div></div>';
+        }
     }
     pagina += '</div></div>';
 
@@ -407,76 +412,26 @@ function cargarBusquedaEvent(listaCafeterias, primeraVez) {
     cafeteriaSelect.innerHTML = pagina;
 }
 
-function cargarBuscadorEvent() {
-    var listaEventos = obtenerListaEventos(listaCafeterias);
-    var cafeteriaSelect = document.getElementById("busqueda-filtro");
-    var pagina = '<div class="row">';
 
-    let resultados = 0;
-
-    for (let i = 0; i < listaEventos.length; i++) {
-        if (cumpleFiltros(listaEventos[i], filtros)) {
-
-            resultados++;
-
-            //let abierto = comprobarEstadoDeNegocio(listaEventos[i].openingHours);
-            pagina += '<div class="icon-box mt-5 mt-lg-0 aos-init aos-animate" onclick="cargarContenido(\'evento.html\', \'' + listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')" data-aos="zoom-in" data-aos-delay="150">';
-            pagina += '<div class="event-body"><i class="fa-solid fa-chevron-right chevron">';
-            pagina += '</i><h4>' + listaEventos[i].name + '</h4>'
-            pagina += '<a class="media" href="#">';
-            pagina += '<div class="media-body row">';
-            pagina += '<div class="media-image col-md-4">';
-            pagina += '<img src="' + listaCafeterias[i].image[0].url + '" class="mr-3" alt="' + listaCafeterias[i].image[0].name + '">';
-            pagina += '</div>';
-            pagina += '<div class="col-md-4 media-nombre d-flex align-items-center">';
-            pagina += '<h4>' + listaEventos[i].name + '</h4>';
-            pagina += '</div>';
-            pagina += '<div class="col-md-4 d-flex align-items-center div-filas">';
-            pagina += '<p>Valoración: ' + listaEventos[i].aggregateRating.ratingValue + '</p>';
-            pagina += '<p>Ubicación:' + listaEventos[i].address.streetAddress + '</p>';
-            pagina += '<p class="' + abierto.toLocaleLowerCase() + '">' + abierto + '</p>';
-            pagina += '</div>';
-            pagina += '</div>';
-            pagina += '</a>';
-        }
-    }
-    pagina += '</div>';
-
-    document.getElementById("totalResultados").textContent = "Resultados encontrados: " + resultados
-
-    cafeteriaSelect.innerHTML = pagina;
-}
-
-function cumpleFiltros(cafeteria, filtros) {
+function cumpleFiltrosEv(evento, cafeteria, filtros) {
     if (filtros.length === 0) {
         return true;
     }
-    let cafeteriaVal = [cafeteria.priceRange];
-    let keywordsCaf = cafeteria.keywords;
-    for (let i = 0; i < cafeteria.keywords.length; i++) {
-        cafeteriaVal.concat(cafeteria.keywords[i]);
-    }
+    let eventVal = [evento.isAccessibleForFree.toString(), evento.audience];
     let cumple = false;
     for (let i = 0; i < filtros.length - 1; i++) {
-        if (cafeteriaVal.includes(filtros[i]) || keywordsCaf.includes(filtros[i])) {
+        console.log("FILTROS EVENT: " + filtros[i]);
+        console.log("EVENT VAL: " + eventVal[i]);
+        if (eventVal.includes(filtros[i])) {
             cumple = true;
         }
     }
-    console.log("Cafeteria ->" + (cafeteria.distancia / 1000).toFixed(2));
-    console.log("Distancia slider ->" + filtros[filtros.length - 1]);
-    console.log(filtros);
     if (filtros[filtros.length - 1] != 0) {
         if ((parseInt(cafeteria.distancia) / 1000).toFixed(2) <= parseInt(filtros[filtros.length - 1])) {
             cumple = true;
         }
     } else {
         if (filtros.length == 1) {
-            cumple = true;
-        }
-    }
-    if (filtros.length > 1) {
-        console.log("Rating -> "+filtros[filtros.length - 2]);
-        if (parseInt(cafeteria.aggregateRating.ratingValue) >= parseInt(filtros[filtros.length - 2])) {
             cumple = true;
         }
     }
