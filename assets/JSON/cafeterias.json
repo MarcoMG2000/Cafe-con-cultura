@@ -97,7 +97,7 @@
                "@context": "https://schema.org",
                "@type": "Event",
                "name": "Concierto Jazz",
-               "about": "Musica en directo de Jazz por el artista tal",
+               "about": "Música en directo de Jazz por el artista tal",
                "audience": "Todas las edades",
                "startDate": "2023-05-22T18:30:00Z",
                "endDate": "2023-05-22T20:00:00Z",
@@ -132,7 +132,7 @@
                "@context": "https://schema.org",
                "@type": "TheaterEvent",
                "name": "Concierto Jazz",
-               "about": "Musica en directo de Jazz por el artista tal",
+               "about": "Música en directo de Jazz por el artista tal",
                "audience": "Todas las edades",
                "startDate": "2023-06-12T20:30:00Z",
                "endDate": "2023-06-12T22:00:00Z",
@@ -203,7 +203,7 @@
          "keywords": [
             "Juegos de mesa",
             "Cartas",
-            "Musica",
+            "Música",
             "Lectura",
             "Libros",
             "Comida y Bebida"
@@ -841,7 +841,7 @@
          ],
          "priceRange": "$$",
          "acceptsReservations": true,
-         "hasMenu": "https://es.restaurantguru.com/La-Biblioteca-de-Babel-Palma/menu",
+         "hasMenu": true,
          "events": [],
          "keywords": [
             "Copas",
@@ -905,6 +905,558 @@
          "keywords": [
             "Lectura",
             "Cultura"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Café La Fabrique D'art",
+         "description": "Llonguets, bocadillos, helados artesanales, vermut, conservas, vinos, cavas.",
+         "address": {
+            "streetAddress": "Plaça de Raimundo Clar, 12",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07002",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.5704541",
+            "longitude": "2.6554177"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "43"
+         },
+         "openingHours": [
+            "Mo-Fr 10:00-16:00",
+            "Fr-Sa 11:00-16:00",
+            "Fr-Sa 19:00-23:00"
+         ],
+         "contactPoint": {
+            "telephone": "600 89 27 68",
+            "email": "lafabrique12@gmail.com"
+         },
+         "url": "https://www.facebook.com/cafelafabriquedart/?locale=es_ES",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Café La Fabrique D'art/imagen-1.jpg",
+               "name": "Imagen 1 - Café La Fabrique D'art"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Café La Fabrique D'art/imagen-2.jpg",
+               "name": "Imagen 2 - Café La Fabrique D'art"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Café La Fabrique D'art/imagen-3.jpg",
+               "name": "Imagen 3 - Café La Fabrique D'art"
+            }
+         ],
+         "priceRange": "$$",
+         "acceptsReservations": true,
+         "hasMenu": true,
+         "events": [],
+         "keywords": [
+            "Cultura",
+            "Conciertos",
+            "Arte"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Can Alcover",
+         "description": "Pa amb oli tomàtiga i companatge Aquesta casa (des de 1895 fins a la primeria dels anys 20) es convertí en un temple de l’Art, obert a la Poesia, al Pensament i a la llibertat d’escoles literàries.",
+         "address": {
+            "streetAddress": "Carrer de Sant Alonso, 24",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07001",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.5666004",
+            "longitude": "2.6526286"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.4",
+            "reviewCount": "134"
+         },
+         "openingHours": [
+            "Mo-Fr 10:00-14:00",
+            "Sa-Su 12:00-15:00",
+            "Mo-Su 17:00-23:00"
+         ],
+         "contactPoint": {
+            "telephone": "629 57 59 41",
+            "email": "secretaria@ocb.cat"
+         },
+         "url": "https://ocb.cat",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Can Alcover/imagen-1.jpg",
+               "name": "Imagen 1 - Can Alcover"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Can Alcover/imagen-2.jpg",
+               "name": "Imagen 2 - Can Alcover"
+            }
+         ],
+         "priceRange": "$",
+         "acceptsReservations": true,
+         "hasMenu": false,
+         "events": [],
+         "keywords": [
+            "Cultura",
+            "Conciertos",
+            "Lectura",
+            "Libros"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Transilvania Cafetería-Museum",
+         "description": "Una nueva cafetería tematica , única y exclusiva en Palma especializado en colecciones figurativas.",
+         "address": {
+            "streetAddress": " Carrer de Jaume Ferran, 38",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07004",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.5819698",
+            "longitude": "2.6588922"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "499"
+         },
+         "openingHours": [
+            "Tu-Th 17:00-24:00",
+            "Fr-Sa 17:00-01:00"
+         ],
+         "contactPoint": {
+            "telephone": "871 51 44 88",
+            "email": "elgatohaceartedebarrio@outlook.com"
+         },
+         "url": "https://www.facebook.com/museodecerapalma",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Transilvania Cafetería-Museum/imagen-1.jpg",
+               "name": "Imagen 1 - Transilvania Cafetería-Museum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Transilvania Cafetería-Museum/imagen-2.jpg",
+               "name": "Imagen 2 - Transilvania Cafetería-Museum"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Transilvania Cafetería-Museum/imagen-3.jpg",
+               "name": "Imagen 3 - Transilvania Cafetería-Museum"
+            }
+         ],
+         "priceRange": "$",
+         "acceptsReservations": false,
+         "hasMenu": false,
+         "events": [],
+         "keywords": [
+            "Cultura",
+            "Magia",
+            "Espesctáculos"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Cafè Espanyol",
+         "description": "Un lugar familiar y acogedor donde degustar un buen café y los famosos \"pa amb olis\" sin olvidarnos de nuestras originales ensaladas.",
+         "address": {
+            "streetAddress": "Carrer de Cabrit i Bassa, 2",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07014",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.5760893",
+            "longitude": "2.6344064"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "reviewCount": "97"
+         },
+         "openingHours": [
+            "Mo-Sa 7:15-21:00"
+         ],
+         "contactPoint": {
+            "telephone": "871 95 36 66",
+            "email": "cafe-espanyol@gmail.com"
+         },
+         "url": "https://cafe-espanyol.business.site/website/cafe-espanyol/",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafè Espanyol/imagen-1.jpg",
+               "name": "Imagen 1 - Cafè Espanyol"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafè Espanyol/imagen-2.jpg",
+               "name": "Imagen 2 - Cafè Espanyol"
+            }
+         ],
+         "priceRange": "$",
+         "acceptsReservations": false,
+         "hasMenu": true,
+         "events": [],
+         "keywords": [
+            "Comida",
+            "Libros",
+            "Lectura"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Cafeteria Espai Natural",
+         "description": "Cafeteria Espai Natural es un lugar tranquilo y acogedor donde puedes disfrutar de un buen café rodeado de plantas y buena música. Perfecto para relajarte y disfrutar de un buen libro.",
+         "address": {
+            "streetAddress": "Costa de la Pols, 18",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07003",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.572503",
+            "longitude": "2.6508944"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "3.4",
+            "reviewCount": "52"
+         },
+         "openingHours": [
+            "Mo-Fr 07:00-20:00",
+            "Sa-Su 08:00-13:00"
+         ],
+         "contactPoint": {
+            "telephone": "871 51 44 88",
+            "email": "cafeespainatural@gmail.com"
+         },
+         "url": "https://es.restaurantguru.com/Cafeteria-Espai-Natural-Palma",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafeteria Espai Natural/imagen-1.jpg",
+               "name": "Imagen 1 - Cafeteria Espai Natural"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Cafeteria Espai Natural/imagen-2.jpg",
+               "name": "Imagen 2 - Cafeteria Espai Natural"
+            }
+         ],
+         "priceRange": "$",
+         "acceptsReservations": false,
+         "hasMenu": true,
+         "events": [],
+         "keywords": [
+            "Libros",
+            "Lectura"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Goblintrader Mallorca",
+         "description": "Tienda Especialista en Mallorca en el mundo de las Miniaturas, Wargames, Juegos de mesa y Modelismo. Con Cafetería de juegos de mesa y Zona de juego.",
+         "address": {
+            "streetAddress": "Carrer de Rosselló i Cazador, 7",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07004",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.5814087",
+            "longitude": "2.6545752"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "308"
+         },
+         "openingHours": [
+            "Tu-Sa 11:00-14:00",
+            "Tu-Th 16:30-20:00",
+            "Fr-Sa 16:30-21:00"
+         ],
+         "contactPoint": {
+            "telephone": "871 85 80 67",
+            "email": "pedidosweb@goblintrader.es"
+         },
+         "url": "https://www.goblintrader.es/es/",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Goblintrader Mallorca/imagen-1.jpg",
+               "name": "Imagen 1 - Goblintrader Mallorca"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Goblintrader Mallorca/imagen-2.jpg",
+               "name": "Imagen 2 - Goblintrader Mallorca"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Goblintrader Mallorca/imagen-3.jpg",
+               "name": "Imagen 3 - Goblintrader Mallorca"
+            }
+         ],
+         "priceRange": "$",
+         "acceptsReservations": false,
+         "hasMenu": true,
+         "events": [],
+         "keywords": [
+            "Juegos de mesa",
+            "Miniaturas",
+            "Entretenimiento"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Café Al Vent del Món",
+         "description": "Local chulo y acogedor donde pasar una tarde-noche con amigos jugando a juegos de mesa.",
+         "address": {
+            "streetAddress": "Carrer del Marquès de la Fontsanta, 82",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07005",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.5785379",
+            "longitude": "2.6619738"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.3",
+            "reviewCount": "460"
+         },
+         "openingHours": [
+            "Mo-Fr 09:00-13:00",
+            "Mo-Sa 16:00-02:00"
+         ],
+         "contactPoint": {
+            "telephone": "971 24 24 04",
+            "email": "cafealvent@gmail.com"
+         },
+         "url": "https://m.facebook.com/pages/Cafe-Al-Vent/191736204174184",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Café Al Vent del Món/imagen-1.jpg",
+               "name": "Imagen 1 - Café Al Vent del Món"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Café Al Vent del Món/imagen-2.jpg",
+               "name": "Imagen 2 - Café Al Vent del Món"
+            }
+         ],
+         "priceRange": "$",
+         "acceptsReservations": true,
+         "hasMenu": true,
+         "events": [],
+         "keywords": [
+            "Música",
+            "Cenas",
+            "Juegos de mesa",
+            "Entretenimiento"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Sense Món",
+         "description": "Zumeria, teteria y cerveceria, acompañada de un gran surtido de tartas y tapas. Donde podras jugar a juegos de mesa.",
+         "address": {
+            "streetAddress": "Carrer de Sant Jaume, 5",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07012",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.572062",
+            "longitude": "2.6472883"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "100"
+         },
+         "openingHours": [
+            "Mo-Th 08:30-14:30",
+            "Th-Sa 18:30-02:00"
+         ],
+         "contactPoint": {
+            "telephone": "871 71 16 27",
+            "email": "sensemon@hotmail.com"
+         },
+         "url": "https://sensemon.negocio.site/?utm_source=gmb&utm_medium=referral",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Sense Món/imagen-1.jpg",
+               "name": "Imagen 1 - Sense Món"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Sense Món/imagen-2.jpg",
+               "name": "Imagen 2 - Sense Món"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Sense Món/imagen-3.jpg",
+               "name": "Imagen 3 - Sense Món"
+            }
+         ],
+         "priceRange": "$",
+         "acceptsReservations": false,
+         "hasMenu": true,
+         "events": [],
+         "keywords": [
+            "Juegos de mesa",
+            "Entretenimiento",
+            "Cenas"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Bar Akelarre",
+         "description": "Tu Café Pub en Ciudad Jardín, Mallorca",
+         "address": {
+            "streetAddress": "Carrer de l'Illa de Xipre, 33",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07007",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.5522853",
+            "longitude": "2.6918623"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.4",
+            "reviewCount": "508"
+         },
+         "openingHours": [
+            "Tu-Fr 18:00-03:00",
+            "Sa-Su 12:00-04:00"
+         ],
+         "contactPoint": {
+            "telephone": "971 26 50 98",
+            "email": "info@yocomunico.com"
+         },
+         "url": "https://www.facebook.com/CafePubAkelarre/?locale=es_ES",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Bar Akelarre/imagen-1.jpg",
+               "name": "Imagen 1 - Bar Akelarre"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Bar Akelarre/imagen-2.jpg",
+               "name": "Imagen 2 - Bar Akelarre"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Bar Akelarre/imagen-3.jpg",
+               "name": "Imagen 3 - Bar Akelarre"
+            }
+         ],
+         "priceRange": "$$",
+         "acceptsReservations": false,
+         "hasMenu": true,
+         "events": [],
+         "keywords": [
+            "Entretenimiento",
+            "Conciertos",
+            "Música",
+            "Copas"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "La Forja",
+         "description": "Somos el distribuidor exclusivo para España de Hidromiel La Forja. Se trata de una bebida alcohólica de origen milenario conocida como hidromiel.",
+         "address": {
+            "streetAddress": "Carrer de Pou, 8",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07013",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.5732018",
+            "longitude": "2.6393944"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "reviewCount": "972"
+         },
+         "openingHours": [
+            "Mo-Su 18:00-01:00"
+         ],
+         "contactPoint": {
+            "telephone": "871 85 80 67",
+            "email": "laforjavikinga@gmail.es"
+         },
+         "url": "https://twitter.com/laforjavikinga?lang=es",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/La Forja/imagen-1.jpg",
+               "name": "Imagen 1 - La Forja"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/La Forja/imagen-2.jpg",
+               "name": "Imagen 2 - La Forja"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/La Forja/imagen-3.jpg",
+               "name": "Imagen 3 - La Forja"
+            }
+         ],
+         "priceRange": "$$",
+         "acceptsReservations": false,
+         "hasMenu": true,
+         "events": [],
+         "keywords": [
+            "Música",
+            "Copas"
          ]
       }
    ]
