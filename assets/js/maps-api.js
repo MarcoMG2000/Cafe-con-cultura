@@ -28,6 +28,56 @@ function initMap() {
 
 }
 
+function filterMap(tipoMarcador){
+	switch (tipoMarcador) {
+		case "Cafeterias":
+			coffeMarkers.map(marker => {
+				marker.setMap(map);
+			})
+			restaurantMarkers.map(marker => {
+				marker.setMap(null);
+			})
+			bodegaMarkers.map(marker => {
+				marker.setMap(null);
+			})
+			break;
+		case "Restaurantes":
+			coffeMarkers.map(marker => {
+				marker.setMap(null);
+			})
+			restaurantMarkers.map(marker => {
+				marker.setMap(map);
+			})
+			bodegaMarkers.map(marker => {
+				marker.setMap(null);
+			})
+			break;
+		case "Bodegas":
+			coffeMarkers.map(marker => {
+				marker.setMap(null);
+			})
+			restaurantMarkers.map(marker => {
+				marker.setMap(null);
+			})
+			bodegaMarkers.map(marker => {
+				marker.setMap(map);
+			})
+			break;
+		default:
+			coffeMarkers.map(marker => {
+				marker.setMap(map);
+			})
+			restaurantMarkers.map(marker => {
+				marker.setMap(map);
+			})
+			bodegaMarkers.map(marker => {
+				marker.setMap(map);
+			})
+			break;
+	}
+
+}
+
 function loadCafeterias(){
 	// Hacemos el request del JSON
     const request = new XMLHttpRequest();
