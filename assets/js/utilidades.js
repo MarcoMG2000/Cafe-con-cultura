@@ -150,7 +150,7 @@ function cargarBuscador(nombre, bool) {
             cargarBusquedaCafe(listaCafeterias, filtros, bool);
         } else {
             tipoFiltro = 'Eventos';
-            cargarBusquedaEvent(listaCafeterias,filtros, bool);
+            cargarBusquedaEvent(listaCafeterias, filtros, bool);
         }
     };
     request.send();
@@ -368,7 +368,7 @@ function cargarBusquedaEvent(listaCafeterias, primeraVez) {
             '<label for="pastries">+18</label>' +
             '</div>' +
             '</form>' +
-            '</div>' ;
+            '</div>';
         filt.insertAdjacentHTML('afterbegin', filterS);
     }
     var cafeteriaSelect = document.getElementById("busqueda-filtro");
@@ -394,7 +394,7 @@ function cargarBusquedaEvent(listaCafeterias, primeraVez) {
             timeZone: 'UTC'
         });
         pagina += '<div class="icon-box mt-5 mt-lg-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">';
-        pagina += '<div class="event-body-bus" onclick="cargarContenido(\'evento.html\', \''+ listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')"><i class="fa-solid fa-chevron-right chevron"></i>';
+        pagina += '<div class="event-body-bus" onclick="cargarContenido(\'evento.html\', \'' + listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')"><i class="fa-solid fa-chevron-right chevron"></i>';
         pagina += '<h4>' + listaEventos[i].name + '</h4>'
         pagina += '<p class="info">';
         pagina += '<div><i class="fa-solid fa-location-dot fa-lg"></i>' + listaEventos[i].place + '</div>';
@@ -420,7 +420,7 @@ function cargarBuscadorEvent() {
             resultados++;
 
             //let abierto = comprobarEstadoDeNegocio(listaEventos[i].openingHours);
-            pagina += '<div class="icon-box mt-5 mt-lg-0 aos-init aos-animate" onclick="cargarContenido(\'evento.html\', \''+ listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')" data-aos="zoom-in" data-aos-delay="150">';
+            pagina += '<div class="icon-box mt-5 mt-lg-0 aos-init aos-animate" onclick="cargarContenido(\'evento.html\', \'' + listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')" data-aos="zoom-in" data-aos-delay="150">';
             pagina += '<div class="event-body"><i class="fa-solid fa-chevron-right chevron">';
             pagina += '</i><h4>' + listaEventos[i].name + '</h4>'
             pagina += '<a class="media" href="#">';
@@ -451,7 +451,7 @@ function cumpleFiltros(cafeteria, filtros) {
     if (filtros.length === 0) {
         return true;
     }
-    let cafeteriaVal = [cafeteria.priceRange, cafeteria.aggregateRating.ratingValue];
+    let cafeteriaVal = [cafeteria.priceRange];
     let keywordsCaf = cafeteria.keywords;
     for (let i = 0; i < cafeteria.keywords.length; i++) {
         cafeteriaVal.concat(cafeteria.keywords[i]);
@@ -465,12 +465,18 @@ function cumpleFiltros(cafeteria, filtros) {
     console.log("Cafeteria ->" + (cafeteria.distancia / 1000).toFixed(2));
     console.log("Distancia slider ->" + filtros[filtros.length - 1]);
     console.log(filtros);
-    if(filtros[filtros.length - 1] != 0){
+    if (filtros[filtros.length - 1] != 0) {
         if ((parseInt(cafeteria.distancia) / 1000).toFixed(2) <= parseInt(filtros[filtros.length - 1])) {
             cumple = true;
         }
-    }else{
-        if(filtros.length == 1){
+    } else {
+        if (filtros.length == 1) {
+            cumple = true;
+        }
+    }
+    if (filtros.length > 1) {
+        console.log("Rating -> "+filtros[filtros.length - 2]);
+        if (parseInt(cafeteria.aggregateRating.ratingValue) >= parseInt(filtros[filtros.length - 2])) {
             cumple = true;
         }
     }
@@ -531,7 +537,7 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
     pagina += '    </div>';
     pagina += '    <div>';
     pagina += '      <h4>Rango de precios <i class="fa-solid fa-hand-holding-dollar"></i></h4>';
-    pagina += '      <div class="price-range">'; 
+    pagina += '      <div class="price-range">';
     for (let i = 0; i < cafeteriaEncontrada.priceRange.length; i++) {
         pagina += '      <i class="fa-solid fa-euro-sign fa-lg"></i>';
     }
@@ -596,7 +602,7 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
         for (let i = 0; i < cafeteriaEncontrada.events.length; i++) {
 
             pagina += '  <div class="evento col-lg-4 col-md-6 d-flex align-items-stretch"';
-            pagina += '                   onclick="cargarContenido(\'evento.html\', \''+ nombreCafeteria.replace(/'/g, "\\'") + '\', \'' + cafeteriaEncontrada.events[i].name.replace(/'/g, "\\'") + '\')">';
+            pagina += '                   onclick="cargarContenido(\'evento.html\', \'' + nombreCafeteria.replace(/'/g, "\\'") + '\', \'' + cafeteriaEncontrada.events[i].name.replace(/'/g, "\\'") + '\')">';
             pagina += '    <a class="cafeteria-event">';
 
             const fechaInicioEvento = new Date(cafeteriaEncontrada.events[i].startDate);
@@ -620,7 +626,7 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
         }
         pagina += '</div>';
     }
-    
+
     cafeteriaSelect.innerHTML = pagina;
 }
 
@@ -628,16 +634,16 @@ function cargarEventoClickado(listaCafeterias, nombreCafeteria, nombreEvento) {
     console.log("NOMBRE -> " + nombreEvento);
     // Seleccionamos el elemento HTML donde se agregarán las cafeterías
     var eventoSelect = document.getElementById("evento-sel");
-    
+
     let eventoEncontrado = null;  // Evento clicado
     let cafeteria = null;         // Cafetería donde tiene lugar el evento clicado
     let cafeteriasDelEvento = []; // Lista de cafeterías donde está programado el evento
 
     //Buscamos el evento que ha sido seleccionado y las cafeterías donde sucede
     for (var i = 0; i < listaCafeterias.length; i++) {
-        
+
         if (nombreCafeteria === listaCafeterias[i].name) cafeteria = listaCafeterias[i];
-        
+
         for (var j = 0; j < listaCafeterias[i].events.length; j++) {
             if (listaCafeterias[i].events[j].name === nombreEvento) {
                 if (eventoEncontrado == null) eventoEncontrado = listaCafeterias[i].events[j]; // Guardamos el evento una sola vez
@@ -700,26 +706,26 @@ function cargarEventoClickado(listaCafeterias, nombreCafeteria, nombreEvento) {
     if (eventoEncontrado.isAccessibleForFree) { pagina += '      <p>Gratuita</p>'; }
     else { pagina += '      <p>' + eventoEncontrado.offers.price + getCurrencySymbol(eventoEncontrado.offers.priceCurrency) + '</p>' }
     pagina += '    </div>';
-    
+
     if (eventoEncontrado.performers.length > 0) {
         pagina += '    <div class="performers">';
         pagina += '      <h4>Performers<i class="fa-solid fa-masks-theater"></i></h4>';
         for (let i = 0; i < eventoEncontrado.performers.length; i++) {
             pagina += '      <a href="' + eventoEncontrado.performers[i].url + '">';
             pagina += '        <i class="fa-solid fa-chevron-right"></i>';
-            pagina +=          eventoEncontrado.performers[i].name;
+            pagina += eventoEncontrado.performers[i].name;
             pagina += '      </a>';
         }
         pagina += '    </div>';
     }
-    
+
     pagina += '    <div>';
     pagina += '      <h4>Aforo<i class="fa-solid fa-users"></i></h4>';
     pagina += '      <p>' + eventoEncontrado.maximumPhysicalAttendeeCapacity + ' personas </p>';
     pagina += '    </div>';
     pagina += '    <div class="ubicacion">';
     pagina += '      <h4>Ubicación <i class="fa-solid fa-location-dot"></i></h4>';
-    pagina += '      <h6 style="font-weight: bold" onclick="cargarContenido(\'cafeteria.html\', \''+ nombreCafeteria.replace(/'/g, "\\'") + '\', null)">' + nombreCafeteria.replace(/'/g, "\\'") + '</h6>';
+    pagina += '      <h6 style="font-weight: bold" onclick="cargarContenido(\'cafeteria.html\', \'' + nombreCafeteria.replace(/'/g, "\\'") + '\', null)">' + nombreCafeteria.replace(/'/g, "\\'") + '</h6>';
     pagina += '      <p>' + cafeteria.address.streetAddress + '</p>';
     pagina += '    </div>';
     pagina += '  </div>';
@@ -773,10 +779,10 @@ function cargarEventoClickado(listaCafeterias, nombreCafeteria, nombreEvento) {
         pagina += '<div class="row" data-aos="zoom-in" data-aos-delay="100">';
 
         for (let i = 0; i < cafeteriasDelEvento.length; i++) {
-            
+
             // No mostramos la propia cafetería del evento
             if (cafeteriasDelEvento[i].name === nombreCafeteria) continue;
-            
+
             // Obtenemos los valores de la cafetería del archivo JSON
             const nombre = cafeteriasDelEvento[i].name;
             const valoracion = cafeteriasDelEvento[i].aggregateRating.ratingValue;
@@ -802,17 +808,17 @@ function cargarEventoClickado(listaCafeterias, nombreCafeteria, nombreEvento) {
             }
             estrellas += '</p>';
 
-            pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \''+ nombre.replace(/'/g, "\\'") + '\', null)">';
+            pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \'' + nombre.replace(/'/g, "\\'") + '\', null)">';
             pagina += '  <div class="media-body row">';
             pagina += '    <div class="media-image col-md-4">';
-            pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i +'>'; 
+            pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i + '>';
             pagina += '    </div>';
             pagina += '    <div class="col-md-4 media-nombre d-flex align-items-center">';
             pagina += '      <h4>' + nombre + '</h4>';
             pagina += '    </div>';
             pagina += '    <div class="col-md-4 d-flex align-items-center div-filas">';
-            pagina +=        abierto_cerrado;
-            pagina +=        estrellas;
+            pagina += abierto_cerrado;
+            pagina += estrellas;
             pagina += '      <div class="info">';
             pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>';
             pagina += '        <p>' + ubicacion + '</p>';
@@ -867,7 +873,7 @@ function traducirHorarioApertura(horario) {
 
 function cargarCafeteriasPorValoracion(listaCafeterias) {
     const nombresCafeterias = [];
-    
+
     // Ordenamos por valoración
     listaCafeterias = ordenarLista(listaCafeterias, "aggregateRating.ratingValue", "descendente");
     const cafeteriasRating = document.getElementById("cafeterias-rating");
@@ -875,7 +881,7 @@ function cargarCafeteriasPorValoracion(listaCafeterias) {
     var pagina = ''; // Construimos la sección en este mensaje
 
     for (let i = 0; i < 3; i++) { // Recorremos las tres cafeterías con mejor valoración
-        
+
         // Obtenemos los valores de la cafetería del archivo JSON
         const nombre = listaCafeterias[i].name;
         nombresCafeterias.push(nombre);
@@ -902,17 +908,17 @@ function cargarCafeteriasPorValoracion(listaCafeterias) {
         }
         estrellas += '</p>';
 
-        pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \''+ nombre.replace(/'/g, "\\'") + '\', null)">';
+        pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \'' + nombre.replace(/'/g, "\\'") + '\', null)">';
         pagina += '  <div class="media-body row">';
         pagina += '    <div class="media-image col-md-4">';
-        pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i +'>'; 
+        pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i + '>';
         pagina += '    </div>';
         pagina += '    <div class="col-md-4 media-nombre d-flex align-items-center">';
         pagina += '      <h4>' + nombre + '</h4>';
         pagina += '    </div>';
         pagina += '    <div class="col-md-4 d-flex align-items-center div-filas">';
-        pagina +=        abierto_cerrado;
-        pagina +=        estrellas;
+        pagina += abierto_cerrado;
+        pagina += estrellas;
         pagina += '      <div class="info">';
         pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>';
         pagina += '        <p>' + ubicacion + '</p>';
@@ -948,10 +954,10 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
             abierto_cerrado = '        <p class="cerrado">Cerrado</p>';
         }
 
-        pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \''+ nombre.replace(/'/g, "\\'") + '\', null)">';
+        pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \'' + nombre.replace(/'/g, "\\'") + '\', null)">';
         pagina += '  <div class="media-body row">';
         pagina += '    <div class="col-md-4 d-flex align-items-center div-filas">'
-        pagina +=        abierto_cerrado;
+        pagina += abierto_cerrado;
         pagina += '      <div class="info">';
         pagina += '        <i class="fa-solid fa-route fa-lg"></i>';
         pagina += '        <p>' + (listaCafeterias[i].distancia / 1000).toFixed(2) + ' Km</p>';
@@ -965,7 +971,7 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
         pagina += '      <h4>' + nombre + '</h4>'
         pagina += '    </div>';
         pagina += '    <div class="media-image col-md-4">';
-        pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i +'>'; 
+        pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i + '>';
         pagina += '    </div>'
         pagina += '  </div>'
         pagina += '</div>';
@@ -1164,7 +1170,7 @@ function obtenerListaTotalEventos(listaCafeterias) {
 }
 
 function getCurrencySymbol(priceCurrency) {
-    
+
     const currencySymbols = {
         USD: '$',
         EUR: '€',
@@ -1179,7 +1185,7 @@ function getCurrencySymbol(priceCurrency) {
         KRW: '₩',
         PGY: '₲'
     };
-    
+
     if (currencySymbols.hasOwnProperty(priceCurrency)) {
         return currencySymbols[priceCurrency];
     }
