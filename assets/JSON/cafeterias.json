@@ -1458,6 +1458,435 @@
             "Música",
             "Copas"
          ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Honky Tonk",
+         "description": "Este bar es uno de los pocos representantes de la cultura alternativa de la isla. Una vez que se abren las puertas, la decoración habla por sí sola: las paredes están sembradas de monopatines y carteles de iconos de la música rock, soul y funk. ",
+         "address": {
+            "streetAddress": "Carrer de Sant Llorenç, 9",
+            "addressLocality": "Palma",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07012",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.570705579037835",
+            "longitude": "2.6434401153456624"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.4",
+            "reviewCount": "376"
+         },
+         "openingHours": [
+            "Fr-Sa 21:00-03:00"
+          ],
+         "contactPoint": {
+            "telephone": "+34 674 80 26 22",
+            "email": "honkytonk@gmail.es"
+         },
+         "url": "https://www.facebook.com/honkytonkpmi/?locale=es_ES",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Honky Tonk/imagen-1.jpg",
+               "name": "Imagen 1 - Honky Tonk"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Honky Tonk/imagen-2.jpg",
+               "name": "Imagen 2 - Honky Tonk"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Honky Tonk/imagen-3.jpg",
+               "name": "Imagen 3 - Honky Tonk"
+            }
+         ],
+         "priceRange": "$",
+         "acceptsReservations": true,
+         "hasMenu": true,
+         "events": [
+            {
+               "@type": "Event",
+               "name": "Mark Smith acústico",
+               "about": "Disfruta de la música en directo de Mark Smith, en la presentación de su nueva maqueta.",
+               "audience": "16",
+               "isAccessibleForFree": true,
+               "startDate": "2023-07-21T21:30:00Z",
+               "endDate": "2023-07-21T23:30:00Z",
+               "maximumPhysicalAttendeeCapacity": "50",
+               "eventStatus": "EventScheduled",
+               "performers": [
+                  {
+                     "name": "Mark Smith",
+                     "url": "https://twitter.com/dmsmifffy?lang=ess"
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Mark Smith acustico/imagen-1.jpg",
+                     "name": "Imagen 1 - Mark Smith acústico"
+                  }
+               ]
+            }
+         ],
+         "keywords": [
+            "Música"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Midnightsun",
+         "description": "Midnightsun nace con la intención de ofrecerte siempre espectáculos musicales de calidad en los mejores entornos.",
+         "address": {
+            "streetAddress": "Carretera Palma -Soller Km17",
+            "addressLocality": "Bunyola",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07110",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.71668006132893",
+            "longitude": "2.691884067455191"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "22"
+         },
+         "openingHours": [
+            "Th-Su 19:00-01:30"
+          ],
+         "contactPoint": {
+            "telephone": "+34 617 74 16 29",
+            "email": "midnsunmllc@gmail.es"
+         },
+         "url": "https://www.facebook.com/MidnightsunMallorca/",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Midnightsun/imagen-1.jpg",
+               "name": "Imagen 1 - Midnightsun"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Midnightsun/imagen-2.jpg",
+               "name": "Imagen 2 - Midnightsun"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Midnightsun/imagen-3.jpg",
+               "name": "Imagen 3 - Midnightsun"
+            }
+         ],
+         "priceRange": "$$$",
+         "acceptsReservations": true,
+         "hasMenu": true,
+         "events": [
+            {
+               "@type": "Event",
+               "name": "Midnightsun Live Show",
+               "about": "Disfruta de las noches más mágicas de la isla de la mano de nuestros artistas.",
+               "audience": "Todas las edades",
+               "isAccessibleForFree": false,
+               "startDate": "2023-06-27T19:30:00Z",
+               "endDate": "2023-06-27T23:30:00Z",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "13.00",
+                  "priceCurrency": "EUR",
+                  "url": "https://www.midnightsun.es/?utm_source=facebook&utm_medium=ppc&utm_campaign=promoted_post&utm_content=oferta_es"
+               },
+               "maximumPhysicalAttendeeCapacity": "150",
+               "eventStatus": "EventScheduled",
+               "performers": [
+                  {
+                     "name": "Midnight Team",
+                     "url": "https://www.facebook.com/MidnightsunMallorca/"
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Midnightsun Live Show/imagen-1.jpg",
+                     "name": "Imagen 1 - Midnightsun Live Show"
+                  }
+               ]
+            }
+         ],
+         "keywords": [
+            "Música",
+            "Cultura",
+            "Arte"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Pirates Adventure",
+         "description": "Escápate a un mundo mágico lleno de acción, emoción, comedia y diversión y disfrute de una experiencia inolvidable. Pirates Adventure es la mejor cena con espectáculo ideal para que, tanto mayores como pequeños, disfruten.",
+         "address": {
+            "streetAddress": "Camí Porrassa, 12",
+            "addressLocality": "Magaluf",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07181",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.50489675969745",
+            "longitude": "2.5274331153422867"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "reviewCount": "1800"
+         },
+         "openingHours": [
+            "Tu-Su 19:00-23:30"
+          ],
+         "contactPoint": {
+            "telephone": "971 13 06 59",
+            "email": "reception@globobalear.com"
+         },
+         "url": "https://piratesadventure.com/es",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Pirates Adventure/imagen-1.jpg",
+               "name": "Imagen 1 - Pirates Adventure"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Pirates Adventure/imagen-2.jpg",
+               "name": "Imagen 2 - Pirates Adventure"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Pirates Adventure/imagen-3.jpg",
+               "name": "Imagen 3 - Pirates Adventure"
+            }
+         ],
+         "priceRange": "$$$",
+         "acceptsReservations": true,
+         "hasMenu": true,
+         "events": [
+            {
+               "@type": "Event",
+               "name": "Pirates Show",
+               "about": "¡Suban a bordo La Hispaniola y disfruten de un mágico viaje en una época en que los piratas dominaban los siete mares!",
+               "audience": "Todas las edades",
+               "isAccessibleForFree": false,
+               "startDate": "2023-06-27T19:30:00Z",
+               "endDate": "2023-06-27T23:30:00Z",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "49.00",
+                  "priceCurrency": "EUR",
+                  "url": "https://booking.piratesadventure.com/es/booking/step1?showId=1&_ga=2.198655979.599863733.1684058901-1170789820.1684058901&_gl=1*1mk6iq9*_ga*MTE3MDc4OTgyMC4xNjg0MDU4OTAx*_ga_JN3BHC1KVQ*MTY4NDA1OTIxMi4xLjAuMTY4NDA1OTQ1Ni42MC4wLjA."
+               },
+               "maximumPhysicalAttendeeCapacity": "1000",
+               "eventStatus": "EventScheduled",
+               "performers": [
+                  {
+                     "name": "Pirates Team",
+                     "url": "https://piratesadventure.com/es/sobre-nosotros"
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Pirates Show/imagen-1.jpg",
+                     "name": "Imagen 1 - Pirates Show"
+                  }
+               ]
+            }
+         ],
+         "keywords": [
+            "Cultura",
+            "Teatro"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "House of Son Amar",
+         "description": "Conocida por sus prestigiosos espectáculos y exclusivas actuaciones internacionales, la Casa de Son Amar se encuentra a sólo 10 minutos del centro de Palma de Mallorca y a 15 minutos de Calvià.",
+         "address": {
+            "streetAddress": "Carretera de Palma-Soller KM 10",
+            "addressLocality": "Palmanyola",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07193",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.667492923002854",
+            "longitude": "2.6771045573111443"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "3400"
+         },
+         "openingHours": [
+            "Fr-Sa 18:00-01:00"
+          ],
+         "contactPoint": {
+            "telephone": "971 61 75 33",
+            "email": "houseofsonamar@globobalear.com"
+         },
+         "url": "https://sonamar.com/es",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Son Amar/imagen-1.jpg",
+               "name": "Imagen 1 - Son Amar"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Son Amar/imagen-2.jpg",
+               "name": "Imagen 2 - Son Amar"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Son Amar/imagen-3.jpg",
+               "name": "Imagen 3 - Son Amar"
+            }
+         ],
+         "priceRange": "$$$",
+         "acceptsReservations": true,
+         "hasMenu": true,
+         "events": [
+            {
+               "@type": "Event",
+               "name": "Exhibit Air",
+               "about": "A fully immersive threatrical experience",
+               "audience": "+18",
+               "isAccessibleForFree": false,
+               "startDate": "2023-07-21T21:00:00Z",
+               "endDate": "2023-07-21T00:00:00Z",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "27.50",
+                  "priceCurrency": "EUR",
+                  "url": "https://reserva.sonamar.com/public/#/683a5bc3-1d92-45d6-9a09-f5557c5982c9/select-tickets"
+               },
+               "maximumPhysicalAttendeeCapacity": "850",
+               "eventStatus": "EventScheduled",
+               "performers": [
+                  {
+                     "name": "EXHIBIT",
+                     "url": "https://exhibitmallorca.com"
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Exhibit/imagen-1.jpg",
+                     "name": "Imagen 1 - Exhibit"
+                  }
+               ]
+            },
+            {
+               "@type": "Event",
+               "name": "Ohala",
+               "about": "Una experiencia familiar única con efectos especiales, acrobacias, danza y la última tecnología en sonido envolvente.",
+               "audience": "Todas las edades",
+               "isAccessibleForFree": false,
+               "startDate": "2023-08-21T21:00:00Z",
+               "endDate": "2023-08-21T00:00:00Z",
+               "offers": {
+                  "@type": "Offer",
+                  "price": "27.50",
+                  "priceCurrency": "EUR",
+                  "url": "https://reserva.sonamar.com/public/#/9060029b-2b8a-4ede-bd80-f87d4d48a081/select-tickets"
+               },
+               "maximumPhysicalAttendeeCapacity": "850",
+               "eventStatus": "EventScheduled",
+               "performers": [
+                  {
+                     "name": "Ohala",
+                     "url": "https://reserva.sonamar.com/public/#/events/1c322ec4-1b1e-40c7-95b9-7b7198028b8d/category"
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Ohala/imagen-1.jpg",
+                     "name": "Imagen 1 - Ohala"
+                  }
+               ]
+            }
+         ],
+         "keywords": [
+            "Cultura",
+            "Teatro",
+            "Musica"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Bar Papis",
+         "description": "En Papis podrás degustar tanto de cócteles como cervezas de importación y nacionales. Pero dónde más destaca es la actuación en directo del dúo HOOKED.",
+         "address": {
+            "streetAddress": "Avenida Pedro Vaquer Ramis, 28",
+            "addressLocality": "Palma Nova",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07181",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.51264908585635",
+            "longitude": "2.537242"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.4",
+            "reviewCount": "874"
+         },
+         "openingHours": [
+            "Mo-Su 09:00-03:00"
+         ],
+         "contactPoint": {
+            "telephone": "971 64 14 62",
+            "email": "barpapis@hotmail.com"
+         },
+         "url": "http://barpapislivemusic.com/?utm_source=gmb&utm_medium=referral",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Bar Papis/imagen-1.jpg",
+               "name": "Imagen 1 - Bar Papis"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Bar Papis/imagen-2.jpg",
+               "name": "Imagen 2 - Bar Papis"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Bar Papis/imagen-3.jpg",
+               "name": "Imagen 3 - Bar Papis"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Bar Papis/imagen-4.jpg",
+               "name": "Imagen 4 - Bar Papis"
+            }
+         ],
+         "priceRange": "$$",
+         "acceptsReservations": true,
+         "hasMenu": true,
+         "events": [],
+         "keywords": [
+            "Musica",
+            "Copas"
+         ]
       }
    ]
 }
