@@ -1537,7 +1537,7 @@
       {
          "@type": "CafeOrCoffeeShop",
          "name": "Honky Tonk",
-         "description": "Este bar es uno de los pocos representantes de la cultura alternativa de la isla. Una vez que se abren las puertas, la decoración habla por sí sola: las paredes están sembradas de monopatines y carteles de iconos de la música rock, soul y funk. ",
+         "description": "Este bar es uno de los pocos representantes de la cultura alternativa de la isla. Una vez que se abren las puertas, la decoración habla por sí sola: las paredes están sembradas de monopatines y carteles de iconos de la música rock, soul y funk.",
          "address": {
             "streetAddress": "Carrer de Sant Llorenç, 9",
             "addressLocality": "Palma",
@@ -1660,7 +1660,7 @@
                "name": "Imagen 3 - Midnightsun"
             }
          ],
-         "priceRange": "$$$",
+         "priceRange": "$$",
          "acceptsReservations": true,
          "hasMenu": true,
          "events": [
@@ -1748,7 +1748,7 @@
                "name": "Imagen 3 - Pirates Adventure"
             }
          ],
-         "priceRange": "$$$",
+         "priceRange": "$$",
          "acceptsReservations": true,
          "hasMenu": true,
          "events": [
@@ -1998,10 +1998,10 @@
             "Mo-Sa 07:00-20:00"
          ],
          "contactPoint": {
-            "telephone": "+34 971 61 22 47",
+            "telephone": "971 61 22 47",
             "email": "forncanmolinas@gmail.com"
          },
-         "url": "http://http://www.canmolinas.com/",
+         "url": "http://www.canmolinas.com/",
          "image": [
             {
                "@type": "ImageObject",
@@ -2059,7 +2059,7 @@
             "Mo-Su 09:30-21:00"
          ],
          "contactPoint": {
-            "telephone": "+34 971 61 60 59",
+            "telephone": "971 61 60 59",
             "email": "info@grupocappuccino.com"
          },
          "url": "http://www.cappuccinograndcafe.es/es/mallorca/valldemossa",
@@ -2124,10 +2124,10 @@
             "Fr-Su 08:30-01:30"
          ],
          "contactPoint": {
-            "telephone": "+34 971 88 20 54",
-            "email": ""
+            "telephone": "971 88 20 54",
+            "email": "rom4n1@gmail.com"
          },
-         "url": "",
+         "url": "https://www.facebook.com/romani41",
          "image": [
             {
                "@type": "ImageObject",
@@ -2138,6 +2138,11 @@
                "@type": "ImageObject",
                "url": "assets/img/cafeterias/ROM4N1 Cafetería & Restaurant/imagen-2.jpg",
                "name": "Imagen 2 - ROM4N1 Cafetería & Restaurant"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/ROM4N1 Cafetería & Restaurant/imagen-3.jpg",
+               "name": "Imagen 3 - ROM4N1 Cafetería & Restaurant"
             }
          ],
          "priceRange": "$$$",
@@ -2177,7 +2182,7 @@
             "Mo-Sa 17:00-20:00"
          ],
          "contactPoint": {
-            "telephone": "+34 871 51 03 59",
+            "telephone": "871 51 03 59",
             "email": "reguscidulcedeleche@gmail.com"
          },
          "url": "https://www.facebook.com/DulcedelecheManacor/",
@@ -2201,6 +2206,11 @@
                "@type": "ImageObject",
                "url": "assets/img/cafeterias/Dulce De Leche/imagen-4.jpg",
                "name": "Imagen 4 - Dulce De Leche"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Dulce De Leche/imagen-5.jpg",
+               "name": "Imagen 5 - Dulce De Leche"
             }
          ],
          "priceRange": "$",
@@ -2240,7 +2250,7 @@
             "Fr-Su 07:00-00:00"
          ],
          "contactPoint": {
-            "telephone": "+34 971 54 54 30",
+            "telephone": "971 54 54 30",
             "email": "salvaavila@gmail.com"
          },
          "url": "http://barespasseigalcudia.rf.gd/",
@@ -2254,16 +2264,6 @@
                "@type": "ImageObject",
                "url": "assets/img/cafeterias/Es Passeig/imagen-2.jpg",
                "name": "Imagen 2 - Es Passeig"
-            },
-            {
-               "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Es Passeig/imagen-3.jpg",
-               "name": "Imagen 3 - Es Passeig"
-            },
-            {
-               "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Es Passeig/imagen-4.jpg",
-               "name": "Imagen 4 - Es Passeig"
             }
          ],
          "priceRange": "$",
