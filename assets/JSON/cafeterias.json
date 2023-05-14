@@ -54,148 +54,64 @@
          "hasMenu": false,
          "events": [
             {
+               "@context": "https://schema.org",
                "@type": "Event",
-               "name": "Club de Lectura: MistBorn",
-               "about": "Club de Lectura del Libro 1 de la Saga MistBorn, por Brandom Sanderson",
+               "name": "Club de Lectura - MistBorn",
+               "about": "Club de Lectura del Libro 1 de la Saga MistBorn: El Imperio Final, por Brandom Sanderson",
                "audience": "Todas las edades",
-               "isAccessibleForFree": false,
-               "startDate": "2023-05-20T18:30:00Z",
-               "endDate": "2023-05-20T20:00:00Z",
-               "offers": {
-                  "@type": "Offer",
-                  "price": "13.00",
-                  "priceCurrency": "EUR",
-                  "url": "http://www.ticketfly.com/purchase/309433"
-               },
-               "maximumPhysicalAttendeeCapacity": "50",
+               "isAccessibleForFree": true,
+               "startDate": "2023-06-07T18:30:00Z",
+               "endDate": "2023-06-07T20:00:00Z",
+               "offers": {},
+               "maximumPhysicalAttendeeCapacity": "80",
                "eventStatus": "EventScheduled",
                "performers": [
                   {
-                     "name": "Rock Band",
-                     "url": "https://rockband.com/"
+                     "name": "Alexelcapo",
+                     "url": "https://twitter.com/EvilAFM"
                   }
                ],
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
-                     "name": "Imagen 1 - Cafetería Parabellum"
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-1.jpg",
+                     "name": "Imagen 1 - Club de Lectura - MistBorn"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
-                     "name": "Imagen 2 - Cafetería Parabellum"
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-2.jpg",
+                     "name": "Imagen 2 - Club de Lectura - MistBorn"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
-                     "name": "Imagen 3 - Cafetería Parabellum"
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-3.jpg",
+                     "name": "Imagen 3 - Club de Lectura - MistBorn"
                   }
                ]
             },
             {
                "@context": "https://schema.org",
                "@type": "Event",
-               "name": "Concierto Jazz",
-               "about": "Música en directo de Jazz por el artista tal",
-               "audience": "16",
-               "startDate": "2023-05-22T18:30:00Z",
-               "endDate": "2023-05-22T20:00:00Z",
+               "name": "JAM session con Robert Castelli",
+               "about": "Nuestras Jam Session ya son un imprescindible de los miércoles, ven y disfruta en directo de la bateria de Robert Castelli!",
+               "audience": "Todas las edades",
                "isAccessibleForFree": true,
-               "maximumPhysicalAttendeeCapacity": "50",
+               "startDate": "2023-05-17T21:30:00Z",
+               "endDate": "2023-05-17T23:30:00Z",
+               "offers": {},
+               "maximumPhysicalAttendeeCapacity": "80",
                "eventStatus": "EventScheduled",
                "performers": [
                   {
-                     "name": "Jazz Band",
-                     "url": "https://google.com/"
+                     "name": "Robert Castelli",
+                     "url": "https://www.robertcastelli.com"
                   }
                ],
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
-                     "name": "Imagen 1 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
-                     "name": "Imagen 2 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
-                     "name": "Imagen 3 - Cafetería Parabellum"
-                  }
-               ]
-            },
-            {
-               "@context": "https://schema.org",
-               "@type": "TheaterEvent",
-               "name": "Concierto Jazz",
-               "about": "Música en directo de Jazz por el artista tal",
-               "audience": "Todas las edades",
-               "startDate": "2023-06-12T20:30:00Z",
-               "endDate": "2023-06-12T22:00:00Z",
-               "isAccessibleForFree": true,
-               "maximumPhysicalAttendeeCapacity": "50",
-               "eventStatus": "EventScheduled",
-               "performers": [
-                  {
-                     "name": "Jazz Band",
-                     "url": "https://google.com/"
-                  }
-               ],
-               "image": [
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
-                     "name": "Imagen 1 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
-                     "name": "Imagen 2 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
-                     "name": "Imagen 3 - Cafetería Parabellum"
-                  }
-               ],
-               "inLanguage": "ES"
-            },
-            {
-               "@context": "https://schema.org",
-               "@type": "Event",
-               "name": "Torneo Carcassone",
-               "about": "XX Torneo Carcassone patrocinado por asfsdg",
-               "audience": "Todas las edades",
-               "isAccessibleForFree": false,
-               "startDate": "2023-07-01T19:30:00Z",
-               "endDate": "2023-06-01T20:00:00Z",
-               "performers": [],
-               "offers": {
-                  "@type": "Offer",
-                  "price": "5.00",
-                  "priceCurrency": "EUR"
-               },
-               "maximumPhysicalAttendeeCapacity": "50",
-               "eventStatus": "EventScheduled",
-               "image": [
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-1.jpg",
-                     "name": "Imagen 1 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-2.jpg",
-                     "name": "Imagen 2 - Cafetería Parabellum"
-                  },
-                  {
-                     "@type": "ImageObject",
-                     "url": "assets/img/cafeterias/cafeteria-3.jpg",
-                     "name": "Imagen 3 - Cafetería Parabellum"
+                     "url": "assets/img/eventos/JAM session con Robert Castelli/imagen-1.jpg",
+                     "name": "Imagen 1 - JAM session con Robert Castelli"
                   }
                ]
             }
@@ -315,7 +231,34 @@
          "priceRange": "$",
          "acceptsReservations": true,
          "hasMenu": true,
-         "events": [],
+         "events": [
+            {
+               "@context": "https://schema.org",
+               "@type": "Event",
+               "name": "JAM session con Robert Castelli",
+               "about": "Nuestras Jam Session ya son un imprescindible de los miércoles, ven y disfruta en directo de la bateria de Robert Castelli!",
+               "audience": "Todas las edades",
+               "isAccessibleForFree": true,
+               "startDate": "2023-06-04T21:30:00Z",
+               "endDate": "2023-06-04T23:30:00Z",
+               "offers": {},
+               "maximumPhysicalAttendeeCapacity": "80",
+               "eventStatus": "EventScheduled",
+               "performers": [
+                  {
+                     "name": "Robert Castelli",
+                     "url": "https://www.robertcastelli.com"
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/JAM session con Robert Castelli/imagen-1.jpg",
+                     "name": "Imagen 1 - JAM session con Robert Castelli"
+                  }
+               ]
+            }
+         ],
          "keywords": [
             "Música",
             "Cultura"
@@ -427,7 +370,34 @@
          "priceRange": "$",
          "acceptsReservations": false,
          "hasMenu": false,
-         "events": [],
+         "events": [
+            {
+               "@context": "https://schema.org",
+               "@type": "Event",
+               "name": "JAM session con Robert Castelli",
+               "about": "Nuestras Jam Session ya son un imprescindible de los miércoles, ven y disfruta en directo de la bateria de Robert Castelli!",
+               "audience": "Todas las edades",
+               "isAccessibleForFree": true,
+               "startDate": "2023-05-25T21:30:00Z",
+               "endDate": "2023-05-25T23:30:00Z",
+               "offers": {},
+               "maximumPhysicalAttendeeCapacity": "80",
+               "eventStatus": "EventScheduled",
+               "performers": [
+                  {
+                     "name": "Robert Castelli",
+                     "url": "https://www.robertcastelli.com"
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/JAM session con Robert Castelli/imagen-1.jpg",
+                     "name": "Imagen 1 - JAM session con Robert Castelli"
+                  }
+               ]
+            }
+         ],
          "keywords": [
             "Música",
             "Monólogos",
@@ -491,6 +461,7 @@
          "hasMenu": true,
          "events": [
             {
+               "@context": "https://schema.org",
                "@type": "Event",
                "name": "Clara Andrés en Café a Tres Bandas",
                "about": "La cantautora valenciana Clara Andrés visita el Café a Tres Bandas para presentar su galardonado “Capfico”, premio Carles Santos de la música valenciana al mejor disco de canción de autor.",
@@ -536,6 +507,7 @@
                ]
             },
             {
+               "@context": "https://schema.org",
                "@type": "Event",
                "name": "Daniel Higiénico",
                "about": "Daniel Higiénico presenta \"Cancionólogos\" en el Café A Tres Bandas de Palma.",
@@ -576,6 +548,7 @@
                ]
             },
             {
+               "@context": "https://schema.org",
                "@type": "Event",
                "name": "Monólogo Edén Serrano (De aquí no sale)",
                "about": "«De aquí no sale» es el típico nombre de show de comedia que pretende ir de canallita y transgresor. El típico título que quiere llamar tu atención sobre el resto de planes que te puedan surgir.",
@@ -616,6 +589,7 @@
                ]
             },
             {
+               "@context": "https://schema.org",
                "@type": "Event",
                "name": "Dani Flaco en Palma de Mallorca",
                "about": "Gira «Bailemos un bis» 2023. Entradas a la venta a partir del 2 de Enero a las 10h.",
@@ -842,7 +816,44 @@
          "priceRange": "$$",
          "acceptsReservations": true,
          "hasMenu": true,
-         "events": [],
+         "events": [
+            {
+               "@context": "https://schema.org",
+               "@type": "Event",
+               "name": "Club de Lectura - MistBorn",
+               "about": "Club de Lectura del Libro 1 de la Saga MistBorn: El Imperio Final, por Brandom Sanderson",
+               "audience": "Todas las edades",
+               "isAccessibleForFree": true,
+               "startDate": "2023-06-09T18:30:00Z",
+               "endDate": "2023-06-09T20:00:00Z",
+               "offers": {},
+               "maximumPhysicalAttendeeCapacity": "80",
+               "eventStatus": "EventScheduled",
+               "performers": [
+                  {
+                     "name": "Alexelcapo",
+                     "url": "https://twitter.com/EvilAFM"
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-1.jpg",
+                     "name": "Imagen 1 - Club de Lectura - MistBorn"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-2.jpg",
+                     "name": "Imagen 2 - Club de Lectura - MistBorn"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-3.jpg",
+                     "name": "Imagen 3 - Club de Lectura - MistBorn"
+                  }
+               ]
+            }
+         ],
          "keywords": [
             "Copas",
             "Cenas",
@@ -901,7 +912,44 @@
          "priceRange": "$$",
          "acceptsReservations": true,
          "hasMenu": true,
-         "events": [],
+         "events": [
+            {
+               "@context": "https://schema.org",
+               "@type": "Event",
+               "name": "Club de Lectura - MistBorn",
+               "about": "Club de Lectura del Libro 1 de la Saga MistBorn: El Imperio Final, por Brandom Sanderson",
+               "audience": "Todas las edades",
+               "isAccessibleForFree": true,
+               "startDate": "2023-06-08T18:30:00Z",
+               "endDate": "2023-06-08T20:00:00Z",
+               "offers": {},
+               "maximumPhysicalAttendeeCapacity": "80",
+               "eventStatus": "EventScheduled",
+               "performers": [
+                  {
+                     "name": "Alexelcapo",
+                     "url": "https://twitter.com/EvilAFM"
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-1.jpg",
+                     "name": "Imagen 1 - Club de Lectura - MistBorn"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-2.jpg",
+                     "name": "Imagen 2 - Club de Lectura - MistBorn"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-3.jpg",
+                     "name": "Imagen 3 - Club de Lectura - MistBorn"
+                  }
+               ]
+            }
+         ],
          "keywords": [
             "Lectura",
             "Cultura"
@@ -1396,7 +1444,34 @@
          "priceRange": "$$",
          "acceptsReservations": false,
          "hasMenu": true,
-         "events": [],
+         "events": [
+            {
+               "@context": "https://schema.org",
+               "@type": "Event",
+               "name": "JAM session con Robert Castelli",
+               "about": "Nuestras Jam Session ya son un imprescindible de los miércoles, ven y disfruta en directo de la bateria de Robert Castelli!",
+               "audience": "Todas las edades",
+               "isAccessibleForFree": true,
+               "startDate": "2023-06-01T21:30:00Z",
+               "endDate": "2023-06-01T23:30:00Z",
+               "offers": {},
+               "maximumPhysicalAttendeeCapacity": "80",
+               "eventStatus": "EventScheduled",
+               "performers": [
+                  {
+                     "name": "Robert Castelli",
+                     "url": "https://www.robertcastelli.com"
+                  }
+               ],
+               "image": [
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/JAM session con Robert Castelli/imagen-1.jpg",
+                     "name": "Imagen 1 - JAM session con Robert Castelli"
+                  }
+               ]
+            }
+         ],
          "keywords": [
             "Entretenimiento",
             "Conciertos",
@@ -1484,7 +1559,7 @@
             "Fr-Sa 21:00-03:00"
           ],
          "contactPoint": {
-            "telephone": "+34 674 80 26 22",
+            "telephone": "674 80 26 22",
             "email": "honkytonk@gmail.es"
          },
          "url": "https://www.facebook.com/honkytonkpmi/?locale=es_ES",
@@ -1510,10 +1585,11 @@
          "hasMenu": true,
          "events": [
             {
+               "@context": "https://schema.org",
                "@type": "Event",
                "name": "Mark Smith acústico",
                "about": "Disfruta de la música en directo de Mark Smith, en la presentación de su nueva maqueta.",
-               "audience": "16",
+               "audience": "16 años",
                "isAccessibleForFree": true,
                "startDate": "2023-07-21T21:30:00Z",
                "endDate": "2023-07-21T23:30:00Z",
@@ -1563,7 +1639,7 @@
             "Th-Su 19:00-01:30"
           ],
          "contactPoint": {
-            "telephone": "+34 617 74 16 29",
+            "telephone": "617 74 16 29",
             "email": "midnsunmllc@gmail.es"
          },
          "url": "https://www.facebook.com/MidnightsunMallorca/",
@@ -1589,10 +1665,11 @@
          "hasMenu": true,
          "events": [
             {
+               "@context": "https://schema.org",
                "@type": "Event",
                "name": "Midnightsun Live Show",
                "about": "Disfruta de las noches más mágicas de la isla de la mano de nuestros artistas.",
-               "audience": "18",
+               "audience": "18 años",
                "isAccessibleForFree": false,
                "startDate": "2023-06-27T19:30:00Z",
                "endDate": "2023-06-27T23:30:00Z",
@@ -1676,6 +1753,7 @@
          "hasMenu": true,
          "events": [
             {
+               "@context": "https://schema.org",
                "@type": "Event",
                "name": "Pirates Show",
                "about": "¡Suban a bordo La Hispaniola y disfruten de un mágico viaje en una época en que los piratas dominaban los siete mares!",
@@ -1762,10 +1840,11 @@
          "hasMenu": true,
          "events": [
             {
+               "@context": "https://schema.org",
                "@type": "Event",
                "name": "Exhibit Air",
                "about": "A fully immersive threatrical experience",
-               "audience": "18",
+               "audience": "18 años",
                "isAccessibleForFree": false,
                "startDate": "2023-07-21T21:00:00Z",
                "endDate": "2023-07-21T00:00:00Z",
@@ -1792,6 +1871,7 @@
                ]
             },
             {
+               "@context": "https://schema.org",
                "@type": "Event",
                "name": "Ohala",
                "about": "Una experiencia familiar única con efectos especiales, acrobacias, danza y la última tecnología en sonido envolvente.",
@@ -1818,6 +1898,16 @@
                      "@type": "ImageObject",
                      "url": "assets/img/eventos/Ohala/imagen-1.jpg",
                      "name": "Imagen 1 - Ohala"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Ohala/imagen-2.jpg",
+                     "name": "Imagen 2 - Ohala"
+                  },
+                  {
+                     "@type": "ImageObject",
+                     "url": "assets/img/eventos/Ohala/imagen-3.jpg",
+                     "name": "Imagen 3 - Ohala"
                   }
                ]
             }
@@ -1872,11 +1962,6 @@
                "@type": "ImageObject",
                "url": "assets/img/cafeterias/Bar Papis/imagen-3.jpg",
                "name": "Imagen 3 - Bar Papis"
-            },
-            {
-               "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Bar Papis/imagen-4.jpg",
-               "name": "Imagen 4 - Bar Papis"
             }
          ],
          "priceRange": "$$",
