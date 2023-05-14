@@ -377,15 +377,8 @@ async function cargarBusquedaEvent(listaCafeterias, filtros, primeraVez) {
     var cafeteriaSelect = document.getElementById("busqueda-filtro");
     var pagina = '<div class="row-filt-ev">';
     pagina += '<div id="past-events" class="col-lg-6 aos-init aos-animate" data-aos="fade-left" data-aos-delay="100">';
-
-    let resultados = 0;
-
     for (let i = listaEventos.length - 1; i >= 0; i--) {
         if (cumpleFiltrosEv(listaEventos[i], listaCafeterias[i], filtros)) {
-
-            //MOVER LINEA DENTRO DE CONDICIÓN DE FILTROS UNA VEZ IMPLEMENTADO
-            resultados++;
-
             const fechaInicioEvento = new Date(listaEventos[i].startDate);
             const fecha = fechaInicioEvento.toLocaleString('es-ES', {
                 year: 'numeric',
@@ -410,8 +403,43 @@ async function cargarBusquedaEvent(listaCafeterias, filtros, primeraVez) {
     document.getElementById("totalResultados").textContent = "Resultados encontrados: " + resultados
 
     cafeteriaSelect.innerHTML = pagina;
-}
+}  
 
+function cumpleFiltrosCaf(cafeteria, filtros) {
+    if (filtros.length === 0) {
+        return true;
+    }
+    let cafeteriaVal = [cafeteria.priceRange];
+    let keywordsCaf = cafeteria.keywords;
+    for (let i = 0; i < cafeteria.keywords.length; i++) {
+        cafeteriaVal.concat(cafeteria.keywords[i]);
+    }
+    let cumple = false;
+    for (let i = 0; i < filtros.length - 1; i++) {
+        if (cafeteriaVal.includes(filtros[i]) || keywordsCaf.includes(filtros[i])) {
+            cumple = true;
+        }
+    }
+    console.log("Cafeteria ->" + (cafeteria.distancia / 1000).toFixed(2));
+    console.log("Distancia slider ->" + filtros[filtros.length - 1]);
+    console.log(filtros);
+    if (filtros[filtros.length - 1] != 0) {
+        if ((parseInt(cafeteria.distancia) / 1000).toFixed(2) <= parseInt(filtros[filtros.length - 1])) {
+            cumple = true;
+        }
+    } else {
+        if (filtros.length == 1) {
+            cumple = true;
+        }
+    }
+    if (filtros.length > 1) {
+        console.log("Rating -> " + filtros[filtros.length - 2]);
+        if (parseInt(cafeteria.aggregateRating.ratingValue) >= parseInt(filtros[filtros.length - 2])) {
+            cumple = true;
+        }
+    }
+    return cumple;
+}
 
 function cumpleFiltrosEv(evento, cafeteria, filtros) {
     if (filtros.length === 0) {
