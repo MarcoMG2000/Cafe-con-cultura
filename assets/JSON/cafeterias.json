@@ -1972,6 +1972,309 @@
             "Musica",
             "Copas"
          ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Ca'n Molinas",
+         "description": "Dentro de la dilatada gama de productos artesanales que elaboramos en Ca'n Molinas, quizás el más emblemático sea la famosísima coca de patata, un hito de la cultura tradicional Mallorquina, enseña de identidad de la localidad Valldemossina, y como no, sello y marca de la calidad de este horno.",
+         "address": {
+            "streetAddress": "Via Blanquerna, 15",
+            "addressLocality": "Valldemossa",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07170",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.70989478576917",
+            "longitude": "2.621613295889222"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.2",
+            "reviewCount": "2669"
+         },
+         "openingHours": [
+            "Mo-Sa 07:00-20:00"
+         ],
+         "contactPoint": {
+            "telephone": "+34 971 61 22 47",
+            "email": "forncanmolinas@gmail.com"
+         },
+         "url": "http://http://www.canmolinas.com/",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Ca'n Molinas/imagen-1.jpg",
+               "name": "Imagen 1 - Ca'n Molinas"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Ca'n Molinas/imagen-2.jpg",
+               "name": "Imagen 2 - Ca'n Molinas"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Ca'n Molinas/imagen-3.jpg",
+               "name": "Imagen 3 - Ca'n Molinas"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Ca'n Molinas/imagen-4.jpg",
+               "name": "Imagen 4 - Ca'n Molinas"
+            }
+         ],
+         "priceRange": "$$",
+         "acceptsReservations": false,
+         "hasMenu": true,
+         "events": [],
+         "keywords": [
+            "Comida y Bebida",
+            "Comida",
+            "Pasteleria"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Cappuccino Valldemossa",
+         "description": "Dentro de la dilatada gama de productos artesanales que elaboramos en Ca'n Molinas, quizás el más emblemático sea la famosísima coca de patata, un hito de la cultura tradicional Mallorquina, enseña de identidad de la localidad Valldemossina, y como no, sello y marca de la calidad de este horno.",
+         "address": {
+            "streetAddress": "Placa de Ramon Llull, 5",
+            "addressLocality": "Valldemossa",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07170",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.7100319640338",
+            "longitude": "2.622634672553074"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "3.7",
+            "reviewCount": "1279"
+         },
+         "openingHours": [
+            "Mo-Su 09:30-21:00"
+         ],
+         "contactPoint": {
+            "telephone": "+34 971 61 60 59",
+            "email": "info@grupocappuccino.com"
+         },
+         "url": "http://www.cappuccinograndcafe.es/es/mallorca/valldemossa",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Capuccino Valldemossa/imagen-1.jpg",
+               "name": "Imagen 1 - Capuccino Valldemossa"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Capuccino Valldemossa/imagen-2.jpg",
+               "name": "Imagen 2 - Capuccino Valldemossa"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Capuccino Valldemossa/imagen-3.jpg",
+               "name": "Imagen 3 - Capuccino Valldemossa"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Capuccino Valldemossa/imagen-4.jpg",
+               "name": "Imagen 4 - Capuccino Valldemossa"
+            }
+         ],
+         "priceRange": "$$$",
+         "acceptsReservations": true,
+         "hasMenu": true,
+         "events": [],
+         "keywords": [
+            "Comida y Bebida",
+            "Comida",
+            "Pasteleria",
+            "Libros",
+            "Lectura",
+            "Musica"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "ROM4N1 Cafetería & Restaurant",
+         "description": "Dentro de la dilatada gama de productos artesanales que elaboramos en Ca'n Molinas, quizás el más emblemático sea la famosísima coca de patata, un hito de la cultura tradicional Mallorquina, enseña de identidad de la localidad Valldemossina, y como no, sello y marca de la calidad de este horno.",
+         "address": {
+            "streetAddress": "Avinguda del General Luque, 41",
+            "addressLocality": "Inca",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07300",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.71932118849009",
+            "longitude": "2.909109823903032"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.0",
+            "reviewCount": "1230"
+         },
+         "openingHours": [
+            "Tu-Th 08:30-00:30",
+            "Fr-Su 08:30-01:30"
+         ],
+         "contactPoint": {
+            "telephone": "+34 971 88 20 54",
+            "email": ""
+         },
+         "url": "",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/ROM4N1 Cafetería & Restaurant/imagen-1.jpg",
+               "name": "Imagen 1 - ROM4N1 Cafetería & Restaurant"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/ROM4N1 Cafetería & Restaurant/imagen-2.jpg",
+               "name": "Imagen 2 - ROM4N1 Cafetería & Restaurant"
+            }
+         ],
+         "priceRange": "$$$",
+         "acceptsReservations": true,
+         "hasMenu": true,
+         "events": [],
+         "keywords": [
+            "Comida y Bebida",
+            "Comida",
+            "Musica",
+            "Copas"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Dulce de Leche",
+         "description": "Dentro de la dilatada gama de productos artesanales que elaboramos en Ca'n Molinas, quizás el más emblemático sea la famosísima coca de patata, un hito de la cultura tradicional Mallorquina, enseña de identidad de la localidad Valldemossina, y como no, sello y marca de la calidad de este horno.",
+         "address": {
+            "streetAddress": "Via Palma, 100",
+            "addressLocality": "Manacor",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07500",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.575002839978296",
+            "longitude": "3.203855808756887"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "reviewCount": "880"
+         },
+         "openingHours": [
+            "Mo-Do 07:30-14:30",
+            "Mo-Sa 17:00-20:00"
+         ],
+         "contactPoint": {
+            "telephone": "+34 871 51 03 59",
+            "email": "reguscidulcedeleche@gmail.com"
+         },
+         "url": "https://www.facebook.com/DulcedelecheManacor/",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Dulce De Leche/imagen-1.jpg",
+               "name": "Imagen 1 - Dulce De Leche"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Dulce De Leche/imagen-2.jpg",
+               "name": "Imagen 2 - Dulce De Leche"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Dulce De Leche/imagen-3.jpg",
+               "name": "Imagen 3 - Dulce De Leche"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Dulce De Leche/imagen-4.jpg",
+               "name": "Imagen 4 - Dulce De Leche"
+            }
+         ],
+         "priceRange": "$",
+         "acceptsReservations": false,
+         "hasMenu": true,
+         "events": [],
+         "keywords": [
+            "Comida y Bebida",
+            "Comida",
+            "Pasteleria",
+            "Cartas"
+         ]
+      },
+      {
+         "@type": "CafeOrCoffeeShop",
+         "name": "Es Passeig",
+         "description": "Dentro de la dilatada gama de productos artesanales que elaboramos en Ca'n Molinas, quizás el más emblemático sea la famosísima coca de patata, un hito de la cultura tradicional Mallorquina, enseña de identidad de la localidad Valldemossina, y como no, sello y marca de la calidad de este horno.",
+         "address": {
+            "streetAddress": "Paseig de la Mare de Déu de la Victòria, 5",
+            "addressLocality": "Alcúdia",
+            "addressRegion": "Illes Balears",
+            "postalCode": "07400",
+            "addressCountry": "ES"
+         },
+         "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.85224839057196",
+            "longitude": "3.123804538225109"
+         },
+         "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.1",
+            "reviewCount": "430"
+         },
+         "openingHours": [
+            "Mo-We 07:00-00:00",
+            "Fr-Su 07:00-00:00"
+         ],
+         "contactPoint": {
+            "telephone": "+34 971 54 54 30",
+            "email": "salvaavila@gmail.com"
+         },
+         "url": "http://barespasseigalcudia.rf.gd/",
+         "image": [
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Es Passeig/imagen-1.jpg",
+               "name": "Imagen 1 - Es Passeig"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Es Passeig/imagen-2.jpg",
+               "name": "Imagen 2 - Es Passeig"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Es Passeig/imagen-3.jpg",
+               "name": "Imagen 3 - Es Passeig"
+            },
+            {
+               "@type": "ImageObject",
+               "url": "assets/img/cafeterias/Es Passeig/imagen-4.jpg",
+               "name": "Imagen 4 - Es Passeig"
+            }
+         ],
+         "priceRange": "$",
+         "acceptsReservations": false,
+         "hasMenu": true,
+         "events": [],
+         "keywords": [
+            "Comida y Bebida",
+            "Comida",
+            "Pasteleria"
+         ]
       }
    ]
 }
