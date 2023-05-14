@@ -1,10 +1,12 @@
 var listaCafeterias;
 var listaRestaurantes;
+var listaBodegas;
 
 var map;
 
 var coffeMarkers = [];
 var restaurantMarkers = [];
+var bodegaMarkers = [];
 
 function initMap() {
 	// Update MAP_ID with custom map ID
@@ -22,6 +24,7 @@ function initMap() {
 
 	loadCafeterias();
 	loadRestaurantes();
+	loadBodegas();
 
 }
 
@@ -122,6 +125,54 @@ function loadRestaurantes(){
     request.send();
 }
 
+function loadBodegas(){
+	// Hacemos el request del JSON
+    const request = new XMLHttpRequest();
+    request.open("GET", "/assets/JSON/bodegas.json");
+    request.responseType = 'text';
+    
+    request.onload = () => {
+        // Convertimos el JSON a objetos JS
+        const objeto = JSON.parse(request.response);
+        listaBodegas = objeto.itemListElement;
+        
+		let indxMarker = 0;
+		listaBodegas.forEach(bodega => {
+
+			const marker = new google.maps.Marker({
+				position: { lat: Number(bodega.geo.latitude), lng: Number(bodega.geo.longitude) },
+				map,
+				title: bodega.name,
+				icon: {
+					url: 'assets/img/bottleandglass.svg',
+					scaledSize: new google.maps.Size(35, 35),
+				},
+				animation: google.maps.Animation.DROP,
+				zIndex: indxMarker++
+			});
+
+			const content = "<b>" + bodega.name + "</b>"
+				+ "<br>" + bodega.address.streetAddress 
+				+ "<br>" + bodega.address.addressLocality
+			 	+ "<br>" + bodega.address.addressRegion
+				+ "<br>" + bodega.address.postalCode;
+
+			const infowindow = new google.maps.InfoWindow({
+				content: content,
+			});
+			
+			marker.addListener('click', () => {
+				infowindow.open(map, marker);
+				console.log(marker)
+				iconMapClickBodega(marker);
+			});
+
+			bodegaMarkers.push(marker);
+		});
+    };
+    request.send();
+}
+
 function iconMapClickCafeteria(marker){
 	cafeteria = listaCafeterias[marker.zIndex]
 	console.log(cafeteria);
@@ -134,6 +185,14 @@ function iconMapClickRestaurante(marker){
 	restaurante = listaRestaurantes[marker.zIndex]
 	console.log(restaurante);
 
-	//Load Info of cafeteria on page
+	//Load Info of restaurante on page
 	document.getElementById("map-selected-item-name").textContent = restaurante.name;
+}
+
+function iconMapClickBodega(marker){
+	bodega = listaBodegas[marker.zIndex]
+	console.log(bodega);
+
+	//Load Info of bodega on page
+	document.getElementById("map-selected-item-name").textContent = bodega.name;
 }
