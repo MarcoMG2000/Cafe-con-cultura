@@ -1,8 +1,3 @@
-
-/**
- * Función para cargar las distintas vistas al contenedor principal.
- * @param {*} nombreArchivo String con el nombre del archivo que se quiere cargar.
- */
 function cargarContenido(nombreArchivo, nombreCafeteria, nombreEvento) {
   document.querySelector('#main').innerHTML = '';
 
@@ -494,6 +489,7 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
   pagina += '  </div>';
   pagina += '</div>';
 
+  // API DE GOOGLE MAPS
   const latitud = cafeteriaEncontrada.geo.latitude;
   const longitud = cafeteriaEncontrada.geo.longitude;
   const urlUb = 'https://www.google.com/maps/embed/v1/view?key=AIzaSyDEttTnyKUn1uAIIjfqoOQoTJqbAncMym0&center=' + latitud + ',' + longitud + '&zoom=18';
@@ -501,6 +497,8 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
   pagina += '  <iframe src="' + urlUb + '" frameborder="0" allowfullscreen></iframe>';
   pagina += '</div>';
 
+  // LISTA DE EVENTOS
+  const fechaActual = new Date();
   if (cafeteriaEncontrada.events.length > 0) {
     pagina += '<div class="section-title margin-top-50">';
     pagina += '  <h2>Eventos</h2>';
@@ -509,11 +507,9 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
     pagina += '<div class="row cafeteria-events" data-aos="zoom-in" data-aos-delay="100">';
     for (let i = 0; i < cafeteriaEncontrada.events.length; i++) {
 
-      pagina += '  <div class="evento col-lg-4 col-md-6 d-flex align-items-stretch"';
-      pagina += '                   onclick="cargarContenido(\'evento.html\', \'' + nombreCafeteria.replace(/'/g, "\\'") + '\', \'' + cafeteriaEncontrada.events[i].name.replace(/'/g, "\\'") + '\')">';
-      pagina += '    <a class="cafeteria-event">';
-
       const fechaInicioEvento = new Date(cafeteriaEncontrada.events[i].startDate);
+      if (fechaActual > fechaInicioEvento) continue; // Saltamos el evento si ya ha sucedido
+
       const fecha = fechaInicioEvento.toLocaleString('es-ES', {
           year: 'numeric',
           month: '2-digit',
@@ -525,6 +521,9 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
           timeZone: 'UTC'
       });
 
+      pagina += '  <div class="evento col-lg-4 col-md-6 d-flex align-items-stretch"';
+      pagina += '                   onclick="cargarContenido(\'evento.html\', \'' + nombreCafeteria.replace(/'/g, "\\'") + '\', \'' + cafeteriaEncontrada.events[i].name.replace(/'/g, "\\'") + '\')">';
+      pagina += '    <a class="cafeteria-event">';
       pagina += '      <h4>' + cafeteriaEncontrada.events[i].name + '</h4>';
       pagina += '      <h4>' + fecha + '</h4>';
       pagina += '      <p>' + cafeteriaEncontrada.events[i].about + '</p>';
@@ -874,7 +873,7 @@ async function cargarBusquedaCafe(listaCafeterias, filtros, primeraVez) {
 }
 
 async function cargarBusquedaEvent(listaCafeterias, filtros, primeraVez) {
-  var listaEventos = obtenerListaEventos(listaCafeterias);
+  var listaEventos = obtenerListaTotalEventos(listaCafeterias);
   await obtenerDistanciasCafeterias(listaCafeterias);
   var slider = document.getElementById("distancia");
   slider.max = getMaxDistance(listaCafeterias);

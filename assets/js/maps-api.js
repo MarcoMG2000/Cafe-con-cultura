@@ -300,7 +300,6 @@ function loadMonumentos(){
     request.send();
 }
 
-
 function iconMapClickCafeteria(marker){
 	cafeteria = listaCafeterias[marker.zIndex]
 	console.log(cafeteria);

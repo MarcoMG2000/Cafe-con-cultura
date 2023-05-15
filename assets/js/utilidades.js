@@ -75,10 +75,40 @@ function comprobarSiEstaAbiertoEnEsteDia(diaInicio, diaFin) {
     return diaActualIndex >= diaInicioIndex && diaActualIndex <= diaFinIndex;
 }
 
+<<<<<<< Updated upstream
 function buscarCafeteriaPorNombre(listaCafeterias, nombreCaf) {
     for (let i = 0; i < listaCafeterias.length; i++) {
         if (listaCafeterias[i].name === nombreCaf) {
             return listaCafeterias[i];
+=======
+function comprobarSiEstaAbiertoEnEstaHora(horaInicio, horaFin, horaActual) {
+    const [horaInicioH, horaInicioM] = horaInicio.split(":");
+    const [horaFinH, horaFinM] = horaFin.split(":");
+    const [horaActualH, horaActualM] = horaActual.split(":");
+
+    const horaInicioMs = (parseInt(horaInicioH) * 60 + parseInt(horaInicioM)) * 60 * 1000;
+    var horaFinMs = (parseInt(horaFinH) * 60 + parseInt(horaFinM)) * 60 * 1000;
+    const horaActualMs = (parseInt(horaActualH) * 60 + parseInt(horaActualM)) * 60 * 1000;
+
+    if (horaFinMs < horaInicioMs) {
+        horaFinMs += 24 * 60 * 60 * 1000;
+    }
+
+    return horaActualMs >= horaInicioMs && horaActualMs <= horaFinMs;
+}
+
+function storeCafeteria(nombre) {
+    if (typeof Storage !== 'undefined') {
+        let historialPrevio = localStorage.getItem('Cafeterias Visitadas');
+        let historialNuevo = [];
+        if (historialPrevio) {
+            historialNuevo = JSON.parse(historialPrevio);
+            if (historialNuevo.includes(nombre)) {
+                historialNuevo.splice(historialNuevo.indexOf(nombre), 1);
+            } else if (historialNuevo.length >= 5) {
+                historialNuevo.shift();
+            }
+>>>>>>> Stashed changes
         }
     }
     return null;
@@ -159,21 +189,6 @@ function storeEvento(nombreCafeteria, nombreEvento) {
     request.send();
 }
 
-function comprobarSiEstaAbiertoEnEstaHora(horaInicio, horaFin, horaActual) {
-    const [horaInicioH, horaInicioM] = horaInicio.split(":");
-    const [horaFinH, horaFinM] = horaFin.split(":");
-    const [horaActualH, horaActualM] = horaActual.split(":");
-
-    const horaInicioMs = (parseInt(horaInicioH) * 60 + parseInt(horaInicioM)) * 60 * 1000;
-    var horaFinMs = (parseInt(horaFinH) * 60 + parseInt(horaFinM)) * 60 * 1000;
-    const horaActualMs = (parseInt(horaActualH) * 60 + parseInt(horaActualM)) * 60 * 1000;
-
-    if (horaFinMs < horaInicioMs) {
-        horaFinMs += 24 * 60 * 60 * 1000;
-    }
-
-    return horaActualMs >= horaInicioMs && horaActualMs <= horaFinMs;
-}
 
 function filtrosSeleccionadosCaf() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
@@ -315,7 +330,6 @@ function obtenerUbicacionUsuario() {
     });
 }
 
-// Función para calcular la distancia entre dos coordenadas geográficas (en kilómetros)
 function calcularDistancia(latitud1, longitud1, latitud2, longitud2) {
     const radioTierra = 6371; // Radio de la Tierra en kilómetros
 
@@ -345,7 +359,6 @@ function gradosARadianes(grados) {
     return grados * (Math.PI / 180);
 }
 
-// Función principal para obtener la posición del usuario y calcular las distancias
 async function obtenerDistanciasCafeterias(listaCafeterias) {
     // Obtener la posición del usuario
 
