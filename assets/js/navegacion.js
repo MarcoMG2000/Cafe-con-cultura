@@ -250,7 +250,7 @@ function cargarEventos(listaCafeterias) {
         pagina += '<div class="icon-box mt-5 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">';
       }
 
-      pagina += '  <div class="event-body">';
+      pagina += '  <div class="event-body" onclick="cargarContenido(\'evento.html\', \'' + listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')">';
       pagina += '    <i class="fa-solid fa-chevron-right chevron"></i>';
       pagina += '    <h4>' + nombre + '</h4>';
       pagina += '    <div class="div-filas">';
