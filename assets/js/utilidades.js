@@ -114,8 +114,20 @@ function comprobarSiEstaAbiertoEnEstaHora(horaInicio, horaFin, horaActual) {
     return horaActualMs >= horaInicioMs && horaActualMs <= horaFinMs;
 }
 
-function filtrosSeleccionados() {
+function filtrosSeleccionadosCaf() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    const ids = [];
+    checkboxes.forEach(checkbox => ids.push(checkbox.id));
+
+    const distancia = document.getElementById('distancia').value;
+    const filtrosSeleccionados = ids;
+    filtrosSeleccionados.push(distancia);
+
+    return filtrosSeleccionados;
+}
+
+function filtrosSeleccionadosEv() {
+    const checkboxes = document.querySelectorAll('input[type="radio"]:checked');
     const ids = [];
     checkboxes.forEach(checkbox => ids.push(checkbox.id));
 
@@ -167,21 +179,17 @@ function cumpleFiltrosEv(evento, cafeteria, filtros) {
         return true;
     }
     let eventVal = [evento.isAccessibleForFree.toString(), evento.audience];
-    let cumple = false;
+    let cumple = true;
     for (let i = 0; i < filtros.length - 1; i++) {
         console.log("FILTROS EVENT: " + filtros[i]);
         console.log("EVENT VAL: " + eventVal[i]);
-        if (eventVal.includes(filtros[i])) {
-            cumple = true;
+        if (!eventVal.includes(filtros[i])) {
+            cumple = false;
         }
     }
     if (filtros[filtros.length - 1] != 0) {
-        if ((parseInt(cafeteria.distancia) / 1000).toFixed(2) <= parseInt(filtros[filtros.length - 1])) {
-            cumple = true;
-        }
-    } else {
-        if (filtros.length == 1) {
-            cumple = true;
+        if ((parseInt(cafeteria.distancia) / 1000).toFixed(2) > parseInt(filtros[filtros.length - 1])) {
+            cumple = false;
         }
     }
     return cumple;

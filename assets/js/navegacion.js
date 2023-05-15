@@ -83,26 +83,26 @@ function clickEvento(nombreCafetria, nombreEvento) {
   request.send();
 }
 
+var tipoFiltro = 'Cafeterias';
 function cargarBuscador(nombre, bool) {
   console.log(nombre);
   // Hacemos el request del JSON
   const request = new XMLHttpRequest();
   request.open("GET", "/assets/JSON/cafeterias.json");
   request.responseType = 'text';
-  var tipoFiltro = 'Cafeterias';
 
   request.onload = () => {
       // Convertimos el JSON a objetos JS
       const objeto = JSON.parse(request.response);
       var listaCafeterias = objeto.itemListElement;
-      let filtros = filtrosSeleccionados();
-      console.log(filtros);
       if (nombre === 'Cafeterias') {
-          tipoFiltro = 'Cafeterias';
-          cargarBusquedaCafe(listaCafeterias, filtros, bool);
+        let filtros = filtrosSeleccionadosCaf();
+        tipoFiltro = 'Cafeterias';
+        cargarBusquedaCafe(listaCafeterias, filtros, bool);
       } else {
-          tipoFiltro = 'Eventos';
-          cargarBusquedaEvent(listaCafeterias, filtros, bool);
+        let filtros = filtrosSeleccionadosEv();
+        tipoFiltro = 'Eventos';
+        cargarBusquedaEvent(listaCafeterias, filtros, bool);
       }
   };
   request.send();
@@ -879,38 +879,49 @@ async function cargarBusquedaEvent(listaCafeterias, filtros, primeraVez) {
   slider.max = getMaxDistance(listaCafeterias);
   if (primeraVez) {
       var filt = document.getElementById("sidebar");
-      var filterS = '<div class="border-bottom pb-2 ml-2">' +
-          '<h4 id="burgundy">Filtros</h4>' +
+      var filterS = '' +
+          '<div class="border-bottom pb-2 ml-2">' +
+          '  <h4 id="burgundy">Filtros</h4>' +
           '</div>' +
           '<div class="py-2 border-bottom ml-3">' +
-          '<h6 class="font-weight-bold">Coste</h6>' +
-          '<form>' +
-          '<div class="form-group">' +
-          '<input type="checkbox" id="false">' +
-          '<label for="artisan">gratuito</label>' +
-          '</div>' +
-          '<div class="form-group">' +
-          '<input type="checkbox" id="true">' +
-          '<label for="breakfast">De pago</label>' +
-          '</div>' +
-          '</form>' +
+          '  <h6 class="font-weight-bold">Coste</h6>' +
+          '  <form>' +
+          '    <div class="form-check">' +
+          '      <input class="form-check-input" type="radio" name="flexRadioDefault" id="true" checked>' +
+          '      <label class="form-check-label" for="true">' +
+          '        Gratuito' +
+          '      </label>' +
+          '    </div>' +
+          '    <div class="form-check">' +
+          '      <input class="form-check-input" type="radio" name="flexRadioDefault" id="false">' +
+          '      <label class="form-check-label" for="false">' +
+          '        De pago' +
+          '      </label>' +
+          '    </div>' +
+          '  </form>' +
           '</div>' +
           '<div class="py-2 border-bottom ml-3">' +
-          '<h6 class="font-weight-bold">Audiencia</h6>' +
-          '<form>' +
-          '<div class="form-group">' +
-          '<input type="checkbox" id="Todas las edades">' +
-          '<label for="tea">ATP</label>' +
-          '</div>' +
-          '<div class="form-group">' +
-          '<input type="checkbox" id="16">' +
-          '<label for="cookies">+16</label>' +
-          '</div>' +
-          '<div class="form-group">' +
-          '<input type="checkbox" id="18">' +
-          '<label for="pastries">+18</label>' +
-          '</div>' +
-          '</form>' +
+          '  <h6 class="font-weight-bold">Audiencia</h6>' +
+          '  <form>' +
+          '    <div class="form-check">' +
+          '      <input class="form-check-input" type="radio" name="flexRadioDefault" id="Todas las edades" checked>' +
+          '      <label class="form-check-label" for="Todas las edades">' +
+          '        Todos los públicos' +
+          '      </label>' +
+          '    </div>' +
+          '    <div class="form-check">' +
+          '      <input class="form-check-input" type="radio" name="flexRadioDefault" id="16 años">' +
+          '      <label class="form-check-label" for="16 años">' +
+          '        +16' +
+          '      </label>' +
+          '    </div>' +
+          '    <div class="form-check">' +
+          '      <input class="form-check-input" type="radio" name="flexRadioDefault" id="18 años">' +
+          '      <label class="form-check-label" for="18 años">' +
+          '        +18' +
+          '      </label>' +
+          '    </div>' +
+          '  </form>' +
           '</div>';
       filt.insertAdjacentHTML('afterbegin', filterS);
   }
