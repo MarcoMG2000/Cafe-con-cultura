@@ -75,12 +75,6 @@ function comprobarSiEstaAbiertoEnEsteDia(diaInicio, diaFin) {
     return diaActualIndex >= diaInicioIndex && diaActualIndex <= diaFinIndex;
 }
 
-<<<<<<< Updated upstream
-function buscarCafeteriaPorNombre(listaCafeterias, nombreCaf) {
-    for (let i = 0; i < listaCafeterias.length; i++) {
-        if (listaCafeterias[i].name === nombreCaf) {
-            return listaCafeterias[i];
-=======
 function comprobarSiEstaAbiertoEnEstaHora(horaInicio, horaFin, horaActual) {
     const [horaInicioH, horaInicioM] = horaInicio.split(":");
     const [horaFinH, horaFinM] = horaFin.split(":");
@@ -97,18 +91,21 @@ function comprobarSiEstaAbiertoEnEstaHora(horaInicio, horaFin, horaActual) {
     return horaActualMs >= horaInicioMs && horaActualMs <= horaFinMs;
 }
 
-function storeCafeteria(nombre) {
-    if (typeof Storage !== 'undefined') {
-        let historialPrevio = localStorage.getItem('Cafeterias Visitadas');
-        let historialNuevo = [];
-        if (historialPrevio) {
-            historialNuevo = JSON.parse(historialPrevio);
-            if (historialNuevo.includes(nombre)) {
-                historialNuevo.splice(historialNuevo.indexOf(nombre), 1);
-            } else if (historialNuevo.length >= 5) {
-                historialNuevo.shift();
+function buscarCafeteriaPorNombre(listaCafeterias, nombreCaf) {
+    for (let i = 0; i < listaCafeterias.length; i++) {
+        if (listaCafeterias[i].name === nombreCaf) {
+            return listaCafeterias[i];
+        }
+    }
+    return null;
+}
+
+function buscarEventoPorNombre(listaCafeterias, nombreEv) {
+    for (let i = 0; i < listaCafeterias.length; i++) {
+        for (let j = 0; j < listaCafeterias[i].events.length; j++){
+            if(listaCafeterias[i].events[j].name === nombreEv){
+                return listaCafeterias[i].events[j];
             }
->>>>>>> Stashed changes
         }
     }
     return null;
@@ -125,7 +122,6 @@ function storeCafeteria(nombre) {
         const objeto = JSON.parse(request.response);
         var listaCafeterias = objeto.itemListElement;
         caf = buscarCafeteriaPorNombre(listaCafeterias, nombre);
-        console.log(caf);
         if (typeof Storage !== 'undefined') {
             let historialPrevio = localStorage.getItem('Cafeterias Visitadas');
             let historialNuevo = [];
@@ -144,17 +140,6 @@ function storeCafeteria(nombre) {
         }
     };
     request.send();
-}
-
-function buscarEventoPorNombre(listaCafeterias, nombreEv) {
-    for (let i = 0; i < listaCafeterias.length; i++) {
-        for (let j = 0; j < listaCafeterias[i].events.length; j++){
-            if(listaCafeterias[i].events[j].name === nombreEv){
-                return listaCafeterias[i].events[j];
-            }
-        }
-    }
-    return null;
 }
 
 function storeEvento(nombreCafeteria, nombreEvento) {
@@ -188,7 +173,6 @@ function storeEvento(nombreCafeteria, nombreEvento) {
     };
     request.send();
 }
-
 
 function filtrosSeleccionadosCaf() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
@@ -229,9 +213,6 @@ function cumpleFiltrosCaf(cafeteria, filtros) {
             cumple = true;
         }
     }
-    console.log("Cafeteria ->" + (cafeteria.distancia / 1000).toFixed(2));
-    console.log("Distancia slider ->" + filtros[filtros.length - 1]);
-    console.log(filtros);
     if (filtros[filtros.length - 1] != 0) {
         if ((parseInt(cafeteria.distancia) / 1000).toFixed(2) <= parseInt(filtros[filtros.length - 1])) {
             cumple = true;
@@ -242,7 +223,6 @@ function cumpleFiltrosCaf(cafeteria, filtros) {
         }
     }
     if (filtros.length > 1) {
-        console.log("Rating -> " + filtros[filtros.length - 2]);
         if (parseInt(cafeteria.aggregateRating.ratingValue) >= parseInt(filtros[filtros.length - 2])) {
             cumple = true;
         }
@@ -257,8 +237,6 @@ function cumpleFiltrosEv(evento, cafeteria, filtros) {
     let eventVal = [evento.isAccessibleForFree.toString(), evento.audience];
     let cumple = true;
     for (let i = 0; i < filtros.length - 1; i++) {
-        console.log("FILTROS EVENT: " + filtros[i]);
-        console.log("EVENT VAL: " + eventVal[i]);
         if (!eventVal.includes(filtros[i])) {
             cumple = false;
         }

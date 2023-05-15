@@ -62,8 +62,6 @@ function clickCafeteria(nombreCafeteria) {
   request.send();
 }
 
-
-
 function clickEvento(nombreCafeteria, nombreEvento) {
   // Hacemos el request del JSON
   const request = new XMLHttpRequest();
@@ -82,7 +80,6 @@ function clickEvento(nombreCafeteria, nombreEvento) {
 
 var tipoFiltro = 'Cafeterias';
 function cargarBuscador(nombre, bool) {
-  console.log(nombre);
   // Hacemos el request del JSON
   const request = new XMLHttpRequest();
   request.open("GET", "/assets/JSON/cafeterias.json");
@@ -269,9 +266,9 @@ function cargarRecientes() {
   var recent = document.getElementById("recent");
   
   const listaEventosJSON = localStorage.getItem('Eventos Visitados');
-  const listaEventos = JSON.parse(listaEventosJSON);
+  const listaEventos = JSON.parse(listaEventosJSON).reverse();
   const listaCafeteriasJSON = localStorage.getItem('Cafeterias Visitadas');
-  const listaCafeterias = JSON.parse(listaCafeteriasJSON);
+  const listaCafeterias = JSON.parse(listaCafeteriasJSON).reverse();
 
   if (listaCafeterias === null && listaEventos === null) {
     return;
@@ -387,7 +384,6 @@ function cargarRecientes() {
 }
 
 function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
-  console.log("NOMBRE -> " + nombreCafeteria);
   // Seleccionamos el elemento HTML donde se agregarán las cafeterías
   var cafeteriaSelect = document.getElementById("cafeterias-sel");
   let cafeteriaEncontrada = null;
@@ -538,7 +534,6 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
 }
 
 function cargarEventoClickado(listaCafeterias, nombreCafeteria, nombreEvento) {
-  console.log("NOMBRE -> " + nombreEvento);
   // Seleccionamos el elemento HTML donde se agregarán las cafeterías
   var eventoSelect = document.getElementById("evento-sel");
 
