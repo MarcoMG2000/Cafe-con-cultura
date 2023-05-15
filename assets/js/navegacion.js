@@ -916,7 +916,7 @@ async function cargarBusquedaEvent(listaCafeterias, filtros, primeraVez) {
   }
   var cafeteriaSelect = document.getElementById("busqueda-filtro");
   var pagina = '<div class="row-filt-ev">';
-  pagina += '<div id="past-events" class="col-lg-6 aos-init aos-animate" data-aos="fade-left" data-aos-delay="100">';
+  pagina += '<div id="past-events" class="col-12 aos-init aos-animate" data-aos="fade-left" data-aos-delay="100">';
 
   let resultados = 0;
 

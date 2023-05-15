@@ -838,7 +838,7 @@ h6:hover {
 }
 
 .event-body-bus {
-  width: 200%;
+  width: 100%;
   margin: 0 auto 20px;
   border: 2px solid rgb(248, 214, 23);
   padding: 5px;
@@ -876,6 +876,23 @@ h6:hover {
   #sidebar {
     margin-left: 50px;  
     width: 86%;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .event-body-bus {
+    justify-content: center;
+  }
+
+  #buscador .icon-box h4 {
+    text-align: center;
+    margin-right: 60px;
+  }
+  
+  #buscador .info {
+    justify-content: center;
   }
 
 }
