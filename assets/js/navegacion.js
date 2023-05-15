@@ -46,7 +46,7 @@ function cargarHome() {
       cargarCafeteriasPorValoracion(listaCafeterias);
       cargarCafeteriasPorCercania(listaCafeterias);
       cargarEventos(listaCafeterias);
-      cargarRecientes(listaCafeterias);
+      cargarRecientes();
   };
   request.send();
 }
@@ -69,7 +69,7 @@ function clickCafeteria(nombreCafeteria) {
 
 
 
-function clickEvento(nombreCafetria, nombreEvento) {
+function clickEvento(nombreCafeteria, nombreEvento) {
   // Hacemos el request del JSON
   const request = new XMLHttpRequest();
   request.open("GET", "/assets/JSON/cafeterias.json");
@@ -79,8 +79,8 @@ function clickEvento(nombreCafetria, nombreEvento) {
       // Convertimos el JSON a objetos JS
       const objeto = JSON.parse(request.response);
       var listaCafeterias = objeto.itemListElement;
-      cargarEventoClickado(listaCafeterias, nombreCafetria, nombreEvento);
-      storeEvento(nombreEvento);
+      cargarEventoClickado(listaCafeterias, nombreCafeteria, nombreEvento);
+      storeEvento(nombreCafeteria, nombreEvento);
   };
   request.send();
 }
@@ -270,16 +270,15 @@ function cargarEventos(listaCafeterias) {
   upcomingEvents.innerHTML = pagina;
 }
 
-function cargarRecientes(listaCafeterias) {
+function cargarRecientes() {
   var recent = document.getElementById("recent");
   
-  // LEER LA LISTA DE CAFETERÍAS Y EVENTOS DEL LOCAL STORAGE
-  // const listaCafeterias = cafe;
-  const listaEventos = obtenerListaEventos(listaCafeterias);
-  // listaCafeterias = {};
-  // listaEventos = {};
+  const listaEventosJSON = localStorage.getItem('Eventos Visitados');
+  const listaEventos = JSON.parse(listaEventosJSON);
+  const listaCafeteriasJSON = localStorage.getItem('Cafeterias Visitadas');
+  const listaCafeterias = JSON.parse(listaCafeteriasJSON);
 
-  if ((listaCafeterias.length <= 0 || listaCafeterias.length == undefined) && (listaEventos.length == undefined || listaEventos.length <= 0)) {
+  if (listaCafeterias === null && listaEventos === null) {
     return;
   }
 
@@ -293,17 +292,17 @@ function cargarRecientes(listaCafeterias) {
   pagina += '<div id="recent-carousels" class="carousel slide">';
 
   pagina += '<div class="row">';
-  if (listaCafeterias.length > 0) {
+  if (listaCafeterias != null) {
     pagina += '  <div class="col-6"><h2>Cafeterías</h2></div>';
   }
-  if (listaEventos.length > 0) {
+  if (listaEventos != null) {
     pagina += '  <div class="col-6"><h2>Eventos</h2></div>';
   }
   pagina += '</div>';
 
   pagina += '<div class="row">';
   // Carousel de Cafeterías
-  if (listaCafeterias.length > 0) {
+  if (listaCafeterias != null) {
     pagina += '  <div id="carouselCafeteriaReciente" class="carousel slide col-6" data-ride="carousel" data-aos="zoom-in" data-aos-delay="100">';
     var indicatorsCafeteria = '<div class="carousel-indicators">';
     var itemsCafeteria = '<div class="carousel-inner">';
@@ -344,7 +343,7 @@ function cargarRecientes(listaCafeterias) {
   }
   
   // Carousel de Eventos
-  if (listaEventos.length > 0) {
+  if (listaEventos != null) {
     pagina += '  <div id="carouselEventoReciente" class="carousel slide col-6" data-ride="carousel" data-aos="zoom-in" data-aos-delay="100">';
     var indicatorsEvento = '<div class="carousel-indicators">';
     var itemsEvento = '<div class="carousel-inner">';

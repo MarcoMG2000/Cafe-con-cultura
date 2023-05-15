@@ -127,7 +127,7 @@ function buscarEventoPorNombre(listaCafeterias, nombreEv) {
     return null;
 }
 
-function storeEvento(nombre) {
+function storeEvento(nombreCafeteria, nombreEvento) {
     // Hacemos el request del JSON
     const request = new XMLHttpRequest();
     request.open("GET", "/assets/JSON/cafeterias.json");
@@ -137,18 +137,19 @@ function storeEvento(nombre) {
         // Convertimos el JSON a objetos JS
         const objeto = JSON.parse(request.response);
         var listaCafeterias = objeto.itemListElement;
-        evento = buscarEventoPorNombre(listaCafeterias, nombre);
+        evento = buscarEventoPorNombre(listaCafeterias, nombreEvento);
         if (typeof Storage !== 'undefined') {
             let historialPrevio = localStorage.getItem('Eventos Visitados');
             let historialNuevo = [];
             if (historialPrevio) {
                 historialNuevo = JSON.parse(historialPrevio);
-                if (buscarCafeteriaPorNombre(historialNuevo, nombre)) {
-                    historialNuevo = historialNuevo.filter(ev => ev.name !== nombre);
+                if (buscarCafeteriaPorNombre(historialNuevo, nombreEvento)) {
+                    historialNuevo = historialNuevo.filter(ev => ev.name !== nombreEvento);
                 } else if (historialNuevo.length >= 5) {
                     historialNuevo.shift();
                 }
             }
+            evento.place = nombreCafeteria;
             historialNuevo.push(evento);
             localStorage.setItem('Eventos Visitados', JSON.stringify(historialNuevo));
         } else {
