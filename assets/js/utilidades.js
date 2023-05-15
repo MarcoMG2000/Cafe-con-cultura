@@ -225,66 +225,6 @@ function traducirHorarioApertura(horario) {
     return horarioTraducido.join("<br>");
 }
 
-function cargarCafeteriasPorValoracion(listaCafeterias) {
-    const nombresCafeterias = [];
-
-    // Ordenamos por valoración
-    listaCafeterias = ordenarLista(listaCafeterias, "aggregateRating.ratingValue", "descendente");
-    const cafeteriasRating = document.getElementById("cafeterias-rating");
-
-    var pagina = ''; // Construimos la sección en este mensaje
-
-    for (let i = 0; i < 3; i++) { // Recorremos las tres cafeterías con mejor valoración
-
-        // Obtenemos los valores de la cafetería del archivo JSON
-        const nombre = listaCafeterias[i].name;
-        nombresCafeterias.push(nombre);
-        const valoracion = listaCafeterias[i].aggregateRating.ratingValue;
-        const ubicacion = listaCafeterias[i].address.streetAddress;
-        const imagen = listaCafeterias[i].image[0].url;
-        const estado = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
-
-        // Generamos el html del estado
-        var abierto_cerrado = "";
-        if (estado === "Abierto") {
-            abierto_cerrado = '        <p class="abierto">Abierto</p>';
-        } else if (estado === "Cerrado") {
-            abierto_cerrado = '        <p class="cerrado">Cerrado</p>';
-        }
-
-        // Generamos el html de la valoración
-        var estrellas = '<p>';
-        const numEstrellas = 5;
-        for (let i = 1; i <= numEstrellas; i++) {
-            if (i <= valoracion) { estrellas += '<span class="fa-solid fa-star"></span>'; }
-            else if (i === Math.ceil(valoracion) && valoracion % 1 !== 0) { estrellas += '<span class="fa-solid fa-star-half-stroke"></span>'; }
-            else { estrellas += '<span class="fa-regular fa-star"></span>'; }
-        }
-        estrellas += '</p>';
-
-        pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \'' + nombre.replace(/'/g, "\\'") + '\', null)">';
-        pagina += '  <div class="media-body row">';
-        pagina += '    <div class="media-image col-md-4">';
-        pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i + '>';
-        pagina += '    </div>';
-        pagina += '    <div class="col-md-4 media-nombre d-flex align-items-center">';
-        pagina += '      <h4>' + nombre + '</h4>';
-        pagina += '    </div>';
-        pagina += '    <div class="col-md-4 d-flex align-items-center div-filas">';
-        pagina += abierto_cerrado;
-        pagina += estrellas;
-        pagina += '      <div class="info">';
-        pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>';
-        pagina += '        <p>' + ubicacion + '</p>';
-        pagina += '      </div>';
-        pagina += '    </div>';
-        pagina += '  </div>'
-        pagina += '</div>';
-    }
-
-    cafeteriasRating.innerHTML = pagina;
-}
-
 function obtenerUbicacionUsuario() {
     return new Promise((resolve, reject) => {
         if (navigator.geolocation) {

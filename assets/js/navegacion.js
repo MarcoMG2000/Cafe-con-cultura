@@ -45,7 +45,8 @@ function cargarHome() {
       var listaCafeterias = objeto.itemListElement;
       cargarCafeteriasPorValoracion(listaCafeterias);
       cargarCafeteriasPorCercania(listaCafeterias);
-      cargarEventos(listaCafeterias)
+      cargarEventos(listaCafeterias);
+      cargarRecientes(listaCafeterias);
   };
   request.send();
 }
@@ -107,6 +108,66 @@ function cargarBuscador(nombre, bool) {
   request.send();
 }
 
+function cargarCafeteriasPorValoracion(listaCafeterias) {
+  const nombresCafeterias = [];
+
+  // Ordenamos por valoración
+  listaCafeterias = ordenarLista(listaCafeterias, "aggregateRating.ratingValue", "descendente");
+  const cafeteriasRating = document.getElementById("cafeterias-rating");
+
+  var pagina = ''; // Construimos la sección en este mensaje
+
+  for (let i = 0; i < 3; i++) { // Recorremos las tres cafeterías con mejor valoración
+
+      // Obtenemos los valores de la cafetería del archivo JSON
+      const nombre = listaCafeterias[i].name;
+      nombresCafeterias.push(nombre);
+      const valoracion = listaCafeterias[i].aggregateRating.ratingValue;
+      const ubicacion = listaCafeterias[i].address.streetAddress;
+      const imagen = listaCafeterias[i].image[0].url;
+      const estado = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
+
+      // Generamos el html del estado
+      var abierto_cerrado = "";
+      if (estado === "Abierto") {
+          abierto_cerrado = '        <p class="abierto">Abierto</p>';
+      } else if (estado === "Cerrado") {
+          abierto_cerrado = '        <p class="cerrado">Cerrado</p>';
+      }
+
+      // Generamos el html de la valoración
+      var estrellas = '<p>';
+      const numEstrellas = 5;
+      for (let i = 1; i <= numEstrellas; i++) {
+          if (i <= valoracion) { estrellas += '<span class="fa-solid fa-star"></span>'; }
+          else if (i === Math.ceil(valoracion) && valoracion % 1 !== 0) { estrellas += '<span class="fa-solid fa-star-half-stroke"></span>'; }
+          else { estrellas += '<span class="fa-regular fa-star"></span>'; }
+      }
+      estrellas += '</p>';
+
+      pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \'' + nombre.replace(/'/g, "\\'") + '\', null)">';
+      pagina += '  <div class="media-body row">';
+      pagina += '    <div class="media-image col-md-4">';
+      pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i + '>';
+      pagina += '    </div>';
+      pagina += '    <div class="col-md-4 media-nombre d-flex align-items-center">';
+      pagina += '      <h4>' + nombre + '</h4>';
+      pagina += '    </div>';
+      pagina += '    <div class="col-md-4 d-flex align-items-center div-filas">';
+      pagina += abierto_cerrado;
+      pagina += estrellas;
+      pagina += '      <div class="info">';
+      pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>';
+      pagina += '        <p>' + ubicacion + '</p>';
+      pagina += '      </div>';
+      pagina += '    </div>';
+      pagina += '  </div>'
+      pagina += '</div>';
+  }
+
+  cafeteriasRating.innerHTML = pagina;
+}
+
 async function cargarCafeteriasPorCercania(listaCafeterias) {
 
   await obtenerDistanciasCafeterias(listaCafeterias); // Calculamos las distancias a todas las cafeterías
@@ -162,9 +223,10 @@ function cargarEventos(listaCafeterias) {
 
   // Ordenamos por valoración
   listaEventos = ordenarLista(listaEventos, "startDate", "ascendente");
-
-  // Seleccionamos el elemento HTML donde se agregarán las cafeterías
+  
   const upcomingEvents = document.getElementById("upcoming-events");
+  var pagina = '';
+
   for (let i = 0; i < 4; i++) { // Mostramos los 4 eventos más próximos en el tiempo
       // Obtenemos los valores del evento del archivo JSON
       const nombre = listaEventos[i].name;
@@ -181,60 +243,151 @@ function cargarEventos(listaCafeterias) {
           timeZone: 'UTC'
       });
 
-      // Creamos los elementos HTML
-      const divIconBox = document.createElement("div");
-
       if (i == 0) {
-          divIconBox.className = "icon-box mt-5 mt-lg-0";
+        pagina += '<div class="icon-box mt-5 mt-lg-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">';
       }
       else {
-          divIconBox.className = "icon-box mt-5";
+        pagina += '<div class="icon-box mt-5 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">';
       }
 
-      divIconBox.setAttribute("data-aos", "zoom-in");
-      divIconBox.setAttribute("data-aos-delay", "150");
-      divIconBox.onclick = function () { cargarContenido('evento.html', lugar.replace(/'/g, "\\'"), nombre.replace(/'/g, "\\'")) };
-
-      const divEventBody = document.createElement("div");
-      divEventBody.className = "event-body";
-
-      const iconChevronRight = document.createElement("i");
-      iconChevronRight.className = "fa-solid fa-chevron-right chevron";
-
-      const heading = document.createElement("h4");
-      heading.textContent = nombre;
-
-      const paragraph = document.createElement("p");
-      paragraph.classList.add("info");
-
-      const iconoUbicacion = document.createElement("i");
-      iconoUbicacion.classList.add("fa-solid", "fa-location-dot", "fa-lg");
-
-      const iconoFecha = document.createElement("i");
-      iconoFecha.classList.add("fa-solid", "fa-calendar", "fa-lg");
-
-      // Crear contenedor para la primera fila
-      const fila1 = document.createElement('div');
-      fila1.append(iconoUbicacion);
-      fila1.append(lugar);
-
-      // Crear contenedor para la segunda fila
-      const fila2 = document.createElement('div');
-      fila2.append(iconoFecha);
-      fila2.append(fecha);
-
-      // Agregar las filas al párrafo
-      paragraph.append(fila1);
-      paragraph.append(fila2);
-
-      // Estructuramos los elementos HTML
-      divEventBody.appendChild(iconChevronRight);
-      divEventBody.appendChild(heading);
-      divEventBody.appendChild(paragraph);
-
-      divIconBox.appendChild(divEventBody);
-      upcomingEvents.appendChild(divIconBox);
+      pagina += '  <div class="event-body">';
+      pagina += '    <i class="fa-solid fa-chevron-right chevron"></i>';
+      pagina += '    <h4>' + nombre + '</h4>';
+      pagina += '    <div class="div-filas">';
+      pagina += '      <div class="info">';
+      pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>' + lugar;
+      pagina += '      </div>';
+      pagina += '      <div class="info">';
+      pagina += '        <i class="fa-solid fa-calendar fa-lg"></i>' + fecha;
+      pagina += '      </div>';
+      pagina += '    </div>';
+      pagina += '  </div>';
+      pagina += '</div>';
   }
+
+  upcomingEvents.innerHTML = pagina;
+}
+
+function cargarRecientes(listaCafeterias) {
+  var recent = document.getElementById("recent");
+  
+  // LEER LA LISTA DE CAFETERÍAS Y EVENTOS DEL LOCAL STORAGE
+  // const listaCafeterias = cafe;
+  const listaEventos = obtenerListaEventos(listaCafeterias);
+  // listaCafeterias = {};
+  // listaEventos = {};
+
+  if ((listaCafeterias.length <= 0 || listaCafeterias.length == undefined) && (listaEventos.length == undefined || listaEventos.length <= 0)) {
+    return;
+  }
+
+  var pagina = '';
+  pagina += '<div class="container" data-aos="fade-up">';
+  pagina += '<div class="section-title">';
+  pagina += '<h2>Recently</h2>';
+  pagina += '<p>visitado recientemente</p>';
+  pagina += '</div>';
+  pagina += '<div class="row">';
+  pagina += '<div id="recent-carousels" class="carousel slide">';
+
+  pagina += '<div class="row">';
+  if (listaCafeterias.length > 0) {
+    pagina += '  <div class="col-6"><h2>Cafeterías</h2></div>';
+  }
+  if (listaEventos.length > 0) {
+    pagina += '  <div class="col-6"><h2>Eventos</h2></div>';
+  }
+  pagina += '</div>';
+
+  pagina += '<div class="row">';
+  // Carousel de Cafeterías
+  if (listaCafeterias.length > 0) {
+    pagina += '  <div id="carouselCafeteriaReciente" class="carousel slide col-6" data-ride="carousel" data-aos="zoom-in" data-aos-delay="100">';
+    var indicatorsCafeteria = '<div class="carousel-indicators">';
+    var itemsCafeteria = '<div class="carousel-inner">';
+    for (var i = 0; i < listaCafeterias.length && i < 5; i++) {
+      if (i == 0) {
+        indicatorsCafeteria += '<button type="button" data-bs-target="#carouselCafeteriaReciente" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
+
+        itemsCafeteria += '<div class="carousel-item active" onclick="cargarContenido(\'cafeteria.html\', \'' + listaCafeterias[i].name.replace(/'/g, "\\'") + '\', null)">';
+        itemsCafeteria += '  <img src="' + listaCafeterias[i].image[0].url + '" class="d-block w-100 h-100" alt="' + listaCafeterias[i].image[0].name + '">';
+        itemsCafeteria += '  <div class="carousel-caption d-none d-md-block">';
+        itemsCafeteria += '    <h5>' + listaCafeterias[i].name + '</h5>';
+        itemsCafeteria += '    <p>' + listaCafeterias[i].address.streetAddress + '</p>';  
+        itemsCafeteria += '  </div>';
+        itemsCafeteria += '</div>';
+      } else {
+        indicatorsCafeteria += '<button type="button" data-bs-target="#carouselCafeteriaReciente" data-bs-slide-to="' + i + '" aria-label="Slide ' + i + '"></button>';
+
+        itemsCafeteria += '<div class="carousel-item" onclick="cargarContenido(\'cafeteria.html\', \'' + listaCafeterias[i].name.replace(/'/g, "\\'") + '\', null)">';
+        itemsCafeteria += '  <img src="' + listaCafeterias[i].image[0].url + '" class="d-block w-100 h-100" alt="' + listaCafeterias[i].image[0].name + '">';
+        itemsCafeteria += '  <div class="carousel-caption d-none d-md-block">';
+        itemsCafeteria += '    <h5>' + listaCafeterias[i].name + '</h5>';
+        itemsCafeteria += '    <p>' + listaCafeterias[i].address.streetAddress + '</p>';  
+        itemsCafeteria += '  </div>';
+        itemsCafeteria += '</div>';
+      }
+    }
+    pagina += indicatorsCafeteria + '</div>';
+    pagina += itemsCafeteria + '</div>';
+    pagina += '      <button class="carousel-control-prev" type="button" data-bs-target="#carouselCafeteriaReciente" data-bs-slide="prev">';
+    pagina += '        <span class="carousel-control-prev-icon" aria-hidden="true"></span>';
+    pagina += '        <span class="visually-hidden">Previous</span>';
+    pagina += '      </button>';
+    pagina += '      <button class="carousel-control-next" type="button" data-bs-target="#carouselCafeteriaReciente" data-bs-slide="next">';
+    pagina += '        <span class="carousel-control-next-icon" aria-hidden="true"></span>';
+    pagina += '        <span class="visually-hidden">Next</span>';
+    pagina += '      </button>';
+    pagina += '    </div>';
+  }
+  
+  // Carousel de Eventos
+  if (listaEventos.length > 0) {
+    pagina += '  <div id="carouselEventoReciente" class="carousel slide col-6" data-ride="carousel" data-aos="zoom-in" data-aos-delay="100">';
+    var indicatorsEvento = '<div class="carousel-indicators">';
+    var itemsEvento = '<div class="carousel-inner">';
+    for (var i = 0; i < listaEventos.length && i < 5; i++) {
+      if (i == 0) {
+        indicatorsEvento += '<button type="button" data-bs-target="#carouselEventoReciente" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
+
+        itemsEvento += '<div class="carousel-item active" onclick="cargarContenido(\'evento.html\', \'' + listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')">';
+        itemsEvento += '  <img src="' + listaEventos[i].image[0].url + '" class="d-block w-100 h-100" alt="' + listaEventos[i].image[0].name + '">';
+        itemsEvento += '  <div class="carousel-caption d-none d-md-block">';
+        itemsEvento += '    <h5>' + listaEventos[i].name + '</h5>';
+        itemsEvento += '    <p>' + listaEventos[i].place + '</p>';
+        itemsEvento += '  </div>';
+        itemsEvento += '</div>';
+      } else {
+        indicatorsEvento += '<button type="button" data-bs-target="#carouselEventoReciente" data-bs-slide-to="' + i + '" aria-label="Slide ' + i + '"></button>';
+
+        itemsEvento += '<div class="carousel-item" onclick="cargarContenido(\'evento.html\', \'' + listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')">';
+        itemsEvento += '  <img src="' + listaEventos[i].image[0].url + '" class="d-block w-100 h-100" alt="' + listaEventos[i].image[0].name + '">';
+        itemsEvento += '  <div class="carousel-caption d-none d-md-block">';
+        itemsEvento += '    <h5>' + listaEventos[i].name + '</h5>';
+        itemsEvento += '    <p>' + listaEventos[i].place + '</p>';  
+        itemsEvento += '  </div>';
+        itemsEvento += '</div>';
+      }
+    }
+    pagina += indicatorsEvento + '</div>';
+    pagina += itemsEvento + '</div>';
+    pagina += '      <button class="carousel-control-prev" type="button" data-bs-target="#carouselEventoReciente" data-bs-slide="prev">';
+    pagina += '        <span class="carousel-control-prev-icon" aria-hidden="true"></span>';
+    pagina += '        <span class="visually-hidden">Previous</span>';
+    pagina += '      </button>';
+    pagina += '      <button class="carousel-control-next" type="button" data-bs-target="#carouselEventoReciente" data-bs-slide="next">';
+    pagina += '        <span class="carousel-control-next-icon" aria-hidden="true"></span>';
+    pagina += '        <span class="visually-hidden">Next</span>';
+    pagina += '      </button>';
+    pagina += '    </div>';
+    pagina += '  </div>';
+  }
+  pagina += '</div>';
+  pagina += '</div>';
+  pagina += '</div>';
+  pagina += '</div>';
+  
+  recent.innerHTML = pagina;
 }
 
 function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
@@ -244,11 +397,11 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
   let cafeteriaEncontrada = null;
   //Buscamos la cafeteria que ha sido seleccionada
   for (var i = 0; i < listaCafeterias.length; i++) {
-      //Una vez encontrada la guardamos en la variable declarada anteriormente
-      if (listaCafeterias[i].name === nombreCafeteria) {
-          cafeteriaEncontrada = listaCafeterias[i];
-          break;
-      }
+    //Una vez encontrada la guardamos en la variable declarada anteriormente
+    if (listaCafeterias[i].name === nombreCafeteria) {
+      cafeteriaEncontrada = listaCafeterias[i];
+      break;
+    }
   }
 
   var pagina = '<div class="row first-row">';
@@ -267,17 +420,17 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
   const valoracion = cafeteriaEncontrada.aggregateRating.ratingValue;
   for (let i = 1; i <= numEstrellas; i++) {
 
-      // Si la posición actual es menor o igual al valor de "rating", agregamos la clase "fa-solid" para marcar la estrella como "checked"
-      if (i <= valoracion) {
-          pagina += '<span class="fa-solid fa-star"> </span>';
-      }
-      // Si la posición actual es igual al valor de "valoracion" + 0.5, agregamos la clase "fa-solid fa-star-half-stroke" para mostrar una estrella parcialmente llena
-      else if (i === Math.ceil(valoracion) && valoracion % 1 !== 0) {
-          pagina += '<span class="fa-solid fa-star-half-stroke"> </span>';
-      }
-      else { // Si no, agregamos la clase "fa-regular fa-star" para mostrar una estrella vacía
-          pagina += '<span class="fa-regular fa-star"> </span>';
-      }
+    // Si la posición actual es menor o igual al valor de "rating", agregamos la clase "fa-solid" para marcar la estrella como "checked"
+    if (i <= valoracion) {
+      pagina += '<span class="fa-solid fa-star"> </span>';
+    }
+    // Si la posición actual es igual al valor de "valoracion" + 0.5, agregamos la clase "fa-solid fa-star-half-stroke" para mostrar una estrella parcialmente llena
+    else if (i === Math.ceil(valoracion) && valoracion % 1 !== 0) {
+      pagina += '<span class="fa-solid fa-star-half-stroke"> </span>';
+    }
+    else { // Si no, agregamos la clase "fa-regular fa-star" para mostrar una estrella vacía
+      pagina += '<span class="fa-regular fa-star"> </span>';
+    }
   }
   pagina += '      </h4>';
   pagina += '    </div>';
@@ -293,7 +446,7 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
   pagina += '      <h4>Rango de precios <i class="fa-solid fa-hand-holding-dollar"></i></h4>';
   pagina += '      <div class="price-range">';
   for (let i = 0; i < cafeteriaEncontrada.priceRange.length; i++) {
-      pagina += '      <i class="fa-solid fa-euro-sign fa-lg"></i>';
+    pagina += '      <i class="fa-solid fa-euro-sign fa-lg"></i>';
   }
   pagina += '      </div>';
   pagina += '    </div>';
@@ -313,19 +466,19 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
   var items = '<div class="carousel-inner">';
   const imagenes = cafeteriaEncontrada.image;
   for (var i = 0; i < imagenes.length; i++) {
-      if (i == 0) {
-          indicators += '<button type="button" data-bs-target="#carouselCafeteria" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
+    if (i == 0) {
+      indicators += '<button type="button" data-bs-target="#carouselCafeteria" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
 
-          items += '<div class="carousel-item active">';
-          items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '">';
-          items += '</div>';
-      } else {
-          indicators += '<button type="button" data-bs-target="#carouselCafeteria" data-bs-slide-to="' + i + '" aria-label="Slide ' + i + '"></button>';
+      items += '<div class="carousel-item active">';
+      items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '">';
+      items += '</div>';
+    } else {
+      indicators += '<button type="button" data-bs-target="#carouselCafeteria" data-bs-slide-to="' + i + '" aria-label="Slide ' + i + '"></button>';
 
-          items += '<div class="carousel-item">';
-          items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '">';
-          items += '</div>';
-      }
+      items += '<div class="carousel-item">';
+      items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '">';
+      items += '</div>';
+    }
   }
   pagina += indicators + '</div>';
   pagina += items + '</div>';
@@ -348,37 +501,37 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
   pagina += '</div>';
 
   if (cafeteriaEncontrada.events.length > 0) {
-      pagina += '<div class="section-title margin-top-50">';
-      pagina += '  <h2>Eventos</h2>';
-      pagina += '  <p>Próximos eventos en esta cafetería</p>';
-      pagina += '</div>';
-      pagina += '<div class="row cafeteria-events" data-aos="zoom-in" data-aos-delay="100">';
-      for (let i = 0; i < cafeteriaEncontrada.events.length; i++) {
+    pagina += '<div class="section-title margin-top-50">';
+    pagina += '  <h2>Eventos</h2>';
+    pagina += '  <p>Próximos eventos en esta cafetería</p>';
+    pagina += '</div>';
+    pagina += '<div class="row cafeteria-events" data-aos="zoom-in" data-aos-delay="100">';
+    for (let i = 0; i < cafeteriaEncontrada.events.length; i++) {
 
-          pagina += '  <div class="evento col-lg-4 col-md-6 d-flex align-items-stretch"';
-          pagina += '                   onclick="cargarContenido(\'evento.html\', \'' + nombreCafeteria.replace(/'/g, "\\'") + '\', \'' + cafeteriaEncontrada.events[i].name.replace(/'/g, "\\'") + '\')">';
-          pagina += '    <a class="cafeteria-event">';
+      pagina += '  <div class="evento col-lg-4 col-md-6 d-flex align-items-stretch"';
+      pagina += '                   onclick="cargarContenido(\'evento.html\', \'' + nombreCafeteria.replace(/'/g, "\\'") + '\', \'' + cafeteriaEncontrada.events[i].name.replace(/'/g, "\\'") + '\')">';
+      pagina += '    <a class="cafeteria-event">';
 
-          const fechaInicioEvento = new Date(cafeteriaEncontrada.events[i].startDate);
-          const fecha = fechaInicioEvento.toLocaleString('es-ES', {
-              year: 'numeric',
-              month: '2-digit',
-              day: '2-digit',
-              hour: '2-digit',
-              minute: '2-digit',
-              second: '2-digit',
-              hour12: false,
-              timeZone: 'UTC'
-          });
+      const fechaInicioEvento = new Date(cafeteriaEncontrada.events[i].startDate);
+      const fecha = fechaInicioEvento.toLocaleString('es-ES', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false,
+          timeZone: 'UTC'
+      });
 
-          pagina += '      <h4>' + cafeteriaEncontrada.events[i].name + '</h4>';
-          pagina += '      <h4>' + fecha + '</h4>';
-          pagina += '      <p>' + cafeteriaEncontrada.events[i].about + '</p>';
-          pagina += '    </a>';
-          pagina += '  </div>';
+      pagina += '      <h4>' + cafeteriaEncontrada.events[i].name + '</h4>';
+      pagina += '      <h4>' + fecha + '</h4>';
+      pagina += '      <p>' + cafeteriaEncontrada.events[i].about + '</p>';
+      pagina += '    </a>';
+      pagina += '  </div>';
 
-      }
-      pagina += '</div>';
+    }
+    pagina += '</div>';
   }
 
   cafeteriaSelect.innerHTML = pagina;
@@ -396,42 +549,42 @@ function cargarEventoClickado(listaCafeterias, nombreCafeteria, nombreEvento) {
   //Buscamos el evento que ha sido seleccionado y las cafeterías donde sucede
   for (var i = 0; i < listaCafeterias.length; i++) {
 
-      if (nombreCafeteria === listaCafeterias[i].name) cafeteria = listaCafeterias[i];
+    if (nombreCafeteria === listaCafeterias[i].name) cafeteria = listaCafeterias[i];
 
-      for (var j = 0; j < listaCafeterias[i].events.length; j++) {
-          if (listaCafeterias[i].events[j].name === nombreEvento) {
-              if (eventoEncontrado == null) eventoEncontrado = listaCafeterias[i].events[j]; // Guardamos el evento una sola vez
-              var registrado = false;
-              for (var k = 0; k < cafeteriasDelEvento.length; k++) {
-                  if (listaCafeterias[i].name === cafeteriasDelEvento[k].name) registrado = true;
-              }
-              if (!registrado) cafeteriasDelEvento.push(listaCafeterias[i]); // Guardamos todas las cafeterías donde aparece el evento
-          }
-      }
+    for (var j = 0; j < listaCafeterias[i].events.length; j++) {
+        if (listaCafeterias[i].events[j].name === nombreEvento) {
+            if (eventoEncontrado == null) eventoEncontrado = listaCafeterias[i].events[j]; // Guardamos el evento una sola vez
+            var registrado = false;
+            for (var k = 0; k < cafeteriasDelEvento.length; k++) {
+                if (listaCafeterias[i].name === cafeteriasDelEvento[k].name) registrado = true;
+            }
+            if (!registrado) cafeteriasDelEvento.push(listaCafeterias[i]); // Guardamos todas las cafeterías donde aparece el evento
+        }
+    }
   }
 
   var fechaInicioEvento = new Date(eventoEncontrado.startDate);
   fechaInicioEvento = fechaInicioEvento.toLocaleString('es-ES', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: false,
-      timeZone: 'UTC'
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+    timeZone: 'UTC'
   });
 
   var fechaFinEvento = new Date(eventoEncontrado.endDate);
   fechaFinEvento = fechaFinEvento.toLocaleString('es-ES', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: false,
-      timeZone: 'UTC'
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+    timeZone: 'UTC'
   });
 
   var pagina = '<div class="row first-row">';
@@ -462,15 +615,15 @@ function cargarEventoClickado(listaCafeterias, nombreCafeteria, nombreEvento) {
   pagina += '    </div>';
 
   if (eventoEncontrado.performers.length > 0) {
-      pagina += '    <div class="performers">';
-      pagina += '      <h4>Performers<i class="fa-solid fa-masks-theater"></i></h4>';
-      for (let i = 0; i < eventoEncontrado.performers.length; i++) {
-          pagina += '      <a href="' + eventoEncontrado.performers[i].url + '">';
-          pagina += '        <i class="fa-solid fa-chevron-right"></i>';
-          pagina += eventoEncontrado.performers[i].name;
-          pagina += '      </a>';
-      }
-      pagina += '    </div>';
+    pagina += '    <div class="performers">';
+    pagina += '      <h4>Performers<i class="fa-solid fa-masks-theater"></i></h4>';
+    for (let i = 0; i < eventoEncontrado.performers.length; i++) {
+        pagina += '      <a href="' + eventoEncontrado.performers[i].url + '">';
+        pagina += '        <i class="fa-solid fa-chevron-right"></i>';
+        pagina += eventoEncontrado.performers[i].name;
+        pagina += '      </a>';
+    }
+    pagina += '    </div>';
   }
 
   pagina += '    <div>';
@@ -490,19 +643,19 @@ function cargarEventoClickado(listaCafeterias, nombreCafeteria, nombreEvento) {
   var items = '<div class="carousel-inner">';
   const imagenes = eventoEncontrado.image;
   for (var i = 0; i < imagenes.length; i++) {
-      if (i == 0) {
-          indicators += '<button type="button" data-bs-target="#carouselEvento" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
+    if (i == 0) {
+        indicators += '<button type="button" data-bs-target="#carouselEvento" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
 
-          items += '<div class="carousel-item active">';
-          items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '">';
-          items += '</div>';
-      } else {
-          indicators += '<button type="button" data-bs-target="#carouselEvento" data-bs-slide-to="' + i + '" aria-label="Slide ' + i + '"></button>';
+        items += '<div class="carousel-item active">';
+        items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '">';
+        items += '</div>';
+    } else {
+        indicators += '<button type="button" data-bs-target="#carouselEvento" data-bs-slide-to="' + i + '" aria-label="Slide ' + i + '"></button>';
 
-          items += '<div class="carousel-item">';
-          items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '">';
-          items += '</div>';
-      }
+        items += '<div class="carousel-item">';
+        items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '">';
+        items += '</div>';
+    }
   }
   pagina += indicators + '</div>';
   pagina += items + '</div>';
@@ -526,62 +679,62 @@ function cargarEventoClickado(listaCafeterias, nombreCafeteria, nombreEvento) {
 
   // Si hay al menos una cafetería más a parte de esta, las mostramos en lista
   if (cafeteriasDelEvento.length > 1) {
-      pagina += '<div class="section-title margin-top-50">';
-      pagina += '  <h2>Alternativas</h2>';
-      pagina += '  <p>Otras cafeterías donde está programado el evento</p>';
-      pagina += '</div>';
-      pagina += '<div class="row" data-aos="zoom-in" data-aos-delay="100">';
+    pagina += '<div class="section-title margin-top-50">';
+    pagina += '  <h2>Alternativas</h2>';
+    pagina += '  <p>Otras cafeterías donde está programado el evento</p>';
+    pagina += '</div>';
+    pagina += '<div class="row" data-aos="zoom-in" data-aos-delay="100">';
 
-      for (let i = 0; i < cafeteriasDelEvento.length; i++) {
+    for (let i = 0; i < cafeteriasDelEvento.length; i++) {
 
-          // No mostramos la propia cafetería del evento
-          if (cafeteriasDelEvento[i].name === nombreCafeteria) continue;
+      // No mostramos la propia cafetería del evento
+      if (cafeteriasDelEvento[i].name === nombreCafeteria) continue;
 
-          // Obtenemos los valores de la cafetería del archivo JSON
-          const nombre = cafeteriasDelEvento[i].name;
-          const valoracion = cafeteriasDelEvento[i].aggregateRating.ratingValue;
-          const ubicacion = cafeteriasDelEvento[i].address.streetAddress;
-          const imagen = cafeteriasDelEvento[i].image[0].url;
-          const estado = comprobarEstadoDeNegocio(cafeteriasDelEvento[i].openingHours);
+      // Obtenemos los valores de la cafetería del archivo JSON
+      const nombre = cafeteriasDelEvento[i].name;
+      const valoracion = cafeteriasDelEvento[i].aggregateRating.ratingValue;
+      const ubicacion = cafeteriasDelEvento[i].address.streetAddress;
+      const imagen = cafeteriasDelEvento[i].image[0].url;
+      const estado = comprobarEstadoDeNegocio(cafeteriasDelEvento[i].openingHours);
 
-          // Generamos el html del estado
-          var abierto_cerrado = "";
-          if (estado === "Abierto") {
-              abierto_cerrado = '        <p class="abierto">Abierto</p>';
-          } else if (estado === "Cerrado") {
-              abierto_cerrado = '        <p class="cerrado">Cerrado</p>';
-          }
-
-          // Generamos el html de la valoración
-          var estrellas = '<p>';
-          const numEstrellas = 5;
-          for (let i = 1; i <= numEstrellas; i++) {
-              if (i <= valoracion) { estrellas += '<span class="fa-solid fa-star"></span>'; }
-              else if (i === Math.ceil(valoracion) && valoracion % 1 !== 0) { estrellas += '<span class="fa-solid fa-star-half-stroke"></span>'; }
-              else { estrellas += '<span class="fa-regular fa-star"></span>'; }
-          }
-          estrellas += '</p>';
-
-          pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \'' + nombre.replace(/'/g, "\\'") + '\', null)">';
-          pagina += '  <div class="media-body row">';
-          pagina += '    <div class="media-image col-md-4">';
-          pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i + '>';
-          pagina += '    </div>';
-          pagina += '    <div class="col-md-4 media-nombre d-flex align-items-center">';
-          pagina += '      <h4>' + nombre + '</h4>';
-          pagina += '    </div>';
-          pagina += '    <div class="col-md-4 d-flex align-items-center div-filas">';
-          pagina += abierto_cerrado;
-          pagina += estrellas;
-          pagina += '      <div class="info">';
-          pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>';
-          pagina += '        <p>' + ubicacion + '</p>';
-          pagina += '      </div>';
-          pagina += '    </div>';
-          pagina += '  </div>'
-          pagina += '</div>';
+      // Generamos el html del estado
+      var abierto_cerrado = "";
+      if (estado === "Abierto") {
+          abierto_cerrado = '        <p class="abierto">Abierto</p>';
+      } else if (estado === "Cerrado") {
+          abierto_cerrado = '        <p class="cerrado">Cerrado</p>';
       }
+
+      // Generamos el html de la valoración
+      var estrellas = '<p>';
+      const numEstrellas = 5;
+      for (let i = 1; i <= numEstrellas; i++) {
+          if (i <= valoracion) { estrellas += '<span class="fa-solid fa-star"></span>'; }
+          else if (i === Math.ceil(valoracion) && valoracion % 1 !== 0) { estrellas += '<span class="fa-solid fa-star-half-stroke"></span>'; }
+          else { estrellas += '<span class="fa-regular fa-star"></span>'; }
+      }
+      estrellas += '</p>';
+
+      pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \'' + nombre.replace(/'/g, "\\'") + '\', null)">';
+      pagina += '  <div class="media-body row">';
+      pagina += '    <div class="media-image col-md-4">';
+      pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i + '>';
+      pagina += '    </div>';
+      pagina += '    <div class="col-md-4 media-nombre d-flex align-items-center">';
+      pagina += '      <h4>' + nombre + '</h4>';
+      pagina += '    </div>';
+      pagina += '    <div class="col-md-4 d-flex align-items-center div-filas">';
+      pagina += abierto_cerrado;
+      pagina += estrellas;
+      pagina += '      <div class="info">';
+      pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>';
+      pagina += '        <p>' + ubicacion + '</p>';
+      pagina += '      </div>';
+      pagina += '    </div>';
+      pagina += '  </div>'
       pagina += '</div>';
+    }
+    pagina += '</div>';
   }
 
   eventoSelect.innerHTML = pagina;
@@ -664,53 +817,53 @@ async function cargarBusquedaCafe(listaCafeterias, filtros, primeraVez) {
   let resultados = 0;
 
   for (let i = 0; i < listaCafeterias.length; i++) {
-      if (cumpleFiltrosCaf(listaCafeterias[i], filtros)) {
+    if (cumpleFiltrosCaf(listaCafeterias[i], filtros)) {
 
-          resultados++;
+      resultados++;
 
-          let abierto = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
+      let abierto = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
 
-          pagina += '<a class="media" href="#" onclick="cargarContenido(\'cafeteria.html\',\'' + listaCafeterias[i].name.replace(/'/g, "\\'") + '\')">';
-          pagina += '<div class="media-body row">';
-          pagina += '<div class="media-image col-md-4">';
-          pagina += '<img src="' + listaCafeterias[i].image[0].url + '" class="mr-3" alt="' + listaCafeterias[i].image[0].name + '">';
-          pagina += '</div>';
-          pagina += '<div class="col-md-4 media-nombre d-flex align-items-center">';
-          pagina += '<h4>' + listaCafeterias[i].name + '</h4>';
-          pagina += '</div>';
-          pagina += '<div class="col-md-4 d-flex align-items-center div-filas">';
-          pagina += '<p class="' + abierto.toLocaleLowerCase() + '">' + abierto + '</p>';
-          pagina += '<p>';
-          const numEstrellas = 5;
-          const valoracion = listaCafeterias[i].aggregateRating.ratingValue;
-          for (let i = 1; i <= numEstrellas; i++) {
+      pagina += '<a class="media" href="#" onclick="cargarContenido(\'cafeteria.html\',\'' + listaCafeterias[i].name.replace(/'/g, "\\'") + '\')">';
+      pagina += '<div class="media-body row">';
+      pagina += '<div class="media-image col-md-4">';
+      pagina += '<img src="' + listaCafeterias[i].image[0].url + '" class="mr-3" alt="' + listaCafeterias[i].image[0].name + '">';
+      pagina += '</div>';
+      pagina += '<div class="col-md-4 media-nombre d-flex align-items-center">';
+      pagina += '<h4>' + listaCafeterias[i].name + '</h4>';
+      pagina += '</div>';
+      pagina += '<div class="col-md-4 d-flex align-items-center div-filas">';
+      pagina += '<p class="' + abierto.toLocaleLowerCase() + '">' + abierto + '</p>';
+      pagina += '<p>';
+      const numEstrellas = 5;
+      const valoracion = listaCafeterias[i].aggregateRating.ratingValue;
+      for (let i = 1; i <= numEstrellas; i++) {
 
-              // Si la posición actual es menor o igual al valor de "rating", agregamos la clase "fa-solid" para marcar la estrella como "checked"
-              if (i <= valoracion) {
-                  pagina += '<span class="fa-solid fa-star"> </span>';
-              }
-              // Si la posición actual es igual al valor de "valoracion" + 0.5, agregamos la clase "fa-solid fa-star-half-stroke" para mostrar una estrella parcialmente llena
-              else if (i === Math.ceil(valoracion) && valoracion % 1 !== 0) {
-                  pagina += '<span class="fa-solid fa-star-half-stroke"> </span>';
-              }
-              else { // Si no, agregamos la clase "fa-regular fa-star" para mostrar una estrella vacía
-                  pagina += '<span class="fa-regular fa-star"> </span>';
-              }
+          // Si la posición actual es menor o igual al valor de "rating", agregamos la clase "fa-solid" para marcar la estrella como "checked"
+          if (i <= valoracion) {
+              pagina += '<span class="fa-solid fa-star"> </span>';
           }
-          pagina += '</p>';
-          pagina += '<div class="info">';
-          pagina += '<i class="fa-solid fa-route fa-lg"></i>';
-          pagina += '<p>' + (listaCafeterias[i].distancia / 1000).toFixed(2) + " Km" + '</p>'; // CAMBIAR X Km por la distancia
-          pagina += '</div>';
-          pagina += '<div class="info">';
-          pagina += '<i class="fa-solid fa-location-dot fa-lg"></i>';
-          pagina += '<p>' + listaCafeterias[i].address.streetAddress + '</p>';
-          pagina += '</div>';
-          pagina += '</div>';
-          pagina += '</div>';
-          pagina += '</a>';
-
+          // Si la posición actual es igual al valor de "valoracion" + 0.5, agregamos la clase "fa-solid fa-star-half-stroke" para mostrar una estrella parcialmente llena
+          else if (i === Math.ceil(valoracion) && valoracion % 1 !== 0) {
+              pagina += '<span class="fa-solid fa-star-half-stroke"> </span>';
+          }
+          else { // Si no, agregamos la clase "fa-regular fa-star" para mostrar una estrella vacía
+              pagina += '<span class="fa-regular fa-star"> </span>';
+          }
       }
+      pagina += '</p>';
+      pagina += '<div class="info">';
+      pagina += '<i class="fa-solid fa-route fa-lg"></i>';
+      pagina += '<p>' + (listaCafeterias[i].distancia / 1000).toFixed(2) + " Km" + '</p>'; // CAMBIAR X Km por la distancia
+      pagina += '</div>';
+      pagina += '<div class="info">';
+      pagina += '<i class="fa-solid fa-location-dot fa-lg"></i>';
+      pagina += '<p>' + listaCafeterias[i].address.streetAddress + '</p>';
+      pagina += '</div>';
+      pagina += '</div>';
+      pagina += '</div>';
+      pagina += '</a>';
+
+    }
   }
   pagina += '</div>';
 
@@ -768,29 +921,43 @@ async function cargarBusquedaEvent(listaCafeterias, filtros, primeraVez) {
   let resultados = 0;
 
   for (let i = listaEventos.length - 1; i >= 0; i--) {
-      if (cumpleFiltrosEv(listaEventos[i], listaCafeterias[i], filtros)) {
+    if (cumpleFiltrosEv(listaEventos[i], listaCafeterias[i], filtros)) {
 
-          //MOVER LINEA DENTRO DE CONDICIÓN DE FILTROS UNA VEZ IMPLEMENTADO
-          resultados++;
+        //MOVER LINEA DENTRO DE CONDICIÓN DE FILTROS UNA VEZ IMPLEMENTADO
+        resultados++;
 
-          const fechaInicioEvento = new Date(listaEventos[i].startDate);
-          const fecha = fechaInicioEvento.toLocaleString('es-ES', {
-              year: 'numeric',
-              month: '2-digit',
-              day: '2-digit',
-              hour: '2-digit',
-              minute: '2-digit',
-              second: '2-digit',
-              hour12: false,
-              timeZone: 'UTC'
-          });
-          pagina += '<div class="icon-box mt-5 mt-lg-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">';
-          pagina += '<div class="event-body-bus" onclick="cargarContenido(\'evento.html\', \'' + listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')"><i class="fa-solid fa-chevron-right chevron"></i>';
-          pagina += '<h4>' + listaEventos[i].name + '</h4>'
-          pagina += '<p class="info">';
-          pagina += '<div><i class="fa-solid fa-location-dot fa-lg"></i>' + listaEventos[i].place + '</div>';
-          pagina += '<div><i class="fa-solid fa-calendar fa-lg"></i>' + fecha + '</div></p></div></div>';
-      }
+        const fechaInicioEvento = new Date(listaEventos[i].startDate);
+        const fecha = fechaInicioEvento.toLocaleString('es-ES', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false,
+            timeZone: 'UTC'
+        });
+        
+        pagina += '<div class="icon-box mt-2 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">';
+        pagina += '  <div class="event-body-bus row" onclick="cargarContenido(\'evento.html\', \'' + listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')">';
+        pagina += '    <div class="col-md-4 align-self-center">';
+        pagina += '      <i class="fa-solid fa-chevron-right chevron"></i>';
+        pagina += '      <h4>' + listaEventos[i].name + '</h4>';
+        pagina += '    </div>';
+        pagina += '    <div class="div-filas col-md-4">';
+        pagina += '      <div class="info">';
+        pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>' + listaEventos[i].place;
+        pagina += '      </div>';
+        pagina += '      <div class="info">';
+        pagina += '        <i class="fa-solid fa-calendar fa-lg"></i>' + fecha;
+        pagina += '      </div>';
+        pagina += '    </div>';
+        pagina += '    <div class="media-image col-md-4">';
+        pagina += '      <img src="' + listaEventos[i].image[0].url + '" class="mr-3" alt="' + listaEventos[i].image[0].name + '"' + i + '>';
+        pagina += '    </div>';
+        pagina += '  </div>';
+        pagina += '</div>';
+    }
   }
   pagina += '</div></div>';
 
