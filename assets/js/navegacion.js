@@ -67,6 +67,8 @@ function clickCafeteria(nombreCafeteria) {
   request.send();
 }
 
+
+
 function clickEvento(nombreCafetria, nombreEvento) {
   // Hacemos el request del JSON
   const request = new XMLHttpRequest();

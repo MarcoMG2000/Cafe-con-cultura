@@ -75,27 +75,87 @@ function comprobarSiEstaAbiertoEnEsteDia(diaInicio, diaFin) {
     return diaActualIndex >= diaInicioIndex && diaActualIndex <= diaFinIndex;
 }
 
+function buscarCafeteriaPorNombre(listaCafeterias, nombreCaf) {
+    for (let i = 0; i < listaCafeterias.length; i++) {
+        if (listaCafeterias[i].name === nombreCaf) {
+            return listaCafeterias[i];
+        }
+    }
+    return null;
+}
+
 function storeCafeteria(nombre) {
-    if (typeof Storage !== 'undefined') {
-        let historialPrevio = localStorage.getItem('Cafeterias Visitadas');
-        let historialNuevo = [];
-        if (historialPrevio) {
-            historialNuevo = JSON.parse(historialPrevio);
-            if (historialNuevo.includes(nombre)) {
-                historialNuevo.splice(historialNuevo.indexOf(nombre), 1);
-            } else if (historialNuevo.length >= 5) {
-                historialNuevo.shift();
+    // Hacemos el request del JSON
+    const request = new XMLHttpRequest();
+    request.open("GET", "/assets/JSON/cafeterias.json");
+    request.responseType = 'text';
+    var caf;
+    request.onload = () => {
+        // Convertimos el JSON a objetos JS
+        const objeto = JSON.parse(request.response);
+        var listaCafeterias = objeto.itemListElement;
+        caf = buscarCafeteriaPorNombre(listaCafeterias, nombre);
+        console.log(caf);
+        if (typeof Storage !== 'undefined') {
+            let historialPrevio = localStorage.getItem('Cafeterias Visitadas');
+            let historialNuevo = [];
+            if (historialPrevio) {
+                historialNuevo = JSON.parse(historialPrevio);
+                if (buscarCafeteriaPorNombre(historialNuevo, nombre)) {
+                    historialNuevo = historialNuevo.filter(cafe => cafe.name !== nombre);
+                } else if (historialNuevo.length >= 5) {
+                    historialNuevo.shift();
+                }
+            }
+            historialNuevo.push(caf);
+            localStorage.setItem('Cafeterias Visitadas', JSON.stringify(historialNuevo));
+        } else {
+            alert('Storage no es compatible con este navegador');
+        }
+    };
+    request.send();
+}
+
+function buscarEventoPorNombre(listaCafeterias, nombreEv) {
+    for (let i = 0; i < listaCafeterias.length; i++) {
+        for (let j = 0; j < listaCafeterias[i].events.length; j++){
+            if(listaCafeterias[i].events[j].name === nombreEv){
+                return listaCafeterias[i].events[j];
             }
         }
-        historialNuevo.push(nombre);
-        localStorage.setItem('Cafeterias Visitadas', JSON.stringify(historialNuevo));
-    } else {
-        alert('Storage no es compatible con este navegador');
     }
+    return null;
 }
 
 function storeEvento(nombre) {
-    // TODO;
+    // Hacemos el request del JSON
+    const request = new XMLHttpRequest();
+    request.open("GET", "/assets/JSON/cafeterias.json");
+    request.responseType = 'text';
+    var caf;
+    request.onload = () => {
+        // Convertimos el JSON a objetos JS
+        const objeto = JSON.parse(request.response);
+        var listaCafeterias = objeto.itemListElement;
+        evento = buscarEventoPorNombre(listaCafeterias, nombre);
+        if (typeof Storage !== 'undefined') {
+            let historialPrevio = localStorage.getItem('Eventos Visitados');
+            let historialNuevo = [];
+            if (historialPrevio) {
+                historialNuevo = JSON.parse(historialPrevio);
+                if (buscarCafeteriaPorNombre(historialNuevo, nombre)) {
+                    historialNuevo = historialNuevo.filter(ev => ev.name !== nombre);
+                } else if (historialNuevo.length >= 5) {
+                    historialNuevo.shift();
+                }
+            }
+            historialNuevo.push(evento);
+            localStorage.setItem('Eventos Visitados', JSON.stringify(historialNuevo));
+        } else {
+            alert('Storage no es compatible con este navegador');
+        }
+    };
+    request.send();
 }
 
 function comprobarSiEstaAbiertoEnEstaHora(horaInicio, horaFin, horaActual) {
