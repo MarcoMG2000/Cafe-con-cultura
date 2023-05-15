@@ -266,9 +266,11 @@ function cargarRecientes() {
   var recent = document.getElementById("recent");
   
   const listaEventosJSON = localStorage.getItem('Eventos Visitados');
-  const listaEventos = JSON.parse(listaEventosJSON).reverse();
+  var listaEventos = JSON.parse(listaEventosJSON);
+  if (listaEventos != null) { listaEventos.reverse(); }
   const listaCafeteriasJSON = localStorage.getItem('Cafeterias Visitadas');
-  const listaCafeterias = JSON.parse(listaCafeteriasJSON).reverse();
+  var listaCafeterias = JSON.parse(listaCafeteriasJSON);
+  if (listaCafeterias != null) { listaCafeterias.reverse(); }
 
   if (listaCafeterias === null && listaEventos === null) {
     return;
