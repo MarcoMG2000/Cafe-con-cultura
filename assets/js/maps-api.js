@@ -1,12 +1,14 @@
 var listaCafeterias;
 var listaRestaurantes;
 var listaBodegas;
+var listaMonumentos;
 
 var map;
 
 var coffeMarkers = [];
 var restaurantMarkers = [];
 var bodegaMarkers = [];
+var monumentosMarkers = [];
 
 function initMap() {
 	// Update MAP_ID with custom map ID
@@ -25,6 +27,7 @@ function initMap() {
 	loadCafeterias();
 	loadRestaurantes();
 	loadBodegas();
+	loadMonumentos();
 
 }
 
@@ -40,6 +43,9 @@ function filterMap(tipoMarcador){
 			bodegaMarkers.map(marker => {
 				marker.setMap(null);
 			})
+			monumentosMarkers.map(marker => {
+				marker.setMap(null);
+			})
 			break;
 		case "Restaurantes":
 			coffeMarkers.map(marker => {
@@ -49,6 +55,9 @@ function filterMap(tipoMarcador){
 				marker.setMap(map);
 			})
 			bodegaMarkers.map(marker => {
+				marker.setMap(null);
+			})
+			monumentosMarkers.map(marker => {
 				marker.setMap(null);
 			})
 			break;
@@ -62,6 +71,23 @@ function filterMap(tipoMarcador){
 			bodegaMarkers.map(marker => {
 				marker.setMap(map);
 			})
+			monumentosMarkers.map(marker => {
+				marker.setMap(null);
+			})
+			break;
+		case "Monumentos":
+			coffeMarkers.map(marker => {
+				marker.setMap(null);
+			})
+			restaurantMarkers.map(marker => {
+				marker.setMap(null);
+			})
+			bodegaMarkers.map(marker => {
+				marker.setMap(null);
+			})
+			monumentosMarkers.map(marker => {
+				marker.setMap(map);
+			})
 			break;
 		default:
 			coffeMarkers.map(marker => {
@@ -71,6 +97,9 @@ function filterMap(tipoMarcador){
 				marker.setMap(map);
 			})
 			bodegaMarkers.map(marker => {
+				marker.setMap(map);
+			})
+			monumentosMarkers.map(marker => {
 				marker.setMap(map);
 			})
 			break;
@@ -223,6 +252,55 @@ function loadBodegas(){
     request.send();
 }
 
+function loadMonumentos(){
+	// Hacemos el request del JSON
+    const request = new XMLHttpRequest();
+    request.open("GET", "/assets/JSON/monumentos.json");
+    request.responseType = 'text';
+    
+    request.onload = () => {
+        // Convertimos el JSON a objetos JS
+        const objeto = JSON.parse(request.response);
+        listaMonumentos = objeto.itemListElement;
+        
+		let indxMarker = 0;
+		listaMonumentos.forEach(monumento => {
+
+			const marker = new google.maps.Marker({
+				position: { lat: Number(monumento.geo.latitude), lng: Number(monumento.geo.longitude) },
+				map,
+				title: monumento.name,
+				icon: {
+					url: 'assets/img/Museum-icon.svg',
+					scaledSize: new google.maps.Size(30, 25),
+				},
+				animation: google.maps.Animation.DROP,
+				zIndex: indxMarker++
+			});
+
+			const content = "<b>" + monumento.name + "</b>"
+				+ "<br>" + monumento.address.streetAddress 
+				+ "<br>" + monumento.address.addressLocality
+			 	+ "<br>" + monumento.address.addressRegion
+				+ "<br>" + monumento.address.postalCode;
+
+			const infowindow = new google.maps.InfoWindow({
+				content: content,
+			});
+			
+			marker.addListener('click', () => {
+				infowindow.open(map, marker);
+				console.log(marker)
+				iconMapClickMonumento(marker);
+			});
+
+			monumentosMarkers.push(marker);
+		});
+    };
+    request.send();
+}
+
+
 function iconMapClickCafeteria(marker){
 	cafeteria = listaCafeterias[marker.zIndex]
 	console.log(cafeteria);
@@ -245,4 +323,12 @@ function iconMapClickBodega(marker){
 
 	//Load Info of bodega on page
 	document.getElementById("map-selected-item-name").textContent = bodega.name;
+}
+
+function iconMapClickMonumento(marker){
+	monumento = listaMonumentos[marker.zIndex]
+	console.log(monumento);
+
+	//Load Info of monumento on page
+	document.getElementById("map-selected-item-name").textContent = monumento.name;
 }
