@@ -449,7 +449,7 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
   pagina += '      <p>';
   pagina += '        <a href=tel:"' + cafeteriaEncontrada.contactPoint.telephone + '"><i class="fa-solid fa-phone"></i>' + cafeteriaEncontrada.contactPoint.telephone + '</a><br>';
   pagina += '        <a href=mailto:"' + cafeteriaEncontrada.contactPoint.email + '"><i class="fa-solid fa-envelope"></i>' + cafeteriaEncontrada.contactPoint.email + '</a><br>';
-  pagina += '        <a href="' + cafeteriaEncontrada.url + '"><i class="fa-solid fa-link"></i>' + cafeteriaEncontrada.url + '</a>';
+  pagina += '        <a Target="_blank" href="' + cafeteriaEncontrada.url + '"><i class="fa-solid fa-link"></i>' + cafeteriaEncontrada.url + '</a>';
   pagina += '      </p>';
   pagina += '    </div>';
   pagina += '  </div>';
@@ -615,7 +615,7 @@ function cargarEventoClickado(listaCafeterias, nombreCafeteria, nombreEvento) {
     pagina += '    <div class="performers">';
     pagina += '      <h4>Performers<i class="fa-solid fa-masks-theater"></i></h4>';
     for (let i = 0; i < eventoEncontrado.performers.length; i++) {
-        pagina += '      <a href="' + eventoEncontrado.performers[i].url + '">';
+        pagina += '      <a Target="_blank" href="' + eventoEncontrado.performers[i].url + '">';
         pagina += '        <i class="fa-solid fa-chevron-right"></i>';
         pagina += eventoEncontrado.performers[i].name;
         pagina += '      </a>';
