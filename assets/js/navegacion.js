@@ -13,6 +13,7 @@ function cargarContenido(nombreArchivo, nombreCafeteria, nombreEvento) {
       }
     })
     .then(() => { // Carga el contenido de las cafeterías dinámicamente cuando el html está cargado
+      vaciarJSONLD(); // Eliminamos todas las etiquetas <script> de JSON-LD presentes
       if (nombreArchivo == "home.html") {
         cargarHome();
       }
@@ -25,6 +26,10 @@ function cargarContenido(nombreArchivo, nombreCafeteria, nombreEvento) {
       else if (nombreArchivo == "buscador.html") {
         cargarBuscador(nombreCafeteria, true);
       }
+      window.scrollTo({ // Hacemos scroll al principio de la página
+        top: 0,
+        behavior: 'instant'
+      });
     });
 }
 
@@ -113,50 +118,52 @@ function cargarCafeteriasPorValoracion(listaCafeterias) {
 
   for (let i = 0; i < 3; i++) { // Recorremos las tres cafeterías con mejor valoración
 
-      // Obtenemos los valores de la cafetería del archivo JSON
-      const nombre = listaCafeterias[i].name;
-      nombresCafeterias.push(nombre);
-      const valoracion = listaCafeterias[i].aggregateRating.ratingValue;
-      const ubicacion = listaCafeterias[i].address.streetAddress;
-      const imagen = listaCafeterias[i].image[0].url;
-      const estado = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
+    addElementoJSONLD(listaCafeterias[i]);
 
-      // Generamos el html del estado
-      var abierto_cerrado = "";
-      if (estado === "Abierto") {
-          abierto_cerrado = '        <p class="abierto">Abierto</p>';
-      } else if (estado === "Cerrado") {
-          abierto_cerrado = '        <p class="cerrado">Cerrado</p>';
-      }
+    // Obtenemos los valores de la cafetería del archivo JSON
+    const nombre = listaCafeterias[i].name;
+    nombresCafeterias.push(nombre);
+    const valoracion = listaCafeterias[i].aggregateRating.ratingValue;
+    const ubicacion = listaCafeterias[i].address.streetAddress;
+    const imagen = listaCafeterias[i].image[0].url;
+    const estado = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
 
-      // Generamos el html de la valoración
-      var estrellas = '<p>';
-      const numEstrellas = 5;
-      for (let i = 1; i <= numEstrellas; i++) {
-          if (i <= valoracion) { estrellas += '<span class="fa-solid fa-star"></span>'; }
-          else if (i === Math.ceil(valoracion) && valoracion % 1 !== 0) { estrellas += '<span class="fa-solid fa-star-half-stroke"></span>'; }
-          else { estrellas += '<span class="fa-regular fa-star"></span>'; }
-      }
-      estrellas += '</p>';
+    // Generamos el html del estado
+    var abierto_cerrado = "";
+    if (estado === "Abierto") {
+        abierto_cerrado = '        <p class="abierto">Abierto</p>';
+    } else if (estado === "Cerrado") {
+        abierto_cerrado = '        <p class="cerrado">Cerrado</p>';
+    }
 
-      pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \'' + nombre.replace(/'/g, "\\'") + '\', null)">';
-      pagina += '  <div class="media-body row">';
-      pagina += '    <div class="media-image col-md-4">';
-      pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i + '>';
-      pagina += '    </div>';
-      pagina += '    <div class="col-md-4 media-nombre d-flex align-items-center">';
-      pagina += '      <h4>' + nombre + '</h4>';
-      pagina += '    </div>';
-      pagina += '    <div class="col-md-4 d-flex align-items-center div-filas">';
-      pagina += abierto_cerrado;
-      pagina += estrellas;
-      pagina += '      <div class="info">';
-      pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>';
-      pagina += '        <p>' + ubicacion + '</p>';
-      pagina += '      </div>';
-      pagina += '    </div>';
-      pagina += '  </div>'
-      pagina += '</div>';
+    // Generamos el html de la valoración
+    var estrellas = '<p>';
+    const numEstrellas = 5;
+    for (let i = 1; i <= numEstrellas; i++) {
+        if (i <= valoracion) { estrellas += '<span class="fa-solid fa-star"></span>'; }
+        else if (i === Math.ceil(valoracion) && valoracion % 1 !== 0) { estrellas += '<span class="fa-solid fa-star-half-stroke"></span>'; }
+        else { estrellas += '<span class="fa-regular fa-star"></span>'; }
+    }
+    estrellas += '</p>';
+
+    pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \'' + nombre.replace(/'/g, "\\'") + '\', null)">';
+    pagina += '  <div class="media-body row">';
+    pagina += '    <div class="media-image col-md-4">';
+    pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i + '>';
+    pagina += '    </div>';
+    pagina += '    <div class="col-md-4 media-nombre d-flex align-items-center">';
+    pagina += '      <h4>' + nombre + '</h4>';
+    pagina += '    </div>';
+    pagina += '    <div class="col-md-4 d-flex align-items-center div-filas">';
+    pagina += abierto_cerrado;
+    pagina += estrellas;
+    pagina += '      <div class="info">';
+    pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>';
+    pagina += '        <p>' + ubicacion + '</p>';
+    pagina += '      </div>';
+    pagina += '    </div>';
+    pagina += '  </div>'
+    pagina += '</div>';
   }
 
   cafeteriasRating.innerHTML = pagina;
@@ -173,39 +180,42 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
   var pagina = ''; // Construimos la sección en este mensaje
 
   for (let i = 0; i < 3; i++) { // Recorremos las tres cafeterías con mejor valoración
-      const estado = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
-      const nombre = listaCafeterias[i].name;
-      const ubicacion = listaCafeterias[i].address.streetAddress;
-      const imagen = listaCafeterias[i].image[0].url;
-      // Generamos el html del estado
-      var abierto_cerrado = "";
-      if (estado === "Abierto") {
-          abierto_cerrado = '        <p class="abierto">Abierto</p>';
-      } else if (estado === "Cerrado") {
-          abierto_cerrado = '        <p class="cerrado">Cerrado</p>';
-      }
+      
+    addElementoJSONLD(listaCafeterias[i]);
+    
+    const estado = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
+    const nombre = listaCafeterias[i].name;
+    const ubicacion = listaCafeterias[i].address.streetAddress;
+    const imagen = listaCafeterias[i].image[0].url;
+    // Generamos el html del estado
+    var abierto_cerrado = "";
+    if (estado === "Abierto") {
+        abierto_cerrado = '        <p class="abierto">Abierto</p>';
+    } else if (estado === "Cerrado") {
+        abierto_cerrado = '        <p class="cerrado">Cerrado</p>';
+    }
 
-      pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \'' + nombre.replace(/'/g, "\\'") + '\', null)">';
-      pagina += '  <div class="media-body row">';
-      pagina += '    <div class="col-md-4 d-flex align-items-center div-filas">'
-      pagina += abierto_cerrado;
-      pagina += '      <div class="info">';
-      pagina += '        <i class="fa-solid fa-route fa-lg"></i>';
-      pagina += '        <p>' + (listaCafeterias[i].distancia / 1000).toFixed(2) + ' Km</p>';
-      pagina += '      </div>';
-      pagina += '      <div class="info">';
-      pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>';
-      pagina += '        <p>' + ubicacion + '</p>';
-      pagina += '      </div>';
-      pagina += '    </div>';
-      pagina += '    <div class="col-md-4 media-nombre d-flex align-items-center">';
-      pagina += '      <h4>' + nombre + '</h4>'
-      pagina += '    </div>';
-      pagina += '    <div class="media-image col-md-4">';
-      pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i + '>';
-      pagina += '    </div>'
-      pagina += '  </div>'
-      pagina += '</div>';
+    pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \'' + nombre.replace(/'/g, "\\'") + '\', null)">';
+    pagina += '  <div class="media-body row">';
+    pagina += '    <div class="col-md-4 d-flex align-items-center div-filas">'
+    pagina += abierto_cerrado;
+    pagina += '      <div class="info">';
+    pagina += '        <i class="fa-solid fa-route fa-lg"></i>';
+    pagina += '        <p>' + (listaCafeterias[i].distancia / 1000).toFixed(2) + ' Km</p>';
+    pagina += '      </div>';
+    pagina += '      <div class="info">';
+    pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>';
+    pagina += '        <p>' + ubicacion + '</p>';
+    pagina += '      </div>';
+    pagina += '    </div>';
+    pagina += '    <div class="col-md-4 media-nombre d-flex align-items-center">';
+    pagina += '      <h4>' + nombre + '</h4>'
+    pagina += '    </div>';
+    pagina += '    <div class="media-image col-md-4">';
+    pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i + '>';
+    pagina += '    </div>'
+    pagina += '  </div>'
+    pagina += '</div>';
   }
 
   cafeteriasRating.innerHTML = pagina;
@@ -222,41 +232,44 @@ function cargarEventos(listaCafeterias) {
   var pagina = '';
 
   for (let i = 0; i < 4; i++) { // Mostramos los 4 eventos más próximos en el tiempo
-      // Obtenemos los valores del evento del archivo JSON
-      const nombre = listaEventos[i].name;
-      const lugar = listaEventos[i].place;
-      const fechaInicioEvento = new Date(listaEventos[i].startDate);
-      const fecha = fechaInicioEvento.toLocaleString('es-ES', {
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false,
-          timeZone: 'UTC'
-      });
+      
+    addElementoJSONLD(listaEventos[i]);
+    
+    // Obtenemos los valores del evento del archivo JSON
+    const nombre = listaEventos[i].name;
+    const lugar = listaEventos[i].place;
+    const fechaInicioEvento = new Date(listaEventos[i].startDate);
+    const fecha = fechaInicioEvento.toLocaleString('es-ES', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+        timeZone: 'UTC'
+    });
 
-      if (i == 0) {
-        pagina += '<div class="icon-box mt-5 mt-lg-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">';
-      }
-      else {
-        pagina += '<div class="icon-box mt-5 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">';
-      }
+    if (i == 0) {
+      pagina += '<div class="icon-box mt-5 mt-lg-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">';
+    }
+    else {
+      pagina += '<div class="icon-box mt-5 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">';
+    }
 
-      pagina += '  <div class="event-body" onclick="cargarContenido(\'evento.html\', \'' + listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')">';
-      pagina += '    <i class="fa-solid fa-chevron-right chevron"></i>';
-      pagina += '    <h4>' + nombre + '</h4>';
-      pagina += '    <div class="div-filas">';
-      pagina += '      <div class="info">';
-      pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>' + lugar;
-      pagina += '      </div>';
-      pagina += '      <div class="info">';
-      pagina += '        <i class="fa-solid fa-calendar fa-lg"></i>' + fecha;
-      pagina += '      </div>';
-      pagina += '    </div>';
-      pagina += '  </div>';
-      pagina += '</div>';
+    pagina += '  <div class="event-body" onclick="cargarContenido(\'evento.html\', \'' + listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')">';
+    pagina += '    <i class="fa-solid fa-chevron-right chevron"></i>';
+    pagina += '    <h4>' + nombre + '</h4>';
+    pagina += '    <div class="div-filas">';
+    pagina += '      <div class="info">';
+    pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>' + lugar;
+    pagina += '      </div>';
+    pagina += '      <div class="info">';
+    pagina += '        <i class="fa-solid fa-calendar fa-lg"></i>' + fecha;
+    pagina += '      </div>';
+    pagina += '    </div>';
+    pagina += '  </div>';
+    pagina += '</div>';
   }
 
   upcomingEvents.innerHTML = pagina;
@@ -275,6 +288,9 @@ function cargarRecientes() {
   if (listaCafeterias === null && listaEventos === null) {
     return;
   }
+
+  addListaJSONLD(listaCafeterias);
+  addListaJSONLD(listaEventos);
 
   var pagina = '';
   pagina += '<div class="container" data-aos="fade-up">';
@@ -389,6 +405,7 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
   // Seleccionamos el elemento HTML donde se agregarán las cafeterías
   var cafeteriaSelect = document.getElementById("cafeterias-sel");
   let cafeteriaEncontrada = null;
+  
   //Buscamos la cafeteria que ha sido seleccionada
   for (var i = 0; i < listaCafeterias.length; i++) {
     //Una vez encontrada la guardamos en la variable declarada anteriormente
@@ -397,6 +414,8 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
       break;
     }
   }
+
+  addElementoJSONLD(cafeteriaEncontrada);
 
   var pagina = '<div class="row first-row">';
   pagina += '  <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">';
@@ -505,6 +524,8 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
     pagina += '<div class="row cafeteria-events" data-aos="zoom-in" data-aos-delay="100">';
     for (let i = 0; i < cafeteriaEncontrada.events.length; i++) {
 
+      addElementoJSONLD(cafeteriaEncontrada.events[i]);
+
       const fechaInicioEvento = new Date(cafeteriaEncontrada.events[i].startDate);
       if (fechaActual > fechaInicioEvento) continue; // Saltamos el evento si ya ha sucedido
 
@@ -549,16 +570,19 @@ function cargarEventoClickado(listaCafeterias, nombreCafeteria, nombreEvento) {
     if (nombreCafeteria === listaCafeterias[i].name) cafeteria = listaCafeterias[i];
 
     for (var j = 0; j < listaCafeterias[i].events.length; j++) {
-        if (listaCafeterias[i].events[j].name === nombreEvento) {
-            if (eventoEncontrado == null) eventoEncontrado = listaCafeterias[i].events[j]; // Guardamos el evento una sola vez
-            var registrado = false;
-            for (var k = 0; k < cafeteriasDelEvento.length; k++) {
-                if (listaCafeterias[i].name === cafeteriasDelEvento[k].name) registrado = true;
-            }
-            if (!registrado) cafeteriasDelEvento.push(listaCafeterias[i]); // Guardamos todas las cafeterías donde aparece el evento
+      if (listaCafeterias[i].events[j].name === nombreEvento) {
+        if (eventoEncontrado == null) eventoEncontrado = listaCafeterias[i].events[j]; // Guardamos el evento una sola vez
+        var registrado = false;
+        for (var k = 0; k < cafeteriasDelEvento.length; k++) {
+          if (listaCafeterias[i].name === cafeteriasDelEvento[k].name) registrado = true;
         }
+        if (!registrado) cafeteriasDelEvento.push(listaCafeterias[i]); // Guardamos todas las cafeterías donde aparece el evento
+      }
     }
   }
+
+  addElementoJSONLD(eventoEncontrado);
+  addListaJSONLD(cafeteriasDelEvento);
 
   var fechaInicioEvento = new Date(eventoEncontrado.startDate);
   fechaInicioEvento = fechaInicioEvento.toLocaleString('es-ES', {
@@ -738,6 +762,9 @@ function cargarEventoClickado(listaCafeterias, nombreCafeteria, nombreEvento) {
 }
 
 async function cargarBusquedaCafe(listaCafeterias, filtros, primeraVez) {
+  
+  vaciarJSONLD();
+
   // obtén el elemento input del slider
   await obtenerDistanciasCafeterias(listaCafeterias);
   var slider = document.getElementById("distancia");
@@ -816,6 +843,8 @@ async function cargarBusquedaCafe(listaCafeterias, filtros, primeraVez) {
   for (let i = 0; i < listaCafeterias.length; i++) {
     if (cumpleFiltrosCaf(listaCafeterias[i], filtros)) {
 
+      addElementoJSONLD(listaCafeterias[i]);
+
       resultados++;
 
       let abierto = comprobarEstadoDeNegocio(listaCafeterias[i].openingHours);
@@ -870,57 +899,60 @@ async function cargarBusquedaCafe(listaCafeterias, filtros, primeraVez) {
 }
 
 async function cargarBusquedaEvent(listaCafeterias, filtros, primeraVez) {
+  
+  vaciarJSONLD();
+  
   var listaEventos = obtenerListaTotalEventos(listaCafeterias);
   await obtenerDistanciasCafeterias(listaCafeterias);
   var slider = document.getElementById("distancia");
   slider.max = getMaxDistance(listaCafeterias);
   if (primeraVez) {
-      var filt = document.getElementById("sidebar");
-      var filterS = '' +
-          '<div class="border-bottom pb-2 ml-2">' +
-          '  <h4 id="burgundy">Filtros</h4>' +
-          '</div>' +
-          '<div class="py-2 border-bottom ml-3">' +
-          '  <h6 class="font-weight-bold">Coste</h6>' +
-          '  <form>' +
-          '    <div class="form-check">' +
-          '      <input class="form-check-input" type="radio" name="flexRadioDefault" id="true" checked>' +
-          '      <label class="form-check-label" for="true">' +
-          '        Gratuito' +
-          '      </label>' +
-          '    </div>' +
-          '    <div class="form-check">' +
-          '      <input class="form-check-input" type="radio" name="flexRadioDefault" id="false">' +
-          '      <label class="form-check-label" for="false">' +
-          '        De pago' +
-          '      </label>' +
-          '    </div>' +
-          '  </form>' +
-          '</div>' +
-          '<div class="py-2 border-bottom ml-3">' +
-          '  <h6 class="font-weight-bold">Audiencia</h6>' +
-          '  <form>' +
-          '    <div class="form-check">' +
-          '      <input class="form-check-input" type="radio" name="flexRadioDefault" id="Todas las edades" checked>' +
-          '      <label class="form-check-label" for="Todas las edades">' +
-          '        Todos los públicos' +
-          '      </label>' +
-          '    </div>' +
-          '    <div class="form-check">' +
-          '      <input class="form-check-input" type="radio" name="flexRadioDefault" id="16 años">' +
-          '      <label class="form-check-label" for="16 años">' +
-          '        +16' +
-          '      </label>' +
-          '    </div>' +
-          '    <div class="form-check">' +
-          '      <input class="form-check-input" type="radio" name="flexRadioDefault" id="18 años">' +
-          '      <label class="form-check-label" for="18 años">' +
-          '        +18' +
-          '      </label>' +
-          '    </div>' +
-          '  </form>' +
-          '</div>';
-      filt.insertAdjacentHTML('afterbegin', filterS);
+    var filt = document.getElementById("sidebar");
+    var filterS = '' +
+        '<div class="border-bottom pb-2 ml-2">' +
+        '  <h4 id="burgundy">Filtros</h4>' +
+        '</div>' +
+        '<div class="py-2 border-bottom ml-3">' +
+        '  <h6 class="font-weight-bold">Coste</h6>' +
+        '  <form>' +
+        '    <div class="form-check">' +
+        '      <input class="form-check-input" type="radio" name="flexRadioDefault" id="true" checked>' +
+        '      <label class="form-check-label" for="true">' +
+        '        Gratuito' +
+        '      </label>' +
+        '    </div>' +
+        '    <div class="form-check">' +
+        '      <input class="form-check-input" type="radio" name="flexRadioDefault" id="false">' +
+        '      <label class="form-check-label" for="false">' +
+        '        De pago' +
+        '      </label>' +
+        '    </div>' +
+        '  </form>' +
+        '</div>' +
+        '<div class="py-2 border-bottom ml-3">' +
+        '  <h6 class="font-weight-bold">Audiencia</h6>' +
+        '  <form>' +
+        '    <div class="form-check">' +
+        '      <input class="form-check-input" type="radio" name="flexRadioDefault" id="Todas las edades" checked>' +
+        '      <label class="form-check-label" for="Todas las edades">' +
+        '        Todos los públicos' +
+        '      </label>' +
+        '    </div>' +
+        '    <div class="form-check">' +
+        '      <input class="form-check-input" type="radio" name="flexRadioDefault" id="16 años">' +
+        '      <label class="form-check-label" for="16 años">' +
+        '        +16' +
+        '      </label>' +
+        '    </div>' +
+        '    <div class="form-check">' +
+        '      <input class="form-check-input" type="radio" name="flexRadioDefault" id="18 años">' +
+        '      <label class="form-check-label" for="18 años">' +
+        '        +18' +
+        '      </label>' +
+        '    </div>' +
+        '  </form>' +
+        '</div>';
+    filt.insertAdjacentHTML('afterbegin', filterS);
   }
   var cafeteriaSelect = document.getElementById("busqueda-filtro");
   var pagina = '<div class="row-filt-ev">';
@@ -931,40 +963,42 @@ async function cargarBusquedaEvent(listaCafeterias, filtros, primeraVez) {
   for (let i = listaEventos.length - 1; i >= 0; i--) {
     if (cumpleFiltrosEv(listaEventos[i], listaCafeterias[i], filtros)) {
 
-        //MOVER LINEA DENTRO DE CONDICIÓN DE FILTROS UNA VEZ IMPLEMENTADO
-        resultados++;
+      addElementoJSONLD(listaEventos[i]);
 
-        const fechaInicioEvento = new Date(listaEventos[i].startDate);
-        const fecha = fechaInicioEvento.toLocaleString('es-ES', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: false,
-            timeZone: 'UTC'
-        });
-        
-        pagina += '<div class="icon-box mt-2 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">';
-        pagina += '  <div class="event-body-bus row" onclick="cargarContenido(\'evento.html\', \'' + listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')">';
-        pagina += '    <div class="col-md-4 align-self-center">';
-        pagina += '      <i class="fa-solid fa-chevron-right chevron"></i>';
-        pagina += '      <h4>' + listaEventos[i].name + '</h4>';
-        pagina += '    </div>';
-        pagina += '    <div class="div-filas col-md-4">';
-        pagina += '      <div class="info">';
-        pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>' + listaEventos[i].place;
-        pagina += '      </div>';
-        pagina += '      <div class="info">';
-        pagina += '        <i class="fa-solid fa-calendar fa-lg"></i>' + fecha;
-        pagina += '      </div>';
-        pagina += '    </div>';
-        pagina += '    <div class="media-image col-md-4">';
-        pagina += '      <img src="' + listaEventos[i].image[0].url + '" class="mr-3" alt="' + listaEventos[i].image[0].name + '"' + i + '>';
-        pagina += '    </div>';
-        pagina += '  </div>';
-        pagina += '</div>';
+      //MOVER LINEA DENTRO DE CONDICIÓN DE FILTROS UNA VEZ IMPLEMENTADO
+      resultados++;
+
+      const fechaInicioEvento = new Date(listaEventos[i].startDate);
+      const fecha = fechaInicioEvento.toLocaleString('es-ES', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false,
+          timeZone: 'UTC'
+      });
+      
+      pagina += '<div class="icon-box mt-2 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="150">';
+      pagina += '  <div class="event-body-bus row" onclick="cargarContenido(\'evento.html\', \'' + listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')">';
+      pagina += '    <div class="col-md-4 align-self-center">';
+      pagina += '      <i class="fa-solid fa-chevron-right chevron"></i>';
+      pagina += '      <h4>' + listaEventos[i].name + '</h4>';
+      pagina += '    </div>';
+      pagina += '    <div class="div-filas col-md-4">';
+      pagina += '      <div class="info">';
+      pagina += '        <i class="fa-solid fa-location-dot fa-lg"></i>' + listaEventos[i].place;
+      pagina += '      </div>';
+      pagina += '      <div class="info">';
+      pagina += '        <i class="fa-solid fa-calendar fa-lg"></i>' + fecha;
+      pagina += '      </div>';
+      pagina += '    </div>';
+      pagina += '    <div class="media-image col-md-4">';
+      pagina += '      <img src="' + listaEventos[i].image[0].url + '" class="mr-3" alt="' + listaEventos[i].image[0].name + '"' + i + '>';
+      pagina += '    </div>';
+      pagina += '  </div>';
+      pagina += '</div>';
     }
   }
   pagina += '</div></div>';
@@ -988,4 +1022,36 @@ function cargarContenidoMap() {
   window.initMap = initMap;
 
   document.head.appendChild(script);
+}
+
+/**
+ * Elimina todas las etiquetas <script> del header (las de tipo JSON-LD).
+ */
+function vaciarJSONLD() {
+  var headScripts = document.head.getElementsByTagName('script');
+
+  for (var i = headScripts.length - 1; i >= 0; i--) {
+    var script = headScripts[i];
+    script.parentNode.removeChild(script);
+  }
+}
+
+/**
+ * Añade una etiqueta <script> de tipo json-ld al header con la información de un elemento.
+ */
+function addElementoJSONLD(elemento) {
+  var el = document.createElement('script');
+  el.type = 'application/ld+json';
+  el.text = JSON.stringify(elemento);
+
+  document.querySelector('head').appendChild(el);
+}
+
+/**
+ * Añade múltiples etiquetas <script> de tipo json-ld al header con la información de una lista de elementos.
+ */
+function addListaJSONLD(lista) {
+  for (let i = 0; i < lista.length; i++) {
+    addElementoJSONLD(lista[i]);
+  }
 }
