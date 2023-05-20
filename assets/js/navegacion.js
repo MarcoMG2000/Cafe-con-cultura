@@ -281,6 +281,7 @@ function cargarRecientes() {
   const listaEventosJSON = localStorage.getItem('Eventos Visitados');
   var listaEventos = JSON.parse(listaEventosJSON);
   if (listaEventos != null) { listaEventos.reverse(); }
+
   const listaCafeteriasJSON = localStorage.getItem('Cafeterias Visitadas');
   var listaCafeterias = JSON.parse(listaCafeteriasJSON);
   if (listaCafeterias != null) { listaCafeterias.reverse(); }
@@ -1017,6 +1018,7 @@ function cargarContenidoMap() {
   }
 
   var script = document.createElement('script');
+  script.id = 'script-api';
   script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBaIKV0ipX-n7b_RwquptRgH70iszT3G5Y&map_ids=fcbac43d02c5a043&callback=initMap";
   script.async = true;
   window.initMap = initMap;
@@ -1051,7 +1053,14 @@ function addElementoJSONLD(elemento) {
  * Añade múltiples etiquetas <script> de tipo json-ld al header con la información de una lista de elementos.
  */
 function addListaJSONLD(lista) {
-  for (let i = 0; i < lista.length; i++) {
-    addElementoJSONLD(lista[i]);
-  }
+  if(lista === null) return;
+  
+  lista.map(item => {
+    var el = document.createElement('script');
+    el.type = 'application/ld+json';
+    el.text = JSON.stringify(item);
+
+    document.querySelector('head').appendChild(el);
+  })
+  
 }

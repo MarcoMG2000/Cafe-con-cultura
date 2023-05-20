@@ -29,6 +29,11 @@ function initMap() {
 	loadBodegas();
 	loadMonumentos();
 
+	addListaJSONLD(listaCafeterias);
+	addListaJSONLD(listaRestaurantes);
+	addListaJSONLD(listaBodegas);
+	addListaJSONLD(listaMonumentos);
+
 }
 
 function filterMap(tipoMarcador){
@@ -305,7 +310,16 @@ function iconMapClickCafeteria(marker){
 	console.log(cafeteria);
 
 	//Load Info of cafeteria on page
-	document.getElementById("map-selected-item-name").textContent = cafeteria.name;
+	document.getElementById("map-selected-item-name").innerHTML = '<i class="fa-sharp fa-solid fa-mug-hot" style="margin-right: 5px;"></i>' + cafeteria.name;
+	
+	info = '<div><h4>Conócenos<i class="fa-solid fa-clipboard-list" style="margin-left: 8px;"></i></h4><p> ' + cafeteria.description + '</p></div>'
+	info+= '<div><h4>Ubicación<i class="fa-solid fa-location-dot" style="margin-left: 8px;"></i></h4><p> ' + cafeteria.address.streetAddress 
+	info+= '. ' + cafeteria.address.addressLocality + ', ' + cafeteria.address.addressRegion
+	info+= '. ' + cafeteria.address.postalCode + '</p></div>'
+	info+= '<div><a href="#" onclick="cargarContenido(\'cafeteria.html\', \'' + cafeteria.name + '\', null)"><b>Más información</b></a></div>'
+
+	document.getElementById("map-selected-item-info").innerHTML = info
+	
 }
 
 function iconMapClickRestaurante(marker){
@@ -313,7 +327,15 @@ function iconMapClickRestaurante(marker){
 	console.log(restaurante);
 
 	//Load Info of restaurante on page
-	document.getElementById("map-selected-item-name").textContent = restaurante.name;
+	document.getElementById("map-selected-item-name").innerHTML = '<i class="fa-solid fa-utensils" style="margin-right: 10px;"></i>' + restaurante.name;
+
+	info = '<div><h4>Conócenos<i class="fa-solid fa-clipboard-list" style="margin-left: 8px;"></i></h4><p> ' + restaurante.description + '</p></div>'
+	info+= '<div><h4>Ubicación<i class="fa-solid fa-location-dot" style="margin-left: 8px;"></i></h4><p> ' + restaurante.address.streetAddress 
+	info+= '. ' + restaurante.address.addressLocality + ', ' + restaurante.address.addressRegion
+	info+= '. ' + restaurante.address.postalCode + '</p></div>'
+	info+= '<div><a href="https://www.mllcarestaurantes.com/singleRestaurant.html? ' + restaurante.id + '"><b>Más información</b></a></div>'
+	
+	document.getElementById("map-selected-item-info").innerHTML = info
 }
 
 function iconMapClickBodega(marker){
@@ -321,7 +343,15 @@ function iconMapClickBodega(marker){
 	console.log(bodega);
 
 	//Load Info of bodega on page
-	document.getElementById("map-selected-item-name").textContent = bodega.name;
+	document.getElementById("map-selected-item-name").innerHTML = '<i class="fa-solid fa-wine-glass" style="margin-right: 8px;"></i>' + bodega.name;
+
+	info = '<div><h4>Conócenos<i class="fa-solid fa-clipboard-list" style="margin-left: 8px;"></i></h4><p> ' + bodega.description + '</p></div>'
+	info+= '<div><h4>Ubicación<i class="fa-solid fa-location-dot" style="margin-left: 8px;"></i></h4><p> ' + bodega.address.streetAddress 
+	info+= '. ' + bodega.address.addressRegion + ', ' + bodega.address.addressLocality
+	info+= '. ' + bodega.address.postalCode + '</p></div>'
+	info+= '<div><a href="https://mallorcabodegas.com"><b>Más información</b></a></div>'
+
+	document.getElementById("map-selected-item-info").innerHTML = info
 }
 
 function iconMapClickMonumento(marker){
@@ -329,5 +359,13 @@ function iconMapClickMonumento(marker){
 	console.log(monumento);
 
 	//Load Info of monumento on page
-	document.getElementById("map-selected-item-name").textContent = monumento.name;
+	document.getElementById("map-selected-item-name").innerHTML = '<i class="fa-solid fa-building-columns" style="margin-right: 8px;"></i>' + monumento.name;
+
+	info = '<div><h4>Conócenos<i class="fa-solid fa-clipboard-list" style="margin-left: 8px;"></i></h4><p> ' + monumento.description + '</p></div>'
+	info+= '<div><h4>Ubicación<i class="fa-solid fa-location-dot" style="margin-left: 8px;"></i></h4><p> ' + monumento.address.streetAddress 
+	info+= '. ' + monumento.address.addressLocality + ', ' + monumento.address.addressRegion
+	info+= '. ' + monumento.address.postalCode + '</p></div>'
+	info+= '<div><a href="https://www.monumentosmallorca.com/monumento.html?monumento=' + marker.zIndex + '"><b>Más información</b></a></div>'
+
+	document.getElementById("map-selected-item-info").innerHTML = info
 }
