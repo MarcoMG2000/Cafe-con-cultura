@@ -597,7 +597,7 @@ h6 {
   width: auto;
 }
 
-.carousel p {
+.carousel .carousel-caption p {
   background-color: rgba(0, 0, 0, 0.95);
   border-radius: 15px;
   font-weight: 500;
@@ -653,7 +653,6 @@ h6 {
 --------------------------------------------------------------*/
 #carouselVideo {
   margin: 0 auto;
-  width: 70%;
 }
 
 #carouselVideo .carousel-inner {
@@ -677,8 +676,8 @@ h6 {
 }
 
 #carouselVideo .carousel-control-prev, #carouselVideo .carousel-control-next {
-  height: 40%;
-  margin-top: 15%;
+  height: 25%;
+  margin-top: 20%;
 }
 
 /*--------------------------------------------------------------
