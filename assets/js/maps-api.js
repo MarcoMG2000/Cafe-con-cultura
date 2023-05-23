@@ -29,10 +29,14 @@ function initMap() {
 	loadBodegas();
 	loadMonumentos();
 
-	addListaJSONLD(listaCafeterias);
-	addListaJSONLD(listaRestaurantes);
-	addListaJSONLD(listaBodegas);
-	addListaJSONLD(listaMonumentos);
+	/**
+	 * NOW EVERY PLACE IS ADDED WITH JSONLD INSIDE EVERY "LOAD" FUNCTION
+	 * 
+	 * addListaJSONLD(listaCafeterias);
+	 * addListaJSONLD(listaRestaurantes);
+	 * addListaJSONLD(listaBodegas);
+	 * addListaJSONLD(listaMonumentos);
+	 **/
 
 }
 
@@ -122,6 +126,7 @@ function loadCafeterias(){
         // Convertimos el JSON a objetos JS
         const objeto = JSON.parse(request.response);
         listaCafeterias = objeto.itemListElement;
+		coffeMarkers = [];
         
 		let indxMarker = 0;
 		listaCafeterias.forEach(cafeteria => {
@@ -156,6 +161,7 @@ function loadCafeterias(){
 			});
 
 			coffeMarkers.push(marker);
+			addElementoJSONLD(cafeteria);
 		});
     };
     request.send();
@@ -171,6 +177,7 @@ function loadRestaurantes(){
         // Convertimos el JSON a objetos JS
         const objeto = JSON.parse(request.response);
         listaRestaurantes = objeto.itemListElement;
+		restaurantMarkers = [];
         
 		let indxMarker = 0;
 		listaRestaurantes.forEach(restaurante => {
@@ -204,6 +211,7 @@ function loadRestaurantes(){
 			});
 
 			restaurantMarkers.push(marker);
+			addElementoJSONLD(restaurante);
 		});
     };
     request.send();
@@ -219,6 +227,7 @@ function loadBodegas(){
         // Convertimos el JSON a objetos JS
         const objeto = JSON.parse(request.response);
         listaBodegas = objeto.itemListElement;
+		bodegaMarkers = [];
         
 		let indxMarker = 0;
 		listaBodegas.forEach(bodega => {
@@ -252,6 +261,7 @@ function loadBodegas(){
 			});
 
 			bodegaMarkers.push(marker);
+			addElementoJSONLD(bodega);
 		});
     };
     request.send();
@@ -267,6 +277,7 @@ function loadMonumentos(){
         // Convertimos el JSON a objetos JS
         const objeto = JSON.parse(request.response);
         listaMonumentos = objeto.itemListElement;
+		monumentosMarkers = [];
         
 		let indxMarker = 0;
 		listaMonumentos.forEach(monumento => {
@@ -300,6 +311,7 @@ function loadMonumentos(){
 			});
 
 			monumentosMarkers.push(marker);
+			addElementoJSONLD(monumento);
 		});
     };
     request.send();
