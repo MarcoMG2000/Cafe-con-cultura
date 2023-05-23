@@ -2,18 +2,21 @@
 <html lang="es">
 
 <head>
+ 
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Café con Cultura</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="¡Descubre cafeterías de Mallorca donde podrás estudiar, trabajar, esuchar música en directo y disfrutar todo tipo de eventos mientras tomas café!" name="description">
+  <meta content="cafetería, café, eventos, mallorca, cultura, stand-up, música, mapa" name="keywords">
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap">
 
+  <!-- Icono -->
+  <link href="assets/favicon/favicon.ico" rel="icon" type="image/x-icon">
+  
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -22,19 +25,14 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- Icono -->
-  <link href="assets/favicon/favicon.ico" rel="icon" type="image/x-icon">
-
 </head>
 
 <body>
 
-  <div id="JSONLD"></div> <!-- Div para cargar la semántica mediante JSON-LD -->
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-lg-between">
-      <img class="logo" src="assets/img/logo.svg" alt="...">
+      <img class="logo" src="assets/img/logo.svg" alt="logo">
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="#main" onclick="cargarContenido('home.html','')">Home</a></li>
@@ -90,8 +88,7 @@
     <div class="footer-top">
       <div class="container">
         <div class="row">
-
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-6 col-md-6">
             <div class="footer-info">
               <h3>Café con Cultura<span>.</span></h3>
               <p>
@@ -102,16 +99,15 @@
                 <strong>Email:</strong> email.ejemplo1@estudiant.uib.com<br>
               </p>
               <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="skype"><i class="fa-brands fa-skype"></i></a>
-                <a href="#" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="twitter" aria-label="Contáctanos mediante twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="facebook" aria-label="Contáctanos mediante facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="instagram" aria-label="Contáctanos mediante instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="skype" aria-label="Contáctanos mediante skype"><i class="fa-brands fa-skype"></i></a>
+                <a href="#" class="linkedin" aria-label="Contáctanos mediante linkedin"><i class="fa-brands fa-linkedin"></i></a>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-6 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
               <li><i class="fa-solid fa-chevron-right"></i> <a href="#">Home</a></li>
@@ -121,15 +117,6 @@
               <li><i class="fa-solid fa-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
           </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Boletin informativo</h4>
-            <p>Mantente informado con las últimas actualizaciones.</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribirse">
-            </form>
-          </div>
-
         </div>
       </div>
     </div>

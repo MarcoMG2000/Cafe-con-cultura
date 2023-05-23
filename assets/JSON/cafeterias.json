@@ -35,17 +35,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-1.webp",
                "name": "Imagen 1 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-2.webp",
                "name": "Imagen 2 - Cafetería Parabellum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Cafetería Parabellum/imagen-3.webp",
                "name": "Imagen 3 - Cafetería Parabellum"
             }
          ],
@@ -74,17 +74,17 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-1.jpg",
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-1.webp",
                      "name": "Imagen 1 - Club de Lectura - MistBorn"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-2.jpg",
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-2.webp",
                      "name": "Imagen 2 - Club de Lectura - MistBorn"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-3.jpg",
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-3.webp",
                      "name": "Imagen 3 - Club de Lectura - MistBorn"
                   }
                ]
@@ -110,7 +110,7 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/JAM session con Robert Castelli/imagen-1.jpg",
+                     "url": "assets/img/eventos/JAM session con Robert Castelli/imagen-1.webp",
                      "name": "Imagen 1 - JAM session con Robert Castelli"
                   }
                ]
@@ -157,12 +157,12 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Espai Suscultura Coop/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Espai Suscultura Coop/imagen-1.webp",
                "name": "Imagen 1 - Espai Suscultura Coop"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Espai Suscultura Coop/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Espai Suscultura Coop/imagen-2.webp",
                "name": "Imagen 2 - Espai Suscultura Coop"
             }
          ],
@@ -209,22 +209,22 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Café Lisboa/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Café Lisboa/imagen-1.webp",
                "name": "Imagen 1 - Café Lisboa"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Café Lisboa/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Café Lisboa/imagen-2.webp",
                "name": "Imagen 2 - Café Lisboa"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Café Lisboa/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Café Lisboa/imagen-3.webp",
                "name": "Imagen 3 - Café Lisboa"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Café Lisboa/imagen-4.jpg",
+               "url": "assets/img/cafeterias/Café Lisboa/imagen-4.webp",
                "name": "Imagen 4 - Café Lisboa"
             }
          ],
@@ -253,7 +253,7 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/JAM session con Robert Castelli/imagen-1.jpg",
+                     "url": "assets/img/eventos/JAM session con Robert Castelli/imagen-1.webp",
                      "name": "Imagen 1 - JAM session con Robert Castelli"
                   }
                ]
@@ -296,17 +296,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafè Barroco/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Cafè Barroco/imagen-1.webp",
                "name": "Imagen 1 - Cafè Barroco"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafè Barroco/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Cafè Barroco/imagen-2.webp",
                "name": "Imagen 2 - Cafè Barroco"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafè Barroco/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Cafè Barroco/imagen-3.webp",
                "name": "Imagen 3 - Cafè Barroco"
             }
          ],
@@ -353,17 +353,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Agua Bar/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Agua Bar/imagen-1.webp",
                "name": "Imagen 1 - Agua Bar"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Agua Bar/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Agua Bar/imagen-2.webp",
                "name": "Imagen 2 - Agua Bar"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Agua Bar/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Agua Bar/imagen-3.webp",
                "name": "Imagen 3 - Agua Bar"
             }
          ],
@@ -392,7 +392,7 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/JAM session con Robert Castelli/imagen-1.jpg",
+                     "url": "assets/img/eventos/JAM session con Robert Castelli/imagen-1.webp",
                      "name": "Imagen 1 - JAM session con Robert Castelli"
                   }
                ]
@@ -437,22 +437,22 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Café a Tres Bandas/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Café a Tres Bandas/imagen-1.webp",
                "name": "Imagen 1 - Café a Tres Bandas"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Café a Tres Bandas/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Café a Tres Bandas/imagen-2.webp",
                "name": "Imagen 2 - Café a Tres Bandas"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Café a Tres Bandas/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Café a Tres Bandas/imagen-3.webp",
                "name": "Imagen 3 - Café a Tres Bandas"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Café a Tres Bandas/imagen-4.jpg",
+               "url": "assets/img/cafeterias/Café a Tres Bandas/imagen-4.webp",
                "name": "Imagen 4 - Café a Tres Bandas"
             }
          ],
@@ -486,22 +486,22 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Clara Andrés en Café a Tres Bandas/imagen-1.jpg",
+                     "url": "assets/img/eventos/Clara Andrés en Café a Tres Bandas/imagen-1.webp",
                      "name": "Imagen 1 - Clara Andrés en Café a Tres Bandas"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Clara Andrés en Café a Tres Bandas/imagen-2.jpg",
+                     "url": "assets/img/eventos/Clara Andrés en Café a Tres Bandas/imagen-2.webp",
                      "name": "Imagen 2 - Clara Andrés en Café a Tres Bandas"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Clara Andrés en Café a Tres Bandas/imagen-3.jpg",
+                     "url": "assets/img/eventos/Clara Andrés en Café a Tres Bandas/imagen-3.webp",
                      "name": "Imagen 3 - Clara Andrés en Café a Tres Bandas"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Clara Andrés en Café a Tres Bandas/imagen-4.jpg",
+                     "url": "assets/img/eventos/Clara Andrés en Café a Tres Bandas/imagen-4.webp",
                      "name": "Imagen 4 - Clara Andrés en Café a Tres Bandas"
                   }
                ]
@@ -532,17 +532,17 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Daniel Higiénico/imagen-1.jpg",
+                     "url": "assets/img/eventos/Daniel Higiénico/imagen-1.webp",
                      "name": "Imagen 1 - Daniel Higiénico"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Daniel Higiénico/imagen-2.jpg",
+                     "url": "assets/img/eventos/Daniel Higiénico/imagen-2.webp",
                      "name": "Imagen 2 - Daniel Higiénico"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Daniel Higiénico/imagen-3.jpg",
+                     "url": "assets/img/eventos/Daniel Higiénico/imagen-3.webp",
                      "name": "Imagen 3 - Daniel Higiénico"
                   }
                ]
@@ -573,17 +573,17 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Monólogo Edén Serrano (De aquí no sale)/imagen-1.jpg",
+                     "url": "assets/img/eventos/Monólogo Edén Serrano (De aquí no sale)/imagen-1.webp",
                      "name": "Imagen 1 - Monólogo Edén Serrano (De aquí no sale)"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Monólogo Edén Serrano (De aquí no sale)/imagen-2.jpg",
+                     "url": "assets/img/eventos/Monólogo Edén Serrano (De aquí no sale)/imagen-2.webp",
                      "name": "Imagen 2 - Monólogo Edén Serrano (De aquí no sale)"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Monólogo Edén Serrano (De aquí no sale)/imagen-3.jpg",
+                     "url": "assets/img/eventos/Monólogo Edén Serrano (De aquí no sale)/imagen-3.webp",
                      "name": "Imagen 3 - Monólogo Edén Serrano (De aquí no sale)"
                   }
                ]
@@ -614,22 +614,22 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Dani Flaco en Palma de Mallorca/imagen-1.jpg",
+                     "url": "assets/img/eventos/Dani Flaco en Palma de Mallorca/imagen-1.webp",
                      "name": "Imagen 1 - Dani Flaco en Palma de Mallorca"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Dani Flaco en Palma de Mallorca/imagen-2.jpg",
+                     "url": "assets/img/eventos/Dani Flaco en Palma de Mallorca/imagen-2.webp",
                      "name": "Imagen 2 - Dani Flaco en Palma de Mallorca"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Dani Flaco en Palma de Mallorca/imagen-3.jpg",
+                     "url": "assets/img/eventos/Dani Flaco en Palma de Mallorca/imagen-3.webp",
                      "name": "Imagen 3 - Dani Flaco en Palma de Mallorca"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Dani Flaco en Palma de Mallorca/imagen-4.jpg",
+                     "url": "assets/img/eventos/Dani Flaco en Palma de Mallorca/imagen-4.webp",
                      "name": "Imagen 4 - Dani Flaco en Palma de Mallorca"
                   }
                ]
@@ -677,17 +677,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Café l'Antiquari/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Café l'Antiquari/imagen-1.webp",
                "name": "Imagen 1 - Café l'Antiquari"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Café l'Antiquari/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Café l'Antiquari/imagen-2.webp",
                "name": "Imagen 2 - Café l'Antiquari"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Café l'Antiquari/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Café l'Antiquari/imagen-3.webp",
                "name": "Imagen 3 - Café l'Antiquari"
             }
          ],
@@ -736,17 +736,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Mandragora cafe/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Mandragora cafe/imagen-1.webp",
                "name": "Imagen 1 - Mandragora cafe"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Mandragora cafe/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Mandragora cafe/imagen-2.webp",
                "name": "Imagen 2 - Mandragora cafe"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Mandragora cafe/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Mandragora cafe/imagen-3.webp",
                "name": "Imagen 3 - Mandragora cafe"
             }
          ],
@@ -794,22 +794,22 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/La biblioteca de Babel/imagen-1.jpg",
+               "url": "assets/img/cafeterias/La biblioteca de Babel/imagen-1.webp",
                "name": "Imagen 1 - La biblioteca de Babel"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/La biblioteca de Babel/imagen-2.jpg",
+               "url": "assets/img/cafeterias/La biblioteca de Babel/imagen-2.webp",
                "name": "Imagen 2 - La biblioteca de Babel"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/La biblioteca de Babel/imagen-3.jpg",
+               "url": "assets/img/cafeterias/La biblioteca de Babel/imagen-3.webp",
                "name": "Imagen 3 - La biblioteca de Babel"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/La biblioteca de Babel/imagen-4.jpg",
+               "url": "assets/img/cafeterias/La biblioteca de Babel/imagen-4.webp",
                "name": "Imagen 4 - La biblioteca de Babel"
             }
          ],
@@ -838,17 +838,17 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-1.jpg",
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-1.webp",
                      "name": "Imagen 1 - Club de Lectura - MistBorn"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-2.jpg",
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-2.webp",
                      "name": "Imagen 2 - Club de Lectura - MistBorn"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-3.jpg",
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-3.webp",
                      "name": "Imagen 3 - Club de Lectura - MistBorn"
                   }
                ]
@@ -895,17 +895,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Literanta/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Literanta/imagen-1.webp",
                "name": "Imagen 1 - Literanta"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Literanta/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Literanta/imagen-2.webp",
                "name": "Imagen 2 - Literanta"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Literanta/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Literanta/imagen-3.webp",
                "name": "Imagen 3 - Literanta"
             }
          ],
@@ -934,17 +934,17 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-1.jpg",
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-1.webp",
                      "name": "Imagen 1 - Club de Lectura - MistBorn"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-2.jpg",
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-2.webp",
                      "name": "Imagen 2 - Club de Lectura - MistBorn"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-3.jpg",
+                     "url": "assets/img/eventos/Club de Lectura - MistBorn/imagen-3.webp",
                      "name": "Imagen 3 - Club de Lectura - MistBorn"
                   }
                ]
@@ -989,17 +989,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Café La Fabrique D'art/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Café La Fabrique D'art/imagen-1.webp",
                "name": "Imagen 1 - Café La Fabrique D'art"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Café La Fabrique D'art/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Café La Fabrique D'art/imagen-2.webp",
                "name": "Imagen 2 - Café La Fabrique D'art"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Café La Fabrique D'art/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Café La Fabrique D'art/imagen-3.webp",
                "name": "Imagen 3 - Café La Fabrique D'art"
             }
          ],
@@ -1047,12 +1047,12 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Can Alcover/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Can Alcover/imagen-1.webp",
                "name": "Imagen 1 - Can Alcover"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Can Alcover/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Can Alcover/imagen-2.webp",
                "name": "Imagen 2 - Can Alcover"
             }
          ],
@@ -1100,17 +1100,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Transilvania Cafetería-Museum/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Transilvania Cafetería-Museum/imagen-1.webp",
                "name": "Imagen 1 - Transilvania Cafetería-Museum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Transilvania Cafetería-Museum/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Transilvania Cafetería-Museum/imagen-2.webp",
                "name": "Imagen 2 - Transilvania Cafetería-Museum"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Transilvania Cafetería-Museum/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Transilvania Cafetería-Museum/imagen-3.webp",
                "name": "Imagen 3 - Transilvania Cafetería-Museum"
             }
          ],
@@ -1156,12 +1156,12 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafè Espanyol/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Cafè Espanyol/imagen-1.webp",
                "name": "Imagen 1 - Cafè Espanyol"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafè Espanyol/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Cafè Espanyol/imagen-2.webp",
                "name": "Imagen 2 - Cafè Espanyol"
             }
          ],
@@ -1208,12 +1208,12 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafeteria Espai Natural/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Cafeteria Espai Natural/imagen-1.webp",
                "name": "Imagen 1 - Cafeteria Espai Natural"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Cafeteria Espai Natural/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Cafeteria Espai Natural/imagen-2.webp",
                "name": "Imagen 2 - Cafeteria Espai Natural"
             }
          ],
@@ -1260,17 +1260,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Goblintrader Mallorca/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Goblintrader Mallorca/imagen-1.webp",
                "name": "Imagen 1 - Goblintrader Mallorca"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Goblintrader Mallorca/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Goblintrader Mallorca/imagen-2.webp",
                "name": "Imagen 2 - Goblintrader Mallorca"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Goblintrader Mallorca/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Goblintrader Mallorca/imagen-3.webp",
                "name": "Imagen 3 - Goblintrader Mallorca"
             }
          ],
@@ -1317,12 +1317,12 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Café Al Vent del Món/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Café Al Vent del Món/imagen-1.webp",
                "name": "Imagen 1 - Café Al Vent del Món"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Café Al Vent del Món/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Café Al Vent del Món/imagen-2.webp",
                "name": "Imagen 2 - Café Al Vent del Món"
             }
          ],
@@ -1370,17 +1370,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Sense Món/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Sense Món/imagen-1.webp",
                "name": "Imagen 1 - Sense Món"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Sense Món/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Sense Món/imagen-2.webp",
                "name": "Imagen 2 - Sense Món"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Sense Món/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Sense Món/imagen-3.webp",
                "name": "Imagen 3 - Sense Món"
             }
          ],
@@ -1427,17 +1427,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Bar Akelarre/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Bar Akelarre/imagen-1.webp",
                "name": "Imagen 1 - Bar Akelarre"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Bar Akelarre/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Bar Akelarre/imagen-2.webp",
                "name": "Imagen 2 - Bar Akelarre"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Bar Akelarre/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Bar Akelarre/imagen-3.webp",
                "name": "Imagen 3 - Bar Akelarre"
             }
          ],
@@ -1466,7 +1466,7 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/JAM session con Robert Castelli/imagen-1.jpg",
+                     "url": "assets/img/eventos/JAM session con Robert Castelli/imagen-1.webp",
                      "name": "Imagen 1 - JAM session con Robert Castelli"
                   }
                ]
@@ -1511,17 +1511,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/La Forja/imagen-1.jpg",
+               "url": "assets/img/cafeterias/La Forja/imagen-1.webp",
                "name": "Imagen 1 - La Forja"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/La Forja/imagen-2.jpg",
+               "url": "assets/img/cafeterias/La Forja/imagen-2.webp",
                "name": "Imagen 2 - La Forja"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/La Forja/imagen-3.jpg",
+               "url": "assets/img/cafeterias/La Forja/imagen-3.webp",
                "name": "Imagen 3 - La Forja"
             }
          ],
@@ -1566,17 +1566,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Honky Tonk/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Honky Tonk/imagen-1.webp",
                "name": "Imagen 1 - Honky Tonk"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Honky Tonk/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Honky Tonk/imagen-2.webp",
                "name": "Imagen 2 - Honky Tonk"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Honky Tonk/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Honky Tonk/imagen-3.webp",
                "name": "Imagen 3 - Honky Tonk"
             }
          ],
@@ -1604,7 +1604,7 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Mark Smith acustico/imagen-1.jpg",
+                     "url": "assets/img/eventos/Mark Smith acustico/imagen-1.webp",
                      "name": "Imagen 1 - Mark Smith acústico"
                   }
                ]
@@ -1646,17 +1646,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Midnightsun/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Midnightsun/imagen-1.webp",
                "name": "Imagen 1 - Midnightsun"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Midnightsun/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Midnightsun/imagen-2.webp",
                "name": "Imagen 2 - Midnightsun"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Midnightsun/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Midnightsun/imagen-3.webp",
                "name": "Imagen 3 - Midnightsun"
             }
          ],
@@ -1690,7 +1690,7 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Midnightsun Live Show/imagen-1.jpg",
+                     "url": "assets/img/eventos/Midnightsun Live Show/imagen-1.webp",
                      "name": "Imagen 1 - Midnightsun Live Show"
                   }
                ]
@@ -1734,17 +1734,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Pirates Adventure/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Pirates Adventure/imagen-1.webp",
                "name": "Imagen 1 - Pirates Adventure"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Pirates Adventure/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Pirates Adventure/imagen-2.webp",
                "name": "Imagen 2 - Pirates Adventure"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Pirates Adventure/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Pirates Adventure/imagen-3.webp",
                "name": "Imagen 3 - Pirates Adventure"
             }
          ],
@@ -1778,7 +1778,7 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Pirates Show/imagen-1.jpg",
+                     "url": "assets/img/eventos/Pirates Show/imagen-1.webp",
                      "name": "Imagen 1 - Pirates Show"
                   }
                ]
@@ -1821,17 +1821,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Son Amar/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Son Amar/imagen-1.webp",
                "name": "Imagen 1 - Son Amar"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Son Amar/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Son Amar/imagen-2.webp",
                "name": "Imagen 2 - Son Amar"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Son Amar/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Son Amar/imagen-3.webp",
                "name": "Imagen 3 - Son Amar"
             }
          ],
@@ -1865,7 +1865,7 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Exhibit/imagen-1.jpg",
+                     "url": "assets/img/eventos/Exhibit/imagen-1.webp",
                      "name": "Imagen 1 - Exhibit"
                   }
                ]
@@ -1896,17 +1896,17 @@
                "image": [
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Ohala/imagen-1.jpg",
+                     "url": "assets/img/eventos/Ohala/imagen-1.webp",
                      "name": "Imagen 1 - Ohala"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Ohala/imagen-2.jpg",
+                     "url": "assets/img/eventos/Ohala/imagen-2.webp",
                      "name": "Imagen 2 - Ohala"
                   },
                   {
                      "@type": "ImageObject",
-                     "url": "assets/img/eventos/Ohala/imagen-3.jpg",
+                     "url": "assets/img/eventos/Ohala/imagen-3.webp",
                      "name": "Imagen 3 - Ohala"
                   }
                ]
@@ -1950,17 +1950,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Bar Papis/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Bar Papis/imagen-1.webp",
                "name": "Imagen 1 - Bar Papis"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Bar Papis/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Bar Papis/imagen-2.webp",
                "name": "Imagen 2 - Bar Papis"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Bar Papis/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Bar Papis/imagen-3.webp",
                "name": "Imagen 3 - Bar Papis"
             }
          ],
@@ -2005,22 +2005,22 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Ca'n Molinas/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Ca'n Molinas/imagen-1.webp",
                "name": "Imagen 1 - Ca'n Molinas"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Ca'n Molinas/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Ca'n Molinas/imagen-2.webp",
                "name": "Imagen 2 - Ca'n Molinas"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Ca'n Molinas/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Ca'n Molinas/imagen-3.webp",
                "name": "Imagen 3 - Ca'n Molinas"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Ca'n Molinas/imagen-4.jpg",
+               "url": "assets/img/cafeterias/Ca'n Molinas/imagen-4.webp",
                "name": "Imagen 4 - Ca'n Molinas"
             }
          ],
@@ -2066,22 +2066,22 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Capuccino Valldemossa/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Capuccino Valldemossa/imagen-1.webp",
                "name": "Imagen 1 - Capuccino Valldemossa"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Capuccino Valldemossa/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Capuccino Valldemossa/imagen-2.webp",
                "name": "Imagen 2 - Capuccino Valldemossa"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Capuccino Valldemossa/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Capuccino Valldemossa/imagen-3.webp",
                "name": "Imagen 3 - Capuccino Valldemossa"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Capuccino Valldemossa/imagen-4.jpg",
+               "url": "assets/img/cafeterias/Capuccino Valldemossa/imagen-4.webp",
                "name": "Imagen 4 - Capuccino Valldemossa"
             }
          ],
@@ -2131,17 +2131,17 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/ROM4N1 Cafetería & Restaurant/imagen-1.jpg",
+               "url": "assets/img/cafeterias/ROM4N1 Cafetería & Restaurant/imagen-1.webp",
                "name": "Imagen 1 - ROM4N1 Cafetería & Restaurant"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/ROM4N1 Cafetería & Restaurant/imagen-2.jpg",
+               "url": "assets/img/cafeterias/ROM4N1 Cafetería & Restaurant/imagen-2.webp",
                "name": "Imagen 2 - ROM4N1 Cafetería & Restaurant"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/ROM4N1 Cafetería & Restaurant/imagen-3.jpg",
+               "url": "assets/img/cafeterias/ROM4N1 Cafetería & Restaurant/imagen-3.webp",
                "name": "Imagen 3 - ROM4N1 Cafetería & Restaurant"
             }
          ],
@@ -2189,27 +2189,27 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Dulce De Leche/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Dulce De Leche/imagen-1.webp",
                "name": "Imagen 1 - Dulce De Leche"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Dulce De Leche/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Dulce De Leche/imagen-2.webp",
                "name": "Imagen 2 - Dulce De Leche"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Dulce De Leche/imagen-3.jpg",
+               "url": "assets/img/cafeterias/Dulce De Leche/imagen-3.webp",
                "name": "Imagen 3 - Dulce De Leche"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Dulce De Leche/imagen-4.jpg",
+               "url": "assets/img/cafeterias/Dulce De Leche/imagen-4.webp",
                "name": "Imagen 4 - Dulce De Leche"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Dulce De Leche/imagen-5.jpg",
+               "url": "assets/img/cafeterias/Dulce De Leche/imagen-5.webp",
                "name": "Imagen 5 - Dulce De Leche"
             }
          ],
@@ -2257,12 +2257,12 @@
          "image": [
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Es Passeig/imagen-1.jpg",
+               "url": "assets/img/cafeterias/Es Passeig/imagen-1.webp",
                "name": "Imagen 1 - Es Passeig"
             },
             {
                "@type": "ImageObject",
-               "url": "assets/img/cafeterias/Es Passeig/imagen-2.jpg",
+               "url": "assets/img/cafeterias/Es Passeig/imagen-2.webp",
                "name": "Imagen 2 - Es Passeig"
             }
          ],

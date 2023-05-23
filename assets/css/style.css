@@ -167,7 +167,7 @@ h6 {
   padding-left: 15px;
 }
 
-#cafeteria h4, #cafeteria p {
+#cafeteria h3, #cafeteria p {
   font-family: "Poppins", sans-serif;
 }
 
@@ -189,7 +189,7 @@ h6 {
   color: #e2a324;
 }
 
-#cafeteria h4 span:first-child {
+#cafeteria h3 span:first-child {
   color: #e2a324;
   padding-left: 20px;
 }
@@ -310,7 +310,7 @@ h6 {
   margin-bottom: 50px;
 }
 
-#evento h4 {
+#evento h3 {
   margin-top: 10px;
 }
 
@@ -322,7 +322,7 @@ h6 {
   padding-left: 15px;
 }
 
-#evento h4, #evento p, #evento .horario, #evento h6, #evento a {
+#evento h3, #evento p, #evento .horario, #evento h6, #evento a {
   font-family: "Poppins", sans-serif;
 }
 
@@ -589,7 +589,7 @@ h6 {
   cursor: pointer;
 }
 
-.carousel h5 {
+.carousel h3 {
   background-color: rgba(0, 0, 0, 0.95);
   border-radius: 15px;
   font-weight: 600;
@@ -858,7 +858,7 @@ h6:hover {
   color: #ffc451;
 }
 
-#buscador .icon-box h4 {
+#buscador .icon-box h3 {
   font-size: 20px;
   font-weight: 700;
   margin: 5px 0 10px 60px;
@@ -922,7 +922,7 @@ h6:hover {
     justify-content: center;
   }
 
-  #buscador .icon-box h4 {
+  #buscador .icon-box h3 {
     text-align: center;
     margin-right: 60px;
   }
@@ -1104,8 +1104,8 @@ h6:hover {
 }
 
 #header .logo {
-  max-width: 300px;
-  max-height: 200px;
+  height: 50px;
+  width: 200px;
 }
 
 /*--------------------------------------------------------------
@@ -1337,7 +1337,7 @@ h6:hover {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/cafeteria-ejemplo.jpg") top center;
+  background: url("../img/cafeteria-ejemplo.webp") top center;
   background-size: cover;
   position: relative;
 }
@@ -1455,7 +1455,7 @@ section {
   margin: 0 0 5px 0;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #aaaaaa;
+  color: rgba(44, 44, 44, 0.9);
   font-family: "Poppins", sans-serif;
 }
 
@@ -1489,7 +1489,7 @@ section {
   padding-left: 15px;
 }
 
-.events .icon-box h4 {
+.events .icon-box h3 {
   font-size: 20px;
   font-weight: 700;
   margin: 5px 0 10px 60px;
@@ -1577,11 +1577,16 @@ section {
   line-height: 0;
 }
 
+.team .member .member-img img {
+  width: 100%;
+  height: 100%;
+}
+
 .team .member .member-info {
   padding: 25px 15px;
 }
 
-.team .member .member-info h4 {
+.team .member .member-info h3 {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 18px;
@@ -1668,7 +1673,7 @@ section {
   text-decoration: none;
 }
 
-#footer .footer-top h4 {
+#footer .footer-top h3 {
   font-size: 16px;
   font-weight: 600;
   color: #fff;
