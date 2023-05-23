@@ -149,7 +149,7 @@ function cargarCafeteriasPorValoracion(listaCafeterias) {
     pagina += '<div class="media" onclick="cargarContenido(\'cafeteria.html\', \'' + nombre.replace(/'/g, "\\'") + '\', null)">';
     pagina += '  <div class="media-body row">';
     pagina += '    <div class="media-image col-md-4">';
-    pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i + '>';
+    pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i + ' loading="lazy">';
     pagina += '    </div>';
     pagina += '    <div class="col-md-4 media-nombre d-flex align-items-center">';
     pagina += '      <h3>' + nombre + '</h3>';
@@ -212,7 +212,7 @@ async function cargarCafeteriasPorCercania(listaCafeterias) {
     pagina += '      <h3>' + nombre + '</h3>'
     pagina += '    </div>';
     pagina += '    <div class="media-image col-md-4">';
-    pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i + '>';
+    pagina += '      <img src="' + imagen + '" class="mr-3" alt="Imagen de la cafetería "' + i + ' loading="lazy">';
     pagina += '    </div>'
     pagina += '  </div>'
     pagina += '</div>';
@@ -322,7 +322,7 @@ function cargarRecientes() {
         indicatorsCafeteria += '<button type="button" data-bs-target="#carouselCafeteriaReciente" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
 
         itemsCafeteria += '<div class="carousel-item active" onclick="cargarContenido(\'cafeteria.html\', \'' + listaCafeterias[i].name.replace(/'/g, "\\'") + '\', null)">';
-        itemsCafeteria += '  <img src="' + listaCafeterias[i].image[0].url + '" class="d-block w-100 h-100" alt="' + listaCafeterias[i].image[0].name + '">';
+        itemsCafeteria += '  <img src="' + listaCafeterias[i].image[0].url + '" class="d-block w-100 h-100" alt="' + listaCafeterias[i].image[0].name + '" loading="lazy">';
         itemsCafeteria += '  <div class="carousel-caption d-none d-md-block">';
         itemsCafeteria += '    <h3>' + listaCafeterias[i].name + '</h3>';
         itemsCafeteria += '    <p>' + listaCafeterias[i].address.streetAddress + '</p>';  
@@ -332,7 +332,7 @@ function cargarRecientes() {
         indicatorsCafeteria += '<button type="button" data-bs-target="#carouselCafeteriaReciente" data-bs-slide-to="' + i + '" aria-label="Slide ' + i + '"></button>';
 
         itemsCafeteria += '<div class="carousel-item" onclick="cargarContenido(\'cafeteria.html\', \'' + listaCafeterias[i].name.replace(/'/g, "\\'") + '\', null)">';
-        itemsCafeteria += '  <img src="' + listaCafeterias[i].image[0].url + '" class="d-block w-100 h-100" alt="' + listaCafeterias[i].image[0].name + '">';
+        itemsCafeteria += '  <img src="' + listaCafeterias[i].image[0].url + '" class="d-block w-100 h-100" alt="' + listaCafeterias[i].image[0].name + '" loading="lazy">';
         itemsCafeteria += '  <div class="carousel-caption d-none d-md-block">';
         itemsCafeteria += '    <h3>' + listaCafeterias[i].name + '</h3>';
         itemsCafeteria += '    <p>' + listaCafeterias[i].address.streetAddress + '</p>';  
@@ -363,7 +363,7 @@ function cargarRecientes() {
         indicatorsEvento += '<button type="button" data-bs-target="#carouselEventoReciente" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
 
         itemsEvento += '<div class="carousel-item active" onclick="cargarContenido(\'evento.html\', \'' + listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')">';
-        itemsEvento += '  <img src="' + listaEventos[i].image[0].url + '" class="d-block w-100 h-100" alt="' + listaEventos[i].image[0].name + '">';
+        itemsEvento += '  <img src="' + listaEventos[i].image[0].url + '" class="d-block w-100 h-100" alt="' + listaEventos[i].image[0].name + '" loading="lazy">';
         itemsEvento += '  <div class="carousel-caption d-none d-md-block">';
         itemsEvento += '    <h3>' + listaEventos[i].name + '</h3>';
         itemsEvento += '    <p>' + listaEventos[i].place + '</p>';
@@ -373,7 +373,7 @@ function cargarRecientes() {
         indicatorsEvento += '<button type="button" data-bs-target="#carouselEventoReciente" data-bs-slide-to="' + i + '" aria-label="Slide ' + i + '"></button>';
 
         itemsEvento += '<div class="carousel-item" onclick="cargarContenido(\'evento.html\', \'' + listaEventos[i].place.replace(/'/g, "\\'") + '\', \'' + listaEventos[i].name.replace(/'/g, "\\'") + '\')">';
-        itemsEvento += '  <img src="' + listaEventos[i].image[0].url + '" class="d-block w-100 h-100" alt="' + listaEventos[i].image[0].name + '">';
+        itemsEvento += '  <img src="' + listaEventos[i].image[0].url + '" class="d-block w-100 h-100" alt="' + listaEventos[i].image[0].name + '" loading="lazy">';
         itemsEvento += '  <div class="carousel-caption d-none d-md-block">';
         itemsEvento += '    <h3>' + listaEventos[i].name + '</h3>';
         itemsEvento += '    <p>' + listaEventos[i].place + '</p>';  
@@ -484,13 +484,13 @@ function cargarCafeteriaClickada(listaCafeterias, nombreCafeteria) {
       indicators += '<button type="button" data-bs-target="#carouselCafeteria" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
 
       items += '<div class="carousel-item active">';
-      items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '">';
+      items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '" loading="lazy">';
       items += '</div>';
     } else {
       indicators += '<button type="button" data-bs-target="#carouselCafeteria" data-bs-slide-to="' + i + '" aria-label="Slide ' + i + '"></button>';
 
       items += '<div class="carousel-item">';
-      items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '">';
+      items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '" loading="lazy">';
       items += '</div>';
     }
   }
@@ -669,13 +669,13 @@ function cargarEventoClickado(listaCafeterias, nombreCafeteria, nombreEvento) {
         indicators += '<button type="button" data-bs-target="#carouselEvento" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
 
         items += '<div class="carousel-item active">';
-        items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '">';
+        items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '" loading="lazy">';
         items += '</div>';
     } else {
         indicators += '<button type="button" data-bs-target="#carouselEvento" data-bs-slide-to="' + i + '" aria-label="Slide ' + i + '"></button>';
 
         items += '<div class="carousel-item">';
-        items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '">';
+        items += '  <img src="' + imagenes[i].url + '" class="d-block w-100 h-100" alt="' + imagenes[i].name + '" loading="lazy">';
         items += '</div>';
     }
   }
@@ -853,7 +853,7 @@ async function cargarBusquedaCafe(listaCafeterias, filtros, primeraVez) {
       pagina += '<a class="media" href="#" onclick="cargarContenido(\'cafeteria.html\',\'' + listaCafeterias[i].name.replace(/'/g, "\\'") + '\')">';
       pagina += '<div class="media-body row">';
       pagina += '<div class="media-image col-md-4">';
-      pagina += '<img src="' + listaCafeterias[i].image[0].url + '" class="mr-3" alt="' + listaCafeterias[i].image[0].name + '">';
+      pagina += '<img src="' + listaCafeterias[i].image[0].url + '" class="mr-3" alt="' + listaCafeterias[i].image[0].name + '" loading="lazy">';
       pagina += '</div>';
       pagina += '<div class="col-md-4 media-nombre d-flex align-items-center">';
       pagina += '<h3>' + listaCafeterias[i].name + '</h3>';
@@ -996,7 +996,7 @@ async function cargarBusquedaEvent(listaCafeterias, filtros, primeraVez) {
       pagina += '      </div>';
       pagina += '    </div>';
       pagina += '    <div class="media-image col-md-4">';
-      pagina += '      <img src="' + listaEventos[i].image[0].url + '" class="mr-3" alt="' + listaEventos[i].image[0].name + '"' + i + '>';
+      pagina += '      <img src="' + listaEventos[i].image[0].url + '" class="mr-3" alt="' + listaEventos[i].image[0].name + '"' + i + ' loading="lazy">';
       pagina += '    </div>';
       pagina += '  </div>';
       pagina += '</div>';
